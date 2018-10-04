@@ -16,9 +16,9 @@ public class AsalaHome extends AsalaPageBase {
 	@FindBy(css="input.button-1.search-box-button")
 	WebElement searchBtn ; 
 	
-	public void ProductSearch(String productName) 
+	/*public void ProductSearch(String productName) 
 	{
 		setTextElementText(searchTextBox, productName);
 		clickButton(searchBtn);
-	}
+	}*/
 }
