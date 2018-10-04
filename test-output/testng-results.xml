@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Asala Dashboard Regression Suite" duration-ms="22" started-at="2018-10-04T09:34:23Z" finished-at="2018-10-04T09:34:23Z">
+    <groups>
+    </groups>
+    <test name="Regression Test" duration-ms="22" started-at="2018-10-04T09:34:23Z" finished-at="2018-10-04T09:34:23Z">
+      <class name="asala.test.AsalaHomeTest">
+        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:asala.test.AsalaHomeTest@7d9d1a19]" name="startDriver" is-config="true" duration-ms="6101" started-at="2018-10-04T09:34:17Z" finished-at="2018-10-04T09:34:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startDriver -->
+        <test-method status="PASS" signature="FirstTestCase()[pri:0, instance:asala.test.AsalaHomeTest@7d9d1a19]" name="FirstTestCase" duration-ms="7" started-at="2018-10-04T09:34:23Z" finished-at="2018-10-04T09:34:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FirstTestCase -->
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaHomeTest@7d9d1a19]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-04T09:34:23Z" finished-at="2018-10-04T09:34:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=FirstTestCase status=SUCCESS method=AsalaHomeTest.FirstTestCase()[pri:0, instance:asala.test.AsalaHomeTest@7d9d1a19] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenShootsOnFailure -->
+        <test-method status="PASS" signature="stopDriver()[pri:0, instance:asala.test.AsalaHomeTest@7d9d1a19]" name="stopDriver" is-config="true" duration-ms="740" started-at="2018-10-04T09:34:23Z" finished-at="2018-10-04T09:34:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopDriver -->
+      </class> <!-- asala.test.AsalaHomeTest -->
+    </test> <!-- Regression Test -->
+  </suite> <!-- Asala Dashboard Regression Suite -->
+</testng-results>
