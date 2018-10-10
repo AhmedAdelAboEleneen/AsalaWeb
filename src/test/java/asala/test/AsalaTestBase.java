@@ -11,6 +11,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
 import asala.utilities.AsalaHelper;
 
 public class AsalaTestBase {
@@ -19,6 +21,7 @@ public class AsalaTestBase {
 
 	@BeforeSuite
 	@Parameters({"browser"})
+	@Test
 	public void startDriver(@Optional ("firefox") String browserName) {
 		
 		if (browserName.equalsIgnoreCase("firefox")) {
@@ -32,7 +35,7 @@ public class AsalaTestBase {
 			driver = new ChromeDriver();
 		}
 
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		driver.navigate().to("http://demo.nopcommerce.com/");
 	}

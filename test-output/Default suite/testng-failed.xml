@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <parameter name="browser" value="chrome"/>
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="asala.test.AsalaHomeTest">
+      <class name="asala.test.AsalaTestBase">
         <methods>
           <include name="startDriver"/>
-          <include name="FirstTestCase"/>
+          <include name="startDriver"/>
           <include name="screenShootsOnFailure"/>
           <include name="stopDriver"/>
         </methods>
-      </class> <!-- asala.test.AsalaHomeTest -->
+      </class> <!-- asala.test.AsalaTestBase -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

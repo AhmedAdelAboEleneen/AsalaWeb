@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="6.556" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="9.811" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="gnome"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -17,7 +17,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
-    <property name="sun.java.command" value="/home/be-max/eclipse-workspace/Asala-Project/asala.dashboard/target/surefire/surefirebooter4206668098040496242.jar /home/be-max/eclipse-workspace/Asala-Project/asala.dashboard/target/surefire 2018-10-04T11-35-55_988-jvmRun1 surefire2593853026120486980tmp surefire_08869375175639652642tmp"/>
+    <property name="sun.java.command" value="/home/be-max/eclipse-workspace/Asala-Project/asala.dashboard/target/surefire/surefirebooter8762734445229320263.jar /home/be-max/eclipse-workspace/Asala-Project/asala.dashboard/target/surefire 2018-10-04T13-04-47_002-jvmRun1 surefire6544755311106776007tmp surefire_03964821405627541122tmp"/>
     <property name="surefire.test.class.path" value="/home/be-max/eclipse-workspace/Asala-Project/asala.dashboard/target/test-classes:/home/be-max/eclipse-workspace/Asala-Project/asala.dashboard/target/classes:/home/be-max/.m2/repository/org/testng/testng/6.14.3/testng-6.14.3.jar:/home/be-max/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.jar:/home/be-max/.m2/repository/org/apache-extras/beanshell/bsh/2.0b6/bsh-2.0b6.jar:/home/be-max/.m2/repository/org/seleniumhq/selenium/selenium-java/3.14.0/selenium-java-3.14.0.jar:/home/be-max/.m2/repository/org/seleniumhq/selenium/selenium-api/3.14.0/selenium-api-3.14.0.jar:/home/be-max/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/3.14.0/selenium-chrome-driver-3.14.0.jar:/home/be-max/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/3.14.0/selenium-edge-driver-3.14.0.jar:/home/be-max/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/3.14.0/selenium-firefox-driver-3.14.0.jar:/home/be-max/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/3.14.0/selenium-ie-driver-3.14.0.jar:/home/be-max/.m2/repository/org/seleniumhq/selenium/selenium-opera-driver/3.14.0/selenium-opera-driver-3.14.0.jar:/home/be-max/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/3.14.0/selenium-remote-driver-3.14.0.jar:/home/be-max/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/3.14.0/selenium-safari-driver-3.14.0.jar:/home/be-max/.m2/repository/org/seleniumhq/selenium/selenium-support/3.14.0/selenium-support-3.14.0.jar:/home/be-max/.m2/repository/net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.jar:/home/be-max/.m2/repository/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/home/be-max/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar:/home/be-max/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/be-max/.m2/repository/com/google/guava/guava/25.0-jre/guava-25.0-jre.jar:/home/be-max/.m2/repository/com/google/code/findbugs/jsr305/1.3.9/jsr305-1.3.9.jar:/home/be-max/.m2/repository/org/checkerframework/checker-compat-qual/2.0.0/checker-compat-qual-2.0.0.jar:/home/be-max/.m2/repository/com/google/errorprone/error_prone_annotations/2.1.3/error_prone_annotations-2.1.3.jar:/home/be-max/.m2/repository/com/google/j2objc/j2objc-annotations/1.1/j2objc-annotations-1.1.jar:/home/be-max/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.14/animal-sniffer-annotations-1.14.jar:/home/be-max/.m2/repository/org/apache/httpcomponents/httpclient/4.5.5/httpclient-4.5.5.jar:/home/be-max/.m2/repository/org/apache/httpcomponents/httpcore/4.4.9/httpcore-4.4.9.jar:/home/be-max/.m2/repository/com/squareup/okhttp3/okhttp/3.10.0/okhttp-3.10.0.jar:/home/be-max/.m2/repository/com/squareup/okio/okio/1.14.1/okio-1.14.1.jar:/home/be-max/.m2/repository/org/apache/maven/surefire/surefire-testng-utils/2.22.0/surefire-testng-utils-2.22.0.jar:/home/be-max/.m2/repository/org/apache/maven/surefire/surefire-grouper/2.22.0/surefire-grouper-2.22.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/be-max"/>
@@ -30,7 +30,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/home/be-max/eclipse-workspace/Asala-Project/asala.dashboard/target/surefire/surefirebooter4206668098040496242.jar"/>
+    <property name="surefire.real.class.path" value="/home/be-max/eclipse-workspace/Asala-Project/asala.dashboard/target/surefire/surefirebooter8762734445229320263.jar"/>
     <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/jfr.jar:/usr/lib/jvm/java-8-openjdk-amd64/jre/classes"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="1.8.0_181-8u181-b13-0ubuntu0.16.04.1-b13"/>
@@ -58,5 +58,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="FirstTestCase" classname="asala.test.AsalaHomeTest" time="0.001"/>
+  <testcase name="FirstTestCase" classname="asala.test.AsalaHomeTest" time="0.002"/>
 </testsuite>
