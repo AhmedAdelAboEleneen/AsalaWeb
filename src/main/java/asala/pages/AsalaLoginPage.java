@@ -8,7 +8,6 @@ public class AsalaLoginPage extends AsalaPageBase {
 
 	public AsalaLoginPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 
@@ -17,6 +16,9 @@ public class AsalaLoginPage extends AsalaPageBase {
 
 	@FindBy(css="#root > div > div > div.login-box-body > form > div:nth-child(1) > div > span")
 	public WebElement emailTxtValidtion ; 
+
+	@FindBy(css="#root > div > div > div.login-box-body > form > div:nth-child(1) > div > span")
+	public WebElement emailTxtValidtionWrongMailFormat ; 
 
 	@FindBy(css="#root > div > div > div.login-box-body > form > div:nth-child(2) > input")
 	WebElement passwordTxtBox ; 
@@ -61,7 +63,7 @@ public class AsalaLoginPage extends AsalaPageBase {
 
 		emailTxtBox.clear();
 	}
-	
+
 	public void ClearPasswordData () {
 
 		passwordTxtBox.clear();

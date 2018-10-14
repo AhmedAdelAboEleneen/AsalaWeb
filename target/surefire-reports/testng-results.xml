@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="Asala Dashboard Regression Suite" duration-ms="18" started-at="2018-10-04T11:04:56Z" finished-at="2018-10-04T11:04:56Z">
+  <suite name="Asala Dashboard Regression Suite" duration-ms="5243" started-at="2018-10-12T23:43:30Z" finished-at="2018-10-12T23:43:35Z">
     <groups>
     </groups>
-    <test name="Regression Test" duration-ms="18" started-at="2018-10-04T11:04:56Z" finished-at="2018-10-04T11:04:56Z">
-      <class name="asala.test.AsalaHomeTest">
-        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:asala.test.AsalaHomeTest@6be46e8f]" name="startDriver" is-config="true" duration-ms="8708" started-at="2018-10-04T11:04:47Z" finished-at="2018-10-04T11:04:56Z">
+    <test name="Regression Test" duration-ms="5243" started-at="2018-10-12T23:43:30Z" finished-at="2018-10-12T23:43:35Z">
+      <class name="asala.test.AsalaLoginTest">
+        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:asala.test.AsalaLoginTest@6be46e8f]" name="startDriver" is-config="true" duration-ms="10786" started-at="2018-10-12T23:43:19Z" finished-at="2018-10-12T23:43:30Z">
           <params>
             <param index="0">
               <value>
@@ -18,26 +18,116 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startDriver -->
-        <test-method status="PASS" signature="FirstTestCase()[pri:0, instance:asala.test.AsalaHomeTest@6be46e8f]" name="FirstTestCase" duration-ms="1" started-at="2018-10-04T11:04:56Z" finished-at="2018-10-04T11:04:56Z">
+        <test-method status="PASS" signature="AddEmailEmptyAndPassword()[pri:1, instance:asala.test.AsalaLoginTest@6be46e8f]" name="AddEmailEmptyAndPassword" duration-ms="530" started-at="2018-10-12T23:43:30Z" finished-at="2018-10-12T23:43:30Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- FirstTestCase -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaHomeTest@6be46e8f]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-04T11:04:56Z" finished-at="2018-10-04T11:04:56Z">
+        </test-method> <!-- AddEmailEmptyAndPassword -->
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@6be46e8f]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-12T23:43:30Z" finished-at="2018-10-12T23:43:30Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=FirstTestCase status=SUCCESS method=AsalaHomeTest.FirstTestCase()[pri:0, instance:asala.test.AsalaHomeTest@6be46e8f] output={null}]]]>
+                <![CDATA[[TestResult name=AddEmailEmptyAndPassword status=SUCCESS method=AsalaLoginTest.AddEmailEmptyAndPassword()[pri:1, instance:asala.test.AsalaLoginTest@6be46e8f] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="stopDriver()[pri:0, instance:asala.test.AsalaHomeTest@6be46e8f]" name="stopDriver" is-config="true" duration-ms="867" started-at="2018-10-04T11:04:56Z" finished-at="2018-10-04T11:04:57Z">
+        <test-method status="PASS" signature="AddEmailEmptyButAddPasword()[pri:2, instance:asala.test.AsalaLoginTest@6be46e8f]" name="AddEmailEmptyButAddPasword" duration-ms="310" started-at="2018-10-12T23:43:30Z" finished-at="2018-10-12T23:43:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddEmailEmptyButAddPasword -->
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@6be46e8f]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-12T23:43:31Z" finished-at="2018-10-12T23:43:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=AddEmailEmptyButAddPasword status=SUCCESS method=AsalaLoginTest.AddEmailEmptyButAddPasword()[pri:2, instance:asala.test.AsalaLoginTest@6be46e8f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenShootsOnFailure -->
+        <test-method status="PASS" signature="AddEmailButAddPaswordEmpty()[pri:3, instance:asala.test.AsalaLoginTest@6be46e8f]" name="AddEmailButAddPaswordEmpty" duration-ms="377" started-at="2018-10-12T23:43:31Z" finished-at="2018-10-12T23:43:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddEmailButAddPaswordEmpty -->
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@6be46e8f]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-12T23:43:31Z" finished-at="2018-10-12T23:43:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=AddEmailButAddPaswordEmpty status=SUCCESS method=AsalaLoginTest.AddEmailButAddPaswordEmpty()[pri:3, instance:asala.test.AsalaLoginTest@6be46e8f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenShootsOnFailure -->
+        <test-method status="PASS" signature="AddWrongEmailButVaildPassword()[pri:4, instance:asala.test.AsalaLoginTest@6be46e8f]" name="AddWrongEmailButVaildPassword" duration-ms="361" started-at="2018-10-12T23:43:31Z" finished-at="2018-10-12T23:43:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddWrongEmailButVaildPassword -->
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@6be46e8f]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-12T23:43:32Z" finished-at="2018-10-12T23:43:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=AddWrongEmailButVaildPassword status=SUCCESS method=AsalaLoginTest.AddWrongEmailButVaildPassword()[pri:4, instance:asala.test.AsalaLoginTest@6be46e8f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenShootsOnFailure -->
+        <test-method status="PASS" signature="AddValidEmailButWrongPasswordPassword()[pri:5, instance:asala.test.AsalaLoginTest@6be46e8f]" name="AddValidEmailButWrongPasswordPassword" duration-ms="2907" started-at="2018-10-12T23:43:32Z" finished-at="2018-10-12T23:43:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddValidEmailButWrongPasswordPassword -->
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@6be46e8f]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-12T23:43:34Z" finished-at="2018-10-12T23:43:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=AddValidEmailButWrongPasswordPassword status=SUCCESS method=AsalaLoginTest.AddValidEmailButWrongPasswordPassword()[pri:5, instance:asala.test.AsalaLoginTest@6be46e8f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenShootsOnFailure -->
+        <test-method status="PASS" signature="AddValidEmailAndPasswordInActiveUSer()[pri:6, instance:asala.test.AsalaLoginTest@6be46e8f]" name="AddValidEmailAndPasswordInActiveUSer" duration-ms="360" started-at="2018-10-12T23:43:34Z" finished-at="2018-10-12T23:43:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddValidEmailAndPasswordInActiveUSer -->
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@6be46e8f]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-12T23:43:35Z" finished-at="2018-10-12T23:43:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=AddValidEmailAndPasswordInActiveUSer status=SUCCESS method=AsalaLoginTest.AddValidEmailAndPasswordInActiveUSer()[pri:6, instance:asala.test.AsalaLoginTest@6be46e8f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenShootsOnFailure -->
+        <test-method status="PASS" signature="AddValidEmailAndPasswordActiveUSer()[pri:7, instance:asala.test.AsalaLoginTest@6be46e8f]" name="AddValidEmailAndPasswordActiveUSer" duration-ms="361" started-at="2018-10-12T23:43:35Z" finished-at="2018-10-12T23:43:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddValidEmailAndPasswordActiveUSer -->
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@6be46e8f]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-12T23:43:35Z" finished-at="2018-10-12T23:43:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=AddValidEmailAndPasswordActiveUSer status=SUCCESS method=AsalaLoginTest.AddValidEmailAndPasswordActiveUSer()[pri:7, instance:asala.test.AsalaLoginTest@6be46e8f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenShootsOnFailure -->
+        <test-method status="PASS" signature="stopDriver()[pri:0, instance:asala.test.AsalaLoginTest@6be46e8f]" name="stopDriver" is-config="true" duration-ms="1763" started-at="2018-10-12T23:43:35Z" finished-at="2018-10-12T23:43:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopDriver -->
-      </class> <!-- asala.test.AsalaHomeTest -->
+      </class> <!-- asala.test.AsalaLoginTest -->
     </test> <!-- Regression Test -->
   </suite> <!-- Asala Dashboard Regression Suite -->
 </testng-results>

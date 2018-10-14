@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Asala Dashboard Regression Suite]">
+  <parameter name="browser" value="chrome"/>
+  <test thread-count="5" name="Regression Test(failed)">
     <classes>
       <class name="asala.test.AsalaLoginTest">
         <methods>
@@ -11,12 +12,12 @@
           <include name="AddEmailEmptyButAddPasword"/>
           <include name="AddValidEmailButWrongPasswordPassword"/>
           <include name="screenShootsOnFailure"/>
-          <include name="AddValidEmailAndPasswordActiveUSerSuperAdmin"/>
+          <include name="AddValidEmailAndPasswordActiveUSer"/>
           <include name="stopDriver"/>
           <include name="AddEmailButAddPaswordEmpty"/>
           <include name="AddEmailEmptyAndPassword"/>
         </methods>
       </class> <!-- asala.test.AsalaLoginTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Regression Test(failed) -->
+</suite> <!-- Failed suite [Asala Dashboard Regression Suite] -->
