@@ -13,23 +13,29 @@ public class AsalaLoginPage extends AsalaPageBase {
 	@FindBy(id="form-control-Email")
 	WebElement emailTxtBox ;
 
-	@FindBy(id="")
+	@FindBy(id="error-msg-email")
 	public WebElement emailTxtValidtion ; 
 
-	@FindBy(id="")
+	@FindBy(id="error-msg-email")
 	public WebElement emailTxtValidtionWrongMailFormat ; 
 
 	@FindBy(id="form-control-Password")
 	WebElement passwordTxtBox ; 
 
-	@FindBy(id="")
+	@FindBy(id="error-msg-password")
 	public WebElement passwordTxtValidtion ; 
 
-	@FindBy(id="")
+	@FindBy(id="error-msg-password")
 	public WebElement wrongEmailOrPasswordTxt ; 
 
-	@FindBy(id="")
-	public WebElement inActiveUserText ; 
+	/*@FindBy(id="")
+	public WebElement inActiveUserText ;*/ 
+
+	@FindBy(id="ar")
+	WebElement changeLanguageToArabicBt ; 
+
+	@FindBy(id="en")
+	WebElement changeLanguageToEnglishBt ; 
 
 	@FindBy(id="submit-btn")
 	WebElement loginBtn ; 
@@ -65,6 +71,15 @@ public class AsalaLoginPage extends AsalaPageBase {
 	public void ClearPasswordData () {
 
 		passwordTxtBox.clear();
+	}
+	public void ClickChangeLanguageToArabic () {
+
+		clickButton(changeLanguageToArabicBt);
+	}
+
+	public void ClickChangeLanguageToEnglish () {
+
+		clickButton(changeLanguageToEnglishBt);
 	}
 
 }

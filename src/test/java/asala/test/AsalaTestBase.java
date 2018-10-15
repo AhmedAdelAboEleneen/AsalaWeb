@@ -24,12 +24,12 @@ public class AsalaTestBase {
 
 		if (browserName.equalsIgnoreCase("firefox")) {
 
-			System.setProperty("webdriver.gecko.driver", "/home/be-max/eclipse-workspace/asala/asala_qc_dashboard/drivers/geckodriver");
+			System.setProperty("webdriver.gecko.driver", "/home/be-max/eclipse-workspace/asala/asala.dashboard/drivers/geckodriver");
 			driver = new FirefoxDriver();
 
 		}else if (browserName.equalsIgnoreCase("chrome")) {
 
-			System.setProperty("webdriver.chrome.driver", "/home/be-max/eclipse-workspace/asala/asala_qc_dashboard/drivers/chromedriver");
+			System.setProperty("webdriver.chrome.driver", "/home/be-max/eclipse-workspace/asala/asala.dashboard/drivers/chromedriver");
 			driver = new ChromeDriver();
 		}
 
