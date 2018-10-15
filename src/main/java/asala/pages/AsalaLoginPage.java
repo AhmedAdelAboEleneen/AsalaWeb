@@ -10,33 +10,31 @@ public class AsalaLoginPage extends AsalaPageBase {
 		super(driver);
 	}
 
-
-	@FindBy(css="#root > div > div > div.login-box-body > form > div:nth-child(1) > input")
+	@FindBy(id="form-control-Email")
 	WebElement emailTxtBox ;
 
-	@FindBy(css="#root > div > div > div.login-box-body > form > div:nth-child(1) > div > span")
+	@FindBy(id="")
 	public WebElement emailTxtValidtion ; 
 
-	@FindBy(css="#root > div > div > div.login-box-body > form > div:nth-child(1) > div > span")
+	@FindBy(id="")
 	public WebElement emailTxtValidtionWrongMailFormat ; 
 
-	@FindBy(css="#root > div > div > div.login-box-body > form > div:nth-child(2) > input")
+	@FindBy(id="form-control-Password")
 	WebElement passwordTxtBox ; 
 
-	@FindBy(css="#root > div > div > div.login-box-body > form > div:nth-child(2) > div > span")
+	@FindBy(id="")
 	public WebElement passwordTxtValidtion ; 
 
-	@FindBy(css="#root > div > div > div.login-box-body > div")
+	@FindBy(id="")
 	public WebElement wrongEmailOrPasswordTxt ; 
 
-
-	@FindBy(css="#root > div > div > div.login-box-body > div")
+	@FindBy(id="")
 	public WebElement inActiveUserText ; 
 
-	@FindBy(css="#root > div > div > div.login-box-body > form > div.row > div > button")
+	@FindBy(id="submit-btn")
 	WebElement loginBtn ; 
 
-	@FindBy(css="#root > div > div > div.login-box-body > form > a")
+	@FindBy(id="forgot-password-btn")
 	WebElement forgetPasswordBtn ; 
 
 	public void AddEmail (String email) {
