@@ -16,20 +16,14 @@ public class AsalaLoginPage extends AsalaPageBase {
 	@FindBy(id="error-msg-email")
 	public WebElement emailTxtValidtion ; 
 
-	@FindBy(id="error-msg-email")
-	public WebElement emailTxtValidtionWrongMailFormat ; 
-
 	@FindBy(id="form-control-Password")
 	WebElement passwordTxtBox ; 
 
 	@FindBy(id="error-msg-password")
 	public WebElement passwordTxtValidtion ; 
 
-	@FindBy(id="error-msg-password")
-	public WebElement wrongEmailOrPasswordTxt ; 
-
-	/*@FindBy(id="")
-	public WebElement inActiveUserText ;*/ 
+	@FindBy(id="error-1")
+	public WebElement wrongEmailOrPasswordOrNotActiveTxt ; 
 
 	@FindBy(id="ar")
 	WebElement changeLanguageToArabicBt ; 

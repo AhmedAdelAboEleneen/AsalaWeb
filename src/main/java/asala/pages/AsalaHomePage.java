@@ -10,22 +10,22 @@ public class AsalaHomePage extends AsalaPageBase{
 		super(driver);
 	}
 
-	@FindBy(id="")
+	@FindBy(id="logo-lg")
 	WebElement homeBt ;
 
-	@FindBy(id="")
+	@FindBy(id="sidebar-toggle")
 	WebElement sideMenuBt ;
 
-	@FindBy(id="")
+	@FindBy(id="manage-malls")
 	WebElement manageMallsBt ;
 
-	@FindBy(id="")
+	@FindBy(id="dropdown-toggle")
 	WebElement userNameBt ;
 
-	@FindBy(id="")
+	@FindBy(id="sign-out-action")
 	WebElement signOutBt ;
 
-	@FindBy(id="")
+	@FindBy(id="edit-profile-action")
 	WebElement profileBt ;
 
 	public void ClickHome () {

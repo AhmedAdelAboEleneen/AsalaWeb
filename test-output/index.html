@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">15 methods,   15 passed</span>
+                    <span class="method-stats">17 methods, 1 failed,   16 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="asala.test.AsalaLoginTest" hash-for-method="AddEmailEmptyAndPasswordAr">AddEmailEmptyAndPasswordAr</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -117,11 +131,6 @@
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="asala.test.AsalaLoginTest" hash-for-method="AddEmailEmptyAndPasswordAr">AddEmailEmptyAndPasswordAr</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="asala.test.AsalaLoginTest" hash-for-method="AddEmailEmptyButAddPasword">AddEmailEmptyButAddPasword</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -138,6 +147,16 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="asala.test.AsalaLoginTest" hash-for-method="AddEmailEmptyWrongFormatAr">AddEmailEmptyWrongFormatAr</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="asala.test.AsalaLoginTest" hash-for-method="AddValidEmailAndPasswordActiveUSerMallAdmin">AddValidEmailAndPasswordActiveUSerMallAdmin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="asala.test.AsalaLoginTest" hash-for-method="AddValidEmailAndPasswordActiveUSerStoreAdmin">AddValidEmailAndPasswordActiveUSerStoreAdmin</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -187,6 +206,54 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">asala.test.AsalaLoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="AddEmailEmptyAndPasswordAr">
+                  </a> <!-- AddEmailEmptyAndPasswordAr -->
+                  <span class="method-name">AddEmailEmptyAndPasswordAr</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at asala.test.AsalaLoginTest.AddEmailEmptyAndPasswordAr(AsalaLoginTest.java:100)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -216,13 +283,6 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="AddEmailEmptyAndPasswordAr">
-                  </a> <!-- AddEmailEmptyAndPasswordAr -->
-                  <span class="method-name">AddEmailEmptyAndPasswordAr</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="AddEmailEmptyButAddPasword">
                   </a> <!-- AddEmailEmptyButAddPasword -->
                   <span class="method-name">AddEmailEmptyButAddPasword</span>
@@ -247,6 +307,20 @@
                   <a name="AddEmailEmptyWrongFormatAr">
                   </a> <!-- AddEmailEmptyWrongFormatAr -->
                   <span class="method-name">AddEmailEmptyWrongFormatAr</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="AddValidEmailAndPasswordActiveUSerMallAdmin">
+                  </a> <!-- AddValidEmailAndPasswordActiveUSerMallAdmin -->
+                  <span class="method-name">AddValidEmailAndPasswordActiveUSerMallAdmin</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="AddValidEmailAndPasswordActiveUSerStoreAdmin">
+                  </a> <!-- AddValidEmailAndPasswordActiveUSerStoreAdmin -->
+                  <span class="method-name">AddValidEmailAndPasswordActiveUSerStoreAdmin</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -303,7 +377,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/tmp/testng-eclipse--817234421/testng-customsuite.xml</span>
+            <span class="header-content">/tmp/testng-eclipse-1955559038/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -352,72 +426,80 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(15);
+data.addRows(17);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'AddEmailEmptyWrongFormatAr')
+data.setCell(0, 1, 'AddValidEmailAndPasswordActiveUSerMallAdmin')
 data.setCell(0, 2, 'asala.test.AsalaLoginTest')
-data.setCell(0, 3, 510);
+data.setCell(0, 3, 3088);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'AddEmailEmptyAndPasswordAr')
+data.setCell(1, 1, 'AddValidEmailAndPasswordActiveUSerSuperAdmin')
 data.setCell(1, 2, 'asala.test.AsalaLoginTest')
-data.setCell(1, 3, 495);
+data.setCell(1, 3, 2603);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'AddEmailEmptyAndPassword')
+data.setCell(2, 1, 'AddValidEmailAndPasswordInActiveUSer')
 data.setCell(2, 2, 'asala.test.AsalaLoginTest')
-data.setCell(2, 3, 359);
+data.setCell(2, 3, 2338);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'AddValidEmailButWrongPasswordPasswordAr')
+data.setCell(3, 1, 'AddEmailEmptyAndPasswordAr')
 data.setCell(3, 2, 'asala.test.AsalaLoginTest')
-data.setCell(3, 3, 353);
+data.setCell(3, 3, 1528);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'AddEmailButAddPaswordEmpty')
+data.setCell(4, 1, 'AddValidEmailButWrongPasswordPassword')
 data.setCell(4, 2, 'asala.test.AsalaLoginTest')
-data.setCell(4, 3, 334);
+data.setCell(4, 3, 1350);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'AddValidEmailAndPasswordActiveUSerSuperAdmin')
+data.setCell(5, 1, 'AddValidEmailAndPasswordInActiveUSerAr')
 data.setCell(5, 2, 'asala.test.AsalaLoginTest')
-data.setCell(5, 3, 321);
+data.setCell(5, 3, 1305);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'AddValidEmailAndPasswordInActiveUSerAr')
+data.setCell(6, 1, 'AddEmailEmptyWrongFormatAr')
 data.setCell(6, 2, 'asala.test.AsalaLoginTest')
-data.setCell(6, 3, 320);
+data.setCell(6, 3, 548);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'AddEmailEmptyButAddPasword')
+data.setCell(7, 1, 'AddValidEmailButWrongPasswordPasswordAr')
 data.setCell(7, 2, 'asala.test.AsalaLoginTest')
-data.setCell(7, 3, 314);
+data.setCell(7, 3, 505);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'AddValidEmailButWrongPasswordPassword')
+data.setCell(8, 1, 'AddValidEmailAndPasswordActiveUSerStoreAdmin')
 data.setCell(8, 2, 'asala.test.AsalaLoginTest')
-data.setCell(8, 3, 309);
+data.setCell(8, 3, 391);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'AddEmailEmptyWrongFormat')
+data.setCell(9, 1, 'AddEmailEmptyAndPassword')
 data.setCell(9, 2, 'asala.test.AsalaLoginTest')
-data.setCell(9, 3, 307);
+data.setCell(9, 3, 383);
 data.setCell(10, 0, 10)
 data.setCell(10, 1, 'AddWrongEmailButVaildPasswordAr')
 data.setCell(10, 2, 'asala.test.AsalaLoginTest')
-data.setCell(10, 3, 307);
+data.setCell(10, 3, 337);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'AddWrongEmailButVaildPassword')
+data.setCell(11, 1, 'AddEmailButAddPaswordEmpty')
 data.setCell(11, 2, 'asala.test.AsalaLoginTest')
-data.setCell(11, 3, 298);
+data.setCell(11, 3, 330);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'AddEmailButAddPaswordEmptyAr')
+data.setCell(12, 1, 'AddEmailEmptyWrongFormat')
 data.setCell(12, 2, 'asala.test.AsalaLoginTest')
-data.setCell(12, 3, 296);
+data.setCell(12, 3, 325);
 data.setCell(13, 0, 13)
-data.setCell(13, 1, 'AddValidEmailAndPasswordInActiveUSer')
+data.setCell(13, 1, 'AddEmailEmptyButAddPasword')
 data.setCell(13, 2, 'asala.test.AsalaLoginTest')
-data.setCell(13, 3, 291);
+data.setCell(13, 3, 321);
 data.setCell(14, 0, 14)
-data.setCell(14, 1, 'AddEmailEmptyButAddPaswordAr')
+data.setCell(14, 1, 'AddEmailButAddPaswordEmptyAr')
 data.setCell(14, 2, 'asala.test.AsalaLoginTest')
-data.setCell(14, 3, 282);
+data.setCell(14, 3, 318);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'AddWrongEmailButVaildPassword')
+data.setCell(15, 2, 'asala.test.AsalaLoginTest')
+data.setCell(15, 3, 316);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'AddEmailEmptyButAddPaswordAr')
+data.setCell(16, 2, 'asala.test.AsalaLoginTest')
+data.setCell(16, 3, 306);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 seconds</span>
+              <span class="suite-total-time">Total running time: 16 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -450,127 +532,145 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="test-method">
                 <span class="method-name">AddEmailEmptyAndPassword</span>
-                <span class="method-start">15225 ms</span>
+                <span class="method-start">7920 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">screenShootsOnFailure([TestResult name=AddEmailEmptyAndPassword status=SUCCESS method=AsalaLoginTest.AddEmailEmptyAndPassw...)</span>
-                <span class="method-start">15585 ms</span>
+                <span class="method-start">8310 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">AddEmailEmptyWrongFormat</span>
-                <span class="method-start">15587 ms</span>
+                <span class="method-start">8313 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">screenShootsOnFailure([TestResult name=AddEmailEmptyWrongFormat status=SUCCESS method=AsalaLoginTest.AddEmailEmptyWrongFor...)</span>
-                <span class="method-start">15895 ms</span>
+                <span class="method-start">8639 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">AddEmailEmptyButAddPasword</span>
-                <span class="method-start">15896 ms</span>
+                <span class="method-start">8641 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">screenShootsOnFailure([TestResult name=AddEmailEmptyButAddPasword status=SUCCESS method=AsalaLoginTest.AddEmailEmptyButAdd...)</span>
-                <span class="method-start">16211 ms</span>
+                <span class="method-start">8962 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">AddEmailButAddPaswordEmpty</span>
-                <span class="method-start">16211 ms</span>
+                <span class="method-start">8963 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">screenShootsOnFailure([TestResult name=AddEmailButAddPaswordEmpty status=SUCCESS method=AsalaLoginTest.AddEmailButAddPaswo...)</span>
-                <span class="method-start">16546 ms</span>
+                <span class="method-start">9294 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">AddWrongEmailButVaildPassword</span>
-                <span class="method-start">16546 ms</span>
+                <span class="method-start">9294 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">screenShootsOnFailure([TestResult name=AddWrongEmailButVaildPassword status=SUCCESS method=AsalaLoginTest.AddWrongEmailBut...)</span>
-                <span class="method-start">16844 ms</span>
+                <span class="method-start">9611 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">AddValidEmailButWrongPasswordPassword</span>
-                <span class="method-start">16845 ms</span>
+                <span class="method-start">9611 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">screenShootsOnFailure([TestResult name=AddValidEmailButWrongPasswordPassword status=SUCCESS method=AsalaLoginTest.AddValid...)</span>
-                <span class="method-start">17155 ms</span>
+                <span class="method-start">10962 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">AddValidEmailAndPasswordInActiveUSer</span>
-                <span class="method-start">17156 ms</span>
+                <span class="method-start">10963 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">screenShootsOnFailure([TestResult name=AddValidEmailAndPasswordInActiveUSer status=SUCCESS method=AsalaLoginTest.AddValidE...)</span>
-                <span class="method-start">17449 ms</span>
+                <span class="method-start">13302 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">AddEmailEmptyAndPasswordAr</span>
-                <span class="method-start">17450 ms</span>
+                <span class="method-start">13303 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">screenShootsOnFailure([TestResult name=AddEmailEmptyAndPasswordAr status=SUCCESS method=AsalaLoginTest.AddEmailEmptyAndPas...)</span>
-                <span class="method-start">17946 ms</span>
+                <span class="method-name">screenShootsOnFailure([TestResult name=AddEmailEmptyAndPasswordAr status=FAILURE method=AsalaLoginTest.AddEmailEmptyAndPas...)</span>
+                <span class="method-start">14834 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">AddEmailEmptyWrongFormatAr</span>
-                <span class="method-start">17947 ms</span>
+                <span class="method-start">14909 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">screenShootsOnFailure([TestResult name=AddEmailEmptyWrongFormatAr status=SUCCESS method=AsalaLoginTest.AddEmailEmptyWrongF...)</span>
-                <span class="method-start">18457 ms</span>
+                <span class="method-start">15458 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">AddEmailEmptyButAddPaswordAr</span>
-                <span class="method-start">18458 ms</span>
+                <span class="method-start">15459 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">screenShootsOnFailure([TestResult name=AddEmailEmptyButAddPaswordAr status=SUCCESS method=AsalaLoginTest.AddEmailEmptyButA...)</span>
-                <span class="method-start">18741 ms</span>
+                <span class="method-start">15765 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">AddEmailButAddPaswordEmptyAr</span>
-                <span class="method-start">18742 ms</span>
+                <span class="method-start">15766 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">screenShootsOnFailure([TestResult name=AddEmailButAddPaswordEmptyAr status=SUCCESS method=AsalaLoginTest.AddEmailButAddPas...)</span>
-                <span class="method-start">19039 ms</span>
+                <span class="method-start">16085 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">AddWrongEmailButVaildPasswordAr</span>
-                <span class="method-start">19040 ms</span>
+                <span class="method-start">16085 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">screenShootsOnFailure([TestResult name=AddWrongEmailButVaildPasswordAr status=SUCCESS method=AsalaLoginTest.AddWrongEmailB...)</span>
-                <span class="method-start">19348 ms</span>
+                <span class="method-start">16422 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">AddValidEmailButWrongPasswordPasswordAr</span>
-                <span class="method-start">19348 ms</span>
+                <span class="method-start">16423 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">screenShootsOnFailure([TestResult name=AddValidEmailButWrongPasswordPasswordAr status=SUCCESS method=AsalaLoginTest.AddVal...)</span>
-                <span class="method-start">19702 ms</span>
+                <span class="method-start">16929 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">AddValidEmailAndPasswordInActiveUSerAr</span>
-                <span class="method-start">19703 ms</span>
+                <span class="method-start">16929 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">screenShootsOnFailure([TestResult name=AddValidEmailAndPasswordInActiveUSerAr status=SUCCESS method=AsalaLoginTest.AddVali...)</span>
-                <span class="method-start">20024 ms</span>
+                <span class="method-start">18234 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">AddValidEmailAndPasswordActiveUSerSuperAdmin</span>
-                <span class="method-start">20026 ms</span>
+                <span class="method-start">18235 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">screenShootsOnFailure([TestResult name=AddValidEmailAndPasswordActiveUSerSuperAdmin status=SUCCESS method=AsalaLoginTest.A...)</span>
-                <span class="method-start">20348 ms</span>
+                <span class="method-start">20839 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">AddValidEmailAndPasswordActiveUSerMallAdmin</span>
+                <span class="method-start">20839 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">screenShootsOnFailure([TestResult name=AddValidEmailAndPasswordActiveUSerMallAdmin status=SUCCESS method=AsalaLoginTest.Ad...)</span>
+                <span class="method-start">23928 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">AddValidEmailAndPasswordActiveUSerStoreAdmin</span>
+                <span class="method-start">23928 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">screenShootsOnFailure([TestResult name=AddValidEmailAndPasswordActiveUSerStoreAdmin status=SUCCESS method=AsalaLoginTest.A...)</span>
+                <span class="method-start">24320 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">stopDriver</span>
-                <span class="method-start">20365 ms</span>
+                <span class="method-start">24343 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

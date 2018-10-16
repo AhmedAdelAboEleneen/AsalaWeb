@@ -3,11 +3,13 @@ package asala.test;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import asala.pages.AsalaHomePage;
 import asala.pages.AsalaLoginPage;
 
 public class AsalaLoginTest extends AsalaTestBase {
 
 	AsalaLoginPage asalaLoginPage;
+	AsalaHomePage asalaHomePage;
 
 	// if user try to make login without email & password 
 	@Test(priority = 1)
@@ -25,18 +27,16 @@ public class AsalaLoginTest extends AsalaTestBase {
 	@Test(priority = 2)
 	public void AddEmailEmptyWrongFormat () {
 
-		asalaLoginPage = new AsalaLoginPage(driver);
 		asalaLoginPage.AddEmail("ahmed");
 		asalaLoginPage.AddPassword("");
 		asalaLoginPage.ClickLogin();
-		Assert.assertTrue(asalaLoginPage.emailTxtValidtionWrongMailFormat.getText().contains("Invalid Email"));
+		Assert.assertTrue(asalaLoginPage.emailTxtValidtion.getText().contains("Invalid Email"));
 		Assert.assertTrue(asalaLoginPage.passwordTxtValidtion.getText().contains("Please enter your Password"));
 	}
 
 	@Test(priority = 3)
 	public void AddEmailEmptyButAddPasword () {
 
-		asalaLoginPage = new AsalaLoginPage(driver);
 		asalaLoginPage.ClearEmailData();
 		asalaLoginPage.AddEmail("");
 		asalaLoginPage.AddPassword("123456");
@@ -48,7 +48,6 @@ public class AsalaLoginTest extends AsalaTestBase {
 	@Test(priority = 4)
 	public void AddEmailButAddPaswordEmpty () {
 
-		asalaLoginPage = new AsalaLoginPage(driver);
 		asalaLoginPage.AddEmail("ahmed.adel@ibtikar.net.sa");
 		asalaLoginPage.ClearPasswordData();
 		asalaLoginPage.AddPassword("");
@@ -59,46 +58,42 @@ public class AsalaLoginTest extends AsalaTestBase {
 	@Test(priority = 5)
 	public void AddWrongEmailButVaildPassword () {
 
-		asalaLoginPage = new AsalaLoginPage(driver);
 		asalaLoginPage.ClearEmailData();
 		asalaLoginPage.AddEmail("ahmed");
 		asalaLoginPage.ClearPasswordData();
 		asalaLoginPage.AddPassword("123456");
 		asalaLoginPage.ClickLogin();
-		Assert.assertTrue(asalaLoginPage.emailTxtValidtionWrongMailFormat.getText().contains("Invalid Email"));
+		Assert.assertTrue(asalaLoginPage.emailTxtValidtion.getText().contains("Invalid Email"));
 	}
 
 	@Test(priority = 6)
 	public void AddValidEmailButWrongPasswordPassword () {
 
-		asalaLoginPage = new AsalaLoginPage(driver);
 		asalaLoginPage.ClearEmailData();
 		asalaLoginPage.AddEmail("ahmed.adel@ibtikar.net.sa");
 		asalaLoginPage.ClearPasswordData();
 		asalaLoginPage.AddPassword("1234567");
 		asalaLoginPage.ClickLogin();
-		//Assert.assertTrue(asalaLoginPage.wrongEmailOrPasswordTxt.getText().contains("Wrong email or password"));
+		Assert.assertTrue(asalaLoginPage.wrongEmailOrPasswordOrNotActiveTxt.getText().contains("Wrong email or password"));
 	}
 
 	// check that the user isn't inactive user.
 	// Check that the inactive user will no longer able to login to the dashboard.
 	@Test(priority = 7)
-	public void AddValidEmailAndPasswordInActiveUSer () {
+	public void AddValidEmailAndPasswordInActiveUSer () throws InterruptedException {
 
-		asalaLoginPage = new AsalaLoginPage(driver);
-		asalaLoginPage.ClearEmailData();
 		asalaLoginPage.AddEmail("super@asala.com");
-		asalaLoginPage.ClearPasswordData();
 		asalaLoginPage.AddPassword("123456");
 		asalaLoginPage.ClickLogin();
-		//Assert.assertTrue(asalaLoginPage.inActiveUserText.getText().contains("Sorry, this account is no longer active, please contact your dashboard administrator"));
+		Thread.sleep(2000);
+		Assert.assertTrue(asalaLoginPage.wrongEmailOrPasswordOrNotActiveTxt.getText().contains("Sorry, this account is no longer active, please contact your dashboard administrator"));
 	}
 
 	@Test(priority = 8)
-	public void AddEmailEmptyAndPasswordAr () {
+	public void AddEmailEmptyAndPasswordAr () throws InterruptedException {
 
-		asalaLoginPage = new AsalaLoginPage(driver);
 		asalaLoginPage.ClickChangeLanguageToArabic();
+		Thread.sleep(1000);
 		asalaLoginPage.AddEmail("");
 		asalaLoginPage.AddPassword("");
 		asalaLoginPage.ClickLogin();
@@ -110,7 +105,6 @@ public class AsalaLoginTest extends AsalaTestBase {
 	@Test(priority = 9)
 	public void AddEmailEmptyWrongFormatAr () {
 
-		asalaLoginPage = new AsalaLoginPage(driver);
 		asalaLoginPage.ClickChangeLanguageToArabic();
 		asalaLoginPage.AddEmail("ahmed");
 		asalaLoginPage.AddPassword("");
@@ -122,7 +116,6 @@ public class AsalaLoginTest extends AsalaTestBase {
 	@Test(priority = 10)
 	public void AddEmailEmptyButAddPaswordAr () {
 
-		asalaLoginPage = new AsalaLoginPage(driver);
 		asalaLoginPage.ClearEmailData();
 		asalaLoginPage.AddEmail("");
 		asalaLoginPage.AddPassword("123456");
@@ -134,7 +127,6 @@ public class AsalaLoginTest extends AsalaTestBase {
 	@Test(priority = 11)
 	public void AddEmailButAddPaswordEmptyAr () {
 
-		asalaLoginPage = new AsalaLoginPage(driver);
 		asalaLoginPage.AddEmail("ahmed.adel@ibtikar.net.sa");
 		asalaLoginPage.ClearPasswordData();
 		asalaLoginPage.AddPassword("");
@@ -145,7 +137,6 @@ public class AsalaLoginTest extends AsalaTestBase {
 	@Test(priority = 12)
 	public void AddWrongEmailButVaildPasswordAr () {
 
-		asalaLoginPage = new AsalaLoginPage(driver);
 		asalaLoginPage.ClearEmailData();
 		asalaLoginPage.AddEmail("ahmed");
 		asalaLoginPage.ClearPasswordData();
@@ -157,68 +148,66 @@ public class AsalaLoginTest extends AsalaTestBase {
 	@Test(priority = 13)
 	public void AddValidEmailButWrongPasswordPasswordAr () {
 
-		asalaLoginPage = new AsalaLoginPage(driver);
 		asalaLoginPage.ClearEmailData();
 		asalaLoginPage.AddEmail("ahmed.adel@ibtikar.net.sa");
 		asalaLoginPage.ClearPasswordData();
 		asalaLoginPage.AddPassword("1234567");
 		asalaLoginPage.ClickLogin();
-		//Assert.assertTrue(asalaLoginPage.wrongEmailOrPasswordTxt.getText().contains("Wrong email or password"));
+		Assert.assertTrue(asalaLoginPage.wrongEmailOrPasswordOrNotActiveTxt.getText().contains("البريد او كلمة المرور غير صحيح"));
 	}
 
 	// check that the user isn't inactive user.
 	// Check that the inactive user will no longer able to login to the dashboard.
 	@Test(priority = 14)
-	public void AddValidEmailAndPasswordInActiveUSerAr () {
+	public void AddValidEmailAndPasswordInActiveUSerAr () throws InterruptedException {
 
-		asalaLoginPage = new AsalaLoginPage(driver);
 		asalaLoginPage.ClearEmailData();
 		asalaLoginPage.AddEmail("super@asala.com");
 		asalaLoginPage.ClearPasswordData();
 		asalaLoginPage.AddPassword("123456");
 		asalaLoginPage.ClickLogin();
-		//Assert.assertTrue(asalaLoginPage.inActiveUserText.getText().contains("Sorry, this account is no longer active, please contact your dashboard administrator"));
+		Thread.sleep(1000);
+		Assert.assertTrue(asalaLoginPage.wrongEmailOrPasswordOrNotActiveTxt.getText().contains("ناسف، هذا الحساب غير مفعل، من فضلك تواصل مع مدير لوحة التحكم"));
 	}
 
 	// check that the email and password matches an active user.
 	// check user role and pages access. 
+	// super admin login
 	@Test(priority = 15)
 	public void AddValidEmailAndPasswordActiveUSerSuperAdmin () {
 
-		asalaLoginPage = new AsalaLoginPage(driver);
 		asalaLoginPage.ClearEmailData();
 		asalaLoginPage.AddEmail("ahmed.adel@ibtikar.net.sa");
 		asalaLoginPage.ClearPasswordData();
 		asalaLoginPage.AddPassword("123456");
 		asalaLoginPage.ClickLogin();
+		asalaLoginPage.ClickChangeLanguageToEnglish();
+		
+		asalaHomePage = new AsalaHomePage(driver);
+		asalaHomePage.ClickUserName();
+		asalaHomePage.ClickSignOut();
 	}
 
 	// check user role and pages access. 
-	/*@Test(priority = 16)
+	// mall admin login
+	@Test(priority = 16)
 	public void AddValidEmailAndPasswordActiveUSerMallAdmin () {
 
-		asalaLoginPage = new AsalaLoginPage(driver);
-		// logout here
-		asalaLoginPage.ClearEmailData();
 		asalaLoginPage.AddEmail("ahmed.adel.mall@ibtikar.net.sa");
-		asalaLoginPage.ClearPasswordData();
 		asalaLoginPage.AddPassword("123456");
 		asalaLoginPage.ClickLogin();
-		//Assert.assertTrue(asalaLoginPage.emailTxtValidtion.getText().contains("Please enter your email"));
+		asalaHomePage.ClickUserName();
+		asalaHomePage.ClickSignOut();
 	}
 
 	// check user role and pages access. 
+	// store admin login 
 	@Test(priority = 17)
 	public void AddValidEmailAndPasswordActiveUSerStoreAdmin () {
 
-		asalaLoginPage = new AsalaLoginPage(driver);
-		// logout here
-		asalaLoginPage.ClearEmailData();
 		asalaLoginPage.AddEmail("ahmed.adel.store@ibtikar.net.sa");
-		asalaLoginPage.ClearPasswordData();
 		asalaLoginPage.AddPassword("123456");
 		asalaLoginPage.ClickLogin();
-		//Assert.assertTrue(asalaLoginPage.emailTxtValidtion.getText().contains("Please enter your email"));
-	}*/
+	}
 
 }

@@ -10,20 +10,32 @@ public class AsalaEditAccountPage extends AsalaPageBase {
 		super(driver);
 	}
 
-	@FindBy(id="")
+	@FindBy(id="form-control-Name")
 	WebElement nameTxtBoxInEdit ;
 
-	@FindBy(id="")
+	@FindBy(id="error-msgs-name")
+	public WebElement nameValidationMessaga ;
+
+	@FindBy(id="form-control-Email")
 	WebElement emailTxtBoxInEdit ;
 
-	@FindBy(id="")
+	@FindBy(id="error-msg-Email")
+	public WebElement emailValidationMessaga ;
+
+	@FindBy(id="form-control-Password")
 	WebElement passwordTxtBoxInEdit ;
 
-	@FindBy(id="")
+	@FindBy(id="error-msg-Password")
+	public WebElement passwordlValidationMessaga ;
+
+	@FindBy(id="form-control-Confirm Password")
 	WebElement confirmPasswordTxtBoxInEdit ;
 
-	@FindBy(id="")
-	WebElement saveInEditBt;
+	@FindBy(id="error-msg-Confirm Password")
+	public WebElement confirmPasswordlValidationMessaga ;
+
+	@FindBy(id="submit-btn")
+	WebElement submitInEditBt;
 
 	public void AddNameInEdit (String name) {
 
@@ -44,10 +56,10 @@ public class AsalaEditAccountPage extends AsalaPageBase {
 
 		setTextElementText(confirmPasswordTxtBoxInEdit, confirmPassword);	
 	}
-	
+
 	public void ClickSaveInEdit () {
-		
-		clickButton(saveInEditBt);
+
+		clickButton(submitInEditBt);
 	}
 
 }

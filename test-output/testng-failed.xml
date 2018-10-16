@@ -6,20 +6,9 @@
       <class name="asala.test.AsalaLoginTest">
         <methods>
           <include name="startDriver"/>
-          <include name="AddValidEmailButWrongPasswordPassword"/>
           <include name="screenShootsOnFailure"/>
-          <include name="AddValidEmailButWrongPasswordPasswordAr"/>
-          <include name="AddEmailEmptyWrongFormat"/>
-          <include name="AddEmailEmptyAndPasswordAr"/>
-          <include name="AddValidEmailAndPasswordInActiveUSer"/>
-          <include name="AddEmailEmptyButAddPaswordAr"/>
-          <include name="AddEmailEmptyButAddPasword"/>
-          <include name="AddEmailEmptyWrongFormatAr"/>
           <include name="stopDriver"/>
-          <include name="AddEmailButAddPaswordEmptyAr"/>
-          <include name="AddWrongEmailButVaildPasswordAr"/>
-          <include name="AddEmailButAddPaswordEmpty"/>
-          <include name="AddEmailEmptyAndPassword"/>
+          <include name="AddEmailEmptyAndPasswordAr"/>
         </methods>
       </class> <!-- asala.test.AsalaLoginTest -->
     </classes>
