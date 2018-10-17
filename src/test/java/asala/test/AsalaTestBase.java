@@ -33,7 +33,7 @@ public class AsalaTestBase {
 			driver = new ChromeDriver();
 		}
 
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		driver.navigate().to("https://asala-dashboard.ibtikar.net.sa/auth/login");
 	}

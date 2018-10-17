@@ -82,10 +82,12 @@ public class AsalaLoginTest extends AsalaTestBase {
 	@Test(priority = 7)
 	public void AddValidEmailAndPasswordInActiveUSer () throws InterruptedException {
 
+		asalaLoginPage.ClearEmailData();
 		asalaLoginPage.AddEmail("super@asala.com");
+		asalaLoginPage.ClearPasswordData();
 		asalaLoginPage.AddPassword("123456");
 		asalaLoginPage.ClickLogin();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		Assert.assertTrue(asalaLoginPage.wrongEmailOrPasswordOrNotActiveTxt.getText().contains("Sorry, this account is no longer active, please contact your dashboard administrator"));
 	}
 
@@ -93,8 +95,10 @@ public class AsalaLoginTest extends AsalaTestBase {
 	public void AddEmailEmptyAndPasswordAr () throws InterruptedException {
 
 		asalaLoginPage.ClickChangeLanguageToArabic();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
+		asalaLoginPage.ClearEmailData();
 		asalaLoginPage.AddEmail("");
+		asalaLoginPage.ClearPasswordData();
 		asalaLoginPage.AddPassword("");
 		asalaLoginPage.ClickLogin();
 		Assert.assertTrue(asalaLoginPage.emailTxtValidtion.getText().contains("من فضلك أدخل البريد الإلكتروني"));
@@ -182,7 +186,7 @@ public class AsalaLoginTest extends AsalaTestBase {
 		asalaLoginPage.AddPassword("123456");
 		asalaLoginPage.ClickLogin();
 		asalaLoginPage.ClickChangeLanguageToEnglish();
-		
+
 		asalaHomePage = new AsalaHomePage(driver);
 		asalaHomePage.ClickUserName();
 		asalaHomePage.ClickSignOut();

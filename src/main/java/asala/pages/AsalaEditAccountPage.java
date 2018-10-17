@@ -22,11 +22,17 @@ public class AsalaEditAccountPage extends AsalaPageBase {
 	@FindBy(id="error-msg-Email")
 	public WebElement emailValidationMessaga ;
 
-	@FindBy(id="form-control-Password")
-	WebElement passwordTxtBoxInEdit ;
+	@FindBy(id="form-control-old_password")
+	WebElement OldPasswordTxtBoxInEdit ;
 
-	@FindBy(id="error-msg-Password")
-	public WebElement passwordlValidationMessaga ;
+	@FindBy(id="error-msg-old_password")
+	public WebElement OldPasswordlValidationMessaga ;
+	
+	@FindBy(id="form-control-new_password")
+	public WebElement newPasswordTxtBoxInEdit ;
+	
+	@FindBy(id="error-msg-new_password")
+	public WebElement newPasswordlValidationMessaga ;
 
 	@FindBy(id="form-control-Confirm Password")
 	WebElement confirmPasswordTxtBoxInEdit ;
@@ -41,15 +47,20 @@ public class AsalaEditAccountPage extends AsalaPageBase {
 
 		setTextElementText(nameTxtBoxInEdit, name);	
 	}
-
+	
 	public void AddEmailInEdit (String email) {
 
 		setTextElementText(emailTxtBoxInEdit, email);	
 	}
 
-	public void AddPasswordInEdit (String password) {
+	public void AddOldPasswordInEdit (String password) {
 
-		setTextElementText(passwordTxtBoxInEdit, password);	
+		setTextElementText(OldPasswordTxtBoxInEdit, password);	
+	}
+	
+	public void AddNewPasswordInEdit (String Newpassword) {
+
+		setTextElementText(newPasswordTxtBoxInEdit, Newpassword);	
 	}
 
 	public void AddConfirmPasswordInEdit (String confirmPassword) {
@@ -60,6 +71,31 @@ public class AsalaEditAccountPage extends AsalaPageBase {
 	public void ClickSaveInEdit () {
 
 		clickButton(submitInEditBt);
+	}
+	
+	public void ClearNameData () {
+
+		nameTxtBoxInEdit.clear();
+	}
+	
+	public void ClearEmailData () {
+
+		emailTxtBoxInEdit.clear();
+	}
+	
+	public void ClearOldPasswordData () {
+
+		OldPasswordTxtBoxInEdit.clear();
+	}
+	
+	public void ClearNewPasswordData () {
+
+		newPasswordTxtBoxInEdit.clear();
+	}
+	
+	public void ClearConfirmpasswrodData () {
+
+		confirmPasswordTxtBoxInEdit.clear();
 	}
 
 }

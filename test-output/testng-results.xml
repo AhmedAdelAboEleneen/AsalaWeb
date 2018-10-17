@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="17" passed="16">
+<testng-results skipped="0" failed="1" ignored="0" total="9" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="16417" started-at="2018-10-16T14:42:15Z" finished-at="2018-10-16T14:42:31Z">
+  <suite name="Default suite" duration-ms="6114" started-at="2018-10-17T16:20:55Z" finished-at="2018-10-17T16:21:01Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="16417" started-at="2018-10-16T14:42:15Z" finished-at="2018-10-16T14:42:31Z">
-      <class name="asala.test.AsalaLoginTest">
-        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:asala.test.AsalaLoginTest@4883b407]" name="startDriver" is-config="true" duration-ms="7903" started-at="2018-10-16T14:42:07Z" finished-at="2018-10-16T14:42:15Z">
+    <test name="Default test" duration-ms="6114" started-at="2018-10-17T16:20:55Z" finished-at="2018-10-17T16:21:01Z">
+      <class name="asala.test.AsalaEditAccountTest">
+        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:asala.test.AsalaEditAccountTest@4883b407]" name="startDriver" is-config="true" duration-ms="6138" started-at="2018-10-17T16:20:49Z" finished-at="2018-10-17T16:20:55Z">
           <params>
             <param index="0">
               <value>
@@ -18,112 +18,127 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startDriver -->
-        <test-method status="PASS" signature="AddEmailEmptyAndPassword()[pri:1, instance:asala.test.AsalaLoginTest@4883b407]" name="AddEmailEmptyAndPassword" duration-ms="383" started-at="2018-10-16T14:42:15Z" finished-at="2018-10-16T14:42:15Z">
+        <test-method status="PASS" signature="MakeLogin()[pri:1, instance:asala.test.AsalaEditAccountTest@4883b407]" name="MakeLogin" duration-ms="1455" started-at="2018-10-17T16:20:55Z" finished-at="2018-10-17T16:20:57Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AddEmailEmptyAndPassword -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-16T14:42:15Z" finished-at="2018-10-16T14:42:15Z">
+        </test-method> <!-- MakeLogin -->
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaEditAccountTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-17T16:20:57Z" finished-at="2018-10-17T16:20:57Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=AddEmailEmptyAndPassword status=SUCCESS method=AsalaLoginTest.AddEmailEmptyAndPassword()[pri:1, instance:asala.test.AsalaLoginTest@4883b407] output={null}]]]>
+                <![CDATA[[TestResult name=MakeLogin status=SUCCESS method=AsalaEditAccountTest.MakeLogin()[pri:1, instance:asala.test.AsalaEditAccountTest@4883b407] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="AddEmailEmptyWrongFormat()[pri:2, instance:asala.test.AsalaLoginTest@4883b407]" name="AddEmailEmptyWrongFormat" duration-ms="325" started-at="2018-10-16T14:42:15Z" finished-at="2018-10-16T14:42:16Z">
+        <test-method status="PASS" signature="UserAddNameFiledEmpty()[pri:2, instance:asala.test.AsalaEditAccountTest@4883b407]" name="UserAddNameFiledEmpty" duration-ms="263" started-at="2018-10-17T16:20:57Z" finished-at="2018-10-17T16:20:57Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AddEmailEmptyWrongFormat -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-16T14:42:16Z" finished-at="2018-10-16T14:42:16Z">
+        </test-method> <!-- UserAddNameFiledEmpty -->
+        <test-method status="PASS" signature="UserAddNameFiledMore30Char()[pri:3, instance:asala.test.AsalaEditAccountTest@4883b407]" name="UserAddNameFiledMore30Char" duration-ms="326" started-at="2018-10-17T16:20:57Z" finished-at="2018-10-17T16:20:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserAddNameFiledMore30Char -->
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaEditAccountTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-17T16:20:57Z" finished-at="2018-10-17T16:20:57Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=AddEmailEmptyWrongFormat status=SUCCESS method=AsalaLoginTest.AddEmailEmptyWrongFormat()[pri:2, instance:asala.test.AsalaLoginTest@4883b407] output={null}]]]>
+                <![CDATA[[TestResult name=UserAddNameFiledEmpty status=SUCCESS method=AsalaEditAccountTest.UserAddNameFiledEmpty()[pri:2, instance:asala.test.AsalaEditAccountTest@4883b407] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="AddEmailEmptyButAddPasword()[pri:3, instance:asala.test.AsalaLoginTest@4883b407]" name="AddEmailEmptyButAddPasword" duration-ms="321" started-at="2018-10-16T14:42:16Z" finished-at="2018-10-16T14:42:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AddEmailEmptyButAddPasword -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-16T14:42:16Z" finished-at="2018-10-16T14:42:16Z">
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaEditAccountTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-17T16:20:57Z" finished-at="2018-10-17T16:20:57Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=AddEmailEmptyButAddPasword status=SUCCESS method=AsalaLoginTest.AddEmailEmptyButAddPasword()[pri:3, instance:asala.test.AsalaLoginTest@4883b407] output={null}]]]>
+                <![CDATA[[TestResult name=UserAddNameFiledMore30Char status=SUCCESS method=AsalaEditAccountTest.UserAddNameFiledMore30Char()[pri:3, instance:asala.test.AsalaEditAccountTest@4883b407] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="AddEmailButAddPaswordEmpty()[pri:4, instance:asala.test.AsalaLoginTest@4883b407]" name="AddEmailButAddPaswordEmpty" duration-ms="330" started-at="2018-10-16T14:42:16Z" finished-at="2018-10-16T14:42:16Z">
+        <test-method status="PASS" signature="UserAddNameFiledLess3Char()[pri:4, instance:asala.test.AsalaEditAccountTest@4883b407]" name="UserAddNameFiledLess3Char" duration-ms="308" started-at="2018-10-17T16:20:57Z" finished-at="2018-10-17T16:20:58Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AddEmailButAddPaswordEmpty -->
-        <test-method status="PASS" signature="AddWrongEmailButVaildPassword()[pri:5, instance:asala.test.AsalaLoginTest@4883b407]" name="AddWrongEmailButVaildPassword" duration-ms="316" started-at="2018-10-16T14:42:16Z" finished-at="2018-10-16T14:42:17Z">
+        </test-method> <!-- UserAddNameFiledLess3Char -->
+        <test-method status="PASS" signature="UserAddNameFiledsuccess()[pri:5, instance:asala.test.AsalaEditAccountTest@4883b407]" name="UserAddNameFiledsuccess" duration-ms="306" started-at="2018-10-17T16:20:58Z" finished-at="2018-10-17T16:20:58Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AddWrongEmailButVaildPassword -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-16T14:42:16Z" finished-at="2018-10-16T14:42:16Z">
+        </test-method> <!-- UserAddNameFiledsuccess -->
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaEditAccountTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-17T16:20:58Z" finished-at="2018-10-17T16:20:58Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=AddEmailButAddPaswordEmpty status=SUCCESS method=AsalaLoginTest.AddEmailButAddPaswordEmpty()[pri:4, instance:asala.test.AsalaLoginTest@4883b407] output={null}]]]>
+                <![CDATA[[TestResult name=UserAddNameFiledLess3Char status=SUCCESS method=AsalaEditAccountTest.UserAddNameFiledLess3Char()[pri:4, instance:asala.test.AsalaEditAccountTest@4883b407] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-16T14:42:17Z" finished-at="2018-10-16T14:42:17Z">
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaEditAccountTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-17T16:20:58Z" finished-at="2018-10-17T16:20:58Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=AddWrongEmailButVaildPassword status=SUCCESS method=AsalaLoginTest.AddWrongEmailButVaildPassword()[pri:5, instance:asala.test.AsalaLoginTest@4883b407] output={null}]]]>
+                <![CDATA[[TestResult name=UserAddNameFiledsuccess status=SUCCESS method=AsalaEditAccountTest.UserAddNameFiledsuccess()[pri:5, instance:asala.test.AsalaEditAccountTest@4883b407] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="AddValidEmailButWrongPasswordPassword()[pri:6, instance:asala.test.AsalaLoginTest@4883b407]" name="AddValidEmailButWrongPasswordPassword" duration-ms="1350" started-at="2018-10-16T14:42:17Z" finished-at="2018-10-16T14:42:18Z">
+        <test-method status="PASS" signature="UserAddEmptyEmail()[pri:6, instance:asala.test.AsalaEditAccountTest@4883b407]" name="UserAddEmptyEmail" duration-ms="2302" started-at="2018-10-17T16:20:58Z" finished-at="2018-10-17T16:21:00Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AddValidEmailButWrongPasswordPassword -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-16T14:42:18Z" finished-at="2018-10-16T14:42:18Z">
+        </test-method> <!-- UserAddEmptyEmail -->
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaEditAccountTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-17T16:21:00Z" finished-at="2018-10-17T16:21:00Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=AddValidEmailButWrongPasswordPassword status=SUCCESS method=AsalaLoginTest.AddValidEmailButWrongPasswordPassword()[pri:6, instance:asala.test.AsalaLoginTest@4883b407] output={null}]]]>
+                <![CDATA[[TestResult name=UserAddEmptyEmail status=SUCCESS method=AsalaEditAccountTest.UserAddEmptyEmail()[pri:6, instance:asala.test.AsalaEditAccountTest@4883b407] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="AddValidEmailAndPasswordInActiveUSer()[pri:7, instance:asala.test.AsalaLoginTest@4883b407]" name="AddValidEmailAndPasswordInActiveUSer" duration-ms="2338" started-at="2018-10-16T14:42:18Z" finished-at="2018-10-16T14:42:20Z">
+        <test-method status="PASS" signature="UserAddWrongEmail()[pri:7, instance:asala.test.AsalaEditAccountTest@4883b407]" name="UserAddWrongEmail" duration-ms="279" started-at="2018-10-17T16:21:00Z" finished-at="2018-10-17T16:21:00Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AddValidEmailAndPasswordInActiveUSer -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-16T14:42:20Z" finished-at="2018-10-16T14:42:20Z">
+        </test-method> <!-- UserAddWrongEmail -->
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaEditAccountTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-17T16:21:00Z" finished-at="2018-10-17T16:21:00Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=AddValidEmailAndPasswordInActiveUSer status=SUCCESS method=AsalaLoginTest.AddValidEmailAndPasswordInActiveUSer()[pri:7, instance:asala.test.AsalaLoginTest@4883b407] output={null}]]]>
+                <![CDATA[[TestResult name=UserAddWrongEmail status=SUCCESS method=AsalaEditAccountTest.UserAddWrongEmail()[pri:7, instance:asala.test.AsalaEditAccountTest@4883b407] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="FAIL" signature="AddEmailEmptyAndPasswordAr()[pri:8, instance:asala.test.AsalaLoginTest@4883b407]" name="AddEmailEmptyAndPasswordAr" duration-ms="1528" started-at="2018-10-16T14:42:20Z" finished-at="2018-10-16T14:42:22Z">
+        <test-method status="PASS" signature="UserAddValidEmail()[pri:8, instance:asala.test.AsalaEditAccountTest@4883b407]" name="UserAddValidEmail" duration-ms="372" started-at="2018-10-17T16:21:00Z" finished-at="2018-10-17T16:21:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserAddValidEmail -->
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaEditAccountTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-17T16:21:01Z" finished-at="2018-10-17T16:21:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=UserAddValidEmail status=SUCCESS method=AsalaEditAccountTest.UserAddValidEmail()[pri:8, instance:asala.test.AsalaEditAccountTest@4883b407] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenShootsOnFailure -->
+        <test-method status="FAIL" signature="UserAddOldPasswordWrong()[pri:9, instance:asala.test.AsalaEditAccountTest@4883b407]" name="UserAddOldPasswordWrong" duration-ms="389" started-at="2018-10-17T16:21:01Z" finished-at="2018-10-17T16:21:01Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -134,7 +149,7 @@ at org.testng.Assert.fail(Assert.java:96)
 at org.testng.Assert.failNotEquals(Assert.java:776)
 at org.testng.Assert.assertTrue(Assert.java:44)
 at org.testng.Assert.assertTrue(Assert.java:54)
-at asala.test.AsalaLoginTest.AddEmailEmptyAndPasswordAr(AsalaLoginTest.java:100)
+at asala.test.AsalaEditAccountTest.UserAddOldPasswordWrong(AsalaEditAccountTest.java:92)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -165,158 +180,23 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AddEmailEmptyAndPasswordAr -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="75" started-at="2018-10-16T14:42:22Z" finished-at="2018-10-16T14:42:22Z">
+        </test-method> <!-- UserAddOldPasswordWrong -->
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaEditAccountTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="76" started-at="2018-10-17T16:21:01Z" finished-at="2018-10-17T16:21:01Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=AddEmailEmptyAndPasswordAr status=FAILURE method=AsalaLoginTest.AddEmailEmptyAndPasswordAr()[pri:8, instance:asala.test.AsalaLoginTest@4883b407] output={null}]]]>
+                <![CDATA[[TestResult name=UserAddOldPasswordWrong status=FAILURE method=AsalaEditAccountTest.UserAddOldPasswordWrong()[pri:9, instance:asala.test.AsalaEditAccountTest@4883b407] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="AddEmailEmptyWrongFormatAr()[pri:9, instance:asala.test.AsalaLoginTest@4883b407]" name="AddEmailEmptyWrongFormatAr" duration-ms="548" started-at="2018-10-16T14:42:22Z" finished-at="2018-10-16T14:42:23Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AddEmailEmptyWrongFormatAr -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-16T14:42:23Z" finished-at="2018-10-16T14:42:23Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=AddEmailEmptyWrongFormatAr status=SUCCESS method=AsalaLoginTest.AddEmailEmptyWrongFormatAr()[pri:9, instance:asala.test.AsalaLoginTest@4883b407] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="AddEmailEmptyButAddPaswordAr()[pri:10, instance:asala.test.AsalaLoginTest@4883b407]" name="AddEmailEmptyButAddPaswordAr" duration-ms="306" started-at="2018-10-16T14:42:23Z" finished-at="2018-10-16T14:42:23Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AddEmailEmptyButAddPaswordAr -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-16T14:42:23Z" finished-at="2018-10-16T14:42:23Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=AddEmailEmptyButAddPaswordAr status=SUCCESS method=AsalaLoginTest.AddEmailEmptyButAddPaswordAr()[pri:10, instance:asala.test.AsalaLoginTest@4883b407] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="AddEmailButAddPaswordEmptyAr()[pri:11, instance:asala.test.AsalaLoginTest@4883b407]" name="AddEmailButAddPaswordEmptyAr" duration-ms="318" started-at="2018-10-16T14:42:23Z" finished-at="2018-10-16T14:42:23Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AddEmailButAddPaswordEmptyAr -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-16T14:42:23Z" finished-at="2018-10-16T14:42:23Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=AddEmailButAddPaswordEmptyAr status=SUCCESS method=AsalaLoginTest.AddEmailButAddPaswordEmptyAr()[pri:11, instance:asala.test.AsalaLoginTest@4883b407] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="AddWrongEmailButVaildPasswordAr()[pri:12, instance:asala.test.AsalaLoginTest@4883b407]" name="AddWrongEmailButVaildPasswordAr" duration-ms="337" started-at="2018-10-16T14:42:23Z" finished-at="2018-10-16T14:42:23Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AddWrongEmailButVaildPasswordAr -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-16T14:42:23Z" finished-at="2018-10-16T14:42:23Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=AddWrongEmailButVaildPasswordAr status=SUCCESS method=AsalaLoginTest.AddWrongEmailButVaildPasswordAr()[pri:12, instance:asala.test.AsalaLoginTest@4883b407] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="AddValidEmailButWrongPasswordPasswordAr()[pri:13, instance:asala.test.AsalaLoginTest@4883b407]" name="AddValidEmailButWrongPasswordPasswordAr" duration-ms="505" started-at="2018-10-16T14:42:23Z" finished-at="2018-10-16T14:42:24Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AddValidEmailButWrongPasswordPasswordAr -->
-        <test-method status="PASS" signature="AddValidEmailAndPasswordInActiveUSerAr()[pri:14, instance:asala.test.AsalaLoginTest@4883b407]" name="AddValidEmailAndPasswordInActiveUSerAr" duration-ms="1305" started-at="2018-10-16T14:42:24Z" finished-at="2018-10-16T14:42:25Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AddValidEmailAndPasswordInActiveUSerAr -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-16T14:42:24Z" finished-at="2018-10-16T14:42:24Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=AddValidEmailButWrongPasswordPasswordAr status=SUCCESS method=AsalaLoginTest.AddValidEmailButWrongPasswordPasswordAr()[pri:13, instance:asala.test.AsalaLoginTest@4883b407] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-16T14:42:25Z" finished-at="2018-10-16T14:42:25Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=AddValidEmailAndPasswordInActiveUSerAr status=SUCCESS method=AsalaLoginTest.AddValidEmailAndPasswordInActiveUSerAr()[pri:14, instance:asala.test.AsalaLoginTest@4883b407] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="AddValidEmailAndPasswordActiveUSerSuperAdmin()[pri:15, instance:asala.test.AsalaLoginTest@4883b407]" name="AddValidEmailAndPasswordActiveUSerSuperAdmin" duration-ms="2603" started-at="2018-10-16T14:42:25Z" finished-at="2018-10-16T14:42:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AddValidEmailAndPasswordActiveUSerSuperAdmin -->
-        <test-method status="PASS" signature="AddValidEmailAndPasswordActiveUSerMallAdmin()[pri:16, instance:asala.test.AsalaLoginTest@4883b407]" name="AddValidEmailAndPasswordActiveUSerMallAdmin" duration-ms="3088" started-at="2018-10-16T14:42:28Z" finished-at="2018-10-16T14:42:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AddValidEmailAndPasswordActiveUSerMallAdmin -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-16T14:42:28Z" finished-at="2018-10-16T14:42:28Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=AddValidEmailAndPasswordActiveUSerSuperAdmin status=SUCCESS method=AsalaLoginTest.AddValidEmailAndPasswordActiveUSerSuperAdmin()[pri:15, instance:asala.test.AsalaLoginTest@4883b407] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="AddValidEmailAndPasswordActiveUSerStoreAdmin()[pri:17, instance:asala.test.AsalaLoginTest@4883b407]" name="AddValidEmailAndPasswordActiveUSerStoreAdmin" duration-ms="391" started-at="2018-10-16T14:42:31Z" finished-at="2018-10-16T14:42:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- AddValidEmailAndPasswordActiveUSerStoreAdmin -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-16T14:42:31Z" finished-at="2018-10-16T14:42:31Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=AddValidEmailAndPasswordActiveUSerMallAdmin status=SUCCESS method=AsalaLoginTest.AddValidEmailAndPasswordActiveUSerMallAdmin()[pri:16, instance:asala.test.AsalaLoginTest@4883b407] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaLoginTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-16T14:42:31Z" finished-at="2018-10-16T14:42:31Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=AddValidEmailAndPasswordActiveUSerStoreAdmin status=SUCCESS method=AsalaLoginTest.AddValidEmailAndPasswordActiveUSerStoreAdmin()[pri:17, instance:asala.test.AsalaLoginTest@4883b407] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="stopDriver()[pri:0, instance:asala.test.AsalaLoginTest@4883b407]" name="stopDriver" is-config="true" duration-ms="954" started-at="2018-10-16T14:42:31Z" finished-at="2018-10-16T14:42:32Z">
+        <test-method status="PASS" signature="stopDriver()[pri:0, instance:asala.test.AsalaEditAccountTest@4883b407]" name="stopDriver" is-config="true" duration-ms="3842" started-at="2018-10-17T16:21:01Z" finished-at="2018-10-17T16:21:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopDriver -->
-      </class> <!-- asala.test.AsalaLoginTest -->
+      </class> <!-- asala.test.AsalaEditAccountTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
