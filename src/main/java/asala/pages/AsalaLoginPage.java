@@ -10,33 +10,31 @@ public class AsalaLoginPage extends AsalaPageBase {
 		super(driver);
 	}
 
-
-	@FindBy(css="#root > div > div > div.login-box-body > form > div:nth-child(1) > input")
+	@FindBy(id="form-control-Email")
 	WebElement emailTxtBox ;
 
-	@FindBy(css="#root > div > div > div.login-box-body > form > div:nth-child(1) > div > span")
+	@FindBy(id="error-msg-email")
 	public WebElement emailTxtValidtion ; 
 
-	@FindBy(css="#root > div > div > div.login-box-body > form > div:nth-child(1) > div > span")
-	public WebElement emailTxtValidtionWrongMailFormat ; 
-
-	@FindBy(css="#root > div > div > div.login-box-body > form > div:nth-child(2) > input")
+	@FindBy(id="form-control-Password")
 	WebElement passwordTxtBox ; 
 
-	@FindBy(css="#root > div > div > div.login-box-body > form > div:nth-child(2) > div > span")
+	@FindBy(id="error-msg-password")
 	public WebElement passwordTxtValidtion ; 
 
-	@FindBy(css="#root > div > div > div.login-box-body > div")
-	public WebElement wrongEmailOrPasswordTxt ; 
+	@FindBy(id="error-1")
+	public WebElement wrongEmailOrPasswordOrNotActiveTxt ; 
 
+	@FindBy(id="ar")
+	WebElement changeLanguageToArabicBt ; 
 
-	@FindBy(css="#root > div > div > div.login-box-body > div")
-	public WebElement inActiveUserText ; 
+	@FindBy(id="en")
+	WebElement changeLanguageToEnglishBt ; 
 
-	@FindBy(css="#root > div > div > div.login-box-body > form > div.row > div > button")
+	@FindBy(id="submit-btn")
 	WebElement loginBtn ; 
 
-	@FindBy(css="#root > div > div > div.login-box-body > form > a")
+	@FindBy(id="forgot-password-btn")
 	WebElement forgetPasswordBtn ; 
 
 	public void AddEmail (String email) {
@@ -67,6 +65,15 @@ public class AsalaLoginPage extends AsalaPageBase {
 	public void ClearPasswordData () {
 
 		passwordTxtBox.clear();
+	}
+	public void ClickChangeLanguageToArabic () {
+
+		clickButton(changeLanguageToArabicBt);
+	}
+
+	public void ClickChangeLanguageToEnglish () {
+
+		clickButton(changeLanguageToEnglishBt);
 	}
 
 }

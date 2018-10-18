@@ -1,7 +1,7 @@
 package asala.test;
 
-import java.util.concurrent.TimeUnit;
 
+import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -24,17 +24,17 @@ public class AsalaTestBase {
 
 		if (browserName.equalsIgnoreCase("firefox")) {
 
-			System.setProperty("webdriver.gecko.driver", "/home/be-max/eclipse-workspace/asala/asala_qc_dashboard/drivers/geckodriver");
+			System.setProperty("webdriver.gecko.driver", "/home/be-max/eclipse-workspace/asala/asala.dashboard/drivers/geckodriver");
 			driver = new FirefoxDriver();
 
 		}else if (browserName.equalsIgnoreCase("chrome")) {
 
-			System.setProperty("webdriver.chrome.driver", "/home/be-max/eclipse-workspace/asala/asala_qc_dashboard/drivers/chromedriver");
+			System.setProperty("webdriver.chrome.driver", "/home/be-max/eclipse-workspace/asala/asala.dashboard/drivers/chromedriver");
 			driver = new ChromeDriver();
 		}
 
 		//driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		driver.navigate().to("https://asala-dashboard.ibtikar.net.sa/auth/login");
 	}
 
