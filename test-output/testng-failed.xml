@@ -1,16 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Asala Dashboard Regression Suite]">
+  <parameter name="browser" value="chrome"/>
+  <test thread-count="5" name="Regression Test(failed)">
     <classes>
-      <class name="asala.test.AsalaEditAccountTest">
+      <class name="asala.test.AsalaLoginTest">
         <methods>
+          <include name="AddValidEmailAndPasswordInActiveUSerAr"/>
+          <include name="AddWrongEmailButVaildPassword"/>
           <include name="startDriver"/>
-          <include name="UserAddOldPasswordWrong"/>
+          <include name="AddValidEmailButWrongPasswordPassword"/>
           <include name="screenShootsOnFailure"/>
+          <include name="AddValidEmailButWrongPasswordPasswordAr"/>
+          <include name="AddEmailEmptyWrongFormat"/>
+          <include name="AddEmailEmptyAndPasswordAr"/>
+          <include name="AddValidEmailAndPasswordActiveUSerStoreAdmin"/>
+          <include name="AddValidEmailAndPasswordInActiveUSer"/>
+          <include name="AddEmailEmptyButAddPaswordAr"/>
+          <include name="AddEmailEmptyButAddPasword"/>
+          <include name="AddEmailEmptyWrongFormatAr"/>
+          <include name="AddValidEmailAndPasswordActiveUSerSuperAdmin"/>
           <include name="stopDriver"/>
+          <include name="AddEmailButAddPaswordEmptyAr"/>
+          <include name="AddWrongEmailButVaildPasswordAr"/>
+          <include name="AddEmailButAddPaswordEmpty"/>
+          <include name="AddEmailEmptyAndPassword"/>
+          <include name="AddValidEmailAndPasswordActiveUSerMallAdmin"/>
         </methods>
-      </class> <!-- asala.test.AsalaEditAccountTest -->
+      </class> <!-- asala.test.AsalaLoginTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Regression Test(failed) -->
+</suite> <!-- Failed suite [Asala Dashboard Regression Suite] -->

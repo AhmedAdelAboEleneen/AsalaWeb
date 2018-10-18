@@ -25,7 +25,7 @@ public class AsalaEditAccountPage extends AsalaPageBase {
 	@FindBy(id="form-control-old_password")
 	WebElement OldPasswordTxtBoxInEdit ;
 
-	@FindBy(id="error-msg-old_password")
+	@FindBy(id="error-msg-old-password")
 	public WebElement OldPasswordlValidationMessaga ;
 	
 	@FindBy(id="form-control-new_password")

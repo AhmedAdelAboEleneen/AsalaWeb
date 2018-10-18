@@ -2,6 +2,7 @@ package asala.test;
 
 
 import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -24,12 +25,12 @@ public class AsalaTestBase {
 
 		if (browserName.equalsIgnoreCase("firefox")) {
 
-			System.setProperty("webdriver.gecko.driver", "/home/be-max/eclipse-workspace/asala/asala.dashboard/drivers/geckodriver");
+			System.setProperty("webdriver.gecko.driver", "/home/be-max/eclipse-workspace/asala/asala_qc_dashboard/drivers/geckodriver");
 			driver = new FirefoxDriver();
 
 		}else if (browserName.equalsIgnoreCase("chrome")) {
 
-			System.setProperty("webdriver.chrome.driver", "/home/be-max/eclipse-workspace/asala/asala.dashboard/drivers/chromedriver");
+			System.setProperty("webdriver.chrome.driver", "/home/be-max/eclipse-workspace/asala/asala_qc_dashboard/drivers/chromedriver");
 			driver = new ChromeDriver();
 		}
 

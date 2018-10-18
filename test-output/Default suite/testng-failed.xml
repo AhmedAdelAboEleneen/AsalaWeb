@@ -6,9 +6,16 @@
       <class name="asala.test.AsalaEditAccountTest">
         <methods>
           <include name="startDriver"/>
-          <include name="UserAddOldPasswordWrong"/>
+          <include name="UserAddValidEmail"/>
           <include name="screenShootsOnFailure"/>
+          <include name="UserAddNameFiledsuccess"/>
+          <include name="UserAddNameFiledLess3Char"/>
           <include name="stopDriver"/>
+          <include name="MakeLogin"/>
+          <include name="UserAddEmptyEmail"/>
+          <include name="UserAddNameFiledEmpty"/>
+          <include name="UserAddWrongEmail"/>
+          <include name="UserAddNameFiledMore30Char"/>
         </methods>
       </class> <!-- asala.test.AsalaEditAccountTest -->
     </classes>

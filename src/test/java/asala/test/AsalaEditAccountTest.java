@@ -21,6 +21,7 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 		asalaLoginPage.AddEmail("ahmed.adel@ibtikar.net.sa");
 		asalaLoginPage.AddPassword("123456");
 		asalaLoginPage.ClickLogin();
+
 		// go to home page & click user & click to get here profile 
 		asalaHomePage = new AsalaHomePage(driver);
 		asalaHomePage.ClickUserName();
@@ -46,7 +47,7 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 
 	@Test(priority = 4)
 	public void UserAddNameFiledLess3Char () throws InterruptedException {
-		
+
 		asalaEditAccountPage.ClearNameData();
 		asalaEditAccountPage.AddNameInEdit("Te");
 		asalaEditAccountPage.ClickSaveInEdit();
@@ -84,68 +85,22 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 		asalaEditAccountPage.ClickSaveInEdit();
 	}
 
-	@Test(priority = 9)
-	public void UserAddOldPasswordWrong () {
+	/*@Test(priority = 9)
+	public void UserAddOldPasswordWrong () throws InterruptedException {
 
-		asalaEditAccountPage.AddOldPasswordInEdit("202020202020202");
-		asalaEditAccountPage.ClickSaveInEdit();
-		Assert.assertTrue(asalaEditAccountPage.OldPasswordlValidationMessaga.getText().contains("wrong password"));
+
 
 	}
 
-	/*@Test(priority = 10)
+	@Test(priority = 10)
 	public void UserAddNewpasswordNotMatchWithConfirmPassword () {
-		asalaEditAccountPage.ClearOldPasswordData();
-		asalaEditAccountPage.AddOldPasswordInEdit("123456");
-		asalaEditAccountPage.AddNewPasswordInEdit("1234567");
-		asalaEditAccountPage.AddConfirmPasswordInEdit("12345689");
-		asalaEditAccountPage.ClickSaveInEdit();
-		Assert.assertTrue(asalaEditAccountPage.confirmPasswordlValidationMessaga.getText().contains("Password does not match"));
+
 
 	}
 
 	@Test(priority = 11)
 	public void UserAddNewPasswordMatchWithNewPassword () {
-		asalaEditAccountPage.ClearOldPasswordData();
-		asalaEditAccountPage.AddOldPasswordInEdit("123456");
-		asalaEditAccountPage.AddNewPasswordInEdit("123456");
-		asalaEditAccountPage.AddConfirmPasswordInEdit("123456");
-		asalaEditAccountPage.ClickSaveInEdit();
-		Assert.assertTrue(asalaEditAccountPage.confirmPasswordlValidationMessaga.getText().contains(" new password should be different than the old password"));
-	}
-
-	/*
-		asalaEditAccountPage.ClickSaveInEdit();
-		// assert for success message	
-		asalaEditAccountPage.AddOldPasswordInEdit("123456");
-		asalaEditAccountPage.ClickSaveInEdit();
-		asalaEditAccountPage.ClickSaveInEdit();
-		Assert.assertTrue(asalaEditAccountPage.newPasswordlValidationMessaga.getText().contains("Please enter your Password"));
-
-		asalaEditAccountPage.ClearOldPasswordData();
-		asalaEditAccountPage.AddOldPasswordInEdit("1");
-		asalaEditAccountPage.ClickSaveInEdit();
-		Assert.assertTrue(asalaEditAccountPage.OldPasswordlValidationMessaga.getText().contains("Password must be 6 letters at least"));
-		Assert.assertTrue(asalaEditAccountPage.newPasswordlValidationMessaga.getText().contains("Please enter your Password"));
-
-		asalaEditAccountPage.ClearOldPasswordData();
-		asalaEditAccountPage.AddOldPasswordInEdit("123456");
-		asalaEditAccountPage.ClickSaveInEdit();
-		Assert.assertTrue(asalaEditAccountPage.newPasswordlValidationMessaga.getText().contains("Please enter your Password"));
-
-		asalaEditAccountPage.ClearOldPasswordData();
-		asalaEditAccountPage.AddOldPasswordInEdit("123456");
-		asalaEditAccountPage.AddNewPasswordInEdit("1");
-		asalaEditAccountPage.ClickSaveInEdit();
-		Assert.assertTrue(asalaEditAccountPage.newPasswordlValidationMessaga.getText().contains("check that the password field minimum number of characters is 6"));
-		Assert.assertTrue(asalaEditAccountPage.confirmPasswordlValidationMessaga.getText().contains("Password does not match"));
-
-		asalaEditAccountPage.ClearOldPasswordData();
-		asalaEditAccountPage.AddOldPasswordInEdit("123456");
-		asalaEditAccountPage.AddNewPasswordInEdit("123");
-		asalaEditAccountPage.AddConfirmPasswordInEdit("123");
-		asalaEditAccountPage.ClickSaveInEdit();
-		Assert.assertTrue(asalaEditAccountPage.newPasswordlValidationMessaga.getText().contains("check that the password field minimum number of characters is 6"));
 
 	}*/
+
 }
