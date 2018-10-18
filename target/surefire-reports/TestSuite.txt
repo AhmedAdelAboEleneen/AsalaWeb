@@ -1,4 +1,33 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.015 s - in TestSuite
+Tests run: 15, Failures: 3, Errors: 0, Skipped: 12, Time elapsed: 30.257 s <<< FAILURE! - in TestSuite
+AddEmailEmptyAndPassword(asala.test.AsalaLoginTest)  Time elapsed: 6.629 s  <<< FAILURE!
+org.openqa.selenium.WebDriverException: 
+Failed to convert data to an object
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'Be-Max', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-36-generic', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 62.0.3, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 4240, moz:profile: /tmp/rust_mozprofile.6agE2J..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, platformVersion: 4.15.0-36-generic, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 75883e7f-6ad1-48aa-aa5a-d65a165f9fc3
+*** Element info: {Using=css selector, value=#root > div > div > div.login-box-body > form > div:nth-child(1) > input}
+	at asala.test.AsalaLoginTest.AddEmailEmptyAndPassword(AsalaLoginTest.java:17)
+
+screenShootsOnFailure(asala.test.AsalaLoginTest)  Time elapsed: 7.853 s  <<< FAILURE!
+org.openqa.selenium.WebDriverException: 
+Failed to decode response from marionette
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'Be-Max', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-36-generic', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 62.0.3, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 4240, moz:profile: /tmp/rust_mozprofile.6agE2J..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, platformVersion: 4.15.0-36-generic, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 75883e7f-6ad1-48aa-aa5a-d65a165f9fc3
+
+stopDriver(asala.test.AsalaLoginTest)  Time elapsed: 8.034 s  <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+Tried to run command without establishing a connection
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'Be-Max', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-36-generic', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 62.0.3, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 4240, moz:profile: /tmp/rust_mozprofile.6agE2J..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, platformVersion: 4.15.0-36-generic, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
+Session ID: 75883e7f-6ad1-48aa-aa5a-d65a165f9fc3
+

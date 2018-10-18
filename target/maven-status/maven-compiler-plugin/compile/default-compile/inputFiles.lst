@@ -1,5 +1,6 @@
 /home/be-max/eclipse-workspace/asala/asala_qc_dashboard/src/main/java/asala/pages/AsalaPageBase.java
 /home/be-max/eclipse-workspace/asala/asala_qc_dashboard/src/main/java/asala/pages/AsalaAddMallPage.java
+/home/be-max/eclipse-workspace/asala/asala_qc_dashboard/src/main/java/asala/pages/AsalaHomePage.java
 /home/be-max/eclipse-workspace/asala/asala_qc_dashboard/src/main/java/asala/pages/AsalaLogoutPage.java
 /home/be-max/eclipse-workspace/asala/asala_qc_dashboard/src/main/java/asala/pages/AsalaLoginPage.java
 /home/be-max/eclipse-workspace/asala/asala_qc_dashboard/src/main/java/asala/pages/AsalaAddNewCategoryPage.java

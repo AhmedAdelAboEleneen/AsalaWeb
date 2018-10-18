@@ -2,6 +2,7 @@
 /home/be-max/eclipse-workspace/asala/asala_qc_dashboard/src/test/java/asala/test/AsalaTestBase.java
 /home/be-max/eclipse-workspace/asala/asala_qc_dashboard/src/test/java/asala/test/AsalaForgetPasswordTest.java
 /home/be-max/eclipse-workspace/asala/asala_qc_dashboard/src/test/java/asala/test/AsalaAddNewCategoryTest.java
+/home/be-max/eclipse-workspace/asala/asala_qc_dashboard/src/test/java/asala/test/AsalaHomeTest.java
 /home/be-max/eclipse-workspace/asala/asala_qc_dashboard/src/test/java/asala/test/AsalaEditAccountTest.java
 /home/be-max/eclipse-workspace/asala/asala_qc_dashboard/src/test/java/asala/test/AsalaLogoutTest.java
 /home/be-max/eclipse-workspace/asala/asala_qc_dashboard/src/test/java/asala/utilities/AsalaHelper.java
