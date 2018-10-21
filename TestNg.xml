@@ -3,7 +3,8 @@
 	<parameter name="browser" value="firefox"></parameter>
 	<test name="Regression Test">
 		<classes>
-			<class name="asala.test.AsalaLoginTest" />
+			<class name="asala.test.AsalaLoginTest"/>
+			<class name="asala.test.AsalaEditAccountTest"/>
 		</classes>
 	</test>
 </suite> 

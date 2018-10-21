@@ -10,22 +10,22 @@ public class AsalaEditAccountPage extends AsalaPageBase {
 		super(driver);
 	}
 
-	@FindBy(id="form-control-Name")
+	@FindBy(id="form-control-name")
 	WebElement nameTxtBoxInEdit ;
 
 	@FindBy(id="error-msgs-name")
 	public WebElement nameValidationMessaga ;
 
-	@FindBy(id="form-control-Email")
+	@FindBy(id="form-control-email")
 	WebElement emailTxtBoxInEdit ;
 
-	@FindBy(id="error-msg-Email")
+	@FindBy(id="error-msg-email")
 	public WebElement emailValidationMessaga ;
 
 	@FindBy(id="form-control-old_password")
 	WebElement OldPasswordTxtBoxInEdit ;
 
-	@FindBy(id="error-msg-old-password")
+	@FindBy(id="error-msg-old_password")
 	public WebElement OldPasswordlValidationMessaga ;
 	
 	@FindBy(id="form-control-new_password")
@@ -34,13 +34,13 @@ public class AsalaEditAccountPage extends AsalaPageBase {
 	@FindBy(id="error-msg-new_password")
 	public WebElement newPasswordlValidationMessaga ;
 
-	@FindBy(id="form-control-Confirm Password")
+	@FindBy(id="form-control-confirm_password")
 	WebElement confirmPasswordTxtBoxInEdit ;
 
-	@FindBy(id="error-msg-Confirm Password")
+	@FindBy(id="error-msg-confirm_password")
 	public WebElement confirmPasswordlValidationMessaga ;
 
-	@FindBy(id="submit-btn")
+	@FindBy(id="submit_profile")
 	WebElement submitInEditBt;
 
 	public void AddNameInEdit (String name) {

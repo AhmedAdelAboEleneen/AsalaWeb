@@ -30,7 +30,7 @@ public class AsalaLoginTest extends AsalaTestBase {
 		asalaLoginPage.AddEmail("ahmed");
 		asalaLoginPage.AddPassword("");
 		asalaLoginPage.ClickLogin();
-		Assert.assertTrue(asalaLoginPage.emailTxtValidtion.getText().contains("Invalid Email"));
+		Assert.assertTrue(asalaLoginPage.emailTxtValidtion.getText().contains("Please enter a valid email"));
 		Assert.assertTrue(asalaLoginPage.passwordTxtValidtion.getText().contains("Please enter your Password"));
 	}
 
@@ -63,7 +63,7 @@ public class AsalaLoginTest extends AsalaTestBase {
 		asalaLoginPage.ClearPasswordData();
 		asalaLoginPage.AddPassword("123456");
 		asalaLoginPage.ClickLogin();
-		Assert.assertTrue(asalaLoginPage.emailTxtValidtion.getText().contains("Invalid Email"));
+		Assert.assertTrue(asalaLoginPage.emailTxtValidtion.getText().contains("Please enter a valid email"));
 	}
 
 	@Test(priority = 6)
@@ -113,7 +113,7 @@ public class AsalaLoginTest extends AsalaTestBase {
 		asalaLoginPage.AddEmail("ahmed");
 		asalaLoginPage.AddPassword("");
 		asalaLoginPage.ClickLogin();
-		Assert.assertTrue(asalaLoginPage.emailTxtValidtion.getText().contains("البريد الإلكتروني غير صحيح"));
+		Assert.assertTrue(asalaLoginPage.emailTxtValidtion.getText().contains("برجاء إدخال بريد إلكتروني صحيح"));
 		Assert.assertTrue(asalaLoginPage.passwordTxtValidtion.getText().contains("من فضلك أدخل كلمة المرور"));
 	}
 
@@ -146,7 +146,7 @@ public class AsalaLoginTest extends AsalaTestBase {
 		asalaLoginPage.ClearPasswordData();
 		asalaLoginPage.AddPassword("123456");
 		asalaLoginPage.ClickLogin();
-		Assert.assertTrue(asalaLoginPage.emailTxtValidtion.getText().contains("البريد الإلكتروني غير صحيح"));
+		Assert.assertTrue(asalaLoginPage.emailTxtValidtion.getText().contains("برجاء إدخال بريد إلكتروني صحيح"));
 	}
 
 	@Test(priority = 13)

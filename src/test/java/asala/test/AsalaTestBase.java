@@ -25,7 +25,7 @@ public class AsalaTestBase {
 
 		if (browserName.equalsIgnoreCase("firefox")) {
 
-			System.setProperty("webdriver.gecko.driver", "/home/be-max/eclipse-workspace/asala/asala_qc_dashboard/drivers/geckodriver");
+			System.setProperty("webdriver.gecko.driver", "/home/be-max/eclipse-workspace/asala_qc_dashboard/drivers/geckodriver");
 			driver = new FirefoxDriver();
 
 		}else if (browserName.equalsIgnoreCase("chrome")) {
@@ -35,7 +35,7 @@ public class AsalaTestBase {
 		}
 
 		//driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.navigate().to("https://asala-dashboard.ibtikar.net.sa/auth/login");
 	}
 

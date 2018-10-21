@@ -27,6 +27,12 @@ public class AsalaHomePage extends AsalaPageBase{
 
 	@FindBy(id="edit-profile-action")
 	WebElement profileBt ;
+	
+	@FindBy(id="ar")
+	WebElement changeLanguageToArabicBt ; 
+
+	@FindBy(id="en")
+	WebElement changeLanguageToEnglishBt ; 
 
 	public void ClickHome () {
 
@@ -52,6 +58,16 @@ public class AsalaHomePage extends AsalaPageBase{
 	public void ClickProfile () {
 
 		clickButton(profileBt);
+	}
+	
+	public void ClickChangeLanguageToArabic () {
+
+		clickButton(changeLanguageToArabicBt);
+	}
+
+	public void ClickChangeLanguageToEnglish () {
+
+		clickButton(changeLanguageToEnglishBt);
 	}
 
 }

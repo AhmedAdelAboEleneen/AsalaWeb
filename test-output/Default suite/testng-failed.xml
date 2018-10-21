@@ -5,17 +5,23 @@
     <classes>
       <class name="asala.test.AsalaEditAccountTest">
         <methods>
+          <include name="UserAddNameFiledLess3CharAr"/>
+          <include name="UserAddNewPasswordButNoConfirmAr"/>
+          <include name="ChangePasswordAgain"/>
           <include name="startDriver"/>
-          <include name="UserAddValidEmail"/>
+          <include name="UserAddOldPasswordButEmptyNewandConfirmAr"/>
           <include name="screenShootsOnFailure"/>
-          <include name="UserAddNameFiledsuccess"/>
-          <include name="UserAddNameFiledLess3Char"/>
+          <include name="UserAddWrongEmailAr"/>
+          <include name="UserAddNameFiledMore30CharAr"/>
+          <include name="UserAddConfirmPasswordButEmptyOldAndNewAr"/>
+          <include name="UserAddEmptyEmailAr"/>
+          <include name="UserAddValidEmailAndNameAr"/>
+          <include name="UserAddNameFiledEmptyAr"/>
+          <include name="UserAddNewPasswordButEmptyOldAndConfirmAr"/>
+          <include name="UserAddOldPasswordWrongAndAddNewPasswordValidAr"/>
+          <include name="UserAddOldWrongAndNewMatchWithWrongAr"/>
           <include name="stopDriver"/>
-          <include name="MakeLogin"/>
-          <include name="UserAddEmptyEmail"/>
-          <include name="UserAddNameFiledEmpty"/>
-          <include name="UserAddWrongEmail"/>
-          <include name="UserAddNameFiledMore30Char"/>
+          <include name="UserClearNameAndEmailAr"/>
         </methods>
       </class> <!-- asala.test.AsalaEditAccountTest -->
     </classes>
