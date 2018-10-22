@@ -3,27 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="asala.test.AsalaEditAccountTest">
+      <class name="asala.test.AsalaMangeMallsTest">
         <methods>
-          <include name="UserAddNameFiledLess3CharAr"/>
-          <include name="UserAddNewPasswordButNoConfirmAr"/>
-          <include name="ChangePasswordAgain"/>
           <include name="startDriver"/>
-          <include name="UserAddOldPasswordButEmptyNewandConfirmAr"/>
           <include name="screenShootsOnFailure"/>
-          <include name="UserAddWrongEmailAr"/>
-          <include name="UserAddNameFiledMore30CharAr"/>
-          <include name="UserAddConfirmPasswordButEmptyOldAndNewAr"/>
-          <include name="UserAddEmptyEmailAr"/>
-          <include name="UserAddValidEmailAndNameAr"/>
-          <include name="UserAddNameFiledEmptyAr"/>
-          <include name="UserAddNewPasswordButEmptyOldAndConfirmAr"/>
-          <include name="UserAddOldPasswordWrongAndAddNewPasswordValidAr"/>
-          <include name="UserAddOldWrongAndNewMatchWithWrongAr"/>
           <include name="stopDriver"/>
-          <include name="UserClearNameAndEmailAr"/>
+          <include name="DeactiveKadiMallEn"/>
         </methods>
-      </class> <!-- asala.test.AsalaEditAccountTest -->
+      </class> <!-- asala.test.AsalaMangeMallsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

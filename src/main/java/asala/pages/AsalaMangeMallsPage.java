@@ -10,17 +10,35 @@ public class AsalaMangeMallsPage extends AsalaPageBase {
 		super(driver);
 	}
 
-	@FindBy(id="")
+	@FindBy(id="import-btn")
 	WebElement importMallBt;
 	
-	@FindBy(id="")
+	@FindBy(id="addNew-btn")
 	WebElement addNewMallBt;
 	
-	@FindBy(id="")
+	@FindBy(id="success-msg")
+	public WebElement successTxt ;
+	
+	@FindBy(id="edit-4")
 	WebElement EditMallBt;
 	
-	@FindBy(id="")
+	@FindBy(id="activated-4")
 	WebElement activeMallBt;
+	
+	@FindBy(id="deactivated-4")
+	WebElement deactiveMallBt;
+	
+	@FindBy(id="activated-4")
+	public WebElement activeTxt;
+	
+	@FindBy(id="deactivated-4")
+	public WebElement deactiveTxt;
+	
+	@FindBy(id="btn-default")
+	WebElement CancelBt;
+	
+	@FindBy(id="btn-primary")
+	WebElement confirmBt;
 	
 	public void ClickImportMall () {
 		clickButton(importMallBt);
@@ -36,5 +54,17 @@ public class AsalaMangeMallsPage extends AsalaPageBase {
 	
 	public void ClickActiveMall () {
 		clickButton(activeMallBt);
+	}
+	
+	public void ClickDeactiveMall () {
+		clickButton(deactiveMallBt);
+	}
+	
+	public void ClickToCancel () {
+		clickButton(CancelBt);
+	}
+	
+	public void ClickToConfirm () {
+		clickButton(confirmBt);
 	}
 }

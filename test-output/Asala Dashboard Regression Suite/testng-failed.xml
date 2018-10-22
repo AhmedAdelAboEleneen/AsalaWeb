@@ -7,21 +7,62 @@
       <class name="asala.test.AsalaLoginTest">
         <methods>
           <include name="AddValidEmailAndPasswordInActiveUSerAr"/>
+          <include name="AddWrongEmailButVaildPassword"/>
           <include name="startDriver"/>
+          <include name="AddValidEmailButWrongPasswordPassword"/>
           <include name="screenShootsOnFailure"/>
           <include name="AddValidEmailButWrongPasswordPasswordAr"/>
+          <include name="AddEmailEmptyWrongFormat"/>
           <include name="AddEmailEmptyAndPasswordAr"/>
           <include name="AddValidEmailAndPasswordActiveUSerStoreAdmin"/>
           <include name="AddValidEmailAndPasswordInActiveUSer"/>
           <include name="AddEmailEmptyButAddPaswordAr"/>
+          <include name="AddEmailEmptyButAddPasword"/>
           <include name="AddEmailEmptyWrongFormatAr"/>
           <include name="AddValidEmailAndPasswordActiveUSerSuperAdmin"/>
           <include name="stopDriver"/>
           <include name="AddEmailButAddPaswordEmptyAr"/>
           <include name="AddWrongEmailButVaildPasswordAr"/>
+          <include name="AddEmailButAddPaswordEmpty"/>
+          <include name="AddEmailEmptyAndPassword"/>
           <include name="AddValidEmailAndPasswordActiveUSerMallAdmin"/>
         </methods>
       </class> <!-- asala.test.AsalaLoginTest -->
+      <class name="asala.test.AsalaEditAccountTest">
+        <methods>
+          <include name="ChangePasswordAgain"/>
+          <include name="startDriver"/>
+          <include name="UserAddOldPasswordButEmptyNewandConfirmAr"/>
+          <include name="UserClearNameAndEmail"/>
+          <include name="UserAddNameFiledLess3Char"/>
+          <include name="UserAddWrongEmailAr"/>
+          <include name="UserAddNameFiledMore30CharAr"/>
+          <include name="UserAddNameFiledMore30Char"/>
+          <include name="UserAddNewPasswordButEmptyOldAndConfirm"/>
+          <include name="UserAddValidEmailAndNameAr"/>
+          <include name="UserAddNameFiledEmptyAr"/>
+          <include name="UserAddOldWrongAndNewMatchWithWrongAr"/>
+          <include name="UserAddOldWrongAndNewMatchWithWrong"/>
+          <include name="UserAddOldPasswordButEmptyNewandConfirm"/>
+          <include name="UserClearNameAndEmailAr"/>
+          <include name="UserAddWrongEmail"/>
+          <include name="ChangePassword"/>
+          <include name="UserAddValidEmailAndName"/>
+          <include name="UserAddNameFiledLess3CharAr"/>
+          <include name="UserAddNewPasswordButNoConfirmAr"/>
+          <include name="screenShootsOnFailure"/>
+          <include name="UserAddNameFiledEmpty"/>
+          <include name="UserAddConfirmPasswordButEmptyOldAndNewAr"/>
+          <include name="UserAddEmptyEmailAr"/>
+          <include name="UserAddNewPasswordButEmptyOldAndConfirmAr"/>
+          <include name="UserAddOldPasswordWrongAndAddNewPasswordValid"/>
+          <include name="UserAddOldPasswordWrongAndAddNewPasswordValidAr"/>
+          <include name="stopDriver"/>
+          <include name="UserAddNewPasswordButNoConfirm"/>
+          <include name="UserAddEmptyEmail"/>
+          <include name="UserAddConfirmPasswordButEmptyOldAndNew"/>
+        </methods>
+      </class> <!-- asala.test.AsalaEditAccountTest -->
     </classes>
   </test> <!-- Regression Test(failed) -->
 </suite> <!-- Failed suite [Asala Dashboard Regression Suite] -->

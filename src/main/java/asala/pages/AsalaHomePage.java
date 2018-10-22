@@ -16,7 +16,7 @@ public class AsalaHomePage extends AsalaPageBase{
 	@FindBy(id="sidebar-toggle")
 	WebElement sideMenuBt ;
 
-	@FindBy(id="manage-malls")
+	@FindBy(id="manage_mall")
 	WebElement manageMallsBt ;
 
 	@FindBy(id="dropdown-toggle")
