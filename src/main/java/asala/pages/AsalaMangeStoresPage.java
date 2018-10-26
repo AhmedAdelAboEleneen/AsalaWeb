@@ -61,7 +61,7 @@ public class AsalaMangeStoresPage extends AsalaPageBase {
 	public void SelectFilterMallAsMallAdmin () {
 
 		Select selectMall = new Select(filterByMall);
-		selectMall.selectByValue("1");
+		selectMall.selectByValue("2");
 
 	}
 

@@ -7,8 +7,9 @@
         <methods>
           <include name="startDriver"/>
           <include name="screenShootsOnFailure"/>
+          <include name="MakeLoginAndSelectMallAsSuuperAdmin"/>
           <include name="stopDriver"/>
-          <include name="MakeLogint"/>
+          <include name="MakeLoginAndSelectMallAsMallAdmin"/>
         </methods>
       </class> <!-- asala.test.AsalaMangeStoreTest -->
     </classes>
