@@ -19,6 +19,9 @@ public class AsalaHomePage extends AsalaPageBase{
 	@FindBy(id="manage_mall")
 	WebElement manageMallsBt ;
 
+	@FindBy(id="manage_store")
+	WebElement mangeStoreBt;
+
 	@FindBy(id="dropdown-toggle")
 	WebElement userNameBt ;
 
@@ -27,7 +30,7 @@ public class AsalaHomePage extends AsalaPageBase{
 
 	@FindBy(id="edit-profile-action")
 	WebElement profileBt ;
-	
+
 	@FindBy(id="ar")
 	WebElement changeLanguageToArabicBt ; 
 
@@ -47,6 +50,11 @@ public class AsalaHomePage extends AsalaPageBase{
 
 		clickButton(manageMallsBt);
 	}
+
+	public void ClickManageStores () {
+
+		clickButton(mangeStoreBt);
+	}
 	public void ClickUserName () {
 
 		clickButton(userNameBt);
@@ -59,7 +67,7 @@ public class AsalaHomePage extends AsalaPageBase{
 
 		clickButton(profileBt);
 	}
-	
+
 	public void ClickChangeLanguageToArabic () {
 
 		clickButton(changeLanguageToArabicBt);

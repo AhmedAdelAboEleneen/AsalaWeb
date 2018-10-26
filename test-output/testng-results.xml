@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="5396" started-at="2018-10-22T15:13:23Z" finished-at="2018-10-22T15:13:28Z">
+  <suite name="Default suite" duration-ms="3150" started-at="2018-10-26T19:37:12Z" finished-at="2018-10-26T19:37:15Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="5396" started-at="2018-10-22T15:13:23Z" finished-at="2018-10-22T15:13:28Z">
-      <class name="asala.test.AsalaMangeMallsTest">
-        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:asala.test.AsalaMangeMallsTest@5622fdf]" name="startDriver" is-config="true" duration-ms="6714" started-at="2018-10-22T15:13:16Z" finished-at="2018-10-22T15:13:23Z">
+    <test name="Default test" duration-ms="3150" started-at="2018-10-26T19:37:12Z" finished-at="2018-10-26T19:37:15Z">
+      <class name="asala.test.AsalaMangeStoreTest">
+        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:asala.test.AsalaMangeStoreTest@4b952a2d]" name="startDriver" is-config="true" duration-ms="9506" started-at="2018-10-26T19:37:02Z" finished-at="2018-10-26T19:37:12Z">
           <params>
             <param index="0">
               <value>
@@ -18,86 +18,41 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startDriver -->
-        <test-method status="PASS" signature="MakeLogint()[pri:1, instance:asala.test.AsalaMangeMallsTest@5622fdf]" name="MakeLogint" duration-ms="2509" started-at="2018-10-22T15:13:23Z" finished-at="2018-10-22T15:13:25Z">
+        <test-method status="PASS" signature="MakeLoginAndSelectMallAsSuuperAdmin()[pri:1, instance:asala.test.AsalaMangeStoreTest@4b952a2d]" name="MakeLoginAndSelectMallAsSuuperAdmin" duration-ms="3113" started-at="2018-10-26T19:37:12Z" finished-at="2018-10-26T19:37:15Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- MakeLogint -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaMangeMallsTest@5622fdf]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-22T15:13:25Z" finished-at="2018-10-22T15:13:25Z">
+        </test-method> <!-- MakeLoginAndSelectMallAsSuuperAdmin -->
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaMangeStoreTest@4b952a2d]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-26T19:37:15Z" finished-at="2018-10-26T19:37:15Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=MakeLogint status=SUCCESS method=AsalaMangeMallsTest.MakeLogint()[pri:1, instance:asala.test.AsalaMangeMallsTest@5622fdf] output={null}]]]>
+                <![CDATA[[TestResult name=MakeLoginAndSelectMallAsSuuperAdmin status=SUCCESS method=AsalaMangeStoreTest.MakeLoginAndSelectMallAsSuuperAdmin()[pri:1, instance:asala.test.AsalaMangeStoreTest@4b952a2d] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="DeactiveKadiMallEn()[pri:2, instance:asala.test.AsalaMangeMallsTest@5622fdf]" name="DeactiveKadiMallEn" duration-ms="574" started-at="2018-10-22T15:13:25Z" finished-at="2018-10-22T15:13:26Z">
+        <test-method status="PASS" signature="SelectMallAsSuperAdmin()[pri:2, instance:asala.test.AsalaMangeStoreTest@4b952a2d]" name="SelectMallAsSuperAdmin" duration-ms="2" started-at="2018-10-26T19:37:15Z" finished-at="2018-10-26T19:37:15Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- DeactiveKadiMallEn -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaMangeMallsTest@5622fdf]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-22T15:13:26Z" finished-at="2018-10-22T15:13:26Z">
+        </test-method> <!-- SelectMallAsSuperAdmin -->
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaMangeStoreTest@4b952a2d]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-26T19:37:15Z" finished-at="2018-10-26T19:37:15Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=DeactiveKadiMallEn status=SUCCESS method=AsalaMangeMallsTest.DeactiveKadiMallEn()[pri:2, instance:asala.test.AsalaMangeMallsTest@5622fdf] output={null}]]]>
+                <![CDATA[[TestResult name=SelectMallAsSuperAdmin status=SUCCESS method=AsalaMangeStoreTest.SelectMallAsSuperAdmin()[pri:2, instance:asala.test.AsalaMangeStoreTest@4b952a2d] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="ActiveKadiMallEn()[pri:3, instance:asala.test.AsalaMangeMallsTest@5622fdf]" name="ActiveKadiMallEn" duration-ms="554" started-at="2018-10-22T15:13:26Z" finished-at="2018-10-22T15:13:26Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ActiveKadiMallEn -->
-        <test-method status="PASS" signature="DeactiveKadiMallAr()[pri:4, instance:asala.test.AsalaMangeMallsTest@5622fdf]" name="DeactiveKadiMallAr" duration-ms="928" started-at="2018-10-22T15:13:26Z" finished-at="2018-10-22T15:13:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DeactiveKadiMallAr -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaMangeMallsTest@5622fdf]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-22T15:13:26Z" finished-at="2018-10-22T15:13:26Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=ActiveKadiMallEn status=SUCCESS method=AsalaMangeMallsTest.ActiveKadiMallEn()[pri:3, instance:asala.test.AsalaMangeMallsTest@5622fdf] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaMangeMallsTest@5622fdf]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-22T15:13:27Z" finished-at="2018-10-22T15:13:27Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=DeactiveKadiMallAr status=SUCCESS method=AsalaMangeMallsTest.DeactiveKadiMallAr()[pri:4, instance:asala.test.AsalaMangeMallsTest@5622fdf] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="ActiveKadiMallAr()[pri:5, instance:asala.test.AsalaMangeMallsTest@5622fdf]" name="ActiveKadiMallAr" duration-ms="809" started-at="2018-10-22T15:13:27Z" finished-at="2018-10-22T15:13:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ActiveKadiMallAr -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaMangeMallsTest@5622fdf]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-22T15:13:28Z" finished-at="2018-10-22T15:13:28Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=ActiveKadiMallAr status=SUCCESS method=AsalaMangeMallsTest.ActiveKadiMallAr()[pri:5, instance:asala.test.AsalaMangeMallsTest@5622fdf] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="stopDriver()[pri:0, instance:asala.test.AsalaMangeMallsTest@5622fdf]" name="stopDriver" is-config="true" duration-ms="1336" started-at="2018-10-22T15:13:28Z" finished-at="2018-10-22T15:13:29Z">
+        <test-method status="PASS" signature="stopDriver()[pri:0, instance:asala.test.AsalaMangeStoreTest@4b952a2d]" name="stopDriver" is-config="true" duration-ms="1833" started-at="2018-10-26T19:37:15Z" finished-at="2018-10-26T19:37:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopDriver -->
-      </class> <!-- asala.test.AsalaMangeMallsTest -->
+      </class> <!-- asala.test.AsalaMangeStoreTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -83,7 +83,7 @@ public class AsalaLoginTest extends AsalaTestBase {
 	public void AddValidEmailAndPasswordInActiveUSer () throws InterruptedException {
 
 		asalaLoginPage.ClearEmailData();
-		asalaLoginPage.AddEmail("super@asala.com");
+		asalaLoginPage.AddEmail("a@asala.com");
 		asalaLoginPage.ClearPasswordData();
 		asalaLoginPage.AddPassword("123456");
 		asalaLoginPage.ClickLogin();
@@ -166,7 +166,7 @@ public class AsalaLoginTest extends AsalaTestBase {
 	public void AddValidEmailAndPasswordInActiveUSerAr () throws InterruptedException {
 
 		asalaLoginPage.ClearEmailData();
-		asalaLoginPage.AddEmail("super@asala.com");
+		asalaLoginPage.AddEmail("a@asala.com");
 		asalaLoginPage.ClearPasswordData();
 		asalaLoginPage.AddPassword("123456");
 		asalaLoginPage.ClickLogin();

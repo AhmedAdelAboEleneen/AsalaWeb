@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="asala.test.AsalaMangeMallsTest">
+      <class name="asala.test.AsalaMangeStoreTest">
         <methods>
           <include name="startDriver"/>
           <include name="screenShootsOnFailure"/>
           <include name="stopDriver"/>
-          <include name="DeactiveKadiMallEn"/>
+          <include name="MakeLogint"/>
         </methods>
-      </class> <!-- asala.test.AsalaMangeMallsTest -->
+      </class> <!-- asala.test.AsalaMangeStoreTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
