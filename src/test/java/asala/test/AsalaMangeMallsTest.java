@@ -13,6 +13,7 @@ public class AsalaMangeMallsTest extends AsalaTestBase {
 	AsalaLoginPage asalaLoginPage;
 	AsalaHomePage asalaHomePage;
 
+	// make login with super admin 
 	@Test(priority = 1)
 	public void MakeLogint() {
 
@@ -27,6 +28,7 @@ public class AsalaMangeMallsTest extends AsalaTestBase {
 		asalaHomePage.ClickManageMalls();
 	}
 	
+	// Deactive KADI MALL	
 	@Test(priority = 2)
 	public void DeactiveKadiMallEn () {
 		
@@ -36,6 +38,7 @@ public class AsalaMangeMallsTest extends AsalaTestBase {
 		Assert.assertTrue(asalaMangeMallsPage.successTxt.getText().contains("The Mall has been deactivated successfully"));
 	}
 	
+	// Active KADI MALL	
 	@Test(priority = 3)
 	public void ActiveKadiMallEn () {
 		
@@ -45,6 +48,7 @@ public class AsalaMangeMallsTest extends AsalaTestBase {
 		Assert.assertTrue(asalaMangeMallsPage.successTxt.getText().contains("The Mall has been activated successfully"));
 	}
 	
+	// Deactive KADI MALL Ar 
 	@Test(priority = 4)
 	public void DeactiveKadiMallAr () {
 		
@@ -55,6 +59,7 @@ public class AsalaMangeMallsTest extends AsalaTestBase {
 		Assert.assertTrue(asalaMangeMallsPage.successTxt.getText().contains("تم إلغاء تفعيل المول"));
 	}
 	
+	// Active KADI MALL Ar 
 	@Test(priority = 5)
 	public void ActiveKadiMallAr () {
 		

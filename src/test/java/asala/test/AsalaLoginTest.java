@@ -91,6 +91,7 @@ public class AsalaLoginTest extends AsalaTestBase {
 		Assert.assertTrue(asalaLoginPage.wrongEmailOrPasswordOrNotActiveTxt.getText().contains("Sorry, this account is no longer active, please contact your dashboard administrator"));
 	}
 
+	// same test cases but Arabic
 	@Test(priority = 8)
 	public void AddEmailEmptyAndPasswordAr () throws InterruptedException {
 

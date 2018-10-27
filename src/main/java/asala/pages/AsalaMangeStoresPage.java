@@ -20,10 +20,10 @@ public class AsalaMangeStoresPage extends AsalaPageBase {
 	WebElement filterByCategory;
 
 	@FindBy(id="store-search")
-	WebElement seacrhStoreTxt ;
+	public WebElement seacrhStoreTxt ;
 
 	@FindBy(id="error-msg-search")
-	WebElement searchErrorMsg;
+	public WebElement searchErrorMsg;
 
 	@FindBy(id="submit-filters")
 	WebElement submitFilterAndSearch;

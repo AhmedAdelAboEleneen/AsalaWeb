@@ -28,6 +28,7 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 		asalaHomePage.ClickProfile();
 	}
 
+	// if user add name empty
 	@Test(priority = 2)
 	public void UserAddNameFiledEmpty () throws InterruptedException {
 
@@ -38,6 +39,7 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 		Assert.assertTrue(asalaEditAccountPage.nameValidationMessaga.getText().contains("This field is required"));
 	}
 
+	// if user add name more than 30 character 
 	@Test(priority = 3)
 	public void UserAddNameFiledMore30Char () {
 
@@ -46,6 +48,7 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 		Assert.assertTrue(asalaEditAccountPage.nameValidationMessaga.getText().contains("This field shouldn’t contain more than 30 character"));
 	}
 
+	// if user add name less than 3 character
 	@Test(priority = 4)
 	public void UserAddNameFiledLess3Char () throws InterruptedException {
 
@@ -55,6 +58,7 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 		Assert.assertTrue(asalaEditAccountPage.nameValidationMessaga.getText().contains("This field shouldn’t be less than 3 characters"));
 	}
 
+	// if user add email empty
 	@Test(priority = 5)
 	public void UserAddEmptyEmail () throws InterruptedException {
 		asalaEditAccountPage.ClearEmailData();
@@ -63,6 +67,7 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 		Assert.assertTrue(asalaEditAccountPage.emailValidationMessaga.getText().contains("This field is required"));
 	}
 
+	// if user add email but wrong format 
 	@Test(priority = 6)
 	public void UserAddWrongEmail () {
 
@@ -71,6 +76,7 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 		Assert.assertTrue(asalaEditAccountPage.emailValidationMessaga.getText().contains("Please enter a valid email"));
 	}
 
+	// if user add name & email empty 
 	@Test(priority = 7)
 	public void UserClearNameAndEmail () throws InterruptedException {
 
@@ -82,6 +88,7 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 		Assert.assertTrue(asalaEditAccountPage.emailValidationMessaga.getText().contains("This field is required"));	
 	}
 
+	// user clear name & email & change it name = test & email = ahmed.adel@ibtikar.net.sa
 	@Test(priority = 8)
 	public void UserAddValidEmailAndName () {
 
@@ -92,6 +99,7 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 		asalaEditAccountPage.ClickSaveInEdit();
 	}
 
+	// if user add old password but empty new password & confirm password 
 	@Test(priority = 9)
 	public void UserAddOldPasswordButEmptyNewandConfirm () throws InterruptedException {
 
@@ -104,6 +112,7 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 		Assert.assertTrue(asalaEditAccountPage.confirmPasswordlValidationMessaga.getText().contains("Password must be 6 letters at least"));
 	}
 
+	// if user add old password wrong & new password correct value & confirm password empty 
 	@Test(priority = 10)
 	public void UserAddOldPasswordWrongAndAddNewPasswordValid () throws InterruptedException {
 
@@ -118,6 +127,7 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 		Assert.assertTrue(asalaEditAccountPage.confirmPasswordlValidationMessaga.getText().contains("new passwords and confirm password are not matched"));
 	}
 
+	// if user add old password correct & new password correct value & confirm password empty 
 	@Test(priority = 11)
 	public void UserAddNewPasswordButNoConfirm () throws InterruptedException {
 
@@ -132,6 +142,7 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 		Assert.assertTrue(asalaEditAccountPage.confirmPasswordlValidationMessaga.getText().contains("new passwords and confirm password are not matched"));
 	}
 
+	// if user add old password empty & new password correct value & confirm password empty 
 	@Test(priority = 12)
 	public void UserAddNewPasswordButEmptyOldAndConfirm () throws InterruptedException {
 
@@ -146,6 +157,7 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 		Assert.assertTrue(asalaEditAccountPage.confirmPasswordlValidationMessaga.getText().contains("new passwords and confirm password are not matched"));
 	}
 
+	// if user add old password empty  & new password empty & confirm password correct value  
 	@Test(priority = 13)
 	public void UserAddConfirmPasswordButEmptyOldAndNew () {
 
@@ -158,6 +170,7 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 		Assert.assertTrue(asalaEditAccountPage.confirmPasswordlValidationMessaga.getText().contains("new passwords and confirm password are not matched"));
 	}
 
+	// if user add old password wrong & new password = old password  & confirm password = new password  
 	@Test(priority = 14)
 	public void UserAddOldWrongAndNewMatchWithWrong () throws InterruptedException {
 
@@ -174,6 +187,7 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 	}
 
 
+	// if user change password to 1234567
 	@Test(priority = 15)
 	public void ChangePassword () {
 
@@ -186,6 +200,7 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 		asalaEditAccountPage.ClickSaveInEdit();
 	}
 
+	// edit user profile name & email & password  
 	@Test(priority = 16)
 	public void ChangePasswordAgain () {
 
@@ -212,6 +227,7 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 		asalaHomePage.ClickProfile();
 	}
 
+	// same scenario but Arabic 
 	@Test(priority = 17)
 	public void UserAddNameFiledEmptyAr () throws InterruptedException {
 
