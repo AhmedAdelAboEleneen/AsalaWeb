@@ -95,8 +95,8 @@ public class AsalaAddNewCategoryTest extends AsalaTestBase {
 	public void UserAddNameEnAndName() {
 
 		driver.navigate().refresh();
-		addNewCategoryPage.AddcategoryNameEntxt("Games");
-		addNewCategoryPage.AddcategoryNameArtxt("ألعاب");
+		addNewCategoryPage.AddcategoryNameEntxt("cinemaaa");
+		addNewCategoryPage.AddcategoryNameArtxt("سينمااااا");
 		addNewCategoryPage.ClickSumbitToAddCategory();
 		Assert.assertTrue(addNewCategoryPage.successMsgtxt.getText().contains("New category has been added successfully"));
 
@@ -160,8 +160,8 @@ public class AsalaAddNewCategoryTest extends AsalaTestBase {
 	public void UserAddNameEnAndNameAr() {
 
 		driver.navigate().refresh();
-		addNewCategoryPage.AddcategoryNameEntxt("Gamess");
-		addNewCategoryPage.AddcategoryNameArtxt("أألعاب");
+		addNewCategoryPage.AddcategoryNameEntxt("cinemaa");
+		addNewCategoryPage.AddcategoryNameArtxt("سينماا");
 		addNewCategoryPage.ClickSumbitToAddCategory();
 		Assert.assertTrue(addNewCategoryPage.successMsgtxt.getText().contains("تم إضافة تصنيف جديد بنجاح"));
 

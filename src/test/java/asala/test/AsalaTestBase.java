@@ -29,7 +29,7 @@ public class AsalaTestBase {
 
 		}*/if (browserName.equalsIgnoreCase("chrome")) {
 
-			System.setProperty("webdriver.chrome.driver", "/home/be-max/eclipse-workspace/asala/asala_qc_dashboard/drivers/chromedriver");
+			System.setProperty("webdriver.chrome.driver", "/home/be-max/eclipse-workspace/asala_qc_dashboard/drivers/chromedriver");
 			driver = new ChromeDriver();
 		}
 

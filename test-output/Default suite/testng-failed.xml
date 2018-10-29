@@ -8,9 +8,7 @@
           <include name="startDriver"/>
           <include name="screenShootsOnFailure"/>
           <include name="stopDriver"/>
-          <include name="UserAddNameEnEmptyAndNameArEmptyAr"/>
-          <include name="UserAddNameEnAndNameArSpaceAr"/>
-          <include name="UserAddNameEnAndNameArLessThanThreecharacterAr"/>
+          <include name="UserAddNameEnAndNameAr"/>
         </methods>
       </class> <!-- asala.test.AsalaAddNewCategoryTest -->
     </classes>

@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="11" passed="11">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="21791" started-at="2018-10-29T16:51:35Z" finished-at="2018-10-29T16:51:57Z">
+  <suite name="Default suite" duration-ms="22093" started-at="2018-10-29T17:08:12Z" finished-at="2018-10-29T17:08:34Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="21791" started-at="2018-10-29T16:51:35Z" finished-at="2018-10-29T16:51:57Z">
+    <test name="Default test" duration-ms="22093" started-at="2018-10-29T17:08:12Z" finished-at="2018-10-29T17:08:34Z">
       <class name="asala.test.AsalaAddNewCategoryTest">
-        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="startDriver" is-config="true" duration-ms="3044" started-at="2018-10-29T16:51:32Z" finished-at="2018-10-29T16:51:35Z">
+        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="startDriver" is-config="true" duration-ms="4022" started-at="2018-10-29T17:08:08Z" finished-at="2018-10-29T17:08:12Z">
           <params>
             <param index="0">
               <value>
@@ -18,172 +18,172 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startDriver -->
-        <test-method status="PASS" signature="MakeLoginAndSelectMallAsSuuperAdmin()[pri:1, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="MakeLoginAndSelectMallAsSuuperAdmin" duration-ms="870" started-at="2018-10-29T16:51:35Z" finished-at="2018-10-29T16:51:36Z">
+        <test-method status="PASS" signature="MakeLoginAndSelectMallAsSuuperAdmin()[pri:1, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="MakeLoginAndSelectMallAsSuuperAdmin" duration-ms="1323" started-at="2018-10-29T17:08:12Z" finished-at="2018-10-29T17:08:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- MakeLoginAndSelectMallAsSuuperAdmin -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-29T16:51:36Z" finished-at="2018-10-29T16:51:36Z">
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="screenShootsOnFailure" is-config="true" duration-ms="2" started-at="2018-10-29T17:08:13Z" finished-at="2018-10-29T17:08:13Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=MakeLoginAndSelectMallAsSuuperAdmin status=SUCCESS method=AsalaAddNewCategoryTest.MakeLoginAndSelectMallAsSuuperAdmin()[pri:1, instance:asala.test.AsalaAddNewCategoryTest@4883b407] output={null}]]]>
+                <![CDATA[[TestResult name=MakeLoginAndSelectMallAsSuuperAdmin status=SUCCESS method=AsalaAddNewCategoryTest.MakeLoginAndSelectMallAsSuuperAdmin()[pri:1, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="UserAddNameEnEmptyAndNameArEmpty()[pri:2, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="UserAddNameEnEmptyAndNameArEmpty" duration-ms="241" started-at="2018-10-29T16:51:36Z" finished-at="2018-10-29T16:51:36Z">
+        <test-method status="PASS" signature="UserAddNameEnEmptyAndNameArEmpty()[pri:2, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="UserAddNameEnEmptyAndNameArEmpty" duration-ms="451" started-at="2018-10-29T17:08:13Z" finished-at="2018-10-29T17:08:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserAddNameEnEmptyAndNameArEmpty -->
-        <test-method status="PASS" signature="UserAddNameEnAndNameArLessThanThreecharacter()[pri:3, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="UserAddNameEnAndNameArLessThanThreecharacter" duration-ms="188" started-at="2018-10-29T16:51:36Z" finished-at="2018-10-29T16:51:36Z">
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-29T17:08:14Z" finished-at="2018-10-29T17:08:14Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=UserAddNameEnEmptyAndNameArEmpty status=SUCCESS method=AsalaAddNewCategoryTest.UserAddNameEnEmptyAndNameArEmpty()[pri:2, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenShootsOnFailure -->
+        <test-method status="PASS" signature="UserAddNameEnAndNameArLessThanThreecharacter()[pri:3, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="UserAddNameEnAndNameArLessThanThreecharacter" duration-ms="278" started-at="2018-10-29T17:08:14Z" finished-at="2018-10-29T17:08:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserAddNameEnAndNameArLessThanThreecharacter -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-29T16:51:36Z" finished-at="2018-10-29T16:51:36Z">
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-29T17:08:14Z" finished-at="2018-10-29T17:08:14Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=UserAddNameEnEmptyAndNameArEmpty status=SUCCESS method=AsalaAddNewCategoryTest.UserAddNameEnEmptyAndNameArEmpty()[pri:2, instance:asala.test.AsalaAddNewCategoryTest@4883b407] output={null}]]]>
+                <![CDATA[[TestResult name=UserAddNameEnAndNameArLessThanThreecharacter status=SUCCESS method=AsalaAddNewCategoryTest.UserAddNameEnAndNameArLessThanThreecharacter()[pri:3, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-29T16:51:36Z" finished-at="2018-10-29T16:51:36Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=UserAddNameEnAndNameArLessThanThreecharacter status=SUCCESS method=AsalaAddNewCategoryTest.UserAddNameEnAndNameArLessThanThreecharacter()[pri:3, instance:asala.test.AsalaAddNewCategoryTest@4883b407] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="UserAddNameEnAndNameArMoreThanMaxcharacter()[pri:4, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="UserAddNameEnAndNameArMoreThanMaxcharacter" duration-ms="827" started-at="2018-10-29T16:51:36Z" finished-at="2018-10-29T16:51:37Z">
+        <test-method status="PASS" signature="UserAddNameEnAndNameArMoreThanMaxcharacter()[pri:4, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="UserAddNameEnAndNameArMoreThanMaxcharacter" duration-ms="1391" started-at="2018-10-29T17:08:14Z" finished-at="2018-10-29T17:08:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserAddNameEnAndNameArMoreThanMaxcharacter -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-29T16:51:37Z" finished-at="2018-10-29T16:51:37Z">
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-29T17:08:16Z" finished-at="2018-10-29T17:08:16Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=UserAddNameEnAndNameArMoreThanMaxcharacter status=SUCCESS method=AsalaAddNewCategoryTest.UserAddNameEnAndNameArMoreThanMaxcharacter()[pri:4, instance:asala.test.AsalaAddNewCategoryTest@4883b407] output={null}]]]>
+                <![CDATA[[TestResult name=UserAddNameEnAndNameArMoreThanMaxcharacter status=SUCCESS method=AsalaAddNewCategoryTest.UserAddNameEnAndNameArMoreThanMaxcharacter()[pri:4, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="UserAddNameEnAndNameArEmpty()[pri:5, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="UserAddNameEnAndNameArEmpty" duration-ms="16558" started-at="2018-10-29T16:51:37Z" finished-at="2018-10-29T16:51:54Z">
+        <test-method status="PASS" signature="UserAddNameEnAndNameArEmpty()[pri:5, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="UserAddNameEnAndNameArEmpty" duration-ms="14209" started-at="2018-10-29T17:08:16Z" finished-at="2018-10-29T17:08:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserAddNameEnAndNameArEmpty -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="2" started-at="2018-10-29T16:51:54Z" finished-at="2018-10-29T16:51:54Z">
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-29T17:08:30Z" finished-at="2018-10-29T17:08:30Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=UserAddNameEnAndNameArEmpty status=SUCCESS method=AsalaAddNewCategoryTest.UserAddNameEnAndNameArEmpty()[pri:5, instance:asala.test.AsalaAddNewCategoryTest@4883b407] output={null}]]]>
+                <![CDATA[[TestResult name=UserAddNameEnAndNameArEmpty status=SUCCESS method=AsalaAddNewCategoryTest.UserAddNameEnAndNameArEmpty()[pri:5, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="UserAddNameEnAndName()[pri:7, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="UserAddNameEnAndName" duration-ms="994" started-at="2018-10-29T16:51:54Z" finished-at="2018-10-29T16:51:55Z">
+        <test-method status="PASS" signature="UserAddNameEnAndName()[pri:7, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="UserAddNameEnAndName" duration-ms="1022" started-at="2018-10-29T17:08:30Z" finished-at="2018-10-29T17:08:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserAddNameEnAndName -->
-        <test-method status="PASS" signature="UserAddNameEnEmptyAndNameArEmptyAr()[pri:8, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="UserAddNameEnEmptyAndNameArEmptyAr" duration-ms="403" started-at="2018-10-29T16:51:55Z" finished-at="2018-10-29T16:51:55Z">
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-29T17:08:31Z" finished-at="2018-10-29T17:08:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=UserAddNameEnAndName status=SUCCESS method=AsalaAddNewCategoryTest.UserAddNameEnAndName()[pri:7, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenShootsOnFailure -->
+        <test-method status="PASS" signature="UserAddNameEnEmptyAndNameArEmptyAr()[pri:8, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="UserAddNameEnEmptyAndNameArEmptyAr" duration-ms="507" started-at="2018-10-29T17:08:31Z" finished-at="2018-10-29T17:08:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserAddNameEnEmptyAndNameArEmptyAr -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-29T16:51:55Z" finished-at="2018-10-29T16:51:55Z">
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-29T17:08:31Z" finished-at="2018-10-29T17:08:31Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=UserAddNameEnAndName status=SUCCESS method=AsalaAddNewCategoryTest.UserAddNameEnAndName()[pri:7, instance:asala.test.AsalaAddNewCategoryTest@4883b407] output={null}]]]>
+                <![CDATA[[TestResult name=UserAddNameEnEmptyAndNameArEmptyAr status=SUCCESS method=AsalaAddNewCategoryTest.UserAddNameEnEmptyAndNameArEmptyAr()[pri:8, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-29T16:51:55Z" finished-at="2018-10-29T16:51:55Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=UserAddNameEnEmptyAndNameArEmptyAr status=SUCCESS method=AsalaAddNewCategoryTest.UserAddNameEnEmptyAndNameArEmptyAr()[pri:8, instance:asala.test.AsalaAddNewCategoryTest@4883b407] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="UserAddNameEnAndNameArLessThanThreecharacterAr()[pri:9, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="UserAddNameEnAndNameArLessThanThreecharacterAr" duration-ms="214" started-at="2018-10-29T16:51:55Z" finished-at="2018-10-29T16:51:55Z">
+        <test-method status="PASS" signature="UserAddNameEnAndNameArLessThanThreecharacterAr()[pri:9, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="UserAddNameEnAndNameArLessThanThreecharacterAr" duration-ms="332" started-at="2018-10-29T17:08:31Z" finished-at="2018-10-29T17:08:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserAddNameEnAndNameArLessThanThreecharacterAr -->
-        <test-method status="PASS" signature="UserAddNameEnAndNameArMoreThanMaxcharacterAr()[pri:10, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="UserAddNameEnAndNameArMoreThanMaxcharacterAr" duration-ms="762" started-at="2018-10-29T16:51:55Z" finished-at="2018-10-29T16:51:56Z">
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-29T17:08:32Z" finished-at="2018-10-29T17:08:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=UserAddNameEnAndNameArLessThanThreecharacterAr status=SUCCESS method=AsalaAddNewCategoryTest.UserAddNameEnAndNameArLessThanThreecharacterAr()[pri:9, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- screenShootsOnFailure -->
+        <test-method status="PASS" signature="UserAddNameEnAndNameArMoreThanMaxcharacterAr()[pri:10, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="UserAddNameEnAndNameArMoreThanMaxcharacterAr" duration-ms="1394" started-at="2018-10-29T17:08:32Z" finished-at="2018-10-29T17:08:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserAddNameEnAndNameArMoreThanMaxcharacterAr -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-29T16:51:55Z" finished-at="2018-10-29T16:51:55Z">
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-29T17:08:33Z" finished-at="2018-10-29T17:08:33Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=UserAddNameEnAndNameArLessThanThreecharacterAr status=SUCCESS method=AsalaAddNewCategoryTest.UserAddNameEnAndNameArLessThanThreecharacterAr()[pri:9, instance:asala.test.AsalaAddNewCategoryTest@4883b407] output={null}]]]>
+                <![CDATA[[TestResult name=UserAddNameEnAndNameArMoreThanMaxcharacterAr status=SUCCESS method=AsalaAddNewCategoryTest.UserAddNameEnAndNameArMoreThanMaxcharacterAr()[pri:10, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="UserAddNameEnAndNameArEmptyAr()[pri:11, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="UserAddNameEnAndNameArEmptyAr" duration-ms="269" started-at="2018-10-29T16:51:56Z" finished-at="2018-10-29T16:51:57Z">
+        <test-method status="PASS" signature="UserAddNameEnAndNameArEmptyAr()[pri:11, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="UserAddNameEnAndNameArEmptyAr" duration-ms="447" started-at="2018-10-29T17:08:33Z" finished-at="2018-10-29T17:08:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserAddNameEnAndNameArEmptyAr -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-29T16:51:56Z" finished-at="2018-10-29T16:51:56Z">
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-29T17:08:34Z" finished-at="2018-10-29T17:08:34Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=UserAddNameEnAndNameArMoreThanMaxcharacterAr status=SUCCESS method=AsalaAddNewCategoryTest.UserAddNameEnAndNameArMoreThanMaxcharacterAr()[pri:10, instance:asala.test.AsalaAddNewCategoryTest@4883b407] output={null}]]]>
+                <![CDATA[[TestResult name=UserAddNameEnAndNameArEmptyAr status=SUCCESS method=AsalaAddNewCategoryTest.UserAddNameEnAndNameArEmptyAr()[pri:11, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-29T16:51:57Z" finished-at="2018-10-29T16:51:57Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=UserAddNameEnAndNameArEmptyAr status=SUCCESS method=AsalaAddNewCategoryTest.UserAddNameEnAndNameArEmptyAr()[pri:11, instance:asala.test.AsalaAddNewCategoryTest@4883b407] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="UserAddNameEnAndNameAr()[pri:13, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="UserAddNameEnAndNameAr" duration-ms="436" started-at="2018-10-29T16:51:57Z" finished-at="2018-10-29T16:51:57Z">
+        <test-method status="PASS" signature="UserAddNameEnAndNameAr()[pri:13, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="UserAddNameEnAndNameAr" duration-ms="681" started-at="2018-10-29T17:08:34Z" finished-at="2018-10-29T17:08:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserAddNameEnAndNameAr -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="screenShootsOnFailure" is-config="true" duration-ms="1" started-at="2018-10-29T16:51:57Z" finished-at="2018-10-29T16:51:57Z">
+        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="screenShootsOnFailure" is-config="true" duration-ms="0" started-at="2018-10-29T17:08:34Z" finished-at="2018-10-29T17:08:34Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=UserAddNameEnAndNameAr status=SUCCESS method=AsalaAddNewCategoryTest.UserAddNameEnAndNameAr()[pri:13, instance:asala.test.AsalaAddNewCategoryTest@4883b407] output={null}]]]>
+                <![CDATA[[TestResult name=UserAddNameEnAndNameAr status=SUCCESS method=AsalaAddNewCategoryTest.UserAddNameEnAndNameAr()[pri:13, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="PASS" signature="stopDriver()[pri:0, instance:asala.test.AsalaAddNewCategoryTest@4883b407]" name="stopDriver" is-config="true" duration-ms="79" started-at="2018-10-29T16:51:57Z" finished-at="2018-10-29T16:51:57Z">
+        <test-method status="PASS" signature="stopDriver()[pri:0, instance:asala.test.AsalaAddNewCategoryTest@3159c4b8]" name="stopDriver" is-config="true" duration-ms="136" started-at="2018-10-29T17:08:34Z" finished-at="2018-10-29T17:08:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopDriver -->
