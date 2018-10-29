@@ -21,6 +21,9 @@ public class AsalaHomePage extends AsalaPageBase{
 
 	@FindBy(id="manage_store")
 	WebElement mangeStoreBt;
+	
+	@FindBy(id="manage_category")
+	WebElement mangeCategoryBt;
 
 	@FindBy(id="dropdown-toggle")
 	WebElement userNameBt ;
@@ -55,6 +58,12 @@ public class AsalaHomePage extends AsalaPageBase{
 
 		clickButton(mangeStoreBt);
 	}
+	
+	public void ClickManageCategory () {
+
+		clickButton(mangeCategoryBt);
+	}
+	
 	public void ClickUserName () {
 
 		clickButton(userNameBt);

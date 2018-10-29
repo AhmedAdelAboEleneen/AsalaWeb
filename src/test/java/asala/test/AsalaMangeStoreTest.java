@@ -13,7 +13,7 @@ public class AsalaMangeStoreTest extends AsalaTestBase {
 	AsalaMangeStoresPage asalaMangeStoresPage;
 
 	// login as mall admin to make sure that mall admin can see only his malls 
-	@Test(priority = 1)
+	/*@Test(priority = 1)
 	public void MakeLoginAndSelectMallAsMallAdmin() {
 
 		// login
@@ -35,10 +35,10 @@ public class AsalaMangeStoreTest extends AsalaTestBase {
 		//logout
 		asalaHomePage.ClickUserName();
 		asalaHomePage.ClickSignOut();
-	}
+	}*/
 
 	// login as super admin to make sure that super admin can see all malls 
-	@Test(priority = 2)
+	@Test(priority = 1)
 	public void MakeLoginAndSelectMallAsSuuperAdmin() {
 
 		// login
@@ -50,16 +50,10 @@ public class AsalaMangeStoreTest extends AsalaTestBase {
 		// go to home page 
 		asalaHomePage = new AsalaHomePage(driver);
 		asalaHomePage.ClickManageStores();
-
-		// as super admin can select all his malls
-		asalaMangeStoresPage = new AsalaMangeStoresPage(driver);
-		asalaMangeStoresPage.SelectFilterMallAsSuperAdmin();
-		asalaMangeStoresPage.ClickSumbitToSearch();
-		driver.navigate().refresh();
 	}
 
 	// make search about poma store 
-	@Test(priority = 3)
+	@Test(priority = 2)
 	public void MakeSearch() {
 
 		asalaMangeStoresPage = new AsalaMangeStoresPage(driver);
@@ -68,19 +62,8 @@ public class AsalaMangeStoreTest extends AsalaTestBase {
 		driver.navigate().refresh();
 	}
 
-	// make filter & search
-	@Test(priority = 4)
-	public void MakeFilterAndSearch() {
-
-		asalaMangeStoresPage.SelectFilterMallAsSuperAdmin();
-		asalaMangeStoresPage.SelectFilterCategory();
-		asalaMangeStoresPage.AddTextInSearch("Poma");
-		asalaMangeStoresPage.ClickSumbitToSearch();
-		driver.navigate().refresh();
-	}
-	
 	// make search for wrong value not in database 
-	@Test(priority = 5)
+	@Test(priority = 3)
 	public void MakeSearchWithWrongValue() {
 
 		asalaMangeStoresPage = new AsalaMangeStoresPage(driver);
@@ -89,5 +72,53 @@ public class AsalaMangeStoreTest extends AsalaTestBase {
 		Assert.assertTrue(asalaMangeStoresPage.searchErrorMsg.getText().contains("No resultes found"));
 		driver.navigate().refresh();
 	}
+
+	// make search with filter mall
+	@Test(priority = 4)
+	public void MakeFilterWithMall() {
+
+		asalaMangeStoresPage = new AsalaMangeStoresPage(driver);
+		asalaMangeStoresPage.SelectFilterMallAsSuperAdmin();
+		asalaMangeStoresPage.ClickSumbitToSearch();
+		asalaMangeStoresPage.SelectFilterMallAll();
+		asalaMangeStoresPage.ClickSumbitToSearch();
+		driver.navigate().refresh();
+	}
+
+	// make search with filter mall & category 
+	@Test(priority = 5)
+	public void MakeFilterWithMallAndCategory() throws InterruptedException {
+
+		asalaMangeStoresPage = new AsalaMangeStoresPage(driver);
+		asalaMangeStoresPage.SelectFilterMallAsSuperAdmin();
+		Thread.sleep(3000);
+		asalaMangeStoresPage.SelectFilterCategory();
+		asalaMangeStoresPage.ClickSumbitToSearch();
+		driver.navigate().refresh();
+	}
+
+	// make search with filter mall & search 
+	@Test(priority = 6)
+	public void MakeFilterWithMallAndSearch() {
+
+		asalaMangeStoresPage = new AsalaMangeStoresPage(driver);
+		asalaMangeStoresPage.SelectFilterMallAsSuperAdmin();
+		asalaMangeStoresPage.ClickSumbitToSearch();
+		asalaMangeStoresPage.AddTextInSearch("Poma");
+		asalaMangeStoresPage.ClickSumbitToSearch();
+		driver.navigate().refresh();
+	}
+	
+	// make search with filter mall & category & search 
+		@Test(priority = 7)
+		public void MakeFilterWithMallAndCategoryAndSearch() {
+
+			asalaMangeStoresPage = new AsalaMangeStoresPage(driver);
+			asalaMangeStoresPage.SelectFilterMallAsSuperAdmin();
+			asalaMangeStoresPage.ClickSumbitToSearch();
+			asalaMangeStoresPage.AddTextInSearch("Poma");
+			asalaMangeStoresPage.ClickSumbitToSearch();
+			driver.navigate().refresh();
+		}
 
 }
