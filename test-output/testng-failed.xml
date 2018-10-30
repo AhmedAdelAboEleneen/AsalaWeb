@@ -3,25 +3,19 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="asala.test.AsalaAddNewCategoryTest">
+      <class name="asala.test.AsalaLoginTest">
         <methods>
           <include name="startDriver"/>
-          <include name="UserAddNameEnAndNameArEmptyAr"/>
-          <include name="UserAddNameEnAndNameArMoreThanMaxcharacter"/>
-          <include name="UserAddNameEnAndNameArSpace"/>
+          <include name="AddEmailEmptyButAddPaswordAr"/>
+          <include name="AddEmailEmptyButAddPasword"/>
           <include name="screenShootsOnFailure"/>
-          <include name="UserAddNameEnAndNameAr"/>
-          <include name="UserAddNameEnAndName"/>
-          <include name="UserAddNameEnEmptyAndNameArEmptyAr"/>
-          <include name="UserAddNameEnAndNameArMoreThanMaxcharacterAr"/>
-          <include name="MakeLoginAndSelectMallAsSuuperAdmin"/>
-          <include name="UserAddNameEnAndNameArEmpty"/>
-          <include name="UserAddNameEnAndNameArSpaceAr"/>
-          <include name="UserAddNameEnAndNameArLessThanThreecharacterAr"/>
-          <include name="UserAddNameEnAndNameArLessThanThreecharacter"/>
-          <include name="UserAddNameEnEmptyAndNameArEmpty"/>
+          <include name="AddEmailEmptyWrongFormatAr"/>
+          <include name="stopDriver"/>
+          <include name="AddEmailButAddPaswordEmptyAr"/>
+          <include name="AddEmailEmptyAndPasswordAr"/>
+          <include name="AddEmailButAddPaswordEmpty"/>
         </methods>
-      </class> <!-- asala.test.AsalaAddNewCategoryTest -->
+      </class> <!-- asala.test.AsalaLoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

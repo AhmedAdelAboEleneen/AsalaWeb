@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-//import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -27,23 +27,23 @@ public class AsalaTestBase {
 			System.setProperty("webdriver.gecko.driver", "/home/be-max/eclipse-workspace/asala/asala_qc_dashboard/drivers/geckodriver");
 			driver = new FirefoxDriver();
 
-		}*/if (browserName.equalsIgnoreCase("chrome")) {
+		}else*/ if (browserName.equalsIgnoreCase("chrome")) {
 
 			System.setProperty("webdriver.chrome.driver", "/home/be-max/eclipse-workspace/asala/asala_qc_dashboard/drivers/chromedriver");
 			driver = new ChromeDriver();
 		}
 
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.navigate().to("https://asala-dashboard.ibtikar.net.sa/auth/login");
 	}
 
 
-	/*@AfterSuite
+	@AfterSuite
 	public void stopDriver() {
 
 		driver.quit();
-	}*/
+	}
 
 	//Take Screenshot when test case fail and add it in screenshot folder
 	@AfterMethod

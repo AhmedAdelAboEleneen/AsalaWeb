@@ -1,10 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Asala Dashboard Regression Suite">
-	<parameter name="browser" value=chrome></parameter>
-	<test name="Regression Test" preserve-order="false">
+	<parameter name="browser" value="firefox"></parameter>
+	<test name="Regression Test">
 		<classes>
-			<class name="asala.test.AsalaEditAccountTest" />
-			<class name="asala.test.AsalaLoginTest" />
+			<class name="asala.test.AsalaLoginTest"/>
+			<class name="asala.test.AsalaEditAccountTest"/>
 		</classes>
 	</test>
 </suite> 
