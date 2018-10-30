@@ -48,7 +48,7 @@ public class AsalaLoginTest extends AsalaTestBase {
 	@Test(priority = 4)
 	public void AddEmailButAddPaswordEmpty () {
 
-		asalaLoginPage.AddEmail("ahmed.adel@ibtikar.net.sa");
+		asalaLoginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
 		asalaLoginPage.ClearPasswordData();
 		asalaLoginPage.AddPassword("");
 		asalaLoginPage.ClickLogin();
@@ -70,7 +70,7 @@ public class AsalaLoginTest extends AsalaTestBase {
 	public void AddValidEmailButWrongPasswordPassword () {
 
 		asalaLoginPage.ClearEmailData();
-		asalaLoginPage.AddEmail("ahmed.adel@ibtikar.net.sa");
+		asalaLoginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
 		asalaLoginPage.ClearPasswordData();
 		asalaLoginPage.AddPassword("1234567");
 		asalaLoginPage.ClickLogin();
@@ -132,7 +132,7 @@ public class AsalaLoginTest extends AsalaTestBase {
 	@Test(priority = 11)
 	public void AddEmailButAddPaswordEmptyAr () {
 
-		asalaLoginPage.AddEmail("ahmed.adel@ibtikar.net.sa");
+		asalaLoginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
 		asalaLoginPage.ClearPasswordData();
 		asalaLoginPage.AddPassword("");
 		asalaLoginPage.ClickLogin();
@@ -154,7 +154,7 @@ public class AsalaLoginTest extends AsalaTestBase {
 	public void AddValidEmailButWrongPasswordPasswordAr () {
 
 		asalaLoginPage.ClearEmailData();
-		asalaLoginPage.AddEmail("ahmed.adel@ibtikar.net.sa");
+		asalaLoginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
 		asalaLoginPage.ClearPasswordData();
 		asalaLoginPage.AddPassword("1234567");
 		asalaLoginPage.ClickLogin();
@@ -182,7 +182,7 @@ public class AsalaLoginTest extends AsalaTestBase {
 	public void AddValidEmailAndPasswordActiveUSerSuperAdmin () {
 
 		asalaLoginPage.ClearEmailData();
-		asalaLoginPage.AddEmail("ahmed.adel@ibtikar.net.sa");
+		asalaLoginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
 		asalaLoginPage.ClearPasswordData();
 		asalaLoginPage.AddPassword("123456");
 		asalaLoginPage.ClickLogin();

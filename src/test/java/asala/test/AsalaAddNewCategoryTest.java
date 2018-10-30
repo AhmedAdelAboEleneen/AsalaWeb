@@ -20,7 +20,7 @@ public class AsalaAddNewCategoryTest extends AsalaTestBase {
 
 		// login
 		asalaLoginPage = new AsalaLoginPage(driver);
-		asalaLoginPage.AddEmail("ahmed.adel@ibtikar.net.sa");
+		asalaLoginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
 		asalaLoginPage.AddPassword("123456");
 		asalaLoginPage.ClickLogin();
 
@@ -79,7 +79,7 @@ public class AsalaAddNewCategoryTest extends AsalaTestBase {
 	}
 
 	// if user add name en & ar space 
-	/*@Test(priority = 6)
+	@Test(priority = 6)
 		public void UserAddNameEnAndNameArSpace() {
 
 			addNewCategoryPage.ClearNameEn();
@@ -89,14 +89,14 @@ public class AsalaAddNewCategoryTest extends AsalaTestBase {
 			addNewCategoryPage.ClickSumbitToAddCategory();
 			Assert.assertTrue(addNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("This field is required"));
 			Assert.assertTrue(addNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("This field is required"));
-		}*/
+		}
 	
 	@Test(priority = 7)
 	public void UserAddNameEnAndName() {
 
 		driver.navigate().refresh();
-		addNewCategoryPage.AddcategoryNameEntxt("cinemaaa");
-		addNewCategoryPage.AddcategoryNameArtxt("سينمااااا");
+		addNewCategoryPage.AddcategoryNameEntxt("Test");
+		addNewCategoryPage.AddcategoryNameArtxt("اختبار");
 		addNewCategoryPage.ClickSumbitToAddCategory();
 		Assert.assertTrue(addNewCategoryPage.successMsgtxt.getText().contains("New category has been added successfully"));
 
@@ -144,7 +144,7 @@ public class AsalaAddNewCategoryTest extends AsalaTestBase {
 	}
 
 	// if user add name en & ar space 
-	/*	@Test(priority = 12)
+		@Test(priority = 12)
 			public void UserAddNameEnAndNameArSpaceAr() {
 
 				addNewCategoryPage.ClearNameEn();
@@ -154,14 +154,14 @@ public class AsalaAddNewCategoryTest extends AsalaTestBase {
 				addNewCategoryPage.ClickSumbitToAddCategory();
 				Assert.assertTrue(addNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("هذا الحقل مطلوب"));
 				Assert.assertTrue(addNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("هذا الحقل مطلوب"));
-			}*/
+			}
 
 	@Test(priority = 13)
 	public void UserAddNameEnAndNameAr() {
 
 		driver.navigate().refresh();
-		addNewCategoryPage.AddcategoryNameEntxt("cinemaa");
-		addNewCategoryPage.AddcategoryNameArtxt("سينماا");
+		addNewCategoryPage.AddcategoryNameEntxt("Test1");
+		addNewCategoryPage.AddcategoryNameArtxt("اختبار1");
 		addNewCategoryPage.ClickSumbitToAddCategory();
 		Assert.assertTrue(addNewCategoryPage.successMsgtxt.getText().contains("تم إضافة تصنيف جديد بنجاح"));
 

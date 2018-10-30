@@ -12,6 +12,9 @@ public class AsalaMangeCategoriesPage extends AsalaPageBase {
 
 	@FindBy(id="addNewCat-btn")
 	WebElement addNewCategoryBt;
+	
+	@FindBy(id="edit-4")
+	WebElement editCategoryBt;
 
 
 	public void ClickToAddNewCategory () {
@@ -19,4 +22,8 @@ public class AsalaMangeCategoriesPage extends AsalaPageBase {
 		clickButton(addNewCategoryBt);
 	}
 
+	public void ClickEditCategory () {
+
+		clickButton(editCategoryBt);
+	}
 }

@@ -18,7 +18,7 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 
 		// login
 		asalaLoginPage = new AsalaLoginPage(driver);
-		asalaLoginPage.AddEmail("ahmed.adel@ibtikar.net.sa");
+		asalaLoginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
 		asalaLoginPage.AddPassword("123456");
 		asalaLoginPage.ClickLogin();
 
@@ -95,7 +95,7 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 		asalaEditAccountPage.ClearNameData();
 		asalaEditAccountPage.AddNameInEdit("Test");
 		asalaEditAccountPage.ClearEmailData();
-		asalaEditAccountPage.AddEmailInEdit("ahmed.adel@ibtikar.net.sa");
+		asalaEditAccountPage.AddEmailInEdit("ahmed.adel.super@ibtikar.net.sa");
 		asalaEditAccountPage.ClickSaveInEdit();
 	}
 
@@ -210,7 +210,7 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 		asalaEditAccountPage.ClearNewPasswordData();
 		asalaEditAccountPage.ClearConfirmpasswrodData();
 		asalaEditAccountPage.AddNameInEdit("Test");
-		asalaEditAccountPage.AddEmailInEdit("ahmed.adel@ibtikar.net.sa");
+		asalaEditAccountPage.AddEmailInEdit("ahmed.adel.super@ibtikar.net.sa");
 		asalaEditAccountPage.AddOldPasswordInEdit("1234567");
 		asalaEditAccountPage.AddNewPasswordInEdit("123456");
 		asalaEditAccountPage.AddConfirmPasswordInEdit("123456");
@@ -219,7 +219,7 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 		asalaHomePage.ClickUserName();
 		asalaHomePage.ClickSignOut();
 
-		asalaLoginPage.AddEmail("ahmed.adel@ibtikar.net.sa");
+		asalaLoginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
 		asalaLoginPage.AddPassword("123456");
 		asalaLoginPage.ClickLogin();	
 
@@ -289,7 +289,7 @@ public class AsalaEditAccountTest extends AsalaTestBase {
 		asalaEditAccountPage.ClearNameData();
 		asalaEditAccountPage.AddNameInEdit("Test");
 		asalaEditAccountPage.ClearEmailData();
-		asalaEditAccountPage.AddEmailInEdit("ahmed.adel@ibtikar.net.sa");
+		asalaEditAccountPage.AddEmailInEdit("ahmed.adel.super@ibtikar.net.sa");
 		asalaEditAccountPage.ClickSaveInEdit();
 	}
 

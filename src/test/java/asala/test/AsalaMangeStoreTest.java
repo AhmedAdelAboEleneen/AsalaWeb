@@ -43,7 +43,7 @@ public class AsalaMangeStoreTest extends AsalaTestBase {
 
 		// login
 		asalaLoginPage = new AsalaLoginPage(driver);
-		asalaLoginPage.AddEmail("ahmed.adel@ibtikar.net.sa");
+		asalaLoginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
 		asalaLoginPage.AddPassword("123456");
 		asalaLoginPage.ClickLogin();
 
