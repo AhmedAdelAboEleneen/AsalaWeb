@@ -3,19 +3,16 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="asala.test.AsalaLoginTest">
+      <class name="asala.test.AsalaAddNewCategoryTest">
         <methods>
+          <include name="UserAddNameEnAndNameArMoreThanMaxcharacterAr"/>
           <include name="startDriver"/>
-          <include name="AddEmailEmptyButAddPaswordAr"/>
-          <include name="AddEmailEmptyButAddPasword"/>
+          <include name="UserAddNameEnAndNameArMoreThanMaxcharacter"/>
           <include name="screenShootsOnFailure"/>
-          <include name="AddEmailEmptyWrongFormatAr"/>
           <include name="stopDriver"/>
-          <include name="AddEmailButAddPaswordEmptyAr"/>
-          <include name="AddEmailEmptyAndPasswordAr"/>
-          <include name="AddEmailButAddPaswordEmpty"/>
+          <include name="UserAddNameEnAndNameAr"/>
         </methods>
-      </class> <!-- asala.test.AsalaLoginTest -->
+      </class> <!-- asala.test.AsalaAddNewCategoryTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

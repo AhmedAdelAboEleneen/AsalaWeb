@@ -20,20 +20,20 @@ public class AsalaTestBase {
 
 	@BeforeSuite
 	@Parameters({"browser"})
-	public void startDriver(@Optional ("chrome") String browserName) {
+	public void startDriver(@Optional ("firefox") String browserName) {
 
-		/*if (browserName.equalsIgnoreCase("firefox")) {
+		if (browserName.equalsIgnoreCase("firefox")) {
 
 			System.setProperty("webdriver.gecko.driver", "/home/be-max/eclipse-workspace/asala/asala_qc_dashboard/drivers/geckodriver");
 			driver = new FirefoxDriver();
 
-		}else*/ if (browserName.equalsIgnoreCase("chrome")) {
+		}else if (browserName.equalsIgnoreCase("chrome")) {
 
 			System.setProperty("webdriver.chrome.driver", "/home/be-max/eclipse-workspace/asala/asala_qc_dashboard/drivers/chromedriver");
 			driver = new ChromeDriver();
 		}
 
-		//driver.manage().window().maximize();
+		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.navigate().to("https://asala-dashboard.ibtikar.net.sa/auth/login");
 	}

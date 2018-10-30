@@ -10,7 +10,7 @@ public class AsalaMangeCategoriesPage extends AsalaPageBase {
 		super(driver);
 	}
 
-	@FindBy(id="addNewCat-btn")
+	@FindBy(id="addNew-btn")
 	WebElement addNewCategoryBt;
 	
 	@FindBy(id="edit-4")

@@ -25,7 +25,7 @@ public class AsalaEditCategoryPage extends AsalaPageBase {
 	@FindBy(id="success-msg")
 	public WebElement successMsgtxt;
 
-	@FindBy(id="submit-btn")
+	@FindBy(id="save-btn")
 	WebElement editSaveBt;
 	
 
