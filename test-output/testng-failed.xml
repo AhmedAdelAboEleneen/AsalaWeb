@@ -10,7 +10,7 @@
           <include name="UserAddNameEnAndNameArMoreThanMaxcharacter"/>
           <include name="screenShootsOnFailure"/>
           <include name="stopDriver"/>
-          <include name="UserAddNameEnAndNameAr"/>
+          <include name="UserAddNameEnEmptyAndNameAr"/>
         </methods>
       </class> <!-- asala.test.AsalaAddNewCategoryTest -->
     </classes>

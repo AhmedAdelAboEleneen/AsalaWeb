@@ -31,7 +31,7 @@ public class AsalaEditAccountPage extends AsalaPageBase {
 	@FindBy(id="form-control-new_password")
 	public WebElement newPasswordTxtBoxInEdit ;
 	
-	@FindBy(id="error-msg-new_password")error-msgs-new_password
+	@FindBy(id="error-msgs-new_password")
 	public WebElement newPasswordlValidationMessaga ;
 
 	@FindBy(id="form-control-confirm_password")
