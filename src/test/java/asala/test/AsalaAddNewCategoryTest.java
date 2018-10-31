@@ -62,13 +62,14 @@ public class AsalaAddNewCategoryTest extends AsalaTestBase {
 	public void UserAddNameEnAndNameArMoreThanMaxcharacter() throws InterruptedException {
 
 		asalaaddNewCategoryPage.ClearNameEn();
-		asalaaddNewCategoryPage.AddcategoryNameEntxt("Teeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+		asalaaddNewCategoryPage.AddcategoryNameEntxt("Teeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
 		asalaaddNewCategoryPage.ClearNameAr();
-		asalaaddNewCategoryPage.AddcategoryNameArtxt("Teeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+		asalaaddNewCategoryPage.AddcategoryNameArtxt("Teeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
 		asalaaddNewCategoryPage.ClickSumbitToAddCategory();
-		Thread.sleep(5000);
-		Assert.assertTrue(asalaaddNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("This field shouldn’t contain more than 30 characters"));
-		Assert.assertTrue(asalaaddNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("This field shouldn’t contain more than 30 characters"));
+		Thread.sleep(3000);
+		//Assert.assertTrue(asalaaddNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("This field shouldn’t contain more than 30 characters"));
+		Assert.assertEquals(asalaaddNewCategoryPage.addcategoryNameEnErrorMsgtxt, "This field shouldn’t contain more than 30 characters");
+		//Assert.assertFalse(asalaaddNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("This field shouldn’t contain more than 30 characters"));
 	}
 
 	// if user add name en & ar empty 
@@ -106,16 +107,6 @@ public class AsalaAddNewCategoryTest extends AsalaTestBase {
 	}
 
 	@Test(priority = 8)
-	public void UserAddNameEnAndName(){
-
-		driver.navigate().refresh();
-		asalaaddNewCategoryPage.AddcategoryNameEntxt("Haa");
-		asalaaddNewCategoryPage.AddcategoryNameArtxt("Haa");
-		asalaaddNewCategoryPage.ClickSumbitToAddCategory();
-		Assert.assertTrue(asalaaddNewCategoryPage.successMsgtxt.getText().contains("New category has been added successfully"));
-
-	}
-	@Test(priority = 9)
 	public void UserAddNameEnEmptyAndNameArEmptyAr() {
 
 		driver.navigate().refresh();
@@ -126,7 +117,7 @@ public class AsalaAddNewCategoryTest extends AsalaTestBase {
 	}
 
 	// if user add name en & ar less than 3 character 
-	@Test(priority = 10)
+	@Test(priority = 9)
 	public void UserAddNameEnAndNameArLessThanThreecharacterAr() {
 
 		asalaaddNewCategoryPage.AddcategoryNameEntxt("Te");
@@ -137,19 +128,21 @@ public class AsalaAddNewCategoryTest extends AsalaTestBase {
 	}
 
 	// if user add name en & ar more than 30 character 
-	@Test(priority = 11)
+	@Test(priority = 10)
 	public void UserAddNameEnAndNameArMoreThanMaxcharacterAr() throws InterruptedException {
 
-		asalaaddNewCategoryPage.AddcategoryNameEntxt("Teeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
-		asalaaddNewCategoryPage.AddcategoryNameArtxt("Teeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+		asalaaddNewCategoryPage.ClearNameEn();
+		asalaaddNewCategoryPage.AddcategoryNameEntxt("Teeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+		asalaaddNewCategoryPage.ClearNameAr();
+		asalaaddNewCategoryPage.AddcategoryNameArtxt("Teeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
 		asalaaddNewCategoryPage.ClickSumbitToAddCategory();
-		Thread.sleep(6000);
+		Thread.sleep(3000);
 		Assert.assertTrue(asalaaddNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("يجب الا تزيد عدد الحروف عن 30 حرف"));
 		Assert.assertTrue(asalaaddNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("يجب الا تزيد عدد الحروف عن 30 حرف"));
 	}
 
 	// if user add name en & ar empty 
-	@Test(priority = 12)
+	@Test(priority = 11)
 	public void UserAddNameEnAndNameArEmptyAr() {
 
 		driver.navigate().refresh();
@@ -159,7 +152,7 @@ public class AsalaAddNewCategoryTest extends AsalaTestBase {
 	}
 
 	// if user add name en & ar space 
-	@Test(priority = 13)
+	@Test(priority = 12)
 	public void UserAddNameEnAndNameArSpaceAr() {
 
 		asalaaddNewCategoryPage.ClearNameEn();
@@ -171,14 +164,28 @@ public class AsalaAddNewCategoryTest extends AsalaTestBase {
 		Assert.assertTrue(asalaaddNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("هذا الحقل مطلوب"));
 	}
 
-	@Test(priority = 14)
+	@Test(priority = 13)
 	public void UserAddNameEnAndNameAr() {
 
 		driver.navigate().refresh();
-		asalaaddNewCategoryPage.AddcategoryNameEntxt("Haaa");
-		asalaaddNewCategoryPage.AddcategoryNameArtxt("Haaa");
+		asalaaddNewCategoryPage.AddcategoryNameEntxt("HaaaHHHHHH");
+		asalaaddNewCategoryPage.AddcategoryNameArtxt("HaaaHHHHHH");
+		asalaaddNewCategoryPage.ClickSumbitToAddCategory();
 		asalaaddNewCategoryPage.ClickSumbitToAddCategory();
 		Assert.assertTrue(asalaaddNewCategoryPage.successMsgtxt.getText().contains("تم إضافة تصنيف جديد بنجاح"));
+
+	}
+	
+	@Test(priority = 14)
+	public void UserAddNameEnAndName(){
+
+		driver.navigate().refresh();
+		asalaHomePage.ClickChangeLanguageToEnglish();
+		asalaaddNewCategoryPage.AddcategoryNameEntxt("HaaaHHHAA");
+		asalaaddNewCategoryPage.AddcategoryNameArtxt("HaaaHHHAA");
+		asalaaddNewCategoryPage.ClickSumbitToAddCategory();
+		asalaaddNewCategoryPage.ClickSumbitToAddCategory();
+		Assert.assertTrue(asalaaddNewCategoryPage.successMsgtxt.getText().contains("New category has been added successfully"));
 
 	}
 }

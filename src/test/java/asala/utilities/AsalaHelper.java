@@ -15,7 +15,7 @@ public class AsalaHelper {
 	
 		public static void caputreScreenShoot (WebDriver driver , String screenShootName) {
 			
-			Path dest = Paths.get("./" + screenShootName +".png");
+			Path dest = Paths.get("./ScreenShoot " + screenShootName +".png");
 			
 			try {
 				java.nio.file.Files.createDirectories(dest.getParent());
