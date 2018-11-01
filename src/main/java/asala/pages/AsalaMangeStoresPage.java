@@ -1,5 +1,6 @@
 package asala.pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -80,6 +81,12 @@ public class AsalaMangeStoresPage extends AsalaPageBase {
 	public void AddTextInSearch (String SearchValue) {
 
 		setTextElementText(seacrhStoreTxt, SearchValue);
+	}
+	public void AutoComplete () {
+		
+		seacrhStoreTxt.sendKeys(Keys.ARROW_DOWN);
+		seacrhStoreTxt.sendKeys(Keys.ENTER);
+		seacrhStoreTxt.sendKeys(Keys.ENTER);
 	}
 
 	public void ClearSearchValue () {

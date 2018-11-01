@@ -3,17 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="asala.test.AsalaEditCategoryTest">
+      <class name="asala.test.AsalaMangeCategoriesTest">
         <methods>
-          <include name="UserAddNameEnAndNameArMoreThanMaxcharacterAr"/>
-          <include name="cleraNameEnAndAr"/>
           <include name="startDriver"/>
           <include name="screenShootsOnFailure"/>
-          <include name="UserAddNameEnAndNameArMoreThanMaxcharacter"/>
-          <include name="stopDriver"/>
-          <include name="UserAddNameEnAndNameAr"/>
+          <include name="DeleteCategory"/>
         </methods>
-      </class> <!-- asala.test.AsalaEditCategoryTest -->
+      </class> <!-- asala.test.AsalaMangeCategoriesTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

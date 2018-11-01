@@ -33,7 +33,7 @@ public class AsalaPageBase {
 	public void scrollToBottom() 
 	
 	{
-		jse.executeScript("scrollBy(0,2500)"); 
+		jse.executeScript("scrollBy(0,1000)"); 
 	}
 	
 	public void clearText(WebElement element) 

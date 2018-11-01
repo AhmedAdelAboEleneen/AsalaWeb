@@ -168,8 +168,8 @@ public class AsalaAddNewCategoryTest extends AsalaTestBase {
 	public void UserAddNameEnAndNameAr() {
 
 		driver.navigate().refresh();
-		asalaaddNewCategoryPage.AddcategoryNameEntxt("HaaaHHHHHH");
-		asalaaddNewCategoryPage.AddcategoryNameArtxt("HaaaHHHHHH");
+		asalaaddNewCategoryPage.AddcategoryNameEntxt("Ahmed Test");
+		asalaaddNewCategoryPage.AddcategoryNameArtxt("Ahmed Test");
 		asalaaddNewCategoryPage.ClickSumbitToAddCategory();
 		asalaaddNewCategoryPage.ClickSumbitToAddCategory();
 		Assert.assertTrue(asalaaddNewCategoryPage.successMsgtxt.getText().contains("تم إضافة تصنيف جديد بنجاح"));
@@ -181,8 +181,8 @@ public class AsalaAddNewCategoryTest extends AsalaTestBase {
 
 		driver.navigate().refresh();
 		asalaHomePage.ClickChangeLanguageToEnglish();
-		asalaaddNewCategoryPage.AddcategoryNameEntxt("HaaaHHHAA");
-		asalaaddNewCategoryPage.AddcategoryNameArtxt("HaaaHHHAA");
+		asalaaddNewCategoryPage.AddcategoryNameEntxt("Ahmed Test 1");
+		asalaaddNewCategoryPage.AddcategoryNameArtxt("Ahmed Test 1");
 		asalaaddNewCategoryPage.ClickSumbitToAddCategory();
 		asalaaddNewCategoryPage.ClickSumbitToAddCategory();
 		Assert.assertTrue(asalaaddNewCategoryPage.successMsgtxt.getText().contains("New category has been added successfully"));

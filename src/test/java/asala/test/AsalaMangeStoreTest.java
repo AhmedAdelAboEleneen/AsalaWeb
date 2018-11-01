@@ -57,7 +57,7 @@ public class AsalaMangeStoreTest extends AsalaTestBase {
 	public void MakeSearch() {
 
 		asalaMangeStoresPage = new AsalaMangeStoresPage(driver);
-		asalaMangeStoresPage.AddTextInSearch("Poma");
+		asalaMangeStoresPage.AddTextInSearch("asala");
 		asalaMangeStoresPage.ClickSumbitToSearch();
 		driver.navigate().refresh();
 	}
@@ -66,18 +66,26 @@ public class AsalaMangeStoreTest extends AsalaTestBase {
 	@Test(priority = 3)
 	public void MakeSearchWithWrongValue() {
 
-		asalaMangeStoresPage = new AsalaMangeStoresPage(driver);
 		asalaMangeStoresPage.AddTextInSearch("doooooooooooooooooooooooooooooooooooooooooo");
 		asalaMangeStoresPage.ClickSumbitToSearch();
 		Assert.assertTrue(asalaMangeStoresPage.searchErrorMsg.getText().contains("No resultes found"));
 		driver.navigate().refresh();
 	}
+	
+	// make search but use AutoComplete
+		@Test(priority = 4)
+		public void MakeSearchWithValueAutoComplete() {
 
-	// make search with filter mall
-	@Test(priority = 4)
+			asalaMangeStoresPage.AddTextInSearch("Pom");
+			asalaMangeStoresPage.AutoComplete();
+			driver.navigate().refresh();
+		}
+	
+
+	// make filter with mall
+	@Test(priority = 5)
 	public void MakeFilterWithMall() {
 
-		asalaMangeStoresPage = new AsalaMangeStoresPage(driver);
 		asalaMangeStoresPage.SelectFilterMallAsSuperAdmin();
 		asalaMangeStoresPage.ClickSumbitToSearch();
 		asalaMangeStoresPage.SelectFilterMallAll();
@@ -85,20 +93,20 @@ public class AsalaMangeStoreTest extends AsalaTestBase {
 		driver.navigate().refresh();
 	}
 
-	// make search with filter mall & category 
-	@Test(priority = 5)
+	// make filter with mall & category 
+	@Test(priority = 6)
 	public void MakeFilterWithMallAndCategory() throws InterruptedException {
 
-		asalaMangeStoresPage = new AsalaMangeStoresPage(driver);
 		asalaMangeStoresPage.SelectFilterMallAsSuperAdmin();
 		Thread.sleep(3000);
 		asalaMangeStoresPage.SelectFilterCategory();
+		Thread.sleep(3000);
 		asalaMangeStoresPage.ClickSumbitToSearch();
-		driver.navigate().refresh();
+		//driver.navigate().refresh();
 	}
 
 	// make search with filter mall & search 
-	@Test(priority = 6)
+	/*@Test(priority = 6)
 	public void MakeFilterWithMallAndSearch() {
 
 		asalaMangeStoresPage = new AsalaMangeStoresPage(driver);
@@ -119,6 +127,6 @@ public class AsalaMangeStoreTest extends AsalaTestBase {
 			asalaMangeStoresPage.AddTextInSearch("Poma");
 			asalaMangeStoresPage.ClickSumbitToSearch();
 			driver.navigate().refresh();
-		}
+		}*/
 
 }

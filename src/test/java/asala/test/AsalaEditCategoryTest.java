@@ -148,8 +148,8 @@ public class AsalaEditCategoryTest extends AsalaTestBase {
 		@Test(priority = 11)
 		public void UserAddNameEnAndNameAr() {
 
-			asalaEditCategoryPage.AddcategoryNameEntxt("BomTak");
-			asalaEditCategoryPage.AddcategoryNameArtxt("BomTak");
+			asalaEditCategoryPage.AddcategoryNameEntxt("Ahmed Test 2");
+			asalaEditCategoryPage.AddcategoryNameArtxt("Ahmed Test 2");
 			asalaEditCategoryPage.ClickSumbitToConfirmEditCategory();
 			asalaEditCategoryPage.ClickSumbitToConfirmEditCategory();
 			Assert.assertTrue(asalaEditCategoryPage.successMsgtxt.getText().contains("تم إضافة تصنيف جديد بنجاح"));
