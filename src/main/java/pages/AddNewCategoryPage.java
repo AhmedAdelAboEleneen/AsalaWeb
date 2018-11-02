@@ -10,47 +10,47 @@ public class AddNewCategoryPage extends PageBase {
 		super(driver);
 	}
 
-	@FindBy(id="form-control-catEnglishName")
-	 WebElement addcategoryNameEntxt;
+	@FindBy(id = "form-control-catEnglishName")
+	WebElement addcategoryNameEntxt;
 
-	@FindBy(id="error-msg-catEnglishName")
+	@FindBy(id = "error-msg-catEnglishName")
 	public WebElement addcategoryNameEnErrorMsgtxt;
 
-	@FindBy(id="form-control-catArabicName")
-	 WebElement addcategoryNameArtxt;
+	@FindBy(id = "form-control-catArabicName")
+	WebElement addcategoryNameArtxt;
 
-	@FindBy(id="error-msg-catArabicName")
+	@FindBy(id = "error-msg-catArabicName")
 	public WebElement addcategoryNameArErrorMsgtxt;
-	
-	@FindBy(id="success-msg")
+
+	@FindBy(id = "success-msg")
 	public WebElement successMsgtxt;
 
-	@FindBy(id="submit-btn")
+	@FindBy(id = "submit-btn")
 	WebElement saveBt;
 
-	public void AddcategoryNameEntxt (String EnValue) {
+	public void AddcategoryNameEntxt(String EnValue) {
 
 		setTextElementText(addcategoryNameEntxt, EnValue);
 	}
 
-	public void AddcategoryNameArtxt (String ArValue) {
+	public void AddcategoryNameArtxt(String ArValue) {
 
 		setTextElementText(addcategoryNameArtxt, ArValue);
 	}
 
-	public void ClickSumbitToAddCategory () {
+	public void ClickSumbitToAddCategory() {
 
 		clickButton(saveBt);
 	}
 
-	public void ClearNameEn () {
+	public void ClearNameEn() {
 
 		addcategoryNameEntxt.clear();
 	}
 
-	public void ClearNameAr () {
+	public void ClearNameAr() {
 
-	   addcategoryNameArtxt.clear();
+		addcategoryNameArtxt.clear();
 	}
 
 }

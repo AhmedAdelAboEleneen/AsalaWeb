@@ -3,71 +3,70 @@ package test;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import asala.test.AsalaTestBase;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.MangeMallsPage;
 
-public class MangeMallsTest extends AsalaTestBase {
-	
-	MangeMallsPage asalaMangeMallsPage;
-	LoginPage asalaLoginPage;
-	HomePage asalaHomePage;
+public class MangeMallsTest extends TestBase {
 
-	// make login with super admin 
+	MangeMallsPage mangeMallsPage;
+	LoginPage loginPage;
+	HomePage homePage;
+
+	// make login with super admin
 	@Test(priority = 1)
 	public void MakeLogint() {
 
 		// login
-		asalaLoginPage = new LoginPage(driver);
-		asalaLoginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
-		asalaLoginPage.AddPassword("123456");
-		asalaLoginPage.ClickLogin();
+		loginPage = new LoginPage(driver);
+		loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
+		loginPage.AddPassword("123456");
+		loginPage.ClickLogin();
 
-		// go to home page & click user & click to get here profile 
-		asalaHomePage = new HomePage(driver);
-		asalaHomePage.ClickManageMalls();
+		// go to home page & click user & click to get here profile
+		homePage = new HomePage(driver);
+		homePage.ClickManageMalls();
 	}
-	
-	// Deactive KADI MALL	
+
+	// Deactive KADI MALL
 	@Test(priority = 2)
-	public void DeactiveKadiMallEn () {
-		
-		asalaMangeMallsPage = new MangeMallsPage(driver);
-		asalaMangeMallsPage.ClickDeactiveMall();
-		asalaMangeMallsPage.ClickToConfirm();
-		Assert.assertTrue(asalaMangeMallsPage.successTxt.getText().contains("The Mall has been deactivated successfully"));
+	public void DeactiveKadiMallEn() {
+
+		mangeMallsPage = new MangeMallsPage(driver);
+		mangeMallsPage.ClickDeactiveMall();
+		mangeMallsPage.ClickToConfirm();
+		Assert.assertTrue(mangeMallsPage.successTxt.getText().contains("The Mall has been deactivated successfully"));
 	}
-	
-	// Active KADI MALL	
+
+	// Active KADI MALL
 	@Test(priority = 3)
-	public void ActiveKadiMallEn () {
-		
-		asalaMangeMallsPage = new MangeMallsPage(driver);
-		asalaMangeMallsPage.ClickActiveMall();
-		asalaMangeMallsPage.ClickToConfirm();
-		Assert.assertTrue(asalaMangeMallsPage.successTxt.getText().contains("The Mall has been activated successfully"));
+	public void ActiveKadiMallEn() {
+
+		mangeMallsPage = new MangeMallsPage(driver);
+		mangeMallsPage.ClickActiveMall();
+		mangeMallsPage.ClickToConfirm();
+		Assert.assertTrue(mangeMallsPage.successTxt.getText().contains("The Mall has been activated successfully"));
 	}
-	
-	// Deactive KADI MALL Ar 
+
+	// Deactive KADI MALL Ar
 	@Test(priority = 4)
-	public void DeactiveKadiMallAr () {
-		
-		asalaHomePage.ClickChangeLanguageToArabic();
-		asalaMangeMallsPage = new MangeMallsPage(driver);
-		asalaMangeMallsPage.ClickDeactiveMall();
-		asalaMangeMallsPage.ClickToConfirm();
-		Assert.assertTrue(asalaMangeMallsPage.successTxt.getText().contains("تم إلغاء تفعيل المول"));
+	public void DeactiveKadiMallAr() {
+
+		homePage.ClickChangeLanguageToArabic();
+		mangeMallsPage = new MangeMallsPage(driver);
+		mangeMallsPage.ClickDeactiveMall();
+		mangeMallsPage.ClickToConfirm();
+		Assert.assertTrue(mangeMallsPage.successTxt.getText().contains("تم إلغاء تفعيل المول"));
 	}
-	
-	// Active KADI MALL Ar 
+
+	// Active KADI MALL Ar
 	@Test(priority = 5)
-	public void ActiveKadiMallAr () {
-		
-		asalaHomePage.ClickChangeLanguageToArabic();
-		asalaMangeMallsPage = new MangeMallsPage(driver);
-		asalaMangeMallsPage.ClickActiveMall();
-		asalaMangeMallsPage.ClickToConfirm();
-		Assert.assertTrue(asalaMangeMallsPage.successTxt.getText().contains("تم تفعيل المول بنجاح"));
+	public void ActiveKadiMallAr() {
+
+		homePage.ClickChangeLanguageToArabic();
+		mangeMallsPage = new MangeMallsPage(driver);
+		mangeMallsPage.ClickActiveMall();
+		mangeMallsPage.ClickToConfirm();
+		Assert.assertTrue(mangeMallsPage.successTxt.getText().contains("تم تفعيل المول بنجاح"));
 	}
 }

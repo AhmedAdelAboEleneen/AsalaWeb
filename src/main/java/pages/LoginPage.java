@@ -10,68 +10,69 @@ public class LoginPage extends PageBase {
 		super(driver);
 	}
 
-	@FindBy(id="form-control-Email")
-	WebElement emailTxtBox ;
+	@FindBy(id = "form-control-Email")
+	WebElement emailTxtBox;
 
-	@FindBy(id="error-msg-email")
-	public WebElement emailTxtValidtion ; 
+	@FindBy(id = "error-msg-email")
+	public WebElement emailTxtValidtion;
 
-	@FindBy(id="form-control-Password")
-	WebElement passwordTxtBox ; 
+	@FindBy(id = "form-control-Password")
+	WebElement passwordTxtBox;
 
-	@FindBy(id="error-msg-password")
-	public WebElement passwordTxtValidtion ; 
+	@FindBy(id = "error-msg-password")
+	public WebElement passwordTxtValidtion;
 
-	@FindBy(id="error-1")
-	public WebElement wrongEmailOrPasswordOrNotActiveTxt ; 
+	@FindBy(id = "error-1")
+	public WebElement wrongEmailOrPasswordOrNotActiveTxt;
 
-	@FindBy(id="ar")
-	WebElement changeLanguageToArabicBt ; 
+	@FindBy(id = "ar")
+	WebElement changeLanguageToArabicBt;
 
-	@FindBy(id="en")
-	WebElement changeLanguageToEnglishBt ; 
+	@FindBy(id = "en")
+	WebElement changeLanguageToEnglishBt;
 
-	@FindBy(id="submit-btn")
-	WebElement loginBtn ; 
+	@FindBy(id = "submit-btn")
+	WebElement loginBtn;
 
-	@FindBy(id="forgot-password-btn")
-	WebElement forgetPasswordBtn ; 
+	@FindBy(id = "forgot-password-btn")
+	WebElement forgetPasswordBtn;
 
-	public void AddEmail (String email) {
+	public void AddEmail(String email) {
 
-		setTextElementText(emailTxtBox, email);	
+		setTextElementText(emailTxtBox, email);
 	}
 
-	public void AddPassword (String password) {
+	public void AddPassword(String password) {
 
-		setTextElementText(passwordTxtBox, password);	
+		setTextElementText(passwordTxtBox, password);
 	}
 
-	public void ClickLogin () {
+	public void ClickLogin() {
 
-		clickButton(loginBtn);	
+		clickButton(loginBtn);
 	}
 
-	public void ClickForgetPassword () {
+	public void ClickForgetPassword() {
 
-		clickButton(forgetPasswordBtn);	
+		clickButton(forgetPasswordBtn);
 	}
 
-	public void ClearEmailData () {
+	public void ClearEmailData() {
 
 		emailTxtBox.clear();
 	}
 
-	public void ClearPasswordData () {
+	public void ClearPasswordData() {
 
 		passwordTxtBox.clear();
 	}
-	public void ClickChangeLanguageToArabic () {
+
+	public void ClickChangeLanguageToArabic() {
 
 		clickButton(changeLanguageToArabicBt);
 	}
 
-	public void ClickChangeLanguageToEnglish () {
+	public void ClickChangeLanguageToEnglish() {
 
 		clickButton(changeLanguageToEnglishBt);
 	}

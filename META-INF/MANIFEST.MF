@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: asala_qc_dashboard
+Bundle-SymbolicName: Asala_Dashboard
+Bundle-Version: 1.0.0.qualifier
+Export-Package: pages,
+ test,
+ utilities

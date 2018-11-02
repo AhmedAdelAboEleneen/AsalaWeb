@@ -1,9 +1,8 @@
 package test;
 
-import asala.test.AsalaTestBase;
 import pages.AddMallPage;
 
-public class AddMallTest extends AsalaTestBase {
+public class AddMallTest extends TestBase {
 
-	AddMallPage asalaAddMallPage;
+	AddMallPage addMallPage;
 }

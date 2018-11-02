@@ -10,52 +10,50 @@ public class MangeCategoriesPage extends PageBase {
 		super(driver);
 	}
 
-	@FindBy(id="addNew-btn")
+	@FindBy(id = "addNew-btn")
 	WebElement addNewCategoryBt;
 
-	@FindBy(id="edit-4")
+	@FindBy(id = "edit-4")
 	WebElement editCategoryBt;
 
-	@FindBy(id="delete-59")
+	@FindBy(id = "delete-61")
 	WebElement deleteEnCategoryBt;
 
-	@FindBy(id="delete-60")
+	@FindBy(id = "delete-62")
 	WebElement deleteArCategoryBt;
 
-	@FindBy(id="btn-primary")
+	@FindBy(id = "btn-primary")
 	WebElement confirmDeleteCategoryBt;
 
-
-	@FindBy(id="page-link-5")
+	@FindBy(id = "page-link-5")
 	WebElement pageBt;
 
-
-	public void ClickToAddNewCategory () {
+	public void ClickToAddNewCategory() {
 
 		clickButton(addNewCategoryBt);
 	}
 
-	public void ClickEditCategory () {
+	public void ClickEditCategory() {
 
 		clickButton(editCategoryBt);
 	}
 
-	public void ClickDeleteCategory () {
+	public void ClickDeleteFirstCategory() {
 
 		clickButton(deleteEnCategoryBt);
 	}
 
-	public void ClickDeleteArCategory () {
+	public void ClickDeleteSecondeCategory() {
 
 		clickButton(deleteArCategoryBt);
 	}
 
-	public void ClickConfirmDeleteCategory () {
+	public void ClickConfirmDeleteCategory() {
 
 		clickButton(confirmDeleteCategoryBt);
 	}
 
-	public void ClickPageNumberSix () {
+	public void ClickPageNumberSix() {
 
 		clickButton(pageBt);
 	}

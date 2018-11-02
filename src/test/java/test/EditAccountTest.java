@@ -3,377 +3,404 @@ package test;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import asala.test.AsalaTestBase;
 import pages.EditAccountPage;
 import pages.HomePage;
 import pages.LoginPage;
 
-public class EditAccountTest extends AsalaTestBase {
+public class EditAccountTest extends TestBase {
 
-	LoginPage asalaLoginPage;
-	HomePage asalaHomePage;
-	EditAccountPage asalaEditAccountPage;
+	LoginPage loginPage;
+	HomePage homePage;
+	EditAccountPage editAccountPage;
 
-	// make login with super admin user 
+	// make login with super admin user
 	@Test(priority = 1)
 	public void MakeLogin() {
 
 		// login
-		asalaLoginPage = new LoginPage(driver);
-		asalaLoginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
-		asalaLoginPage.AddPassword("123456");
-		asalaLoginPage.ClickLogin();
+		loginPage = new LoginPage(driver);
+		loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
+		loginPage.AddPassword("123456");
+		loginPage.ClickLogin();
 
-		// go to home page & click user & click to get here profile 
-		asalaHomePage = new HomePage(driver);
-		asalaHomePage.ClickUserName();
-		asalaHomePage.ClickProfile();
+		// go to home page & click user & click to get here profile
+		homePage = new HomePage(driver);
+		homePage.ClickUserName();
+		homePage.ClickProfile();
 	}
 
 	// if user add name empty
 	@Test(priority = 2)
-	public void UserAddNameFiledEmpty () throws InterruptedException {
+	public void UserAddNameFiledEmpty() throws InterruptedException {
 
-		asalaEditAccountPage = new EditAccountPage(driver);
-		asalaEditAccountPage.ClearNameData();
-		asalaEditAccountPage.ClickSaveInEdit();
+		editAccountPage = new EditAccountPage(driver);
+		editAccountPage.ClearNameData();
+		editAccountPage.ClickSaveInEdit();
 		Thread.sleep(3000);
-		Assert.assertTrue(asalaEditAccountPage.nameValidationMessaga.getText().contains("This field is required"));
+		Assert.assertTrue(editAccountPage.nameValidationMessaga.getText().contains("This field is required"));
 	}
 
-	// if user add name more than 30 character 
+	// if user add name more than 30 character
 	@Test(priority = 3)
-	public void UserAddNameFiledMore30Char () {
+	public void UserAddNameFiledMore30Char() {
 
-		asalaEditAccountPage.AddNameInEdit("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-		asalaEditAccountPage.ClickSaveInEdit();
-		Assert.assertTrue(asalaEditAccountPage.nameValidationMessaga.getText().contains("This field shouldn’t contain more than 30 character"));
+		editAccountPage.AddNameInEdit("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+		editAccountPage.ClickSaveInEdit();
+		Assert.assertTrue(editAccountPage.nameValidationMessaga.getText()
+				.contains("This field shouldn’t contain more than 30 character"));
 	}
 
 	// if user add name less than 3 character
 	@Test(priority = 4)
-	public void UserAddNameFiledLess3Char () throws InterruptedException {
+	public void UserAddNameFiledLess3Char() throws InterruptedException {
 
-		asalaEditAccountPage.ClearNameData();
-		asalaEditAccountPage.AddNameInEdit("Te");
-		asalaEditAccountPage.ClickSaveInEdit();
-		Assert.assertTrue(asalaEditAccountPage.nameValidationMessaga.getText().contains("This field shouldn’t be less than 3 characters"));
+		editAccountPage.ClearNameData();
+		editAccountPage.AddNameInEdit("Te");
+		editAccountPage.ClickSaveInEdit();
+		Assert.assertTrue(editAccountPage.nameValidationMessaga.getText()
+				.contains("This field shouldn’t be less than 3 characters"));
 	}
 
 	// if user add email empty
 	@Test(priority = 5)
-	public void UserAddEmptyEmail () throws InterruptedException {
-		asalaEditAccountPage.ClearEmailData();
-		asalaEditAccountPage.ClickSaveInEdit();
+	public void UserAddEmptyEmail() throws InterruptedException {
+		editAccountPage.ClearEmailData();
+		editAccountPage.ClickSaveInEdit();
 		Thread.sleep(5000);
-		Assert.assertTrue(asalaEditAccountPage.emailValidationMessaga.getText().contains("This field is required"));
+		Assert.assertTrue(editAccountPage.emailValidationMessaga.getText().contains("This field is required"));
 	}
 
-	// if user add email but wrong format 
+	// if user add email but wrong format
 	@Test(priority = 6)
-	public void UserAddWrongEmail () {
+	public void UserAddWrongEmail() {
 
-		asalaEditAccountPage.AddEmailInEdit("aaa");	
-		asalaEditAccountPage.ClickSaveInEdit();
-		Assert.assertTrue(asalaEditAccountPage.emailValidationMessaga.getText().contains("Please enter a valid email"));
+		editAccountPage.AddEmailInEdit("aaa");
+		editAccountPage.ClickSaveInEdit();
+		Assert.assertTrue(editAccountPage.emailValidationMessaga.getText().contains("Please enter a valid email"));
 	}
 
-	// if user add name & email empty 
+	// if user add name & email empty
 	@Test(priority = 7)
-	public void UserClearNameAndEmail () throws InterruptedException {
+	public void UserClearNameAndEmail() throws InterruptedException {
 
-		asalaEditAccountPage.ClearNameData();
-		asalaEditAccountPage.ClearEmailData();
-		asalaEditAccountPage.ClickSaveInEdit();
+		editAccountPage.ClearNameData();
+		editAccountPage.ClearEmailData();
+		editAccountPage.ClickSaveInEdit();
 		Thread.sleep(5000);
-		Assert.assertTrue(asalaEditAccountPage.nameValidationMessaga.getText().contains("This field is required"));
-		Assert.assertTrue(asalaEditAccountPage.emailValidationMessaga.getText().contains("This field is required"));	
+		Assert.assertTrue(editAccountPage.nameValidationMessaga.getText().contains("This field is required"));
+		Assert.assertTrue(editAccountPage.emailValidationMessaga.getText().contains("This field is required"));
 	}
 
-	// user clear name & email & change it name = test & email = ahmed.adel@ibtikar.net.sa
+	// user clear name & email & change it name = test & email =
+	// ahmed.adel@ibtikar.net.sa
 	@Test(priority = 8)
-	public void UserAddValidEmailAndName () {
+	public void UserAddValidEmailAndName() {
 
-		asalaEditAccountPage.ClearNameData();
-		asalaEditAccountPage.AddNameInEdit("Test");
-		asalaEditAccountPage.ClearEmailData();
-		asalaEditAccountPage.AddEmailInEdit("ahmed.adel.super@ibtikar.net.sa");
-		asalaEditAccountPage.ClickSaveInEdit();
+		editAccountPage.ClearNameData();
+		editAccountPage.AddNameInEdit("Test");
+		editAccountPage.ClearEmailData();
+		editAccountPage.AddEmailInEdit("ahmed.adel.super@ibtikar.net.sa");
+		editAccountPage.ClickSaveInEdit();
 	}
 
-	// if user add old password but empty new password & confirm password 
+	// if user add old password but empty new password & confirm password
 	@Test(priority = 9)
-	public void UserAddOldPasswordButEmptyNewandConfirm () throws InterruptedException {
+	public void UserAddOldPasswordButEmptyNewandConfirm() throws InterruptedException {
 
-		asalaEditAccountPage.AddOldPasswordInEdit("123456");
-		asalaEditAccountPage.AddNewPasswordInEdit("");
-		asalaEditAccountPage.AddConfirmPasswordInEdit("");
-		asalaEditAccountPage.ClickSaveInEdit();
+		editAccountPage.AddOldPasswordInEdit("123456");
+		editAccountPage.AddNewPasswordInEdit("");
+		editAccountPage.AddConfirmPasswordInEdit("");
+		editAccountPage.ClickSaveInEdit();
 		Thread.sleep(6000);
-		Assert.assertTrue(asalaEditAccountPage.newPasswordlValidationMessaga.getText().contains("Password must be 6 letters at least"));
-		Assert.assertTrue(asalaEditAccountPage.confirmPasswordlValidationMessaga.getText().contains("Password must be 6 letters at least"));
+		Assert.assertTrue(editAccountPage.newPasswordlValidationMessaga.getText()
+				.contains("Password must be 6 letters at least"));
+		Assert.assertTrue(editAccountPage.confirmPasswordlValidationMessaga.getText()
+				.contains("Password must be 6 letters at least"));
 	}
 
-	// if user add old password wrong & new password correct value & confirm password empty 
+	// if user add old password wrong & new password correct value & confirm
+	// password empty
 	@Test(priority = 10)
-	public void UserAddOldPasswordWrongAndAddNewPasswordValid () throws InterruptedException {
+	public void UserAddOldPasswordWrongAndAddNewPasswordValid() throws InterruptedException {
 
-		asalaEditAccountPage.ClearOldPasswordData();
-		asalaEditAccountPage.AddOldPasswordInEdit("12345678989");
-		asalaEditAccountPage.ClearNewPasswordData();
-		asalaEditAccountPage.AddNewPasswordInEdit("123456");
-		asalaEditAccountPage.ClearConfirmpasswrodData();
-		asalaEditAccountPage.AddConfirmPasswordInEdit("");
-		asalaEditAccountPage.ClickSaveInEdit();
+		editAccountPage.ClearOldPasswordData();
+		editAccountPage.AddOldPasswordInEdit("12345678989");
+		editAccountPage.ClearNewPasswordData();
+		editAccountPage.AddNewPasswordInEdit("123456");
+		editAccountPage.ClearConfirmpasswrodData();
+		editAccountPage.AddConfirmPasswordInEdit("");
+		editAccountPage.ClickSaveInEdit();
 		Thread.sleep(3000);
-		Assert.assertTrue(asalaEditAccountPage.confirmPasswordlValidationMessaga.getText().contains("new passwords and confirm password are not matched"));
+		Assert.assertTrue(editAccountPage.confirmPasswordlValidationMessaga.getText()
+				.contains("new passwords and confirm password are not matched"));
 	}
 
-	// if user add old password correct & new password correct value & confirm password empty 
+	// if user add old password correct & new password correct value & confirm
+	// password empty
 	@Test(priority = 11)
-	public void UserAddNewPasswordButNoConfirm () throws InterruptedException {
+	public void UserAddNewPasswordButNoConfirm() throws InterruptedException {
 
-		asalaEditAccountPage.ClearOldPasswordData();
-		asalaEditAccountPage.AddOldPasswordInEdit("123456");
-		asalaEditAccountPage.ClearNewPasswordData();
-		asalaEditAccountPage.AddNewPasswordInEdit("1234567");
-		asalaEditAccountPage.ClearConfirmpasswrodData();
-		asalaEditAccountPage.AddConfirmPasswordInEdit("");
-		asalaEditAccountPage.ClickSaveInEdit();
+		editAccountPage.ClearOldPasswordData();
+		editAccountPage.AddOldPasswordInEdit("123456");
+		editAccountPage.ClearNewPasswordData();
+		editAccountPage.AddNewPasswordInEdit("1234567");
+		editAccountPage.ClearConfirmpasswrodData();
+		editAccountPage.AddConfirmPasswordInEdit("");
+		editAccountPage.ClickSaveInEdit();
 		Thread.sleep(3000);
-		Assert.assertTrue(asalaEditAccountPage.confirmPasswordlValidationMessaga.getText().contains("new passwords and confirm password are not matched"));
+		Assert.assertTrue(editAccountPage.confirmPasswordlValidationMessaga.getText()
+				.contains("new passwords and confirm password are not matched"));
 	}
 
-	// if user add old password empty & new password correct value & confirm password empty 
+	// if user add old password empty & new password correct value & confirm
+	// password empty
 	@Test(priority = 12)
-	public void UserAddNewPasswordButEmptyOldAndConfirm () throws InterruptedException {
+	public void UserAddNewPasswordButEmptyOldAndConfirm() throws InterruptedException {
 
-		asalaEditAccountPage.ClearOldPasswordData();
-		asalaEditAccountPage.ClearNewPasswordData();
-		asalaEditAccountPage.AddNewPasswordInEdit("1234567");
-		asalaEditAccountPage.ClearConfirmpasswrodData();
-		asalaEditAccountPage.AddConfirmPasswordInEdit("");
-		asalaEditAccountPage.ClickSaveInEdit();
+		editAccountPage.ClearOldPasswordData();
+		editAccountPage.ClearNewPasswordData();
+		editAccountPage.AddNewPasswordInEdit("1234567");
+		editAccountPage.ClearConfirmpasswrodData();
+		editAccountPage.AddConfirmPasswordInEdit("");
+		editAccountPage.ClickSaveInEdit();
 		Thread.sleep(3000);
-		Assert.assertTrue(asalaEditAccountPage.OldPasswordlValidationMessaga.getText().contains("Password must be 6 letters at least"));
-		Assert.assertTrue(asalaEditAccountPage.confirmPasswordlValidationMessaga.getText().contains("new passwords and confirm password are not matched"));
+		Assert.assertTrue(editAccountPage.OldPasswordlValidationMessaga.getText()
+				.contains("Password must be 6 letters at least"));
+		Assert.assertTrue(editAccountPage.confirmPasswordlValidationMessaga.getText()
+				.contains("new passwords and confirm password are not matched"));
 	}
 
-	// if user add old password empty  & new password empty & confirm password correct value  
+	// if user add old password empty & new password empty & confirm password
+	// correct value
 	@Test(priority = 13)
-	public void UserAddConfirmPasswordButEmptyOldAndNew () {
+	public void UserAddConfirmPasswordButEmptyOldAndNew() {
 
-		asalaEditAccountPage.ClearNewPasswordData();
-		asalaEditAccountPage.ClearConfirmpasswrodData();
-		asalaEditAccountPage.AddConfirmPasswordInEdit("1234567");
-		asalaEditAccountPage.ClickSaveInEdit();
-		Assert.assertTrue(asalaEditAccountPage.OldPasswordlValidationMessaga.getText().contains("Password must be 6 letters at least"));
-		Assert.assertTrue(asalaEditAccountPage.newPasswordlValidationMessaga.getText().contains("Password must be 6 letters at least"));
-		Assert.assertTrue(asalaEditAccountPage.confirmPasswordlValidationMessaga.getText().contains("new passwords and confirm password are not matched"));
+		editAccountPage.ClearNewPasswordData();
+		editAccountPage.ClearConfirmpasswrodData();
+		editAccountPage.AddConfirmPasswordInEdit("1234567");
+		editAccountPage.ClickSaveInEdit();
+		Assert.assertTrue(editAccountPage.OldPasswordlValidationMessaga.getText()
+				.contains("Password must be 6 letters at least"));
+		Assert.assertTrue(editAccountPage.newPasswordlValidationMessaga.getText()
+				.contains("Password must be 6 letters at least"));
+		Assert.assertTrue(editAccountPage.confirmPasswordlValidationMessaga.getText()
+				.contains("new passwords and confirm password are not matched"));
 	}
 
-	// if user add old password wrong & new password = old password  & confirm password = new password  
+	// if user add old password wrong & new password = old password & confirm
+	// password = new password
 	@Test(priority = 14)
-	public void UserAddOldWrongAndNewMatchWithWrong () throws InterruptedException {
+	public void UserAddOldWrongAndNewMatchWithWrong() throws InterruptedException {
 
-		asalaEditAccountPage.ClearOldPasswordData();
-		asalaEditAccountPage.ClearNewPasswordData();
-		asalaEditAccountPage.ClearConfirmpasswrodData();
-		asalaEditAccountPage.AddOldPasswordInEdit("1234567");
-		asalaEditAccountPage.AddNewPasswordInEdit("123456");
-		asalaEditAccountPage.AddConfirmPasswordInEdit("123456");
-		asalaEditAccountPage.ClickSaveInEdit();
+		editAccountPage.ClearOldPasswordData();
+		editAccountPage.ClearNewPasswordData();
+		editAccountPage.ClearConfirmpasswrodData();
+		editAccountPage.AddOldPasswordInEdit("1234567");
+		editAccountPage.AddNewPasswordInEdit("123456");
+		editAccountPage.AddConfirmPasswordInEdit("123456");
+		editAccountPage.ClickSaveInEdit();
 		Thread.sleep(3000);
-		Assert.assertTrue(asalaEditAccountPage.OldPasswordlValidationMessaga.getText().contains("wrong password"));
-		Assert.assertTrue(asalaEditAccountPage.newPasswordlValidationMessaga.getText().contains("new password should be different than the old password"));
+		Assert.assertTrue(editAccountPage.OldPasswordlValidationMessaga.getText().contains("wrong password"));
+		Assert.assertTrue(editAccountPage.newPasswordlValidationMessaga.getText()
+				.contains("new password should be different than the old password"));
 	}
-
 
 	// if user change password to 1234567
 	@Test(priority = 15)
-	public void ChangePassword () {
+	public void ChangePassword() {
 
-		asalaEditAccountPage.ClearOldPasswordData();
-		asalaEditAccountPage.ClearNewPasswordData();
-		asalaEditAccountPage.ClearConfirmpasswrodData();
-		asalaEditAccountPage.AddOldPasswordInEdit("123456");
-		asalaEditAccountPage.AddNewPasswordInEdit("1234567");
-		asalaEditAccountPage.AddConfirmPasswordInEdit("1234567");
-		asalaEditAccountPage.ClickSaveInEdit();
+		editAccountPage.ClearOldPasswordData();
+		editAccountPage.ClearNewPasswordData();
+		editAccountPage.ClearConfirmpasswrodData();
+		editAccountPage.AddOldPasswordInEdit("123456");
+		editAccountPage.AddNewPasswordInEdit("1234567");
+		editAccountPage.AddConfirmPasswordInEdit("1234567");
+		editAccountPage.ClickSaveInEdit();
 	}
 
-	// edit user profile name & email & password  
+	// edit user profile name & email & password
 	@Test(priority = 16)
-	public void ChangePasswordAgain () {
+	public void ChangePasswordAgain() {
 
-		asalaEditAccountPage.ClearNameData();
-		asalaEditAccountPage.ClearEmailData();
-		asalaEditAccountPage.ClearOldPasswordData();
-		asalaEditAccountPage.ClearNewPasswordData();
-		asalaEditAccountPage.ClearConfirmpasswrodData();
-		asalaEditAccountPage.AddNameInEdit("Test");
-		asalaEditAccountPage.AddEmailInEdit("ahmed.adel.super@ibtikar.net.sa");
-		asalaEditAccountPage.AddOldPasswordInEdit("1234567");
-		asalaEditAccountPage.AddNewPasswordInEdit("123456");
-		asalaEditAccountPage.AddConfirmPasswordInEdit("123456");
-		asalaEditAccountPage.ClickSaveInEdit();
+		editAccountPage.ClearNameData();
+		editAccountPage.ClearEmailData();
+		editAccountPage.ClearOldPasswordData();
+		editAccountPage.ClearNewPasswordData();
+		editAccountPage.ClearConfirmpasswrodData();
+		editAccountPage.AddNameInEdit("Test");
+		editAccountPage.AddEmailInEdit("ahmed.adel.super@ibtikar.net.sa");
+		editAccountPage.AddOldPasswordInEdit("1234567");
+		editAccountPage.AddNewPasswordInEdit("123456");
+		editAccountPage.AddConfirmPasswordInEdit("123456");
+		editAccountPage.ClickSaveInEdit();
 
-		asalaHomePage.ClickUserName();
-		asalaHomePage.ClickSignOut();
+		homePage.ClickUserName();
+		homePage.ClickSignOut();
 
-		asalaLoginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
-		asalaLoginPage.AddPassword("123456");
-		asalaLoginPage.ClickLogin();	
+		loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
+		loginPage.AddPassword("123456");
+		loginPage.ClickLogin();
 
-		asalaHomePage.ClickUserName();
-		asalaHomePage.ClickProfile();
+		homePage.ClickUserName();
+		homePage.ClickProfile();
 	}
 
-	// same scenario but Arabic 
+	// same scenario but Arabic
 	@Test(priority = 17)
-	public void UserAddNameFiledEmptyAr () throws InterruptedException {
+	public void UserAddNameFiledEmptyAr() throws InterruptedException {
 
-		asalaHomePage.ClickChangeLanguageToArabic();
-		asalaEditAccountPage.ClearNameData();
-		asalaEditAccountPage.ClickSaveInEdit();
+		homePage.ClickChangeLanguageToArabic();
+		editAccountPage.ClearNameData();
+		editAccountPage.ClickSaveInEdit();
 		Thread.sleep(3000);
-		Assert.assertTrue(asalaEditAccountPage.nameValidationMessaga.getText().contains("هذا الحقل مطلوب"));
+		Assert.assertTrue(editAccountPage.nameValidationMessaga.getText().contains("هذا الحقل مطلوب"));
 	}
 
 	@Test(priority = 18)
-	public void UserAddNameFiledMore30CharAr () {
+	public void UserAddNameFiledMore30CharAr() {
 
-		asalaEditAccountPage.AddNameInEdit("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-		asalaEditAccountPage.ClickSaveInEdit();
-		Assert.assertTrue(asalaEditAccountPage.nameValidationMessaga.getText().contains("يجب الا تزيد عدد الحروف عن 30 حرف"));
+		editAccountPage.AddNameInEdit("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+		editAccountPage.ClickSaveInEdit();
+		Assert.assertTrue(
+				editAccountPage.nameValidationMessaga.getText().contains("يجب الا تزيد عدد الحروف عن 30 حرف"));
 	}
 
 	@Test(priority = 19)
-	public void UserAddNameFiledLess3CharAr () throws InterruptedException {
+	public void UserAddNameFiledLess3CharAr() throws InterruptedException {
 
-		asalaEditAccountPage.ClearNameData();
-		asalaEditAccountPage.AddNameInEdit("Te");
-		asalaEditAccountPage.ClickSaveInEdit();
-		Assert.assertTrue(asalaEditAccountPage.nameValidationMessaga.getText().contains("يجب الا تقل عدد الحروف عن 3 أحرف"));
+		editAccountPage.ClearNameData();
+		editAccountPage.AddNameInEdit("Te");
+		editAccountPage.ClickSaveInEdit();
+		Assert.assertTrue(editAccountPage.nameValidationMessaga.getText().contains("يجب الا تقل عدد الحروف عن 3 أحرف"));
 	}
 
 	@Test(priority = 20)
-	public void UserAddEmptyEmailAr () throws InterruptedException {
-		asalaEditAccountPage.ClearEmailData();
-		asalaEditAccountPage.ClickSaveInEdit();
+	public void UserAddEmptyEmailAr() throws InterruptedException {
+		editAccountPage.ClearEmailData();
+		editAccountPage.ClickSaveInEdit();
 		Thread.sleep(5000);
-		Assert.assertTrue(asalaEditAccountPage.emailValidationMessaga.getText().contains("هذا الحقل مطلوب"));
+		Assert.assertTrue(editAccountPage.emailValidationMessaga.getText().contains("هذا الحقل مطلوب"));
 	}
 
 	@Test(priority = 21)
-	public void UserAddWrongEmailAr () throws InterruptedException {
+	public void UserAddWrongEmailAr() throws InterruptedException {
 
-		asalaEditAccountPage.AddEmailInEdit("aaa");	
-		asalaEditAccountPage.ClickSaveInEdit();
+		editAccountPage.AddEmailInEdit("aaa");
+		editAccountPage.ClickSaveInEdit();
 		Thread.sleep(5000);
-		Assert.assertTrue(asalaEditAccountPage.emailValidationMessaga.getText().contains("برجاء إدخال بريد إلكتروني صحيح"));
+		Assert.assertTrue(editAccountPage.emailValidationMessaga.getText().contains("برجاء إدخال بريد إلكتروني صحيح"));
 	}
 
 	@Test(priority = 22)
-	public void UserClearNameAndEmailAr () throws InterruptedException {
+	public void UserClearNameAndEmailAr() throws InterruptedException {
 
-		asalaEditAccountPage.ClearNameData();
-		asalaEditAccountPage.ClearEmailData();
-		asalaEditAccountPage.ClickSaveInEdit();
+		editAccountPage.ClearNameData();
+		editAccountPage.ClearEmailData();
+		editAccountPage.ClickSaveInEdit();
 		Thread.sleep(5000);
-		Assert.assertTrue(asalaEditAccountPage.nameValidationMessaga.getText().contains("هذا الحقل مطلوب"));
-		Assert.assertTrue(asalaEditAccountPage.emailValidationMessaga.getText().contains("هذا الحقل مطلوب"));
+		Assert.assertTrue(editAccountPage.nameValidationMessaga.getText().contains("هذا الحقل مطلوب"));
+		Assert.assertTrue(editAccountPage.emailValidationMessaga.getText().contains("هذا الحقل مطلوب"));
 	}
 
 	@Test(priority = 23)
-	public void UserAddValidEmailAndNameAr () {
+	public void UserAddValidEmailAndNameAr() {
 
-		asalaEditAccountPage.ClearNameData();
-		asalaEditAccountPage.AddNameInEdit("Test");
-		asalaEditAccountPage.ClearEmailData();
-		asalaEditAccountPage.AddEmailInEdit("ahmed.adel.super@ibtikar.net.sa");
-		asalaEditAccountPage.ClickSaveInEdit();
+		editAccountPage.ClearNameData();
+		editAccountPage.AddNameInEdit("Test");
+		editAccountPage.ClearEmailData();
+		editAccountPage.AddEmailInEdit("ahmed.adel.super@ibtikar.net.sa");
+		editAccountPage.ClickSaveInEdit();
 	}
 
 	@Test(priority = 24)
-	public void UserAddOldPasswordButEmptyNewandConfirmAr () throws InterruptedException {
+	public void UserAddOldPasswordButEmptyNewandConfirmAr() throws InterruptedException {
 
-		asalaEditAccountPage.ClearOldPasswordData();
-		asalaEditAccountPage.AddOldPasswordInEdit("123456");
-		asalaEditAccountPage.ClearNewPasswordData();
-		asalaEditAccountPage.AddNewPasswordInEdit("");
-		asalaEditAccountPage.ClearConfirmpasswrodData();
-		asalaEditAccountPage.AddConfirmPasswordInEdit("");
-		asalaEditAccountPage.ClickSaveInEdit();
+		editAccountPage.ClearOldPasswordData();
+		editAccountPage.AddOldPasswordInEdit("123456");
+		editAccountPage.ClearNewPasswordData();
+		editAccountPage.AddNewPasswordInEdit("");
+		editAccountPage.ClearConfirmpasswrodData();
+		editAccountPage.AddConfirmPasswordInEdit("");
+		editAccountPage.ClickSaveInEdit();
 		Thread.sleep(6000);
-		Assert.assertTrue(asalaEditAccountPage.newPasswordlValidationMessaga.getText().contains("كلمة المرور لا تقل عن 6 أحرف"));
-		Assert.assertTrue(asalaEditAccountPage.confirmPasswordlValidationMessaga.getText().contains("كلمة المرور لا تقل عن 6 أحرف"));
+		Assert.assertTrue(
+				editAccountPage.newPasswordlValidationMessaga.getText().contains("كلمة المرور لا تقل عن 6 أحرف"));
+		Assert.assertTrue(
+				editAccountPage.confirmPasswordlValidationMessaga.getText().contains("كلمة المرور لا تقل عن 6 أحرف"));
 	}
 
 	@Test(priority = 25)
-	public void UserAddOldPasswordWrongAndAddNewPasswordValidAr () {
+	public void UserAddOldPasswordWrongAndAddNewPasswordValidAr() {
 
-		asalaEditAccountPage.ClearOldPasswordData();
-		asalaEditAccountPage.AddOldPasswordInEdit("12345678989");
-		asalaEditAccountPage.ClearNewPasswordData();
-		asalaEditAccountPage.AddNewPasswordInEdit("123456");
-		asalaEditAccountPage.ClearConfirmpasswrodData();
-		asalaEditAccountPage.AddConfirmPasswordInEdit("");
-		asalaEditAccountPage.ClickSaveInEdit();
-		Assert.assertTrue(asalaEditAccountPage.confirmPasswordlValidationMessaga.getText().contains("كلمة المرور الجديدة غير متطابقة"));
+		editAccountPage.ClearOldPasswordData();
+		editAccountPage.AddOldPasswordInEdit("12345678989");
+		editAccountPage.ClearNewPasswordData();
+		editAccountPage.AddNewPasswordInEdit("123456");
+		editAccountPage.ClearConfirmpasswrodData();
+		editAccountPage.AddConfirmPasswordInEdit("");
+		editAccountPage.ClickSaveInEdit();
+		Assert.assertTrue(editAccountPage.confirmPasswordlValidationMessaga.getText()
+				.contains("كلمة المرور الجديدة غير متطابقة"));
 	}
 
 	@Test(priority = 26)
-	public void UserAddNewPasswordButNoConfirmAr () {
+	public void UserAddNewPasswordButNoConfirmAr() {
 
-		asalaEditAccountPage.ClearOldPasswordData();
-		asalaEditAccountPage.AddOldPasswordInEdit("123456");
-		asalaEditAccountPage.ClearNewPasswordData();
-		asalaEditAccountPage.AddNewPasswordInEdit("1234567");
-		asalaEditAccountPage.ClearConfirmpasswrodData();
-		asalaEditAccountPage.AddConfirmPasswordInEdit("");
-		asalaEditAccountPage.ClickSaveInEdit();
-		Assert.assertTrue(asalaEditAccountPage.confirmPasswordlValidationMessaga.getText().contains("كلمة المرور الجديدة غير متطابقة"));
+		editAccountPage.ClearOldPasswordData();
+		editAccountPage.AddOldPasswordInEdit("123456");
+		editAccountPage.ClearNewPasswordData();
+		editAccountPage.AddNewPasswordInEdit("1234567");
+		editAccountPage.ClearConfirmpasswrodData();
+		editAccountPage.AddConfirmPasswordInEdit("");
+		editAccountPage.ClickSaveInEdit();
+		Assert.assertTrue(editAccountPage.confirmPasswordlValidationMessaga.getText()
+				.contains("كلمة المرور الجديدة غير متطابقة"));
 	}
 
 	@Test(priority = 27)
-	public void UserAddNewPasswordButEmptyOldAndConfirmAr () {
+	public void UserAddNewPasswordButEmptyOldAndConfirmAr() {
 
-		asalaEditAccountPage.ClearOldPasswordData();
-		asalaEditAccountPage.ClearNewPasswordData();
-		asalaEditAccountPage.AddNewPasswordInEdit("1234567");
-		asalaEditAccountPage.ClearConfirmpasswrodData();
-		asalaEditAccountPage.AddConfirmPasswordInEdit("");
-		asalaEditAccountPage.ClickSaveInEdit();
-		Assert.assertTrue(asalaEditAccountPage.OldPasswordlValidationMessaga.getText().contains("كلمة المرور لا تقل عن 6 أحرف"));
-		Assert.assertTrue(asalaEditAccountPage.confirmPasswordlValidationMessaga.getText().contains("كلمة المرور الجديدة غير متطابقة"));
+		editAccountPage.ClearOldPasswordData();
+		editAccountPage.ClearNewPasswordData();
+		editAccountPage.AddNewPasswordInEdit("1234567");
+		editAccountPage.ClearConfirmpasswrodData();
+		editAccountPage.AddConfirmPasswordInEdit("");
+		editAccountPage.ClickSaveInEdit();
+		Assert.assertTrue(
+				editAccountPage.OldPasswordlValidationMessaga.getText().contains("كلمة المرور لا تقل عن 6 أحرف"));
+		Assert.assertTrue(editAccountPage.confirmPasswordlValidationMessaga.getText()
+				.contains("كلمة المرور الجديدة غير متطابقة"));
 	}
 
 	@Test(priority = 28)
-	public void UserAddConfirmPasswordButEmptyOldAndNewAr () {
+	public void UserAddConfirmPasswordButEmptyOldAndNewAr() {
 
-		asalaEditAccountPage.ClearOldPasswordData();
-		asalaEditAccountPage.ClearNewPasswordData();
-		asalaEditAccountPage.ClearConfirmpasswrodData();
-		asalaEditAccountPage.AddConfirmPasswordInEdit("1234567");
-		asalaEditAccountPage.ClickSaveInEdit();
-		Assert.assertTrue(asalaEditAccountPage.OldPasswordlValidationMessaga.getText().contains("كلمة المرور لا تقل عن 6 أحرف"));
-		Assert.assertTrue(asalaEditAccountPage.newPasswordlValidationMessaga.getText().contains("كلمة المرور لا تقل عن 6 أحرف"));
-		Assert.assertTrue(asalaEditAccountPage.confirmPasswordlValidationMessaga.getText().contains("كلمة المرور الجديدة غير متطابقة"));
+		editAccountPage.ClearOldPasswordData();
+		editAccountPage.ClearNewPasswordData();
+		editAccountPage.ClearConfirmpasswrodData();
+		editAccountPage.AddConfirmPasswordInEdit("1234567");
+		editAccountPage.ClickSaveInEdit();
+		Assert.assertTrue(
+				editAccountPage.OldPasswordlValidationMessaga.getText().contains("كلمة المرور لا تقل عن 6 أحرف"));
+		Assert.assertTrue(
+				editAccountPage.newPasswordlValidationMessaga.getText().contains("كلمة المرور لا تقل عن 6 أحرف"));
+		Assert.assertTrue(editAccountPage.confirmPasswordlValidationMessaga.getText()
+				.contains("كلمة المرور الجديدة غير متطابقة"));
 	}
 
 	@Test(priority = 29)
-	public void UserAddOldWrongAndNewMatchWithWrongAr () throws InterruptedException {
+	public void UserAddOldWrongAndNewMatchWithWrongAr() throws InterruptedException {
 
-		asalaEditAccountPage.ClearOldPasswordData();
-		asalaEditAccountPage.ClearNewPasswordData();
-		asalaEditAccountPage.ClearConfirmpasswrodData();
-		asalaEditAccountPage.AddOldPasswordInEdit("1234567");
-		asalaEditAccountPage.AddNewPasswordInEdit("123456");
-		asalaEditAccountPage.AddConfirmPasswordInEdit("123456");
-		asalaEditAccountPage.ClickSaveInEdit();
+		editAccountPage.ClearOldPasswordData();
+		editAccountPage.ClearNewPasswordData();
+		editAccountPage.ClearConfirmpasswrodData();
+		editAccountPage.AddOldPasswordInEdit("1234567");
+		editAccountPage.AddNewPasswordInEdit("123456");
+		editAccountPage.AddConfirmPasswordInEdit("123456");
+		editAccountPage.ClickSaveInEdit();
 		Thread.sleep(6000);
-		Assert.assertTrue(asalaEditAccountPage.OldPasswordlValidationMessaga.getText().contains("كلمة المرور غير صحيحة"));
-		Assert.assertTrue(asalaEditAccountPage.newPasswordlValidationMessaga.getText().contains("يجب ان تختلف كلمة المرور الجديدة عن القديمة"));
+		Assert.assertTrue(editAccountPage.OldPasswordlValidationMessaga.getText().contains("كلمة المرور غير صحيحة"));
+		Assert.assertTrue(editAccountPage.newPasswordlValidationMessaga.getText()
+				.contains("يجب ان تختلف كلمة المرور الجديدة عن القديمة"));
 	}
 }

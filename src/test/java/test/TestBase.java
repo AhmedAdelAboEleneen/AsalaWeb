@@ -1,6 +1,5 @@
 package test;
 
-
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -20,17 +19,19 @@ public class TestBase {
 	public static WebDriver driver;
 
 	@BeforeSuite
-	@Parameters({"browser"})
-	public void startDriver(@Optional ("firefox") String browserName) {
+	@Parameters({ "browser" })
+	public void startDriver(@Optional("firefox") String browserName) {
 
 		if (browserName.equalsIgnoreCase("firefox")) {
 
-			System.setProperty("webdriver.gecko.driver", "/home/be-max/eclipse-workspace/asala_qc_dashboard/drivers/geckodriver");
+			System.setProperty("webdriver.gecko.driver",
+					"/home/be-max/eclipse-workspace/asala_qc_dashboard/drivers/geckodriver");
 			driver = new FirefoxDriver();
 
-		}else if (browserName.equalsIgnoreCase("chrome")) {
+		} else if (browserName.equalsIgnoreCase("chrome")) {
 
-			System.setProperty("webdriver.chrome.driver", "/home/be-max/eclipse-workspace/asala_qc_dashboard/drivers/chromedriver");
+			System.setProperty("webdriver.chrome.driver",
+					"/home/be-max/eclipse-workspace/asala_qc_dashboard/drivers/chromedriver");
 			driver = new ChromeDriver();
 		}
 
@@ -39,16 +40,15 @@ public class TestBase {
 		driver.navigate().to("https://asala-dashboard.ibtikar.net.sa/auth/login");
 	}
 
-
 	@AfterSuite
 	public void stopDriver() {
 
 		driver.quit();
 	}
 
-	//Take Screenshot when test case fail and add it in screenshot folder
+	// Take Screenshot when test case fail and add it in screenshot folder
 	@AfterMethod
-	public void screenShootsOnFailure (ITestResult result) {
+	public void screenShootsOnFailure(ITestResult result) {
 
 		if (result.getStatus() == ITestResult.FAILURE) {
 
@@ -59,6 +59,5 @@ public class TestBase {
 		}
 
 	}
-
 
 }

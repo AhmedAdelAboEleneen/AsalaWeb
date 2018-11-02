@@ -9,50 +9,48 @@ public class EditCategoryPage extends PageBase {
 	public EditCategoryPage(WebDriver driver) {
 		super(driver);
 	}
-	
-	@FindBy(id="form-control-catEnglishName")
-	 WebElement editcategoryNameEntxt;
 
-	@FindBy(id="error-msg-catEnglishName")
+	@FindBy(id = "form-control-catEnglishName")
+	WebElement editcategoryNameEntxt;
+
+	@FindBy(id = "error-msg-catEnglishName")
 	public WebElement editcategoryNameEnErrorMsgtxt;
 
-	@FindBy(id="form-control-catArabicName")
-	 WebElement editcategoryNameArtxt;
+	@FindBy(id = "form-control-catArabicName")
+	WebElement editcategoryNameArtxt;
 
-	@FindBy(id="error-msg-catArabicName")
+	@FindBy(id = "error-msg-catArabicName")
 	public WebElement editcategoryNameArErrorMsgtxt;
-	
-	@FindBy(id="success-msg")
+
+	@FindBy(id = "success-msg")
 	public WebElement successMsgtxt;
 
-	@FindBy(id="save-btn")
+	@FindBy(id = "save-btn")
 	WebElement editSaveBt;
-	
 
-	public void AddcategoryNameEntxt (String EnValue) {
+	public void AddcategoryNameEntxt(String EnValue) {
 
 		setTextElementText(editcategoryNameEntxt, EnValue);
 	}
 
-	public void AddcategoryNameArtxt (String ArValue) {
+	public void AddcategoryNameArtxt(String ArValue) {
 
 		setTextElementText(editcategoryNameArtxt, ArValue);
 	}
 
-	public void ClickSumbitToConfirmEditCategory () {
+	public void ClickSumbitToConfirmEditCategory() {
 
 		clickButton(editSaveBt);
 	}
 
-	public void ClearNameEn () {
+	public void ClearNameEn() {
 
 		editcategoryNameEntxt.clear();
 	}
 
-	public void ClearNameAr () {
+	public void ClearNameAr() {
 
 		editcategoryNameArtxt.clear();
 	}
-
 
 }

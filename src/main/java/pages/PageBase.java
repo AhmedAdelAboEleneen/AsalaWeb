@@ -8,11 +8,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 public class PageBase {
-	
+
 	public WebDriver driver;
-	public JavascriptExecutor jse ; 
-	public Select select ; 
-	public Actions action ; 
+	public JavascriptExecutor jse;
+	public Select select;
+	public Actions action;
 
 	// create constructor
 	public PageBase(WebDriver driver) {
@@ -20,24 +20,21 @@ public class PageBase {
 		PageFactory.initElements(driver, this);
 	}
 
-	public static void clickButton(WebElement button) 
-	{
+	public static void clickButton(WebElement button) {
 		button.click();
 	}
-	
-	public static void setTextElementText(WebElement textElement , String value) 
-	{
+
+	public static void setTextElementText(WebElement textElement, String value) {
 		textElement.sendKeys(value);
 	}
-	
-	public void scrollToBottom() 
-	
+
+	public void scrollToBottom()
+
 	{
-		jse.executeScript("scrollBy(0,1000)"); 
+		jse.executeScript("scrollBy(0,1000)");
 	}
-	
-	public void clearText(WebElement element) 
-	{
+
+	public void clearText(WebElement element) {
 		element.clear();
 	}
 

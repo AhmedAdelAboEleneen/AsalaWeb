@@ -4,85 +4,88 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePage extends PageBase{
+public class HomePage extends PageBase {
 
 	public HomePage(WebDriver driver) {
 		super(driver);
 	}
 
-	@FindBy(id="logo-lg")
-	WebElement homeBt ;
+	@FindBy(id = "logo-lg")
+	WebElement homeBt;
 
-	@FindBy(id="sidebar-toggle")
-	WebElement sideMenuBt ;
+	@FindBy(id = "sidebar-toggle")
+	WebElement sideMenuBt;
 
-	@FindBy(id="manage_mall")
-	WebElement manageMallsBt ;
+	@FindBy(id = "manage_mall")
+	WebElement manageMallsBt;
 
-	@FindBy(id="manage_store")
+	@FindBy(id = "manage_store")
 	WebElement mangeStoreBt;
-	
-	@FindBy(id="manage_category")
+
+	@FindBy(id = "manage_category")
 	WebElement mangeCategoryBt;
 
-	@FindBy(id="dropdown-toggle")
-	WebElement userNameBt ;
+	@FindBy(id = "dropdown-toggle")
+	WebElement userNameBt;
 
-	@FindBy(id="sign-out-action")
-	WebElement signOutBt ;
+	@FindBy(id = "sign-out-action")
+	WebElement signOutBt;
 
-	@FindBy(id="edit-profile-action")
-	WebElement profileBt ;
+	@FindBy(id = "edit-profile-action")
+	WebElement profileBt;
 
-	@FindBy(id="ar")
-	WebElement changeLanguageToArabicBt ; 
+	@FindBy(id = "ar")
+	WebElement changeLanguageToArabicBt;
 
-	@FindBy(id="en")
-	WebElement changeLanguageToEnglishBt ; 
+	@FindBy(id = "en")
+	WebElement changeLanguageToEnglishBt;
 
-	public void ClickHome () {
+	public void ClickHome() {
 
 		clickButton(homeBt);
 	}
 
-	public void ClickSideMenu () {
+	public void ClickSideMenu() {
 
 		clickButton(sideMenuBt);
 	}
-	public void ClickManageMalls () {
+
+	public void ClickManageMalls() {
 
 		clickButton(manageMallsBt);
 	}
 
-	public void ClickManageStores () {
+	public void ClickManageStores() {
 
 		clickButton(mangeStoreBt);
 	}
-	
-	public void ClickManageCategory () {
+
+	public void ClickManageCategory() {
 
 		clickButton(mangeCategoryBt);
 	}
-	
-	public void ClickUserName () {
+
+	public void ClickUserName() {
 
 		clickButton(userNameBt);
 	}
-	public void ClickSignOut () {
+
+	public void ClickSignOut() {
 
 		clickButton(signOutBt);
 	}
-	public void ClickProfile () {
+
+	public void ClickProfile() {
 
 		clickButton(profileBt);
 	}
 
-	public void ClickChangeLanguageToArabic () {
+	public void ClickChangeLanguageToArabic() {
 
 		clickButton(changeLanguageToArabicBt);
 	}
 
-	public void ClickChangeLanguageToEnglish () {
+	public void ClickChangeLanguageToEnglish() {
 
 		clickButton(changeLanguageToEnglishBt);
 	}

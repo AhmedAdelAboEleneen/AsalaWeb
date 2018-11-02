@@ -10,61 +10,61 @@ public class MangeMallsPage extends PageBase {
 		super(driver);
 	}
 
-	@FindBy(id="import-btn")
+	@FindBy(id = "import-btn")
 	WebElement importMallBt;
-	
-	@FindBy(id="addNew-btn")
+
+	@FindBy(id = "addNew-btn")
 	WebElement addNewMallBt;
-	
-	@FindBy(id="success-msg")
-	public WebElement successTxt ;
-	
-	@FindBy(id="edit-4")
+
+	@FindBy(id = "success-msg")
+	public WebElement successTxt;
+
+	@FindBy(id = "edit-4")
 	WebElement EditMallBt;
-	
-	@FindBy(id="activated-4")
+
+	@FindBy(id = "activated-4")
 	WebElement activeMallBt;
-	
-	@FindBy(id="deactivated-4")
+
+	@FindBy(id = "deactivated-4")
 	WebElement deactiveMallBt;
-	
-	@FindBy(id="activated-4")
+
+	@FindBy(id = "activated-4")
 	public WebElement activeTxt;
-	
-	@FindBy(id="deactivated-4")
+
+	@FindBy(id = "deactivated-4")
 	public WebElement deactiveTxt;
-	
-	@FindBy(id="btn-default")
+
+	@FindBy(id = "btn-default")
 	WebElement CancelBt;
-	
-	@FindBy(id="btn-primary")
+
+	@FindBy(id = "btn-primary")
 	WebElement confirmBt;
-	
-	public void ClickImportMall () {
+
+	public void ClickImportMall() {
 		clickButton(importMallBt);
 	}
-	
-	public void ClickAddMall () {
+
+	public void ClickAddMall() {
 		clickButton(addNewMallBt);
 	}
-	
-	public void ClickEditMall () {
+
+	public void ClickEditMall() {
 		clickButton(EditMallBt);
 	}
-	
-	public void ClickActiveMall () {
+
+	public void ClickActiveMall() {
 		clickButton(activeMallBt);
 	}
-	
-	public void ClickDeactiveMall () {
+
+	public void ClickDeactiveMall() {
 		clickButton(deactiveMallBt);
 	}
-	
-	public void ClickToCancel () {
+
+	public void ClickToCancel() {
 		clickButton(CancelBt);
 	}
-	
-	public void ClickToConfirm () {
+
+	public void ClickToConfirm() {
 		clickButton(confirmBt);
 	}
 }
