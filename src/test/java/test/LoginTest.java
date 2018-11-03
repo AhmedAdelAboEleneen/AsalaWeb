@@ -173,7 +173,7 @@ public class LoginTest extends TestBase {
 		loginPage.ClearPasswordData();
 		loginPage.AddPassword("123456");
 		loginPage.ClickLogin();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		Assert.assertTrue(loginPage.wrongEmailOrPasswordOrNotActiveTxt.getText()
 				.contains("ناسف، هذا الحساب غير مفعل، من فضلك تواصل مع مدير لوحة التحكم"));
 	}

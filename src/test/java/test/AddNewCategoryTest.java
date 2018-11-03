@@ -70,10 +70,8 @@ public class AddNewCategoryTest extends TestBase {
 		addNewCategoryPage.AddcategoryNameArtxt("Teeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
 		addNewCategoryPage.ClickSumbitToAddCategory();
 		Thread.sleep(3000);
-		// Assert.assertTrue(asalaaddNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("This
-		// field shouldn’t contain more than 30 characters"));
-		// Assert.assertFalse(asalaaddNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("This
-		// field shouldn’t contain more than 30 characters"));
+		Assert.assertTrue(addNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("This field shouldn’t contain more than 30 characters"));
+		Assert.assertTrue(addNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("This field shouldn’t contain more than 30 characters"));
 	}
 
 	// if user add name en & ar empty
@@ -143,10 +141,8 @@ public class AddNewCategoryTest extends TestBase {
 		addNewCategoryPage.AddcategoryNameArtxt("Teeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
 		addNewCategoryPage.ClickSumbitToAddCategory();
 		Thread.sleep(3000);
-		// Assert.assertTrue(asalaaddNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("يجب
-		// الا تزيد عدد الحروف عن 30 حرف"));
-		// Assert.assertTrue(asalaaddNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("يجب
-		// الا تزيد عدد الحروف عن 30 حرف"));
+		 Assert.assertTrue(addNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("يجب الا تزيد عدد الحروف عن 30 حرف"));
+		 Assert.assertTrue(addNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("يجب الا تزيد عدد الحروف عن 30 حرف"));
 	}
 
 	// if user add name en & ar empty
@@ -193,8 +189,7 @@ public class AddNewCategoryTest extends TestBase {
 		addNewCategoryPage.AddcategoryNameArtxt("هدوم 1");
 		addNewCategoryPage.ClickSumbitToAddCategory();
 		addNewCategoryPage.ClickSumbitToAddCategory();
-		Assert.assertTrue(
-				addNewCategoryPage.successMsgtxt.getText().contains("New category has been added successfully"));
+		Assert.assertTrue(addNewCategoryPage.successMsgtxt.getText().contains("New category has been added successfully"));
 
 	}
 }

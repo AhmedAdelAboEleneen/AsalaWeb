@@ -2,7 +2,6 @@ package test;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import pages.EditAccountPage;
 import pages.HomePage;
 import pages.LoginPage;

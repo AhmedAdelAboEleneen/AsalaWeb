@@ -38,7 +38,7 @@ public class MangeCategoriesTest extends TestBase {
 		mangeCategoriesPage.ClickPageNumberSix();
 		mangeCategoriesPage.ClickDeleteFirstCategory();
 		mangeCategoriesPage.ClickConfirmDeleteCategory();
-		driver.navigate().refresh();
+		Thread.sleep(3000);
 		mangeCategoriesPage.ClickDeleteSecondeCategory();
 		mangeCategoriesPage.ClickConfirmDeleteCategory();
 	}
