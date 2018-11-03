@@ -182,7 +182,7 @@ public class LoginTest extends TestBase {
 	// check user role and pages access.
 	// super admin login
 	@Test(priority = 15)
-	public void AddValidEmailAndPasswordActiveUSerSuperAdmin() {
+	public void AddValidEmailAndPasswordActiveUSerSuperAdmin() throws InterruptedException {
 
 		loginPage.ClearEmailData();
 		loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
@@ -192,6 +192,7 @@ public class LoginTest extends TestBase {
 		loginPage.ClickChangeLanguageToEnglish();
 
 		homePage = new HomePage(driver);
+		Thread.sleep(5000);
 		homePage.ClickUserName();
 		homePage.ClickSignOut();
 	}
@@ -199,11 +200,12 @@ public class LoginTest extends TestBase {
 	// check user role and pages access.
 	// mall admin login
 	@Test(priority = 16)
-	public void AddValidEmailAndPasswordActiveUSerMallAdmin() {
+	public void AddValidEmailAndPasswordActiveUSerMallAdmin() throws InterruptedException {
 
 		loginPage.AddEmail("ahmed.adel.mall@ibtikar.net.sa");
 		loginPage.AddPassword("123456");
 		loginPage.ClickLogin();
+		Thread.sleep(3000);
 		homePage.ClickUserName();
 		homePage.ClickSignOut();
 	}
