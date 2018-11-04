@@ -38,9 +38,6 @@ public class MangeCategoriesTest extends TestBase {
 		mangeCategoriesPage.ClickPageNumberSix();
 		mangeCategoriesPage.ClickDeleteFirstCategory();
 		mangeCategoriesPage.ClickConfirmDeleteCategory();
-		Thread.sleep(3000);
-		mangeCategoriesPage.ClickDeleteSecondeCategory();
-		mangeCategoriesPage.ClickConfirmDeleteCategory();
 	}
 
 }

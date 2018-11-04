@@ -15,8 +15,8 @@ public class AddNewStoreTest extends TestBase {
 	AddNewStorePage addNewStorePage;
 
 	// make login
-	@Test(priority = 1)
-	public void MakeLoginAndSelectMallAsSuuperAdmin() {
+	/*@Test(priority = 1)
+	public void MakeLogin() {
 
 		// login
 		loginPage = new LoginPage(driver);
@@ -27,6 +27,6 @@ public class AddNewStoreTest extends TestBase {
 		// go to home page
 		homePage = new HomePage(driver);
 		homePage.ClickManageStores();
-	}
+	}*/
 
 }

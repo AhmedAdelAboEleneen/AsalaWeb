@@ -13,28 +13,9 @@ public class MangeStoreTest extends TestBase {
 	HomePage homePage;
 	MangeStoresPage mangeStoresPage;
 
-	// login as mall admin to make sure that mall admin can see only his malls
-	/*
-	 * @Test(priority = 1) public void MakeLoginAndSelectMallAsMallAdmin() {
-	 * 
-	 * // login asalaLoginPage = new AsalaLoginPage(driver);
-	 * asalaLoginPage.AddEmail("ahmed.adel.mall@ibtikar.net.sa");
-	 * asalaLoginPage.AddPassword("123456"); asalaLoginPage.ClickLogin();
-	 * 
-	 * // go to home page & click user & click to get here profile asalaHomePage =
-	 * new AsalaHomePage(driver); asalaHomePage.ClickManageStores();
-	 * 
-	 * // as super admin can select all his malls asalaMangeStoresPage = new
-	 * AsalaMangeStoresPage(driver);
-	 * asalaMangeStoresPage.SelectFilterMallAsMallAdmin();
-	 * asalaMangeStoresPage.ClickSumbitToSearch(); driver.navigate().refresh();
-	 * 
-	 * //logout asalaHomePage.ClickUserName(); asalaHomePage.ClickSignOut(); }
-	 */
-
 	// login as super admin to make sure that super admin can see all malls
 	@Test(priority = 1)
-	public void MakeLoginAndSelectMallAsSuuperAdmin() {
+	public void MakeLoginAndSelectMallAsSuperAdmin() {
 
 		// login
 		loginPage = new LoginPage(driver);
@@ -96,28 +77,31 @@ public class MangeStoreTest extends TestBase {
 		mangeStoresPage.SelectFilterCategory();
 		Thread.sleep(3000);
 		mangeStoresPage.ClickSumbitToSearch();
-		// driver.navigate().refresh();
+		 driver.navigate().refresh();
+	}
+	// make filter with mall & Search
+	@Test(priority = 7)
+	public void MakeFilterWithMallAndSearch() throws InterruptedException {
+
+		mangeStoresPage.SelectFilterMallAsSuperAdmin();
+		Thread.sleep(3000);
+		mangeStoresPage.AddTextInSearch("pom");
+		mangeStoresPage.AutoComplete();
+		Thread.sleep(3000);
+		driver.navigate().refresh();
 	}
 
-	// make search with filter mall & search
-	/*
-	 * @Test(priority = 6) public void MakeFilterWithMallAndSearch() {
-	 * 
-	 * asalaMangeStoresPage = new AsalaMangeStoresPage(driver);
-	 * asalaMangeStoresPage.SelectFilterMallAsSuperAdmin();
-	 * asalaMangeStoresPage.ClickSumbitToSearch();
-	 * asalaMangeStoresPage.AddTextInSearch("Poma");
-	 * asalaMangeStoresPage.ClickSumbitToSearch(); driver.navigate().refresh(); }
-	 * 
-	 * // make search with filter mall & category & search
-	 * 
-	 * @Test(priority = 7) public void MakeFilterWithMallAndCategoryAndSearch() {
-	 * 
-	 * asalaMangeStoresPage = new AsalaMangeStoresPage(driver);
-	 * asalaMangeStoresPage.SelectFilterMallAsSuperAdmin();
-	 * asalaMangeStoresPage.ClickSumbitToSearch();
-	 * asalaMangeStoresPage.AddTextInSearch("Poma");
-	 * asalaMangeStoresPage.ClickSumbitToSearch(); driver.navigate().refresh(); }
-	 */
+	// make filter with mall & category & Search
+	@Test(priority = 8)
+	public void MakeFilterWithMallAndCategoryAndSearch() throws InterruptedException {
+
+		mangeStoresPage.SelectFilterMallAsSuperAdmin();
+		Thread.sleep(3000);
+		mangeStoresPage.SelectFilterCategory();
+		Thread.sleep(3000);
+		mangeStoresPage.AddTextInSearch("asa");
+		mangeStoresPage.ClickSumbitToSearch();
+		driver.navigate().refresh();
+	}
 
 }

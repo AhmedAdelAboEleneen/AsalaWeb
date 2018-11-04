@@ -16,11 +16,8 @@ public class MangeCategoriesPage extends PageBase {
 	@FindBy(id = "edit-4")
 	WebElement editCategoryBt;
 
-	@FindBy(id = "delete-61")
-	WebElement deleteEnCategoryBt;
-
-	@FindBy(id = "delete-62")
-	WebElement deleteArCategoryBt;
+	@FindBy(id = "delete-65")
+	WebElement deleteCategoryBt;
 
 	@FindBy(id = "btn-primary")
 	WebElement confirmDeleteCategoryBt;
@@ -40,13 +37,9 @@ public class MangeCategoriesPage extends PageBase {
 
 	public void ClickDeleteFirstCategory() {
 
-		clickButton(deleteEnCategoryBt);
+		clickButton(deleteCategoryBt);
 	}
 
-	public void ClickDeleteSecondeCategory() {
-
-		clickButton(deleteArCategoryBt);
-	}
 
 	public void ClickConfirmDeleteCategory() {
 

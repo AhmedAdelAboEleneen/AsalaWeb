@@ -30,10 +30,11 @@ public class MangeMallsTest extends TestBase {
 
 	// Deactive KADI MALL
 	@Test(priority = 2)
-	public void DeactiveKadiMallEn() {
+	public void DeactiveKadiMallEn() throws InterruptedException {
 
 		mangeMallsPage = new MangeMallsPage(driver);
 		mangeMallsPage.ClickDeactiveMall();
+		Thread.sleep(3000);
 		mangeMallsPage.ClickToConfirm();
 		Assert.assertTrue(mangeMallsPage.successTxt.getText().contains("The Mall has been deactivated successfully"));
 	}
