@@ -13,6 +13,9 @@ public class MangeCategoriesPage extends PageBase {
 	@FindBy(id = "addNew-btn")
 	WebElement addNewCategoryBt;
 
+	@FindBy(id = "selectCat-btn")
+	WebElement selectCategoryBt;
+
 	@FindBy(id = "edit-4")
 	WebElement editCategoryBt;
 
@@ -28,6 +31,11 @@ public class MangeCategoriesPage extends PageBase {
 	public void ClickToAddNewCategory() {
 
 		clickButton(addNewCategoryBt);
+	}
+
+	public void ClickToSelectMallCategory() {
+
+		clickButton(selectCategoryBt);
 	}
 
 	public void ClickEditCategory() {

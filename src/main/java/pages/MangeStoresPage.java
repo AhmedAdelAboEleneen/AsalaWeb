@@ -10,7 +10,6 @@ public class MangeStoresPage extends PageBase {
 
 	public MangeStoresPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	@FindBy(id = "filter-by-mall")
@@ -99,5 +98,10 @@ public class MangeStoresPage extends PageBase {
 
 		clickButton(submitFilterAndSearch);
 	}
+
+    public void ClickToAddNewStore() {
+
+        clickButton(addNewStoreBt);
+    }
 
 }

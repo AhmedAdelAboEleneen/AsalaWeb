@@ -15,7 +15,7 @@ public class AddNewStoreTest extends TestBase {
 	AddNewStorePage addNewStorePage;
 
 	// make login
-	/*@Test(priority = 1)
+	@Test(priority = 1)
 	public void MakeLogin() {
 
 		// login
@@ -27,6 +27,11 @@ public class AddNewStoreTest extends TestBase {
 		// go to home page
 		homePage = new HomePage(driver);
 		homePage.ClickManageStores();
-	}*/
+	}
+	@Test(priority = 2)
+	public void ClickAddNewStore (){
+		mangeStoresPage = new MangeStoresPage(driver);
+		mangeStoresPage.ClickToAddNewStore();
+	}
 
 }
