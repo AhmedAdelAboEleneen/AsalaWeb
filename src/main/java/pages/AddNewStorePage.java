@@ -21,33 +21,33 @@ public class AddNewStorePage extends PageBase {
 	WebElement categorySelect;
 
 	@FindBy(id = "error-msg-category_id")
-	public WebElement errorFilterByCategory;
+	public WebElement errorCategorySelect;
 
-	@FindBy(id = "floor")
+	@FindBy(id = "floor-select")
 	WebElement floorSelect;
 
 	@FindBy(id = "error-msg-floor")
 	public WebElement errorMsgFloor;
 
-	@FindBy(id = "store_name_ar")
+	@FindBy(id = "store_name_input_ar")
 	WebElement storeNameArTxt;
 
 	@FindBy(id = "error-msg-store_name_ar")
 	public WebElement errorMsgNameAr;
 
-	@FindBy(id = "store_name_en")
+	@FindBy(id = "store_name_input_en")
 	WebElement storeNameEnTxt;
 
 	@FindBy(id = "error-msg-store_name_en")
 	public WebElement errorMsgNameEn;
 
-	@FindBy(id = "store_description_ar")
+	@FindBy(id = "store_description_input_ar")
 	WebElement storeDescriptionArTxt;
 
 	@FindBy(id = "error-msg-store_description_ar")
 	public WebElement errorMsgDescriptionAr;
 
-	@FindBy(id = "store_description_en")
+	@FindBy(id = "store_description_input_en")
 	WebElement storeDescriptionEnTxt;
 
 	@FindBy(id = "error-msg-store_description_en")
@@ -65,32 +65,32 @@ public class AddNewStorePage extends PageBase {
 	@FindBy(id = "select-date-to-0")
 	WebElement dateToSelect;
 
-	@FindBy(id = "")
+	@FindBy(id = "active")
 	WebElement activeRadioBt;
 
-	@FindBy(id = "")
+	@FindBy(id = "opening_soon")
 	WebElement openingSoonRadioBt;
 
 
 	@FindBy(id = "error-msg-status")
 	public WebElement errorMsgStatus;
 
-	@FindBy(id = "can_redeem")
+	@FindBy(id = "can_redeem_input")
 	WebElement canRedeemCheckbox;
 
-	@FindBy(id = "location")
+	@FindBy(id = "location_input")
 	WebElement storeLocationTxt;
 
 	@FindBy(id = "error-msg-location")
 	public WebElement errorMsgLocation;
 
-	@FindBy(id = "logo-input")
+	@FindBy(id = "logo-input-file")
 	WebElement logoBt;
 
 	@FindBy(id = "error-msg-logo")
 	public WebElement errorMsgLogo;
 
-	@FindBy(id = "cover-input")
+	@FindBy(id = "cover-input-file")
 	WebElement coverPhotoBt;
 
 	@FindBy(id = "error-msg-photo")
@@ -117,19 +117,19 @@ public class AddNewStorePage extends PageBase {
 	public void SelectMall() {
 
 		Select selectMall = new Select(mallSelect);
-		selectMall.selectByIndex(4);
+		selectMall.selectByValue("{\"mall_id\":4,\"name\":\"KADI MALL\",\"floors\":10,\"city\":\"Riyadh\",\"address\":\"mall_4\",\"status\":true}");
 	}
 
 	public void SelectCategory() {
 
-		Select selectMall = new Select(categorySelect);
-		selectMall.selectByIndex(4);
+		Select selectCategory = new Select(categorySelect);
+		selectCategory.selectByValue("4");
 	}
 
 	public void SelectFloorNumber() {
 
-		Select selectMall = new Select(floorSelect);
-		selectMall.selectByIndex(4);
+		Select selectFloor = new Select(floorSelect);
+		selectFloor.selectByValue("4");
 	}
 
 	public void AddTextInStoreNameArabic(String Value) {
@@ -160,23 +160,113 @@ public class AddNewStorePage extends PageBase {
 	public void SelectDay() {
 
 		Select selectMall = new Select(daySelect);
-		selectMall.selectByIndex(4);
+		selectMall.selectByValue("Monday");
 	}
 
 	public void SelectDateFrom() {
 
 		Select selectMall = new Select(dateFromSelect);
-		selectMall.selectByIndex(9);
+		selectMall.selectByValue("8 AM");
 	}
 
 	public void SelectDateTo() {
 
 		Select selectMall = new Select(dateToSelect);
-		selectMall.selectByIndex(20);
+		selectMall.selectByValue("8 PM");
 	}
 
 	public void AddTextInLocation(String Value) {
 
 		setTextElementText(storeLocationTxt, Value);
 	}
+
+    public void ClickToCanredeem() {
+
+        clickButton(canRedeemCheckbox);
+    }
+
+    public void ClickToMakeStatusActive() {
+
+        clickButton(activeRadioBt);
+    }
+
+    public void ClickToMakeStatusOpeningSoon() {
+
+        clickButton(openingSoonRadioBt);
+    }
+
+    public void UploadSVG (){
+
+		String imageName = "SVG.svg";
+		String imagePath = System.getProperty("user.dir")+"uploads"+imageName;
+		logoBt.sendKeys(imagePath);
+		logoBt.click();
+	}
+
+	public void UploadMoreSize (){
+
+		String imageName = "OverSize.jpg";
+		String imagePath = System.getProperty("user.dir")+"uploads"+imageName;
+		logoBt.sendKeys(imagePath);
+		logoBt.click();
+	}
+
+	public void UploadPNG (){
+
+		String imageName = "PNG.png";
+		String imagePath = System.getProperty("user.dir")+"uploads"+imageName;
+		logoBt.sendKeys(imagePath);
+		logoBt.click();
+	}
+
+	public void UploadJPG (){
+
+		String imageName = "JPG.jpg";
+		String imagePath = System.getProperty("user.dir")+"uploads"+imageName;
+		logoBt.sendKeys(imagePath);
+		logoBt.click();
+	}
+
+	public void UploadSVGCover (){
+
+		String imageName = "SVG.svg";
+		String imagePath = System.getProperty("user.dir")+"uploads"+imageName;
+		coverPhotoBt.sendKeys(imagePath);
+		coverPhotoBt.click();
+	}
+
+	public void UploadMoreSizeCover (){
+
+		String imageName = "OverSize.jpg";
+		String imagePath = System.getProperty("user.dir")+"uploads"+imageName;
+		coverPhotoBt.sendKeys(imagePath);
+		coverPhotoBt.click();
+	}
+
+	public void UploadPNGCover (){
+
+		String imageName = "PNG.png";
+		String imagePath = System.getProperty("user.dir")+"uploads"+imageName;
+		coverPhotoBt.sendKeys(imagePath);
+		coverPhotoBt.click();
+	}
+
+	public void UploadJPGCover (){
+
+		String imageName = "JPG.jpg";
+		String imagePath = System.getProperty("user.dir")+"uploads"+imageName;
+		coverPhotoBt.sendKeys(imagePath);
+		coverPhotoBt.click();
+	}
+
+	public void AddEmail(String Value) {
+
+		setTextElementText(addEmailTxt, Value);
+	}
+
+	public void ClickToSave() {
+
+		clickButton(saveBt);
+	}
+
 }
