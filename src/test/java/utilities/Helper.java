@@ -9,13 +9,13 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-public class AsalaHelper {
+public class Helper {
 
 	// Method to take screen shoot when test case fail
 
 	public static void caputreScreenShoot(WebDriver driver, String screenShootName) {
 
-		Path dest = Paths.get("./ScreenShoot " + screenShootName + ".png");
+		Path dest = Paths.get("./ScreenShoot/ScreenShoot" + screenShootName + ".png");
 
 		try {
 			java.nio.file.Files.createDirectories(dest.getParent());

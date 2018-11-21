@@ -139,7 +139,7 @@ at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverComman
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
 at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:289)
-at utilities.AsalaHelper.caputreScreenShoot(AsalaHelper.java:22)
+at utilities.Helper.caputreScreenShoot(AsalaHelper.java:22)
 at test.TestBase.screenShootsOnFailure(TestBase.java:56)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)

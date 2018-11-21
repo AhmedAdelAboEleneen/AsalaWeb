@@ -31,11 +31,14 @@ public class EditCategoryPage extends PageBase {
 	public void AddcategoryNameEntxt(String EnValue) {
 
 		setTextElementText(editcategoryNameEntxt, EnValue);
+		System.out.println(EnValue);
 	}
 
 	public void AddcategoryNameArtxt(String ArValue) {
 
 		setTextElementText(editcategoryNameArtxt, ArValue);
+		System.out.println(ArValue);
+
 	}
 
 	public void ClickSumbitToConfirmEditCategory() {

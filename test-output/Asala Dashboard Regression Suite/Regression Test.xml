@@ -22,7 +22,7 @@ at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverComman
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
 at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:294)
-at asala.utilities.AsalaHelper.caputreScreenShoot(AsalaHelper.java:23)
+at asala.utilities.Helper.caputreScreenShoot(AsalaHelper.java:23)
 at asala.test.AsalaTestBase.screenShootsOnFailure(AsalaTestBase.java:56)
 ... Removed 32 stack frames]]>
     </failure>
@@ -48,7 +48,7 @@ at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverComman
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:605)
 at org.openqa.selenium.remote.RemoteWebDriver.getScreenshotAs(RemoteWebDriver.java:294)
-at asala.utilities.AsalaHelper.caputreScreenShoot(AsalaHelper.java:23)
+at asala.utilities.Helper.caputreScreenShoot(AsalaHelper.java:23)
 at asala.test.AsalaTestBase.screenShootsOnFailure(AsalaTestBase.java:56)
 ... Removed 32 stack frames]]>
     </failure>

@@ -65,10 +65,13 @@ public class AddNewStorePage extends PageBase {
 	@FindBy(id = "select-date-to-0")
 	WebElement dateToSelect;
 
-	@FindBy(id = "active")
+	@FindBy(id = "error-msg-day")
+	public WebElement errorMsgDay;
+
+	@FindBy(id = "active_status")
 	WebElement activeRadioBt;
 
-	@FindBy(id = "opening_soon")
+	@FindBy(id = "opening_soon_status")
 	WebElement openingSoonRadioBt;
 
 
@@ -85,7 +88,7 @@ public class AddNewStorePage extends PageBase {
 	public WebElement errorMsgLocation;
 
 	@FindBy(id = "logo-input-file")
-	WebElement logoBt;
+	public WebElement logoBt;
 
 	@FindBy(id = "error-msg-logo")
 	public WebElement errorMsgLogo;
@@ -108,22 +111,31 @@ public class AddNewStorePage extends PageBase {
 	@FindBy(id = "error-msgs-phone-0")
 	public WebElement errorMsgPhone1;
 
-	@FindBy(id = "")
-	WebElement addMorePhoneNumberBt;
+	@FindBy(id = "add-more-phone")
+	 WebElement addMorePhone;
+
+	@FindBy(id = "phone-1")
+	WebElement phoneNumber2Txt;
+
+	@FindBy(id = "error-msg-phone-1")
+	public WebElement errorMsgPhone2;
 
 	@FindBy(id = "submit-btn")
 	WebElement saveBt;
 
+	@FindBy(id = "success-msg")
+	public WebElement sucessMsg;
+
 	public void SelectMall() {
 
 		Select selectMall = new Select(mallSelect);
-		selectMall.selectByValue("{\"mall_id\":4,\"name\":\"KADI MALL\",\"floors\":10,\"city\":\"Riyadh\",\"address\":\"mall_4\",\"status\":true}");
+		selectMall.selectByValue("4");
 	}
 
 	public void SelectCategory() {
 
 		Select selectCategory = new Select(categorySelect);
-		selectCategory.selectByValue("4");
+		selectCategory.selectByValue("114");
 	}
 
 	public void SelectFloorNumber() {
@@ -195,73 +207,85 @@ public class AddNewStorePage extends PageBase {
         clickButton(openingSoonRadioBt);
     }
 
+	public void ClickToMakeCanredeem() {
+
+		clickButton(canRedeemCheckbox);
+	}
+
     public void UploadSVG (){
 
 		String imageName = "SVG.svg";
-		String imagePath = System.getProperty("user.dir")+"uploads"+imageName;
+		String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
 		logoBt.sendKeys(imagePath);
-		logoBt.click();
 	}
 
 	public void UploadMoreSize (){
 
 		String imageName = "OverSize.jpg";
-		String imagePath = System.getProperty("user.dir")+"uploads"+imageName;
+		String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
 		logoBt.sendKeys(imagePath);
-		logoBt.click();
 	}
 
 	public void UploadPNG (){
 
 		String imageName = "PNG.png";
-		String imagePath = System.getProperty("user.dir")+"uploads"+imageName;
+		String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
 		logoBt.sendKeys(imagePath);
-		logoBt.click();
 	}
 
 	public void UploadJPG (){
 
 		String imageName = "JPG.jpg";
-		String imagePath = System.getProperty("user.dir")+"uploads"+imageName;
+		String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
 		logoBt.sendKeys(imagePath);
-		logoBt.click();
 	}
 
 	public void UploadSVGCover (){
 
 		String imageName = "SVG.svg";
-		String imagePath = System.getProperty("user.dir")+"uploads"+imageName;
+		String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
 		coverPhotoBt.sendKeys(imagePath);
-		coverPhotoBt.click();
 	}
 
 	public void UploadMoreSizeCover (){
 
 		String imageName = "OverSize.jpg";
-		String imagePath = System.getProperty("user.dir")+"uploads"+imageName;
+		String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
 		coverPhotoBt.sendKeys(imagePath);
-		coverPhotoBt.click();
 	}
 
 	public void UploadPNGCover (){
 
 		String imageName = "PNG.png";
-		String imagePath = System.getProperty("user.dir")+"uploads"+imageName;
+		String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
 		coverPhotoBt.sendKeys(imagePath);
-		coverPhotoBt.click();
 	}
 
 	public void UploadJPGCover (){
 
 		String imageName = "JPG.jpg";
-		String imagePath = System.getProperty("user.dir")+"uploads"+imageName;
+		String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
 		coverPhotoBt.sendKeys(imagePath);
-		coverPhotoBt.click();
 	}
 
 	public void AddEmail(String Value) {
 
 		setTextElementText(addEmailTxt, Value);
+	}
+
+	public void ClickToAddMorePhone() {
+
+		clickButton(addMorePhone);
+	}
+
+	public void AddPhoneOne(String Value) {
+
+		setTextElementText(phoneNumber1Txt, Value);
+	}
+
+	public void AddPhoneTwo(String Value) {
+
+		setTextElementText(phoneNumber2Txt, Value);
 	}
 
 	public void ClickToSave() {

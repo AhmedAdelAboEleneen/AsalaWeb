@@ -6,13 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
-import utilities.AsalaHelper;
+import utilities.Helper;
 
 public class TestBase {
 
@@ -40,11 +36,11 @@ public class TestBase {
 		driver.navigate().to("https://asala-dashboard.ibtikar.net.sa/auth/login");
 	}
 
-	/*@AfterSuite
+	@AfterSuite
 	public void stopDriver() {
 
 		driver.quit();
-	}*/
+	}
 
 	// Take Screenshot when test case fail and add it in screenshot folder
 	@AfterMethod
@@ -54,10 +50,8 @@ public class TestBase {
 
 			System.out.println("Failed!");
 			System.out.println("Taking ScreenShot.......");
-			AsalaHelper.caputreScreenShoot(driver, result.getName());
+			Helper.caputreScreenShoot(driver, result.getName());
 
 		}
-
 	}
-
 }
