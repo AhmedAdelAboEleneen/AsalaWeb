@@ -62,7 +62,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // check if category empty display validation message
-   /* @Test(priority = 4)
+    @Test(priority = 4)
     public void IfUserChoseCategoryEmpty() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -968,7 +968,7 @@ public class AddNewStoreTest extends TestBase {
         addNewStorePage.ClickToSave();
         js.executeScript("scrollBy(0,3000)");
         Assert.assertTrue(addNewStorePage.errorMsgPhone1.getText().contains("please add a phone number"));
-    }*/
+    }
 
     // VALID TO ADD NEW STORE
     // if User Add try to make Add new store in arabic
@@ -1108,10 +1108,40 @@ public class AddNewStoreTest extends TestBase {
         addNewStorePage.ClickToMakeStatusOpeningSoon();
         addNewStorePage.ClickToCanredeem();
         addNewStorePage.AddTextInLocation(location8);
-        addNewStorePage.UploadJPG();
+        addNewStorePage.UploadPNG();
         addNewStorePage.UploadJPGCover();
         addNewStorePage.AddEmail("a@a.com");
         addNewStorePage.AddPhoneOne("966511234567");
+        addNewStorePage.ClickToSave();
+        js.executeScript("scrollBy(0,-3000)");
+        Thread.sleep(5000);
+        Assert.assertTrue(addNewStorePage.sucessMsg.getText().contains("New store has been added successfully"));
+    }
+
+    // if User Add two phone number
+    @Test(priority = 84)
+    public void IfUserAddTwoPhoneNumber() throws InterruptedException {
+        driver.navigate().refresh();
+        Thread.sleep(5000);
+        addNewStorePage.SelectMall();
+        Thread.sleep(5000);
+        addNewStorePage.SelectCategory();
+        addNewStorePage.SelectFloorNumber();
+        addNewStorePage.AddTextInStoreNameArabic("كبير");
+        addNewStorePage.AddTextInStoreNameEnglish("Big");
+        addNewStorePage.AddTextInStoreDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewStorePage.AddTextInStoreDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        js = (JavascriptExecutor) driver;
+        js.executeScript("scrollBy(0,3000)");
+        addNewStorePage.ClickToMakeStatusOpeningSoon();
+        addNewStorePage.ClickToCanredeem();
+        addNewStorePage.AddTextInLocation(location8);
+        addNewStorePage.UploadPNG();
+        addNewStorePage.UploadJPGCover();
+        addNewStorePage.AddEmail("a@a.com");
+        addNewStorePage.AddPhoneOne("966511234567");
+        addNewStorePage.ClickToAddMorePhone();
+        addNewStorePage.AddPhoneTwo("966511234568");
         addNewStorePage.ClickToSave();
         js.executeScript("scrollBy(0,-3000)");
         Thread.sleep(5000);

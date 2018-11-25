@@ -1,5 +1,6 @@
 package test;
 
+import com.github.javafaker.Faker;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -14,6 +15,13 @@ public class AddNewCategoryTest extends TestBase {
     HomePage homePage;
     MangeCategoriesPage mangeCategoriesPage;
     AddNewCategoryPage addNewCategoryPage;
+
+    Faker fakeData = new Faker();
+
+    String Name1 = fakeData.funnyName().name();
+    String Name2 = fakeData.funnyName().name();
+    String Name3 = fakeData.funnyName().name();
+    String Name4 = fakeData.funnyName().name();
 
     // make login
     @Test(priority = 1)
@@ -70,8 +78,8 @@ public class AddNewCategoryTest extends TestBase {
         addNewCategoryPage.AddcategoryNameArtxt("Teeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
         addNewCategoryPage.ClickSumbitToAddCategory();
         Thread.sleep(3000);
-        //Assert.assertTrue(addNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("This field shouldn’t contain more than 30 characters"));
-        //Assert.assertTrue(addNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("This field shouldn’t contain more than 30 characters"));
+        Assert.assertTrue(addNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("This field shouldn’t contain more than 30 characters"));
+        Assert.assertTrue(addNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("This field shouldn’t contain more than 30 characters"));
     }
 
     // if user add name en & ar empty
@@ -172,8 +180,8 @@ public class AddNewCategoryTest extends TestBase {
     public void UserAddNameEnAndNameAr() {
 
         driver.navigate().refresh();
-        addNewCategoryPage.AddcategoryNameEntxt("N00");
-        addNewCategoryPage.AddcategoryNameArtxt("N00");
+        addNewCategoryPage.AddcategoryNameEntxt(Name1);
+        addNewCategoryPage.AddcategoryNameArtxt(Name2);
         addNewCategoryPage.ClickSumbitToAddCategory();
         Assert.assertTrue(addNewCategoryPage.successMsgtxt.getText().contains("تم إضافة تصنيف جديد بنجاح"));
 
@@ -184,8 +192,8 @@ public class AddNewCategoryTest extends TestBase {
 
         driver.navigate().refresh();
         homePage.ClickChangeLanguageToEnglish();
-        addNewCategoryPage.AddcategoryNameEntxt("N000");
-        addNewCategoryPage.AddcategoryNameArtxt("N000");
+        addNewCategoryPage.AddcategoryNameEntxt(Name3);
+        addNewCategoryPage.AddcategoryNameArtxt(Name4);
         addNewCategoryPage.ClickSumbitToAddCategory();
         Assert.assertTrue(addNewCategoryPage.successMsgtxt.getText().contains("New category has been added successfully"));
     }
