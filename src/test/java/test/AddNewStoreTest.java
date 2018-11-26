@@ -26,6 +26,7 @@ public class AddNewStoreTest extends TestBase {
     String location6 = fakeData.address().cityName();
     String location7 = fakeData.address().cityName();
     String location8 = fakeData.address().cityName();
+    String location9 = fakeData.address().cityName();
 
     // make login
     @Test(priority = 1)
@@ -37,7 +38,7 @@ public class AddNewStoreTest extends TestBase {
         loginPage.AddPassword("123456");
         loginPage.ClickLogin();
 
-        // go to home page
+        // go to home page & click mange stores
         homePage = new HomePage(driver);
         homePage.ClickManageStores();
     }
@@ -897,10 +898,6 @@ public class AddNewStoreTest extends TestBase {
         addNewStorePage.AddTextInStoreDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
-        addNewStorePage.SelectDay();
-        addNewStorePage.SelectDateFrom();
-        addNewStorePage.SelectDateTo();
-        addNewStorePage.ClickToAddAnotherShift();
         addNewStorePage.ClickToAddAnotherShift();
         addNewStorePage.ClickToMakeStatusActive();
         addNewStorePage.AddTextInLocation(location1);
@@ -1135,7 +1132,7 @@ public class AddNewStoreTest extends TestBase {
         js.executeScript("scrollBy(0,3000)");
         addNewStorePage.ClickToMakeStatusOpeningSoon();
         addNewStorePage.ClickToCanredeem();
-        addNewStorePage.AddTextInLocation(location8);
+        addNewStorePage.AddTextInLocation(location9);
         addNewStorePage.UploadPNG();
         addNewStorePage.UploadJPGCover();
         addNewStorePage.AddEmail("a@a.com");
