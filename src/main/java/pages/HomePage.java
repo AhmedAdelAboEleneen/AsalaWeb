@@ -25,6 +25,9 @@ public class HomePage extends PageBase {
 	@FindBy(id = "manage_category")
 	WebElement mangeCategoryBt;
 
+	@FindBy(id = "manage_offer")
+	WebElement mangeOfferBt;
+
 	@FindBy(id = "dropdown-toggle")
 	WebElement userNameBt;
 
@@ -63,6 +66,11 @@ public class HomePage extends PageBase {
 	public void ClickManageCategory() {
 
 		clickButton(mangeCategoryBt);
+	}
+
+	public void ClickManageOffer() {
+
+		clickButton(mangeOfferBt);
 	}
 
 	public void ClickUserName() {
