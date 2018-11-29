@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,25 +14,25 @@ public class AddNewOfferPage extends PageBase {
     @FindBy(id = "offer_name_input_ar")
     WebElement offerNameArTxt;
 
-    @FindBy(id = "error-msg-name_ar")
+    @FindBy(id = "error-msg-offer_name_ar")
     public WebElement errorMsgNameAr;
 
     @FindBy(id = "offer_name_input_en")
     WebElement offerNameEnTxt;
 
-    @FindBy(id = "error-msg-name_en")
+    @FindBy(id = "error-msg-offer_name_en")
     public WebElement errorMsgNameEn;
 
     @FindBy(id = "offer_description_input_ar")
     WebElement offerDescriptionArTxt;
 
-    @FindBy(id = "error-msg-description_ar")
+    @FindBy(id = "error-msg-offer_description_ar")
     public WebElement errorMsgDescriptionAr;
 
     @FindBy(id = "offer_description_input_en")
     WebElement offerDescriptionEnTxt;
 
-    @FindBy(id = "error-msg-description_en")
+    @FindBy(id = "error-msg-offer_description_en")
     public WebElement errorMsgDescriptionEn;
 
     @FindBy(id = "cover-input-file")
@@ -40,14 +41,14 @@ public class AddNewOfferPage extends PageBase {
     @FindBy(id = "error-msg-photo")
     public WebElement errorMsgPhoto;
 
-    @FindBy(id = "")
-    public WebElement DateFromTxt;
+    @FindBy(id = "select-start_at")
+    public WebElement DateFrom;
 
     @FindBy(id = "error-msg-start_at")
     public WebElement errorMsgDateFrom;
 
-    @FindBy(id = "")
-    public WebElement DateToTxt;
+    @FindBy(id = "select-end_at")
+    public WebElement DateTo;
 
     @FindBy(id = "error-msg-end_at")
     public WebElement errorMsgDateTo;
@@ -121,6 +122,46 @@ public class AddNewOfferPage extends PageBase {
     }
 
     // calender Here !!!
+
+    // chose old date in date from
+    public void ChoseDateFromOld(){
+        DateFrom.click();
+        DateFrom.sendKeys(Keys.ARROW_UP);
+        DateFrom.sendKeys(Keys.ENTER);
+    }
+
+    // chose current  date in date from
+    public void ChoseDateFromCurrent(){
+        DateFrom.click();
+        DateFrom.sendKeys(Keys.ENTER);
+    }
+
+    // chose future date in date from
+    public void ChoseDateFromFuture(){
+        DateFrom.click();
+        DateFrom.sendKeys(Keys.ARROW_DOWN);
+        DateFrom.sendKeys(Keys.ENTER);
+    }
+
+    // chose old date in date to
+    public void ChoseDateToOld(){
+        DateTo.click();
+        DateTo.sendKeys(Keys.ARROW_UP);
+        DateTo.sendKeys(Keys.ENTER);
+    }
+
+    // chose current  date in date to
+    public void ChoseDateToCurrent(){
+        DateTo.click();
+        DateTo.sendKeys(Keys.ENTER);
+    }
+
+    // chose future date in date to
+    public void ChoseDateToFuture(){
+        DateTo.click();
+        DateTo.sendKeys(Keys.ARROW_DOWN);
+        DateTo.sendKeys(Keys.ENTER);
+    }
 
     public void SelectMall() {
 

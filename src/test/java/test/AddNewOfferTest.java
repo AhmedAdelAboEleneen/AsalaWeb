@@ -69,7 +69,7 @@ public class AddNewOfferTest extends TestBase {
     public void IfUseAddNameArabicMore() {
         addNewOfferPage.AddTextInOfferNameArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeee");
         addNewOfferPage.ClickToSave();
-        Assert.assertTrue(addNewOfferPage.errorMsgNameAr.getText().contains("This field shouldn’t contain more than 50 characters"));
+        Assert.assertTrue(addNewOfferPage.errorMsgNameAr.getText().contains("This field shouldn’t contain more than 30 characters"));
         driver.navigate().refresh();
     }
 
@@ -120,8 +120,9 @@ public class AddNewOfferTest extends TestBase {
     @Test(priority = 12)
     public void IfUseAddNameEnglishMore() {
         addNewOfferPage.AddTextInOfferNameEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeee");
+        js = (JavascriptExecutor) driver;
         addNewOfferPage.ClickToSave();
-        Assert.assertTrue(addNewOfferPage.errorMsgNameEn.getText().contains("This field shouldn’t contain more than 50 characters"));
+        Assert.assertTrue(addNewOfferPage.errorMsgNameEn.getText().contains("This field shouldn’t contain more than 30 characters"));
         driver.navigate().refresh();
     }
 
@@ -272,7 +273,7 @@ public class AddNewOfferTest extends TestBase {
         addNewOfferPage.UploadMoreSize();
         Thread.sleep(3000);
         addNewOfferPage.ClickToSave();
-        Assert.assertTrue(addNewOfferPage.errorMsgPhoto.getText().contains("Photo size shouldn't be more than 1 Mb"));
+        Assert.assertTrue(addNewOfferPage.errorMsgPhoto.getText().contains("Photo size shouldn’t be more than 1 Mb"));
         driver.navigate().refresh();
     }
 
@@ -291,5 +292,164 @@ public class AddNewOfferTest extends TestBase {
         addNewOfferPage.UploadJPG();
         driver.navigate().refresh();
     }
+
+    // Not Valid Offer
+    // because it from future to curent date
+    @Test(priority = 32)
+    public void AddOfferinDateFromInFutureAndDateToInCurrent() throws InterruptedException {
+        addNewOfferPage.AddTextInOfferNameArabic("Tee");
+        addNewOfferPage.AddTextInOfferNameEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.AddTextInOfferDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.AddTextInOfferDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.UploadPNG();
+        addNewOfferPage.ChoseDateFromFuture();
+        addNewOfferPage.ChoseDateToCurrent();
+        addNewOfferPage.SelectMall();
+        addNewOfferPage.SelectStore();
+        addNewOfferPage.ClickToSave();
+        Thread.sleep(3000);
+        Assert.assertTrue(addNewOfferPage.errorMsgDateTo.getText().contains("Please select a correct end date"));
+        driver.navigate().refresh();
+
+    }
+
+   // add offer without store
+    @Test(priority = 33)
+    public void AddOfferWithoutStore() throws InterruptedException {
+        driver.navigate().refresh();
+        addNewOfferPage.AddTextInOfferNameArabic("Tee");
+        addNewOfferPage.AddTextInOfferNameEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.AddTextInOfferDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.AddTextInOfferDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.UploadPNG();
+        addNewOfferPage.ChoseDateFromCurrent();
+        addNewOfferPage.ChoseDateToCurrent();
+        addNewOfferPage.SelectMall();
+        addNewOfferPage.ClickToSave();
+        Thread.sleep(3000);
+        Assert.assertTrue(addNewOfferPage.errorstoreSelect.getText().contains("please select a store"));
+        driver.navigate().refresh();
+    }
+
+
+    // add offer without mall
+    @Test(priority = 34)
+    public void AddOfferWithoutMall() throws InterruptedException {
+        driver.navigate().refresh();
+        addNewOfferPage.AddTextInOfferNameArabic("Tee");
+        addNewOfferPage.AddTextInOfferNameEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.AddTextInOfferDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.AddTextInOfferDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.UploadPNG();
+        addNewOfferPage.ChoseDateFromCurrent();
+        addNewOfferPage.ChoseDateToCurrent();
+        addNewOfferPage.SelectStore();
+        addNewOfferPage.ClickToSave();
+        Thread.sleep(3000);
+        Assert.assertTrue(addNewOfferPage.errorMallSelect.getText().contains("please select a mall"));
+        driver.navigate().refresh();
+    }
+
+    // add offer without Date To
+    @Test(priority = 35)
+    public void AddOfferWithoutDateTo() throws InterruptedException {
+        driver.navigate().refresh();
+        addNewOfferPage.AddTextInOfferNameArabic("Tee");
+        addNewOfferPage.AddTextInOfferNameEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.AddTextInOfferDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.AddTextInOfferDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.UploadPNG();
+        addNewOfferPage.ChoseDateFromCurrent();
+        addNewOfferPage.SelectMall();
+        addNewOfferPage.SelectStore();
+        addNewOfferPage.ClickToSave();
+        Thread.sleep(3000);
+        Assert.assertTrue(addNewOfferPage.errorMsgDateTo.getText().contains("Please select days range"));
+        driver.navigate().refresh();
+    }
+
+    // add offer without Date From
+    @Test(priority = 36)
+    public void AddOfferWithoutDateFrom() throws InterruptedException {
+        driver.navigate().refresh();
+        addNewOfferPage.AddTextInOfferNameArabic("Tee");
+        addNewOfferPage.AddTextInOfferNameEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.AddTextInOfferDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.AddTextInOfferDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.UploadPNG();
+        addNewOfferPage.ChoseDateToCurrent();
+        addNewOfferPage.SelectMall();
+        addNewOfferPage.SelectStore();
+        addNewOfferPage.ClickToSave();
+        Thread.sleep(3000);
+        Assert.assertTrue(addNewOfferPage.errorMsgDateFrom.getText().contains("Please select days range"));
+        driver.navigate().refresh();
+    }
+
+
+    // valid offer
+    // add offer in current day & photo PNG
+    @Test(priority = 37)
+    public void AddOfferinCurrent() throws InterruptedException {
+        driver.navigate().refresh();
+        addNewOfferPage.AddTextInOfferNameArabic("Tee");
+        addNewOfferPage.AddTextInOfferNameEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.AddTextInOfferDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.AddTextInOfferDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.UploadPNG();
+        addNewOfferPage.ChoseDateFromCurrent();
+        addNewOfferPage.ChoseDateToCurrent();
+        addNewOfferPage.SelectMall();
+        addNewOfferPage.SelectStore();
+        addNewOfferPage.ClickToSave();
+        js = (JavascriptExecutor) driver;
+        js.executeScript("scrollBy(0,-3000)");
+        Thread.sleep(3000);
+        Assert.assertTrue(addNewOfferPage.sucessMsg.getText().contains("New offer has been added successfully"));
+        driver.navigate().refresh();
+    }
+
+    // add offer Date from in current & Date to in future & photo JPG
+    @Test(priority = 38)
+    public void AddOfferinCurrentAndFuture() throws InterruptedException {
+        driver.navigate().refresh();
+        addNewOfferPage.AddTextInOfferNameArabic("Tee");
+        addNewOfferPage.AddTextInOfferNameEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.AddTextInOfferDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.AddTextInOfferDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.UploadJPG();
+        addNewOfferPage.ChoseDateFromCurrent();
+        addNewOfferPage.ChoseDateToFuture();
+        addNewOfferPage.SelectMall();
+        addNewOfferPage.SelectStore();
+        addNewOfferPage.ClickToSave();
+        js = (JavascriptExecutor) driver;
+        js.executeScript("scrollBy(0,-3000)");
+        Thread.sleep(3000);
+        Assert.assertTrue(addNewOfferPage.sucessMsg.getText().contains("New offer has been added successfully"));
+        driver.navigate().refresh();
+    }
+
+    // add offer Date from in future & Date to in future & photo JPG
+    @Test(priority = 39)
+    public void AddOfferinFutureAndFuture() throws InterruptedException {
+        driver.navigate().refresh();
+        addNewOfferPage.AddTextInOfferNameArabic("Tee");
+        addNewOfferPage.AddTextInOfferNameEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.AddTextInOfferDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.AddTextInOfferDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.UploadJPG();
+        addNewOfferPage.ChoseDateFromFuture();
+        addNewOfferPage.ChoseDateToFuture();
+        addNewOfferPage.SelectMall();
+        addNewOfferPage.SelectStore();
+        addNewOfferPage.ClickToSave();
+        js = (JavascriptExecutor) driver;
+        js.executeScript("scrollBy(0,-3000)");
+        Thread.sleep(3000);
+        Assert.assertTrue(addNewOfferPage.sucessMsg.getText().contains("New offer has been added successfully"));
+        driver.navigate().refresh();
+    }
+
 
 }
