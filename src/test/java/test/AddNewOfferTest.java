@@ -20,24 +20,21 @@ public class AddNewOfferTest extends TestBase {
 
         // login
         loginPage = new LoginPage(driver);
-        loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
+        loginPage.AddEmail("ahmed.adel.mall@ibtikar.net.sa");
         loginPage.AddPassword("123456");
         loginPage.ClickLogin();
 
         // go to home page & click mange stores
         homePage = new HomePage(driver);
         homePage.ClickManageOffer();
-    }
 
-    // click on add new offer
-    @Test(priority = 2)
-    public void ClickAddNewStore() {
+        // click on add new offer
         mangeOfferPage = new MangeOfferPage(driver);
         mangeOfferPage.ClickToAddNewOffer();
     }
 
     // if user add name Arabic Empty
-    @Test(priority = 3)
+    @Test(priority = 2)
     public void IfUseAddNameArabicEmpty() {
         addNewOfferPage = new AddNewOfferPage(driver);
         addNewOfferPage.AddTextInOfferNameArabic("");
@@ -47,7 +44,7 @@ public class AddNewOfferTest extends TestBase {
     }
 
     // if user add name Arabic Spaces
-    @Test(priority = 4)
+    @Test(priority = 3)
     public void IfUseAddNameArabicSpaces() {
         addNewOfferPage.AddTextInOfferNameArabic("        ");
         addNewOfferPage.ClickToSave();
@@ -56,7 +53,7 @@ public class AddNewOfferTest extends TestBase {
     }
 
     // if user add name Arabic less than 3 char
-    @Test(priority = 5)
+    @Test(priority = 4)
     public void IfUseAddNameArabicLess() {
         addNewOfferPage.AddTextInOfferNameArabic("Te");
         addNewOfferPage.ClickToSave();
@@ -65,7 +62,7 @@ public class AddNewOfferTest extends TestBase {
     }
 
     // if user add name Arabic more than 30 char
-    @Test(priority = 6)
+    @Test(priority = 5)
     public void IfUseAddNameArabicMore() {
         addNewOfferPage.AddTextInOfferNameArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeee");
         addNewOfferPage.ClickToSave();
@@ -74,7 +71,7 @@ public class AddNewOfferTest extends TestBase {
     }
 
     // if user add name Arabic 3 char
-    @Test(priority = 7)
+    @Test(priority = 6)
     public void IfUseAddNameArabicThree() {
         addNewOfferPage.AddTextInOfferNameArabic("Tee");
         addNewOfferPage.ClickToSave();
@@ -82,7 +79,7 @@ public class AddNewOfferTest extends TestBase {
     }
 
     // if user add name Arabic 30 char
-    @Test(priority = 8)
+    @Test(priority = 7)
     public void IfUseAddNameArabicFifty() {
         addNewOfferPage.AddTextInOfferNameArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewOfferPage.ClickToSave();
@@ -90,7 +87,7 @@ public class AddNewOfferTest extends TestBase {
     }
 
     // if user add name English Empty
-    @Test(priority = 9)
+    @Test(priority = 8)
     public void IfUseAddNameEnglishEmpty() {
         addNewOfferPage.AddTextInOfferNameEnglish("");
         addNewOfferPage.ClickToSave();
@@ -99,7 +96,7 @@ public class AddNewOfferTest extends TestBase {
     }
 
     // if user add name English Spaces
-    @Test(priority = 10)
+    @Test(priority = 9)
     public void IfUseAddNameEnglishSpaces() {
         addNewOfferPage.AddTextInOfferNameEnglish("        ");
         addNewOfferPage.ClickToSave();
@@ -108,7 +105,7 @@ public class AddNewOfferTest extends TestBase {
     }
 
     // if user add name English less than 3 char
-    @Test(priority = 11)
+    @Test(priority = 10)
     public void IfUseAddNameEnglishLess() {
         addNewOfferPage.AddTextInOfferNameEnglish("Te");
         addNewOfferPage.ClickToSave();
@@ -117,7 +114,7 @@ public class AddNewOfferTest extends TestBase {
     }
 
     // if user add name English more than 30 char
-    @Test(priority = 12)
+    @Test(priority = 11)
     public void IfUseAddNameEnglishMore() {
         addNewOfferPage.AddTextInOfferNameEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeee");
         js = (JavascriptExecutor) driver;

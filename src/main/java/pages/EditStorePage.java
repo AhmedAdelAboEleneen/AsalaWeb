@@ -28,6 +28,12 @@ public class EditStorePage extends PageBase {
     @FindBy(id = "remove-more-phone")
     WebElement removePhone;
 
+    @FindBy(id = "form-control-email")
+    WebElement addEmailTxt;
+
+    @FindBy(id = "error-msg-email")
+    public WebElement errorMsgEmail;
+
     @FindBy(id = "logo-input-file")
     public WebElement logoBt;
 
@@ -75,5 +81,10 @@ public class EditStorePage extends PageBase {
         String imageName = "PNG.png";
         String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
         logoBt.sendKeys(imagePath);
+    }
+
+    public void AddEmail(String Value) {
+
+        setTextElementText(addEmailTxt, Value);
     }
 }

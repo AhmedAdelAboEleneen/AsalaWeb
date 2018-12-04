@@ -36,11 +36,11 @@ public class TestBase {
 		driver.navigate().to("https://asala-dashboard.ibtikar.net.sa/auth/login");
 	}
 
-	@AfterSuite
+	/*@AfterSuite
 	public void stopDriver() {
 
 		driver.quit();
-	}
+	}*/
 
 	// Take Screenshot when test case fail and add it in screenshot folder
 	@AfterMethod

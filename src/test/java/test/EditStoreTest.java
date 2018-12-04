@@ -29,11 +29,6 @@ public class EditStoreTest extends TestBase {
         // go to home page & click mange stores
         homePage = new HomePage(driver);
         homePage.ClickManageStores();
-    }
-
-    // select Kadi Mall & chose store number 293
-    @Test(priority = 2)
-    public void SelectKadiMall() {
 
         mangeStoresPage = new MangeStoresPage(driver);
         mangeStoresPage.SelectFilterMallAsSuperAdmin();
@@ -44,7 +39,7 @@ public class EditStoreTest extends TestBase {
     }
 
     // if user change the mall & don't select category & click save no validation message display
-    @Test(priority = 3)
+    @Test(priority = 2)
     public void ChangeMall() throws InterruptedException {
 
         driver.navigate().refresh();
@@ -53,35 +48,38 @@ public class EditStoreTest extends TestBase {
         js.executeScript("scrollBy(0,3000)");
         editStorePage.ClickToSave();
         js.executeScript("scrollBy(0,-3000)");
-        Thread.sleep(5000);
+        Thread.sleep(7000);
         Assert.assertTrue(editStorePage.errorCategorySelect.getText().contains("Please select a category"));
         Assert.assertTrue(editStorePage.errorMsgFloor.getText().contains("Please select a floor"));
     }
 
     //if user add a second phone number & click save click back & click on same store again user will be see only one phone number
-    @Test(priority = 4)
+    @Test(priority = 3)
     public void AddSecondNumber() throws InterruptedException {
 
         driver.navigate().refresh();
         js = (JavascriptExecutor) driver;
-        js.executeScript("scrollBy(0,-3000)");
+        js.executeScript("scrollBy(0,3000)");
         editStorePage.ClickToAddMorePhone();
         editStorePage.AddPhoneTwo("966511234567");
         editStorePage.ClickToSave();
-        js.executeScript("scrollBy(0,3000)");
+        js.executeScript("scrollBy(0,-3000)");
         Thread.sleep(5000);
         Assert.assertTrue(editStorePage.sucessMsg.getText().contains("Store information has been Updated successfully"));
         driver.navigate().refresh();
+        js.executeScript("scrollBy(0,3000)");
+        Thread.sleep(5000);
+        editStorePage.ClickToRemovePhone();
+        editStorePage.ClickToSave();
         js.executeScript("scrollBy(0,-3000)");
         Thread.sleep(5000);
-        Assert.assertTrue(editStorePage.phoneNumber2Txt.getText().contains("966511234567"));
-        editStorePage.ClickToRemovePhone();
+        Assert.assertTrue(editStorePage.sucessMsg.getText().contains("Store information has been Updated successfully"));
         driver.navigate().refresh();
     }
 
     //if user try to edit only one photo logo or cover the change don't apply
-    @Test(priority = 5)
-    public void ChangeLogo() throws InterruptedException {
+    @Test(priority = 4)
+    public void ChangeLogo() {
 
         driver.navigate().refresh();
         js = (JavascriptExecutor) driver;
@@ -90,4 +88,18 @@ public class EditStoreTest extends TestBase {
         editStorePage.ClickToSave();
         driver.navigate().refresh();
     }
+
+    //if user add after email number
+    @Test(priority = 5)
+    public void AddNumberAfterEmail() {
+
+        driver.navigate().refresh();
+        js = (JavascriptExecutor) driver;
+        js.executeScript("scrollBy(0,3000)");
+        editStorePage.AddEmail("1234");
+        editStorePage.ClickToSave();
+        Assert.assertTrue(editStorePage.errorMsgEmail.getText().contains("Please enter a valid email"));
+        driver.navigate().refresh();
+    }
+
 }

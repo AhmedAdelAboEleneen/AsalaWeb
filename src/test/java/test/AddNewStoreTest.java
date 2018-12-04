@@ -41,11 +41,8 @@ public class AddNewStoreTest extends TestBase {
         // go to home page & click mange stores
         homePage = new HomePage(driver);
         homePage.ClickManageStores();
-    }
 
-    // click on add new store
-    @Test(priority = 2)
-    public void ClickAddNewStore() {
+        // click on add new store
         mangeStoresPage = new MangeStoresPage(driver);
         mangeStoresPage.ClickToAddNewStore();
     }
@@ -102,7 +99,7 @@ public class AddNewStoreTest extends TestBase {
     @Test(priority = 7)
     public void IfUserChoseMallAndCategoryButEmptyFloor() throws InterruptedException {
         addNewStorePage.SelectMall();
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         addNewStorePage.SelectCategory();
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -486,6 +483,7 @@ public class AddNewStoreTest extends TestBase {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewStorePage.UploadSVG();
+        addNewStorePage.ClickToSave();
         Assert.assertTrue(addNewStorePage.errorMsgLogo.getText().contains("Accept files in jpg, png and image format"));
         driver.navigate().refresh();
     }
@@ -498,8 +496,9 @@ public class AddNewStoreTest extends TestBase {
         js.executeScript("scrollBy(0,3000)");
         Thread.sleep(3000);
         addNewStorePage.UploadMoreSize();
+        addNewStorePage.ClickToSave();
         Thread.sleep(3000);
-        Assert.assertTrue(addNewStorePage.errorMsgLogo.getText().contains("Photo size shouldn't be more than 1 Mb"));
+        Assert.assertTrue(addNewStorePage.errorMsgLogo.getText().contains("Photo size shouldn’t be more than 1 Mb"));
         driver.navigate().refresh();
     }
 
@@ -541,6 +540,7 @@ public class AddNewStoreTest extends TestBase {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewStorePage.UploadSVGCover();
+        addNewStorePage.ClickToSave();
         Assert.assertTrue(addNewStorePage.errorMsgCoverPhoto.getText().contains("Accept files in jpg, png and image format"));
         driver.navigate().refresh();
     }
@@ -552,7 +552,8 @@ public class AddNewStoreTest extends TestBase {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewStorePage.UploadMoreSizeCover();
-        Assert.assertTrue(addNewStorePage.errorMsgCoverPhoto.getText().contains("Photo size shouldn't be more than 1 Mb"));
+        addNewStorePage.ClickToSave();
+        Assert.assertTrue(addNewStorePage.errorMsgCoverPhoto.getText().contains("Photo size shouldn’t be more than 1 Mb"));
         driver.navigate().refresh();
     }
 
