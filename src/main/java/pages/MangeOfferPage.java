@@ -12,7 +12,7 @@ public class MangeOfferPage extends PageBase {
     @FindBy(id = "addNew-btn")
     WebElement addNewOfferBt;
 
-    @FindBy(id = "edit-4")
+    @FindBy(id = "edit-2179")
     WebElement editOfferNumber4;
 
     public void ClickToAddNewOffer() {

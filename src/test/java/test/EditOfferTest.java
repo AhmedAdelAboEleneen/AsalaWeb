@@ -51,7 +51,7 @@ public class EditOfferTest extends TestBase {
 
     // if user try to change mall
     @Test(priority = 3)
-    public void Changemall() throws InterruptedException {
+    public void ChangeMall() throws InterruptedException {
         driver.navigate().refresh();
         Thread.sleep(5000);
         editOfferPage.UploadJPG();
