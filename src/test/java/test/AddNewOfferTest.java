@@ -80,7 +80,7 @@ public class AddNewOfferTest extends TestBase {
 
     // if user add name Arabic 30 char
     @Test(priority = 7)
-    public void IfUseAddNameArabicFifty() {
+    public void IfUseAddNameArabicThirty() {
         addNewOfferPage.AddTextInOfferNameArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewOfferPage.ClickToSave();
         driver.navigate().refresh();
@@ -117,7 +117,6 @@ public class AddNewOfferTest extends TestBase {
     @Test(priority = 11)
     public void IfUseAddNameEnglishMore() {
         addNewOfferPage.AddTextInOfferNameEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeee");
-        js = (JavascriptExecutor) driver;
         addNewOfferPage.ClickToSave();
         Assert.assertTrue(addNewOfferPage.errorMsgNameEn.getText().contains("This field shouldn’t contain more than 30 characters"));
         driver.navigate().refresh();
@@ -133,7 +132,7 @@ public class AddNewOfferTest extends TestBase {
 
     // if user add name English 30 char
     @Test(priority = 14)
-    public void IfUseAddNameEnglishFifty() {
+    public void IfUseAddNameEnglishThirty() {
         addNewOfferPage.AddTextInOfferNameEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewOfferPage.ClickToSave();
         driver.navigate().refresh();
