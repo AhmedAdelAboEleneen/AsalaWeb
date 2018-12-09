@@ -23,7 +23,7 @@ public class AddNewMallPage extends PageBase {
     @FindBy(id = "error-msg-mall_name_en")
     public WebElement errorMsgNameEn;
 
-    @FindBy(id = "cover-input-file")
+    @FindBy(id = "input-file-photo")
     WebElement coverPhotoBt;
 
     @FindBy(id = "error-msg-photo")
@@ -51,25 +51,25 @@ public class AddNewMallPage extends PageBase {
     WebElement websiteLinkTxt;
 
     @FindBy(id = "error-msg-website")
-    WebElement errorMsgWebsiteLink;
+    public WebElement errorMsgWebsiteLink;
 
     @FindBy(id = "twitter_account")
     WebElement twitterTxt;
 
-    @FindBy(id = "")
-    WebElement errorMsgeTwitter;
+    @FindBy(id = "error-msg-twitter")
+    public WebElement errorMsgeTwitter;
 
     @FindBy(id = "facebook_account")
     WebElement facebookTxt;
 
-    @FindBy(id = "")
-    WebElement errorMsgeFacebook;
+    @FindBy(id = "error-msg-facebook")
+    public WebElement errorMsgeFacebook;
 
     @FindBy(id = "instagram_account")
     WebElement instagramTxt;
 
-    @FindBy(id = "")
-    WebElement errorMsgeInstagram;
+    @FindBy(id = "error-msg-instagram")
+    public WebElement errorMsgeInstagram;
 
     @FindBy(id = "submit-btn")
     WebElement saveBt;
@@ -143,7 +143,7 @@ public class AddNewMallPage extends PageBase {
         setTextElementText(mallAddressTxt, Value);
     }
 
-    public void AddTextInMallWWbsite(String Value) {
+    public void AddTextInMallWebsite(String Value) {
 
         setTextElementText(websiteLinkTxt, Value);
     }
