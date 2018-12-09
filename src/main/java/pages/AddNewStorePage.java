@@ -87,13 +87,13 @@ public class AddNewStorePage extends PageBase {
 	@FindBy(id = "error-msg-location")
 	public WebElement errorMsgLocation;
 
-	@FindBy(id = "logo-input-file")
+	@FindBy(id = "input-file-logo")
 	public WebElement logoBt;
 
 	@FindBy(id = "error-msg-logo")
 	public WebElement errorMsgLogo;
 
-	@FindBy(id = "cover-input-file")
+	@FindBy(id = "input-file-photo")
 	WebElement coverPhotoBt;
 
 	@FindBy(id = "error-msg-photo")
