@@ -10,7 +10,7 @@ public class AddNewEventPage extends PageBase {
         super(driver);
     }
 
-    @FindBy(id = "sfilter-by-mall")
+    @FindBy(id = "filter-by-mall")
     WebElement mallSelect;
 
     @FindBy(id = "error-msg-mall_id")
@@ -38,7 +38,7 @@ public class AddNewEventPage extends PageBase {
     WebElement eventDescriptionEnTxt;
 
     @FindBy(id = "error-msg-description_en")
-    public WebElement eventMsgDescriptionEn;
+    public WebElement errorMsgDescriptionEn;
 
     @FindBy(id = "sponsor_input")
     WebElement organizerTxt;
@@ -59,13 +59,13 @@ public class AddNewEventPage extends PageBase {
     public WebElement errorMsgDateTo;
 
 
-    @FindBy(id = "timeFrom")
+    @FindBy(id = "timeFrom-select")
     public WebElement timeFrom;
 
     @FindBy(id = "")
     public WebElement errorMsgTimeFrom;
 
-    @FindBy(id = "timeTo")
+    @FindBy(id = "timeTo-select")
     public WebElement timeTo;
 
     @FindBy(id = "")
@@ -78,7 +78,7 @@ public class AddNewEventPage extends PageBase {
     public WebElement errorMsgPhoto;
 
     @FindBy(id = "form-control-email")
-    WebElement addEmailTxt;
+    WebElement AddEmail;
 
     @FindBy(id = "error-msg-email")
     public WebElement errorMsgEmail;
@@ -174,6 +174,31 @@ public class AddNewEventPage extends PageBase {
         DateTo.sendKeys(Keys.ENTER);
     }
 
+    // Time
+    public void SelectTimefromEight() {
+
+        Select selectTimeFromEight = new Select(timeFrom);
+        selectTimeFromEight.selectByValue("8 AM");
+    }
+
+    public void SelectTimeToTwo() {
+
+        Select selectTimeToTwo = new Select(timeTo);
+        selectTimeToTwo.selectByValue("2 AM");
+    }
+
+    public void SelectTimeFromTen() {
+
+        Select SelectTimeFromTen = new Select(timeFrom);
+        SelectTimeFromTen.selectByValue("10 AM");
+    }
+
+    public void SelectTimeToten() {
+
+        Select selectTimeToten = new Select(timeTo);
+        selectTimeToten.selectByValue("10 PM");
+    }
+
     public void UploadSVG (){
 
         String imageName = "SVG.svg";
@@ -202,9 +227,9 @@ public class AddNewEventPage extends PageBase {
         photoBt.sendKeys(imagePath);
     }
 
-    public void AddEmailEvent(String Value) {
+    public void AddEmail(String Value) {
 
-        setTextElementText(addEmailTxt, Value);
+        setTextElementText(AddEmail, Value);
     }
 
     public void AddPhoneOne(String Value) {
@@ -215,6 +240,11 @@ public class AddNewEventPage extends PageBase {
     public void AddTextInLocation(String Value) {
 
         setTextElementText(eventLocationTxt, Value);
+    }
+
+    public void ClickToSave() {
+
+        clickButton(saveBt);
     }
 
 }
