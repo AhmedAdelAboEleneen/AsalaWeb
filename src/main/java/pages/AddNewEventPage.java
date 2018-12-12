@@ -1,10 +1,10 @@
 package pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
-
 public class AddNewEventPage extends PageBase {
     public AddNewEventPage(WebDriver driver) {
         super(driver);
@@ -125,6 +125,96 @@ public class AddNewEventPage extends PageBase {
     public void AddTextInEventDescEnglish(String Value) {
 
         setTextElementText(eventDescriptionEnTxt, Value);
+    }
+
+    public void AddTextInSponseer(String Value) {
+
+        setTextElementText(organizerTxt, Value);
+    }
+
+    // calender Here !!!
+
+    // chose old date in date from
+    public void ChoseDateFromOld(){
+        DateFrom.click();
+        DateFrom.sendKeys(Keys.ARROW_UP);
+        DateFrom.sendKeys(Keys.ENTER);
+    }
+
+    // chose current  date in date from
+    public void ChoseDateFromCurrent(){
+        DateFrom.click();
+        DateFrom.sendKeys(Keys.ENTER);
+    }
+
+    // chose future date in date from
+    public void ChoseDateFromFuture(){
+        DateFrom.click();
+        DateFrom.sendKeys(Keys.ARROW_DOWN);
+        DateFrom.sendKeys(Keys.ENTER);
+    }
+
+    // chose old date in date to
+    public void ChoseDateToOld(){
+        DateTo.click();
+        DateTo.sendKeys(Keys.ARROW_UP);
+        DateTo.sendKeys(Keys.ENTER);
+    }
+
+    // chose current  date in date to
+    public void ChoseDateToCurrent(){
+        DateTo.click();
+        DateTo.sendKeys(Keys.ENTER);
+    }
+
+    // chose future date in date to
+    public void ChoseDateToFuture(){
+        DateTo.click();
+        DateTo.sendKeys(Keys.ARROW_DOWN);
+        DateTo.sendKeys(Keys.ENTER);
+    }
+
+    public void UploadSVG (){
+
+        String imageName = "SVG.svg";
+        String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
+        photoBt.sendKeys(imagePath);
+    }
+
+    public void UploadMoreSize (){
+
+        String imageName = "OverSize.jpg";
+        String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
+        photoBt.sendKeys(imagePath);
+    }
+
+    public void UploadPNG (){
+
+        String imageName = "PNG.png";
+        String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
+        photoBt.sendKeys(imagePath);
+    }
+
+    public void UploadJPG (){
+
+        String imageName = "JPG.jpg";
+        String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
+        photoBt.sendKeys(imagePath);
+    }
+
+    public void AddEmailEvent(String Value) {
+
+        setTextElementText(addEmailTxt, Value);
+    }
+
+    public void AddPhoneOne(String Value) {
+
+        setTextElementText(phoneNumberTxt, Value);
+    }
+
+    public void AddTextInLocation(String Value) {
+
+        setTextElementText(eventLocationTxt, Value);
     }
 
 }
