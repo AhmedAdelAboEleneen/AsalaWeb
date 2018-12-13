@@ -1,9 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Asala Dashboard Regression Suite">
 	<parameter name="browser" value="firefox"></parameter>
-	<test name="Regression Test" preserve-order="false">
+	<test name="Regression Test" >
 		<classes>
-			<class name="test.AddNewMallTest"/>
 		</classes>
 	</test>
 </suite>
