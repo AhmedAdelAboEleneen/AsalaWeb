@@ -10,6 +10,9 @@ public class MangeMallsPage extends PageBase {
 		super(driver);
 	}
 
+	@FindBy(id = "manage_mall")
+	WebElement mangeMallsBt;
+
 	@FindBy(id = "import-btn")
 	WebElement importMallBt;
 
@@ -19,7 +22,7 @@ public class MangeMallsPage extends PageBase {
 	@FindBy(id = "success-msg")
 	public WebElement successTxt;
 
-	@FindBy(id = "edit-4")
+	@FindBy(id = "edit-13")
 	WebElement EditMallBt;
 
 	@FindBy(id = "activated-4")
@@ -39,6 +42,10 @@ public class MangeMallsPage extends PageBase {
 
 	@FindBy(id = "btn-primary")
 	WebElement confirmBt;
+
+	public void ClickMangeMalls() {
+		clickButton(mangeMallsBt);
+	}
 
 	public void ClickImportMall() {
 		clickButton(importMallBt);

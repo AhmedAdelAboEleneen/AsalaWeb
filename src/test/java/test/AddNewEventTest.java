@@ -75,7 +75,7 @@ public class AddNewEventTest extends TestBase {
     public void IfUseAddNameArabicMore() {
         addNewEventPage.AddTextInEventNameArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeee");
         addNewEventPage.ClickToSave();
-        Assert.assertTrue(addNewEventPage.errorMsgNameAr.getText().contains("This field shouldn’t contain more than 30 characters"));
+        Assert.assertTrue(addNewEventPage.errorMsgNameAr.getText().contains("This field shouldn’t contain more than 30 character"));
         driver.navigate().refresh();
     }
 
@@ -127,7 +127,7 @@ public class AddNewEventTest extends TestBase {
     public void IfUseAddNameEnglishMore() {
         addNewEventPage.AddTextInEventNameEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeee");
         addNewEventPage.ClickToSave();
-        Assert.assertTrue(addNewEventPage.errorMsgNameEn.getText().contains("This field shouldn’t contain more than 30 characters"));
+        Assert.assertTrue(addNewEventPage.errorMsgNameEn.getText().contains("This field shouldn’t contain more than 30 character"));
         driver.navigate().refresh();
     }
 
