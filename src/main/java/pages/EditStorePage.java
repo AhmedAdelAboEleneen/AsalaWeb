@@ -10,7 +10,7 @@ public class EditStorePage extends PageBase {
         super(driver);
     }
 
-    @FindBy(id = "edit-293")
+    @FindBy(id = "edit-360")
     public WebElement clickEditBt;
 
     @FindBy(id = "filter-by-mall")
@@ -34,7 +34,7 @@ public class EditStorePage extends PageBase {
     @FindBy(id = "error-msg-email")
     public WebElement errorMsgEmail;
 
-    @FindBy(id = "logo-input-file")
+    @FindBy(id = "input-file-logo")
     public WebElement logoBt;
 
     @FindBy(id = "phone-1")

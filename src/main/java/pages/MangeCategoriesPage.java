@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 public class MangeCategoriesPage extends PageBase {
 
@@ -13,49 +14,26 @@ public class MangeCategoriesPage extends PageBase {
 	@FindBy(id = "addNew-btn")
 	WebElement addNewCategoryBt;
 
-	@FindBy(id = "selectCat-btn")
-	WebElement selectCategoryBt;
+	@FindBy(id = "filter-by-mall")
+	WebElement mallSelect;
 
-	@FindBy(id = "edit-4")
+	@FindBy(id = "edit-114")
 	WebElement editCategoryBt;
 
-	@FindBy(id = "delete-65")
-	WebElement deleteCategoryBt;
-
-	@FindBy(id = "btn-primary")
-	WebElement confirmDeleteCategoryBt;
-
-	@FindBy(id = "page-link-5")
-	WebElement pageBt;
 
 	public void ClickToAddNewCategory() {
 
 		clickButton(addNewCategoryBt);
 	}
 
-	public void ClickToSelectMallCategory() {
+	public void SelectMall() {
 
-		clickButton(selectCategoryBt);
+		Select selectMall = new Select(mallSelect);
+		selectMall.selectByValue("4");
 	}
 
 	public void ClickEditCategory() {
 
 		clickButton(editCategoryBt);
-	}
-
-	public void ClickDeleteFirstCategory() {
-
-		clickButton(deleteCategoryBt);
-	}
-
-
-	public void ClickConfirmDeleteCategory() {
-
-		clickButton(confirmDeleteCategoryBt);
-	}
-
-	public void ClickPageNumberSix() {
-
-		clickButton(pageBt);
 	}
 }

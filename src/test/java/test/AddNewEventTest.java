@@ -27,8 +27,8 @@ public class AddNewEventTest extends TestBase {
 
         // login
         loginPage = new LoginPage(driver);
-        //loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
-        loginPage.AddEmail("ahmed.adel.mall@ibtikar.net.sa");
+        loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
+        //loginPage.AddEmail("ahmed.adel.mall@ibtikar.net.sa");
         loginPage.AddPassword("123456");
         loginPage.ClickLogin();
 
@@ -51,7 +51,7 @@ public class AddNewEventTest extends TestBase {
         Assert.assertTrue(addNewEventPage.errorMsgNameAr.getText().contains("This field is required"));
         driver.navigate().refresh();
     }
-/*
+
     // if user add name Arabic Spaces
     @Test(priority = 3)
     public void IfUseAddNameArabicSpaces() {
@@ -592,7 +592,7 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.AddPhoneOne("966591234567");
         addNewEventPage.ClickToSave();
         driver.navigate().refresh();
-    }*/
+    }
 
     // not valid case
     // if user add time from after time to
