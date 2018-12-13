@@ -3,13 +3,7 @@
 	<parameter name="browser" value="firefox"></parameter>
 	<test name="Regression Test" preserve-order="false">
 		<classes>
-			<class name="test.LoginTest"/>
-			<class name="test.EditAccountTest"/>
-			<class name="test.MangeMallsTest"/>
-			<class name="test.MangeCategoriesTest"/>
-			<class name="test.EditCategoryTest"/>
-			<class name="test.AddNewCategoryTest"/>
-			<class name="test.MangeStoreTest"/>
+			<class name="test.AddNewMallTest"/>
 		</classes>
 	</test>
 </suite>

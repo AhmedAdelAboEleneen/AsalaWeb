@@ -283,7 +283,7 @@ public class AddNewEventTest extends TestBase {
     public void IfUseAddNameOrganizerMore() {
         addNewEventPage.AddTextInSponseer("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeee");
         addNewEventPage.ClickToSave();
-        Assert.assertTrue(addNewEventPage.errorMsgOrganizerEn.getText().contains("This field shouldn’t contain more than 30 characters"));
+        Assert.assertTrue(addNewEventPage.errorMsgOrganizerEn.getText().contains("This field shouldn’t contain more than 30 character"));
         driver.navigate().refresh();
     }
 
@@ -344,7 +344,7 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.ChoseDateFromFuture();
         addNewEventPage.ChoseDateToCurrent();
         addNewEventPage.ClickToSave();
-        Assert.assertTrue(addNewEventPage.errorMsgDateTo.getText().contains("please select a valid end date"));
+        Assert.assertTrue(addNewEventPage.errorMsgDateTo.getText().contains("Please select a valid end date"));
         driver.navigate().refresh();
     }
 
