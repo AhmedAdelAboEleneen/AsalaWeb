@@ -3,7 +3,7 @@
 	<parameter name="browser" value="firefox"></parameter>
 	<test name="Regression Test" >
 		<classes>
-			<class name="test.AddNewMallTest"/>
+			<class name="test.LoginTest"/>
 		</classes>
 	</test>
 </suite>
