@@ -68,7 +68,7 @@ public class AddNewEventPage extends PageBase {
     @FindBy(id = "timeTo-select")
     public WebElement timeTo;
 
-    @FindBy(id = "")
+    @FindBy(id = "error-msg-timeTo")
     public WebElement errorMsgTimeTo;
 
     @FindBy(id = "input-file-photo")

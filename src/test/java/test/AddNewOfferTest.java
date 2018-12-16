@@ -20,7 +20,9 @@ public class AddNewOfferTest extends TestBase {
 
         // login
         loginPage = new LoginPage(driver);
-        loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
+       // loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
+        //loginPage.AddEmail("ahmed.adel.mall@ibtikar.net.sa");
+        loginPage.AddEmail("ahmed.adel.store@ibtikar.net.sa");
         loginPage.AddPassword("123456");
         loginPage.ClickLogin();
 
@@ -304,7 +306,7 @@ public class AddNewOfferTest extends TestBase {
         addNewOfferPage.SelectStore();
         addNewOfferPage.ClickToSave();
         Thread.sleep(3000);
-        Assert.assertTrue(addNewOfferPage.errorMsgDateTo.getText().contains("Please select a correct end date"));
+        Assert.assertTrue(addNewOfferPage.errorMsgDateTo.getText().contains("Please select a valid end date"));
         driver.navigate().refresh();
 
     }
@@ -446,6 +448,4 @@ public class AddNewOfferTest extends TestBase {
         Assert.assertTrue(addNewOfferPage.sucessMsg.getText().contains("New offer has been added successfully"));
         driver.navigate().refresh();
     }
-
-
 }

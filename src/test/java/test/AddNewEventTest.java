@@ -615,8 +615,7 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.AddPhoneOne("966591234567");
         addNewEventPage.AddTextInLocation(location1);
         addNewEventPage.ClickToSave();
-        js.executeScript("scrollBy(0,-3000)");
-        Assert.assertTrue(addNewEventPage.sucessMsg.getText().contains("New event has been added successfully"));
+        Assert.assertTrue(addNewEventPage.errorMsgTimeTo.getText().contains("please select a valid end time"));
         driver.navigate().refresh();
     }
 
