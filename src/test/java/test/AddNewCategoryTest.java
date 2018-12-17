@@ -41,7 +41,7 @@ public class AddNewCategoryTest extends TestBase {
 
         mangeCategoriesPage = new MangeCategoriesPage(driver);
         mangeCategoriesPage.ClickToAddNewCategory();
-    }
+    }/*
 
     // if user add name en & ar empty
     @Test(priority = 2)
@@ -78,7 +78,7 @@ public class AddNewCategoryTest extends TestBase {
         addNewCategoryPage.AddcategoryNameArtxt("Teeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
         addNewCategoryPage.ClickSumbitToAddCategory();
         Thread.sleep(3000);
-       // Assert.assertTrue(addNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("This field shouldn’t contain more than 30 characters"));
+        //Assert.assertTrue(addNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("This field shouldn’t contain more than 30 characters"));
         //Assert.assertTrue(addNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("This field shouldn’t contain more than 30 characters"));
     }
 
@@ -196,5 +196,5 @@ public class AddNewCategoryTest extends TestBase {
         addNewCategoryPage.AddcategoryNameArtxt(Name4);
         addNewCategoryPage.ClickSumbitToAddCategory();
         Assert.assertTrue(addNewCategoryPage.successMsgtxt.getText().contains("New category has been added successfully"));
-    }
+    }*/
 }
