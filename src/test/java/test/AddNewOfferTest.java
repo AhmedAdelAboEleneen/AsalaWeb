@@ -33,7 +33,7 @@ public class AddNewOfferTest extends TestBase {
         // click on add new offer
         mangeOfferPage = new MangeOfferPage(driver);
         mangeOfferPage.ClickToAddNewOffer();
-    }
+    }/*
 
     // if user add name Arabic Empty
     @Test(priority = 2)
@@ -447,5 +447,5 @@ public class AddNewOfferTest extends TestBase {
         Thread.sleep(3000);
         Assert.assertTrue(addNewOfferPage.sucessMsg.getText().contains("New offer has been added successfully"));
         driver.navigate().refresh();
-    }
+    }*/
 }
