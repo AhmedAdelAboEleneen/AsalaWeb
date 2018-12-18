@@ -17,7 +17,7 @@ public class TestBase {
 
 	public static WebDriver driver;
 
-	@BeforeSuite
+	@BeforeTest
 	@Parameters({ "browser" })
 	public void startDriver(@Optional("firefox") String browserName) {
 
@@ -49,7 +49,7 @@ public class TestBase {
 		driver.navigate().to("https://asala-dashboard.ibtikar.net.sa/auth/login");
 	}
 
-	@AfterSuite
+	@AfterTest
 	public void stopDriver() {
 
 		driver.quit();

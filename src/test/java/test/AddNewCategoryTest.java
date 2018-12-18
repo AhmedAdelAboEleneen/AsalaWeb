@@ -41,7 +41,7 @@ public class AddNewCategoryTest extends TestBase {
 
         mangeCategoriesPage = new MangeCategoriesPage(driver);
         mangeCategoriesPage.ClickToAddNewCategory();
-    }/*
+    }
 
     // if user add name en & ar empty
     @Test(priority = 2)
@@ -196,5 +196,5 @@ public class AddNewCategoryTest extends TestBase {
         addNewCategoryPage.AddcategoryNameArtxt(Name4);
         addNewCategoryPage.ClickSumbitToAddCategory();
         Assert.assertTrue(addNewCategoryPage.successMsgtxt.getText().contains("New category has been added successfully"));
-    }*/
+    }
 }

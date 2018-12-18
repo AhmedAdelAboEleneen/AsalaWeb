@@ -3,6 +3,12 @@
 	<parameter name="browser" value="firefox"></parameter>
 	<test name="Regression Test" >
 		<classes>
+			<class name="test.AddNewEventTest"/>
+		</classes>
+	</test>
+
+	<test name="Regression Test1" >
+		<classes>
 			<class name="test.AddNewOfferTest"/>
 		</classes>
 	</test>
