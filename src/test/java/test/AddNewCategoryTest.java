@@ -18,10 +18,10 @@ public class AddNewCategoryTest extends TestBase {
 
     Faker fakeData = new Faker();
 
-    String Name1 = fakeData.funnyName().name();
-    String Name2 = fakeData.funnyName().name();
-    String Name3 = fakeData.funnyName().name();
-    String Name4 = fakeData.funnyName().name();
+    String Name1 = fakeData.name().name();
+    String Name2 = fakeData.name().name();
+    String Name3 = fakeData.name().name();
+    String Name4 = fakeData.name().name();
 
     // make login
     @Test(priority = 1)
@@ -78,8 +78,8 @@ public class AddNewCategoryTest extends TestBase {
         addNewCategoryPage.AddcategoryNameArtxt("Teeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
         addNewCategoryPage.ClickSumbitToAddCategory();
         Thread.sleep(3000);
-        //Assert.assertTrue(addNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("This field shouldn’t contain more than 30 characters"));
-        //Assert.assertTrue(addNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("This field shouldn’t contain more than 30 characters"));
+        Assert.assertTrue(addNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("This field shouldn’t contain more than 30 characters"));
+        Assert.assertTrue(addNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("This field shouldn’t contain more than 30 characters"));
     }
 
     // if user add name en & ar empty
@@ -149,8 +149,8 @@ public class AddNewCategoryTest extends TestBase {
         addNewCategoryPage.AddcategoryNameArtxt("Teeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
         addNewCategoryPage.ClickSumbitToAddCategory();
         Thread.sleep(3000);
-        // Assert.assertTrue(addNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("يجب الا تزيد عدد الحروف عن 30 حرف"));
-        // Assert.assertTrue(addNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("يجب الا تزيد عدد الحروف عن 30 حرف"));
+        Assert.assertTrue(addNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("يجب الا تزيد عدد الحروف عن 30 حرف"));
+        Assert.assertTrue(addNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("يجب الا تزيد عدد الحروف عن 30 حرف"));
     }
 
     // if user add name en & ar empty

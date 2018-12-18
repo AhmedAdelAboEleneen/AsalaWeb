@@ -27,8 +27,8 @@ public class AddNewEventTest extends TestBase {
 
         // login
         loginPage = new LoginPage(driver);
-        //loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
-        loginPage.AddEmail("ahmed.adel.mall@ibtikar.net.sa");
+        loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
+        //loginPage.AddEmail("ahmed.adel.mall@ibtikar.net.sa");
         loginPage.AddPassword("123456");
         loginPage.ClickLogin();
 
@@ -40,7 +40,7 @@ public class AddNewEventTest extends TestBase {
         // click on add new offer
         mangeEvents = new MangeEvents(driver);
         mangeEvents.ClickToAddNewEvent();
-    }/*
+    }
 
     // if user add name Arabic Empty
     @Test(priority = 2)
@@ -644,6 +644,6 @@ public class AddNewEventTest extends TestBase {
         Thread.sleep(3000);
         Assert.assertTrue(addNewEventPage.sucessMsg.getText().contains("New event has been added successfully"));
         driver.navigate().refresh();
-    }*/
+    }
 
 }

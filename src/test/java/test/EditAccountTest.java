@@ -17,10 +17,10 @@ public class EditAccountTest extends TestBase {
 	public void MakeLogin() {
 
 		// login
-		/*loginPage = new LoginPage(driver);
+		loginPage = new LoginPage(driver);
 		loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
 		loginPage.AddPassword("123456");
-		loginPage.ClickLogin();*/
+		loginPage.ClickLogin();
 
 		// go to home page & click user & click to get here profile
 		homePage = new HomePage(driver);
