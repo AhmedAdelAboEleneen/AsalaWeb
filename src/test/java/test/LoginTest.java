@@ -30,7 +30,7 @@ public class LoginTest extends TestBase {
 		loginPage.AddEmail("ahmed");
 		loginPage.AddPassword("");
 		loginPage.ClickLogin();
-		Assert.assertTrue(loginPage.emailTxtValidtion.getText().contains("Please enter a valid emailll"));
+		Assert.assertTrue(loginPage.emailTxtValidtion.getText().contains("Please enter a valid email"));
 		Assert.assertTrue(loginPage.passwordTxtValidtion.getText().contains("Please enter your Password"));
 	}
 
