@@ -42,10 +42,16 @@ public class AddNewMallPage extends PageBase {
     public WebElement errorMsgCity;
 
     @FindBy(id = "mall_address")
-    WebElement mallAddressTxt;
+    WebElement mallAddressTxtEn;
 
-    @FindBy(id = "error-msg-store_description_ar")
-    public WebElement errorMsgDescriptionAr;
+    @FindBy(id = "error-msg-address")
+    public WebElement errorMsgAddressEn;
+
+    @FindBy(id = "mall_address_ar")
+     WebElement mallAddressTxtAr;
+
+    @FindBy(id = "error-msg-address_ar")
+    public WebElement errorMsgAddressAr;
 
     @FindBy(id = "website_link")
     WebElement websiteLinkTxt;
@@ -138,9 +144,14 @@ public class AddNewMallPage extends PageBase {
         selectMall.selectByValue("34");
     }
 
-    public void AddTextInMallAddress(String Value) {
+    public void AddTextInMallAddressEn(String Value) {
 
-        setTextElementText(mallAddressTxt, Value);
+        setTextElementText(mallAddressTxtEn, Value);
+    }
+
+    public void AddTextInMallAddressAr(String Value) {
+
+        setTextElementText(mallAddressTxtAr, Value);
     }
 
     public void AddTextInMallWebsite(String Value) {

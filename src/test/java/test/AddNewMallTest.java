@@ -25,6 +25,7 @@ public class AddNewMallTest extends TestBase {
     String name5 = fakeData.lordOfTheRings().character();
     String name6 = fakeData.lordOfTheRings().character();
     String location1 = fakeData.address().cityName();
+    String location2 = fakeData.address().cityName();
 
     // make login
     @Test(priority = 1)
@@ -282,9 +283,79 @@ public class AddNewMallTest extends TestBase {
         driver.navigate().refresh();
     }
 
-
-    // if user add website link number
+    // if user add address En Empty
     @Test(priority = 28)
+    public void IfUseAddAddressEnEmpty() {
+        addNewMallPage.AddTextInMallAddressEn("");
+        addNewMallPage.ClickToSave();
+        Assert.assertTrue(addNewMallPage.errorMsgAddressEn.getText().contains("This field is required"));
+        driver.navigate().refresh();
+    }
+
+    // if user add address En Spaces
+    @Test(priority = 29)
+    public void IfUseAddAddressEnSpaces() {
+        addNewMallPage.AddTextInMallAddressEn("        ");
+        addNewMallPage.ClickToSave();
+        Assert.assertTrue(addNewMallPage.errorMsgAddressEn.getText().contains("This field is required"));
+        driver.navigate().refresh();
+    }
+
+    // if user add address En less than 3 char
+    @Test(priority = 30)
+    public void IfUseAddAddressEnLess() {
+        addNewMallPage.AddTextInMallAddressEn("Te");
+        addNewMallPage.ClickToSave();
+        Assert.assertTrue(addNewMallPage.errorMsgAddressEn.getText().contains("This field shouldn’t be less than 3 characters"));
+        driver.navigate().refresh();
+    }
+
+    // if user add address En more than 100 char
+    @Test(priority = 31)
+    public void IfUseAddAddressEnMore() {
+        addNewMallPage.AddTextInMallAddressEn("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeeeeeeeeeeee");
+        addNewMallPage.ClickToSave();
+        Assert.assertTrue(addNewMallPage.errorMsgAddressEn.getText().contains("This field shouldn’t contain more than 100 character"));
+        driver.navigate().refresh();
+    }
+
+    // if user add address Ar Empty
+    @Test(priority = 32)
+    public void IfUseAddAddressArEmpty() {
+        addNewMallPage.AddTextInMallAddressAr("");
+        addNewMallPage.ClickToSave();
+        Assert.assertTrue(addNewMallPage.errorMsgAddressAr.getText().contains("This field is required"));
+        driver.navigate().refresh();
+    }
+
+    // if user add address Ar Spaces
+    @Test(priority = 33)
+    public void IfUseAddAddressArSpaces() {
+        addNewMallPage.AddTextInMallAddressAr("        ");
+        addNewMallPage.ClickToSave();
+        Assert.assertTrue(addNewMallPage.errorMsgAddressAr.getText().contains("This field is required"));
+        driver.navigate().refresh();
+    }
+
+    // if user add address Ar less than 3 char
+    @Test(priority = 34)
+    public void IfUseAddAddressArLess() {
+        addNewMallPage.AddTextInMallAddressAr("Te");
+        addNewMallPage.ClickToSave();
+        Assert.assertTrue(addNewMallPage.errorMsgAddressAr.getText().contains("This field shouldn’t be less than 3 characters"));
+        driver.navigate().refresh();
+    }
+
+    // if user add address Ar more than 100 char
+    @Test(priority = 35)
+    public void IfUseAddAddressArMore() {
+        addNewMallPage.AddTextInMallAddressEn("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeeeeeeeeeeee");
+        addNewMallPage.ClickToSave();
+        Assert.assertTrue(addNewMallPage.errorMsgAddressAr.getText().contains("This field shouldn’t contain more than 100 character"));
+        driver.navigate().refresh();
+    }
+    // if user add website link number
+    @Test(priority = 36)
     public void IfUseAddWebsiteLinkNumber() {
         addNewMallPage.AddTextInMallWebsite("15451546416546");
         js = (JavascriptExecutor) driver;
@@ -295,7 +366,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add website link text
-    @Test(priority = 29)
+    @Test(priority = 37)
     public void IfUseAddWebsiteLinkText() {
         addNewMallPage.AddTextInMallWebsite("bdakjbkjabkjfbaskbn");
         js = (JavascriptExecutor) driver;
@@ -306,7 +377,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add website link valid
-    @Test(priority = 30)
+    @Test(priority = 38)
     public void IfUseAddWebsiteLinkValid() {
         addNewMallPage.AddTextInMallWebsite("https://asala-dashboard.ibtikar.net.sa/mall/add");
         js = (JavascriptExecutor) driver;
@@ -317,7 +388,7 @@ public class AddNewMallTest extends TestBase {
 
 
     // if user add twitter link number
-    @Test(priority = 31)
+    @Test(priority = 39)
     public void IfUseAddTwitterLinkNumber() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -328,7 +399,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add twitter link text
-    @Test(priority = 32)
+    @Test(priority = 40)
     public void IfUseAddTwitterLinkText() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -340,7 +411,7 @@ public class AddNewMallTest extends TestBase {
 
 
     // if user add twitter link valid
-    @Test(priority = 33)
+    @Test(priority = 41)
     public void IfUseAddTwitterLinkValid() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -350,7 +421,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add facebook link number
-    @Test(priority = 34)
+    @Test(priority = 42)
     public void IfUseAddFacebookLinkNumber() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -361,7 +432,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add facebook link text
-    @Test(priority = 35)
+    @Test(priority = 43)
     public void IfUseAddFacebookLinkText() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -372,7 +443,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add facebook link valid
-    @Test(priority = 36)
+    @Test(priority = 44)
     public void IfUseAddFacebookLinkValid() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -382,7 +453,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add instagram link number
-    @Test(priority = 37)
+    @Test(priority = 45)
     public void IfUseAddinstagraminkNumber() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -393,7 +464,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add instagram link text
-    @Test(priority = 38)
+    @Test(priority = 46)
     public void IfUseAddinstagramLinkText() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -405,7 +476,7 @@ public class AddNewMallTest extends TestBase {
 
 
     // if user add instagram link valid
-    @Test(priority = 39)
+    @Test(priority = 47)
     public void IfUseAddinstagramLinkValid() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -415,49 +486,55 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add mall valid without website link & social account
-    @Test(priority = 40)
+    @Test(priority = 48)
     public void IfUseAddValidMallWithoutSocialAccount() throws InterruptedException {
+        driver.navigate().refresh();
         addNewMallPage.AddTextInMallNameArabic(name1);
         addNewMallPage.AddTextInMallNameEnglish(name2);
         addNewMallPage.UploadJPGCover();
         addNewMallPage.AddTextInNumbersOfFloor("10");
         addNewMallPage.SelectMakka();
-        addNewMallPage.AddTextInMallAddress(location1);
+        addNewMallPage.AddTextInMallAddressEn(location1);
+        addNewMallPage.AddTextInMallAddressAr(location2);
         addNewMallPage.ClickToSave();
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,-300)");
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         Assert.assertTrue(addNewMallPage.sucessMsg.getText().contains("New Mall had been added successfully"));
         driver.navigate().refresh();
     }
 
     // if user add mall valid website link & Without social account
-    @Test(priority = 41)
+    @Test(priority = 49)
     public void IfUseAddValidMallWithWebsiteLinkWithoutSocialAccount() throws InterruptedException {
+        driver.navigate().refresh();
         addNewMallPage.AddTextInMallNameArabic(name3);
         addNewMallPage.AddTextInMallNameEnglish(name4);
         addNewMallPage.UploadJPGCover();
         addNewMallPage.AddTextInNumbersOfFloor("10");
         addNewMallPage.SelectMakka();
-        addNewMallPage.AddTextInMallAddress(location1);
+        addNewMallPage.AddTextInMallAddressEn(location1);
+        addNewMallPage.AddTextInMallAddressAr(location2);
         addNewMallPage.AddTextInMallWebsite("https://asala-dashboard.ibtikar.net.sa/mall/add");
         addNewMallPage.ClickToSave();
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,-300)");
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         Assert.assertTrue(addNewMallPage.sucessMsg.getText().contains("New Mall had been added successfully"));
         driver.navigate().refresh();
     }
 
     // if user add mall valid website link & social account
-    @Test(priority = 42)
+    @Test(priority = 50)
     public void IfUseAddValidMallWithWebsiteLinkSocialAccount() throws InterruptedException {
+        driver.navigate().refresh();
         addNewMallPage.AddTextInMallNameArabic(name5);
         addNewMallPage.AddTextInMallNameEnglish(name6);
         addNewMallPage.UploadPNGCover();
         addNewMallPage.AddTextInNumbersOfFloor("10");
         addNewMallPage.SelectMakka();
-        addNewMallPage.AddTextInMallAddress(location1);
+        addNewMallPage.AddTextInMallAddressEn(location1);
+        addNewMallPage.AddTextInMallAddressAr(location2);
         addNewMallPage.AddTextInMallWebsite("https://asala-dashboard.ibtikar.net.sa/mall/add");
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,300)");
@@ -466,7 +543,7 @@ public class AddNewMallTest extends TestBase {
         addNewMallPage.AddTextInMallInstgram("https://www.instagram.com/");
         addNewMallPage.ClickToSave();
         js.executeScript("scrollBy(0,-300)");
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         Assert.assertTrue(addNewMallPage.sucessMsg.getText().contains("New Mall had been added successfully"));
         driver.navigate().refresh();
     }
