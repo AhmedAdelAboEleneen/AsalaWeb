@@ -31,6 +31,9 @@ public class HomePage extends PageBase {
 	@FindBy(id = "manage_event")
 	WebElement mangeEventBt;
 
+	@FindBy(id = "mall-list-manage_store_admin")
+	WebElement mangeStoreAdminBt;
+
 	@FindBy(id = "dropdown-toggle")
 	WebElement userNameBt;
 
@@ -79,6 +82,11 @@ public class HomePage extends PageBase {
 	public void ClickManageEvent() {
 
 		clickButton(mangeEventBt);
+	}
+
+	public void ClickMangeStoreAdmin() {
+
+		clickButton(mangeStoreAdminBt);
 	}
 
 	public void ClickUserName() {

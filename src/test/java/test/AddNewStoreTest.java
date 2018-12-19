@@ -114,7 +114,7 @@ public class AddNewStoreTest extends TestBase {
     @Test(priority = 8)
     public void IfUserChoseMallAndCategoryAndFloor() throws InterruptedException {
         addNewStorePage.SelectMall();
-        Thread.sleep(5000);
+        Thread.sleep(7000);
         addNewStorePage.SelectCategory();
         addNewStorePage.SelectFloorNumber();
         js = (JavascriptExecutor) driver;

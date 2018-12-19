@@ -45,4 +45,10 @@
 		</classes>
 	</test>
 
+	<test name="Add New Store Admin Script" >
+		<classes>
+			<class name="test.AddNewStoreAdminTest"/>
+		</classes>
+	</test>
+
 </suite>

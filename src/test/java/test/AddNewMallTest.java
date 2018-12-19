@@ -416,7 +416,7 @@ public class AddNewMallTest extends TestBase {
 
     // if user add mall valid without website link & social account
     @Test(priority = 40)
-    public void IfUseAddValidMallWithoutSocialAccount() {
+    public void IfUseAddValidMallWithoutSocialAccount() throws InterruptedException {
         addNewMallPage.AddTextInMallNameArabic(name1);
         addNewMallPage.AddTextInMallNameEnglish(name2);
         addNewMallPage.UploadJPGCover();
@@ -426,6 +426,7 @@ public class AddNewMallTest extends TestBase {
         addNewMallPage.ClickToSave();
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,-300)");
+        Thread.sleep(3000);
         Assert.assertTrue(addNewMallPage.sucessMsg.getText().contains("New Mall had been added successfully"));
         driver.navigate().refresh();
     }
