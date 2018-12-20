@@ -53,6 +53,7 @@ public class AddNewCategoryTest extends TestBase {
         addNewCategoryPage.ClickSumbitToAddCategory();
         Assert.assertTrue(addNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("This field is required"));
         Assert.assertTrue(addNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("This field is required"));
+        driver.navigate().refresh();
     }
 
     // if user add name en & ar less than 3 character
@@ -66,6 +67,7 @@ public class AddNewCategoryTest extends TestBase {
                 .contains("This field shouldn’t be less than 3 characters"));
         Assert.assertTrue(addNewCategoryPage.addcategoryNameArErrorMsgtxt.getText()
                 .contains("This field shouldn’t be less than 3 characters"));
+        driver.navigate().refresh();
     }
 
     // if user add name en & ar more than 30 character
@@ -80,6 +82,7 @@ public class AddNewCategoryTest extends TestBase {
         Thread.sleep(3000);
         Assert.assertTrue(addNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("This field shouldn’t contain more than 30 characters"));
         Assert.assertTrue(addNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("This field shouldn’t contain more than 30 characters"));
+        driver.navigate().refresh();
     }
 
     // if user add name en & ar empty
@@ -91,6 +94,7 @@ public class AddNewCategoryTest extends TestBase {
         addNewCategoryPage.ClearNameAr();
         addNewCategoryPage.ClickSumbitToAddCategory();
         Assert.assertTrue(addNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("This field is required"));
+        driver.navigate().refresh();
     }
 
     // if user add name en empty & ar
@@ -101,6 +105,7 @@ public class AddNewCategoryTest extends TestBase {
         addNewCategoryPage.AddcategoryNameArtxt("Testtttttt");
         addNewCategoryPage.ClickSumbitToAddCategory();
         Assert.assertTrue(addNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("This field is required"));
+        driver.navigate().refresh();
     }
 
     // if user add name en & ar space
@@ -114,6 +119,7 @@ public class AddNewCategoryTest extends TestBase {
         addNewCategoryPage.ClickSumbitToAddCategory();
         Assert.assertTrue(addNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("This field is required"));
         Assert.assertTrue(addNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("This field is required"));
+        driver.navigate().refresh();
     }
 
     @Test(priority = 8)
@@ -124,6 +130,7 @@ public class AddNewCategoryTest extends TestBase {
         addNewCategoryPage.ClickSumbitToAddCategory();
         Assert.assertTrue(addNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("هذا الحقل مطلوب"));
         Assert.assertTrue(addNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("هذا الحقل مطلوب"));
+        driver.navigate().refresh();
     }
 
     // if user add name en & ar less than 3 character
@@ -137,6 +144,7 @@ public class AddNewCategoryTest extends TestBase {
                 addNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("يجب الا تقل عدد الحروف عن 3 أحرف"));
         Assert.assertTrue(
                 addNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("يجب الا تقل عدد الحروف عن 3 أحرف"));
+        driver.navigate().refresh();
     }
 
     // if user add name en & ar more than 30 character
@@ -151,6 +159,7 @@ public class AddNewCategoryTest extends TestBase {
         Thread.sleep(3000);
         Assert.assertTrue(addNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("يجب الا تزيد عدد الحروف عن 30 حرف"));
         Assert.assertTrue(addNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("يجب الا تزيد عدد الحروف عن 30 حرف"));
+        driver.navigate().refresh();
     }
 
     // if user add name en & ar empty
@@ -161,6 +170,7 @@ public class AddNewCategoryTest extends TestBase {
         addNewCategoryPage.AddcategoryNameEntxt("Testtttttt");
         addNewCategoryPage.ClickSumbitToAddCategory();
         Assert.assertTrue(addNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("هذا الحقل مطلوب"));
+        driver.navigate().refresh();
     }
 
     // if user add name en & ar space
@@ -174,6 +184,7 @@ public class AddNewCategoryTest extends TestBase {
         addNewCategoryPage.ClickSumbitToAddCategory();
         Assert.assertTrue(addNewCategoryPage.addcategoryNameEnErrorMsgtxt.getText().contains("هذا الحقل مطلوب"));
         Assert.assertTrue(addNewCategoryPage.addcategoryNameArErrorMsgtxt.getText().contains("هذا الحقل مطلوب"));
+        driver.navigate().refresh();
     }
 
     @Test(priority = 13)
@@ -184,6 +195,7 @@ public class AddNewCategoryTest extends TestBase {
         addNewCategoryPage.AddcategoryNameArtxt(Name2);
         addNewCategoryPage.ClickSumbitToAddCategory();
         Assert.assertTrue(addNewCategoryPage.successMsgtxt.getText().contains("تم إضافة تصنيف جديد بنجاح"));
+        driver.navigate().refresh();
 
     }
 

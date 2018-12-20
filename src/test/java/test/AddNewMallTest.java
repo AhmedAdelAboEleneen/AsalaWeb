@@ -349,7 +349,7 @@ public class AddNewMallTest extends TestBase {
     // if user add address Ar more than 100 char
     @Test(priority = 35)
     public void IfUseAddAddressArMore() {
-        addNewMallPage.AddTextInMallAddressEn("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeeeeeeeeeeee");
+        addNewMallPage.AddTextInMallAddressAr("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeeeeeeeeeeee");
         addNewMallPage.ClickToSave();
         Assert.assertTrue(addNewMallPage.errorMsgAddressAr.getText().contains("This field shouldn’t contain more than 100 character"));
         driver.navigate().refresh();
