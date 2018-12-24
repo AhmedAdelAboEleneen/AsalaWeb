@@ -20,9 +20,9 @@ public class AddNewOfferTest extends TestBase {
 
         // login
         loginPage = new LoginPage(driver);
-          loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
-        //loginPage.AddEmail("ahmed.adel.mall@ibtikar.net.sa");
-        //loginPage.AddEmail("ahmed.adel.store@ibtikar.net.sa");
+        loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
+       // loginPage.AddEmail("ahmed.adel.mall@ibtikar.net.sa");
+       // loginPage.AddEmail("ahmed.adel.store@ibtikar.net.sa");
         loginPage.AddPassword("123456");
         loginPage.ClickLogin();
 
