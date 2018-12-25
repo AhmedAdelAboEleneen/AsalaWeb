@@ -134,13 +134,6 @@ public class AddNewEventPage extends PageBase {
 
     // calender Here !!!
 
-    // chose old date in date from
-    public void ChoseDateFromOld(){
-        DateFrom.click();
-        DateFrom.sendKeys(Keys.ARROW_UP);
-        DateFrom.sendKeys(Keys.ENTER);
-    }
-
     // chose current  date in date from
     public void ChoseDateFromCurrent(){
         DateFrom.click();
@@ -152,13 +145,6 @@ public class AddNewEventPage extends PageBase {
         DateFrom.click();
         DateFrom.sendKeys(Keys.ARROW_DOWN);
         DateFrom.sendKeys(Keys.ENTER);
-    }
-
-    // chose old date in date to
-    public void ChoseDateToOld(){
-        DateTo.click();
-        DateTo.sendKeys(Keys.ARROW_UP);
-        DateTo.sendKeys(Keys.ENTER);
     }
 
     // chose current  date in date to

@@ -477,7 +477,7 @@ public class AddNewMallTest extends TestBase {
 
     // if user add instagram link valid
     @Test(priority = 47)
-    public void IfUseAddinstagramLinkValid() {
+    public void IfUseAddInstagramLinkValid() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewMallPage.AddTextInMallInstgram("https://www.instagram.com/");

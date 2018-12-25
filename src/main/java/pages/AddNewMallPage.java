@@ -138,12 +138,6 @@ public class AddNewMallPage extends PageBase {
         selectMall.selectByValue("3");
     }
 
-    public void SelectTarout() {
-
-        Select selectMall = new Select(mallCitySelect);
-        selectMall.selectByValue("34");
-    }
-
     public void AddTextInMallAddressEn(String Value) {
 
         setTextElementText(mallAddressTxtEn, Value);

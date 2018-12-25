@@ -28,14 +28,4 @@ public class PageBase {
 		textElement.sendKeys(value);
 	}
 
-	public void scrollToBottom()
-
-	{
-		jse.executeScript("scrollBy(0,1000)");
-	}
-
-	public void clearText(WebElement element) {
-		element.clear();
-	}
-
 }
