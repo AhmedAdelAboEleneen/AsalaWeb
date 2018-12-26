@@ -1,54 +1,54 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Asala Dashboard Regression Suite" thread-count="7" verbose="7">
-	<parameter name="browser" value="firefox"></parameter>
-	<test name="Login Script" >
-		<classes>
-			<class name="test.LoginTest"/>
-		</classes>
-	</test>
+    <parameter name="browser" value="firefox"></parameter>
+    <test name="Login Script">
+        <classes>
+            <class name="test.LoginTest"/>
+        </classes>
+    </test>
 
-	<test name="Edit Account Script" >
-		<classes>
-			<class name="test.EditAccountTest"/>
-		</classes>
-	</test>
+    <test name="Edit Account Script">
+        <classes>
+            <class name="test.EditAccountTest"/>
+        </classes>
+    </test>
 
-	<test name="Add New Mall Script" >
-		<classes>
-			<class name="test.AddNewMallTest"/>
-		</classes>
-	</test>
+    <test name="Add New Mall Script">
+        <classes>
+            <class name="test.AddNewMallTest"/>
+        </classes>
+    </test>
 
-	<test name="Add New Category Script" >
-		<classes>
-			<class name="test.AddNewCategoryTest"/>
-		</classes>
-	</test>
+    <test name="Add New Category Script">
+        <classes>
+            <class name="test.AddNewCategoryTest"/>
+        </classes>
+    </test>
 
-	<test name="Add New Store Script" >
-		<classes>
-			<class name="test.AddNewStoreTest"/>
-		</classes>
-	</test>
-
-
-	<test name="Add New Offer Script" >
-		<classes>
-			<class name="test.AddNewOfferTest"/>
-		</classes>
-	</test>
+    <test name="Add New Store Script">
+        <classes>
+            <class name="test.AddNewStoreTest"/>
+        </classes>
+    </test>
 
 
-	<test name="Add New Event Script" >
-		<classes>
-			<class name="test.AddNewEventTest"/>
-		</classes>
-	</test>
+    <test name="Add New Offer Script">
+        <classes>
+            <class name="test.AddNewOfferTest"/>
+        </classes>
+    </test>
 
-	<test name="Add New Store Admin Script" >
-		<classes>
-			<class name="test.AddNewStoreAdminTest"/>
-		</classes>
-	</test>
+
+    <test name="Add New Event Script">
+        <classes>
+            <class name="test.AddNewEventTest"/>
+        </classes>
+    </test>
+
+    <test name="Add New Store Admin Script">
+        <classes>
+            <class name="test.AddNewStoreAdminTest"/>
+        </classes>
+    </test>
 
 </suite>

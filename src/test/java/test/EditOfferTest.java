@@ -22,9 +22,12 @@ public class EditOfferTest extends TestBase {
 
         // login
         loginPage = new LoginPage(driver);
-        //loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
+        // login in stage server
+        loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
+        // login in demo server
+        //loginPage.AddEmail("super@asala.com");
         //loginPage.AddEmail("ahmed.adel.mall@ibtikar.net.sa");
-        loginPage.AddEmail("ahmed.adel.store@ibtikar.net.sa");
+        //loginPage.AddEmail("ahmed.adel.store@ibtikar.net.sa");
         loginPage.AddPassword("123456");
         loginPage.ClickLogin();
 
@@ -36,6 +39,7 @@ public class EditOfferTest extends TestBase {
         mangeOfferPage = new MangeOfferPage(driver);
         mangeOfferPage.ClickToEditOffer();
     }
+
     // if user try to change photo
     @Test(priority = 2)
     public void ChangePhoto() throws InterruptedException {

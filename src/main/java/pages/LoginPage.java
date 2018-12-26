@@ -6,75 +6,67 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends PageBase {
 
-	public LoginPage(WebDriver driver) {
-		super(driver);
-	}
+    @FindBy(id = "error-msg-email")
+    public WebElement emailTxtValidtion;
+    @FindBy(id = "error-msg-password")
+    public WebElement passwordTxtValidtion;
+    @FindBy(id = "error-1")
+    public WebElement wrongEmailOrPasswordOrNotActiveTxt;
+    @FindBy(id = "form-control-Email")
+    WebElement emailTxtBox;
+    @FindBy(id = "form-control-Password")
+    WebElement passwordTxtBox;
+    @FindBy(id = "ar")
+    WebElement changeLanguageToArabicBt;
+    @FindBy(id = "en")
+    WebElement changeLanguageToEnglishBt;
+    @FindBy(id = "submit-btn")
+    WebElement loginBtn;
+    @FindBy(id = "forgot-password-btn")
+    WebElement forgetPasswordBtn;
 
-	@FindBy(id = "form-control-Email")
-	WebElement emailTxtBox;
+    public LoginPage(WebDriver driver) {
+        super(driver);
+    }
 
-	@FindBy(id = "error-msg-email")
-	public WebElement emailTxtValidtion;
+    public void AddEmail(String email) {
 
-	@FindBy(id = "form-control-Password")
-	WebElement passwordTxtBox;
+        setTextElementText(emailTxtBox, email);
+    }
 
-	@FindBy(id = "error-msg-password")
-	public WebElement passwordTxtValidtion;
+    public void AddPassword(String password) {
 
-	@FindBy(id = "error-1")
-	public WebElement wrongEmailOrPasswordOrNotActiveTxt;
+        setTextElementText(passwordTxtBox, password);
+    }
 
-	@FindBy(id = "ar")
-	WebElement changeLanguageToArabicBt;
+    public void ClickLogin() {
 
-	@FindBy(id = "en")
-	WebElement changeLanguageToEnglishBt;
+        clickButton(loginBtn);
+    }
 
-	@FindBy(id = "submit-btn")
-	WebElement loginBtn;
+    public void ClickForgetPassword() {
 
-	@FindBy(id = "forgot-password-btn")
-	WebElement forgetPasswordBtn;
+        clickButton(forgetPasswordBtn);
+    }
 
-	public void AddEmail(String email) {
+    public void ClearEmailData() {
 
-		setTextElementText(emailTxtBox, email);
-	}
+        emailTxtBox.clear();
+    }
 
-	public void AddPassword(String password) {
+    public void ClearPasswordData() {
 
-		setTextElementText(passwordTxtBox, password);
-	}
+        passwordTxtBox.clear();
+    }
 
-	public void ClickLogin() {
+    public void ClickChangeLanguageToArabic() {
 
-		clickButton(loginBtn);
-	}
+        clickButton(changeLanguageToArabicBt);
+    }
 
-	public void ClickForgetPassword() {
+    public void ClickChangeLanguageToEnglish() {
 
-		clickButton(forgetPasswordBtn);
-	}
-
-	public void ClearEmailData() {
-
-		emailTxtBox.clear();
-	}
-
-	public void ClearPasswordData() {
-
-		passwordTxtBox.clear();
-	}
-
-	public void ClickChangeLanguageToArabic() {
-
-		clickButton(changeLanguageToArabicBt);
-	}
-
-	public void ClickChangeLanguageToEnglish() {
-
-		clickButton(changeLanguageToEnglishBt);
-	}
+        clickButton(changeLanguageToEnglishBt);
+    }
 
 }

@@ -3,7 +3,10 @@ package test;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.*;
+import pages.AddNewOfferPage;
+import pages.HomePage;
+import pages.LoginPage;
+import pages.MangeOfferPage;
 
 public class AddNewOfferTest extends TestBase {
 
@@ -20,9 +23,12 @@ public class AddNewOfferTest extends TestBase {
 
         // login
         loginPage = new LoginPage(driver);
+        // login in stage server
         loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
-       // loginPage.AddEmail("ahmed.adel.mall@ibtikar.net.sa");
-       // loginPage.AddEmail("ahmed.adel.store@ibtikar.net.sa");
+        // login in demo server
+        //loginPage.AddEmail("super@asala.com");
+        // loginPage.AddEmail("ahmed.adel.mall@ibtikar.net.sa");
+        // loginPage.AddEmail("ahmed.adel.store@ibtikar.net.sa");
         loginPage.AddPassword("123456");
         loginPage.ClickLogin();
 
@@ -311,7 +317,7 @@ public class AddNewOfferTest extends TestBase {
 
     }
 
-   // add offer without store
+    // add offer without store
     @Test(priority = 33)
     public void AddOfferWithoutStore() throws InterruptedException {
         driver.navigate().refresh();

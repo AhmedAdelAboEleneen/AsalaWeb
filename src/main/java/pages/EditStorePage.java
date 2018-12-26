@@ -6,45 +6,34 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
 public class EditStorePage extends PageBase {
-    public EditStorePage(WebDriver driver) {
-        super(driver);
-    }
-
     @FindBy(id = "edit-360")
     public WebElement clickEditBt;
-
-    @FindBy(id = "filter-by-mall")
-    WebElement mallSelect;
-
     @FindBy(id = "error-msg-category_id")
     public WebElement errorCategorySelect;
-
     @FindBy(id = "error-msg-floor")
     public WebElement errorMsgFloor;
-
-    @FindBy(id = "add-more-phone")
-    WebElement addMorePhone;
-
-    @FindBy(id = "remove-more-phone")
-    WebElement removePhone;
-
-    @FindBy(id = "form-control-email")
-    WebElement addEmailTxt;
-
     @FindBy(id = "error-msg-email")
     public WebElement errorMsgEmail;
-
     @FindBy(id = "input-file-logo")
     public WebElement logoBt;
-
     @FindBy(id = "phone-1")
     public WebElement phoneNumber2Txt;
-
+    @FindBy(id = "success-msg")
+    public WebElement sucessMsg;
+    @FindBy(id = "filter-by-mall")
+    WebElement mallSelect;
+    @FindBy(id = "add-more-phone")
+    WebElement addMorePhone;
+    @FindBy(id = "remove-more-phone")
+    WebElement removePhone;
+    @FindBy(id = "form-control-email")
+    WebElement addEmailTxt;
     @FindBy(id = "submit-btn")
     WebElement saveBt;
 
-    @FindBy(id = "success-msg")
-    public WebElement sucessMsg;
+    public EditStorePage(WebDriver driver) {
+        super(driver);
+    }
 
     public void SelectMall() {
 
@@ -52,7 +41,7 @@ public class EditStorePage extends PageBase {
         selectMall.selectByValue("1");
     }
 
-    public void CLickToEditStore(){
+    public void CLickToEditStore() {
         clickButton(clickEditBt);
     }
 
@@ -76,10 +65,10 @@ public class EditStorePage extends PageBase {
         clickButton(saveBt);
     }
 
-    public void UploadPNG (){
+    public void UploadPNG() {
 
         String imageName = "PNG.png";
-        String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
+        String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
         logoBt.sendKeys(imagePath);
     }
 

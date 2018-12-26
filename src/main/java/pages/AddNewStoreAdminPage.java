@@ -6,45 +6,34 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
 public class AddNewStoreAdminPage extends PageBase {
-    public AddNewStoreAdminPage(WebDriver driver) {
-        super(driver);
-    }
-
-    @FindBy(id = "all_malls")
-    WebElement mallSelect;
-
     @FindBy(id = "error-msg-malls")
     public WebElement errorMsgSelectMall;
-
-    @FindBy(id = "all_stores")
-    WebElement storeSelect;
-
     @FindBy(id = "error-msg-stores")
     public WebElement errorMsgSelectStore;
-
-    @FindBy(id = "admin_Name_input")
-    WebElement adminNameTxt;
-
     @FindBy(id = "error-msg-admin_name")
     public WebElement errorMsgAdminName;
-
-    @FindBy(id = "email_input")
-    WebElement emailNameTxt;
-
     @FindBy(id = "error-msg-email")
     public WebElement errorMsgEmail;
-
-    @FindBy(id = "password_input")
-    WebElement passwordTxt;
-
     @FindBy(id = "error-msg-password")
     public WebElement errorMsgPasssword;
-
+    @FindBy(id = "success-msg")
+    public WebElement successMsg;
+    @FindBy(id = "all_malls")
+    WebElement mallSelect;
+    @FindBy(id = "all_stores")
+    WebElement storeSelect;
+    @FindBy(id = "admin_Name_input")
+    WebElement adminNameTxt;
+    @FindBy(id = "email_input")
+    WebElement emailNameTxt;
+    @FindBy(id = "password_input")
+    WebElement passwordTxt;
     @FindBy(id = "submit-btn")
     WebElement submitBt;
 
-    @FindBy(id = "success-msg")
-    public WebElement successMsg;
+    public AddNewStoreAdminPage(WebDriver driver) {
+        super(driver);
+    }
 
     public void SelectMallInAdmin() {
 

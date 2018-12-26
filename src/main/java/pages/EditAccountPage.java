@@ -6,96 +6,86 @@ import org.openqa.selenium.support.FindBy;
 
 public class EditAccountPage extends PageBase {
 
-	public EditAccountPage(WebDriver driver) {
-		super(driver);
-	}
+    @FindBy(id = "error-msgs-name")
+    public WebElement nameValidationMessaga;
+    @FindBy(id = "error-msg-email")
+    public WebElement emailValidationMessaga;
+    @FindBy(id = "error-msg-old_password")
+    public WebElement OldPasswordlValidationMessaga;
+    @FindBy(id = "form-control-new_password")
+    public WebElement newPasswordTxtBoxInEdit;
+    @FindBy(id = "error-msgs-new_password")
+    public WebElement newPasswordlValidationMessaga;
+    @FindBy(id = "error-msg-confirm_password")
+    public WebElement confirmPasswordlValidationMessaga;
+    @FindBy(id = "form-control-name")
+    WebElement nameTxtBoxInEdit;
+    @FindBy(id = "form-control-email")
+    WebElement emailTxtBoxInEdit;
+    @FindBy(id = "form-control-old_password")
+    WebElement OldPasswordTxtBoxInEdit;
+    @FindBy(id = "form-control-confirm_password")
+    WebElement confirmPasswordTxtBoxInEdit;
+    @FindBy(id = "submit_profile")
+    WebElement submitInEditBt;
 
-	@FindBy(id = "form-control-name")
-	WebElement nameTxtBoxInEdit;
+    public EditAccountPage(WebDriver driver) {
+        super(driver);
+    }
 
-	@FindBy(id = "error-msgs-name")
-	public WebElement nameValidationMessaga;
+    public void AddNameInEdit(String name) {
 
-	@FindBy(id = "form-control-email")
-	WebElement emailTxtBoxInEdit;
+        setTextElementText(nameTxtBoxInEdit, name);
+    }
 
-	@FindBy(id = "error-msg-email")
-	public WebElement emailValidationMessaga;
+    public void AddEmailInEdit(String email) {
 
-	@FindBy(id = "form-control-old_password")
-	WebElement OldPasswordTxtBoxInEdit;
+        setTextElementText(emailTxtBoxInEdit, email);
+    }
 
-	@FindBy(id = "error-msg-old_password")
-	public WebElement OldPasswordlValidationMessaga;
+    public void AddOldPasswordInEdit(String password) {
 
-	@FindBy(id = "form-control-new_password")
-	public WebElement newPasswordTxtBoxInEdit;
+        setTextElementText(OldPasswordTxtBoxInEdit, password);
+    }
 
-	@FindBy(id = "error-msgs-new_password")
-	public WebElement newPasswordlValidationMessaga;
+    public void AddNewPasswordInEdit(String Newpassword) {
 
-	@FindBy(id = "form-control-confirm_password")
-	WebElement confirmPasswordTxtBoxInEdit;
+        setTextElementText(newPasswordTxtBoxInEdit, Newpassword);
+    }
 
-	@FindBy(id = "error-msg-confirm_password")
-	public WebElement confirmPasswordlValidationMessaga;
+    public void AddConfirmPasswordInEdit(String confirmPassword) {
 
-	@FindBy(id = "submit_profile")
-	WebElement submitInEditBt;
+        setTextElementText(confirmPasswordTxtBoxInEdit, confirmPassword);
+    }
 
-	public void AddNameInEdit(String name) {
+    public void ClickSaveInEdit() {
 
-		setTextElementText(nameTxtBoxInEdit, name);
-	}
+        clickButton(submitInEditBt);
+    }
 
-	public void AddEmailInEdit(String email) {
+    public void ClearNameData() {
 
-		setTextElementText(emailTxtBoxInEdit, email);
-	}
+        nameTxtBoxInEdit.clear();
+    }
 
-	public void AddOldPasswordInEdit(String password) {
+    public void ClearEmailData() {
 
-		setTextElementText(OldPasswordTxtBoxInEdit, password);
-	}
+        emailTxtBoxInEdit.clear();
+    }
 
-	public void AddNewPasswordInEdit(String Newpassword) {
+    public void ClearOldPasswordData() {
 
-		setTextElementText(newPasswordTxtBoxInEdit, Newpassword);
-	}
+        OldPasswordTxtBoxInEdit.clear();
+    }
 
-	public void AddConfirmPasswordInEdit(String confirmPassword) {
+    public void ClearNewPasswordData() {
 
-		setTextElementText(confirmPasswordTxtBoxInEdit, confirmPassword);
-	}
+        newPasswordTxtBoxInEdit.clear();
+    }
 
-	public void ClickSaveInEdit() {
+    public void ClearConfirmpasswrodData() {
 
-		clickButton(submitInEditBt);
-	}
-
-	public void ClearNameData() {
-
-		nameTxtBoxInEdit.clear();
-	}
-
-	public void ClearEmailData() {
-
-		emailTxtBoxInEdit.clear();
-	}
-
-	public void ClearOldPasswordData() {
-
-		OldPasswordTxtBoxInEdit.clear();
-	}
-
-	public void ClearNewPasswordData() {
-
-		newPasswordTxtBoxInEdit.clear();
-	}
-
-	public void ClearConfirmpasswrodData() {
-
-		confirmPasswordTxtBoxInEdit.clear();
-	}
+        confirmPasswordTxtBoxInEdit.clear();
+    }
 
 }

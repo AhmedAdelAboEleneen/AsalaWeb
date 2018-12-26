@@ -6,54 +6,49 @@ import org.openqa.selenium.support.FindBy;
 
 public class EditCategoryPage extends PageBase {
 
-	public EditCategoryPage(WebDriver driver) {
-		super(driver);
-	}
+    @FindBy(id = "error-msg-catEnglishName")
+    public WebElement editcategoryNameEnErrorMsgtxt;
+    @FindBy(id = "error-msg-catArabicName")
+    public WebElement editcategoryNameArErrorMsgtxt;
+    @FindBy(id = "success-msg")
+    public WebElement successMsgtxt;
+    @FindBy(id = "form-control-catEnglishName")
+    WebElement editcategoryNameEntxt;
+    @FindBy(id = "form-control-catArabicName")
+    WebElement editcategoryNameArtxt;
+    @FindBy(id = "save-btn")
+    WebElement editSaveBt;
 
-	@FindBy(id = "form-control-catEnglishName")
-	WebElement editcategoryNameEntxt;
+    public EditCategoryPage(WebDriver driver) {
+        super(driver);
+    }
 
-	@FindBy(id = "error-msg-catEnglishName")
-	public WebElement editcategoryNameEnErrorMsgtxt;
+    public void AddcategoryNameEntxt(String EnValue) {
 
-	@FindBy(id = "form-control-catArabicName")
-	WebElement editcategoryNameArtxt;
+        setTextElementText(editcategoryNameEntxt, EnValue);
+        System.out.println(EnValue);
+    }
 
-	@FindBy(id = "error-msg-catArabicName")
-	public WebElement editcategoryNameArErrorMsgtxt;
+    public void AddcategoryNameArtxt(String ArValue) {
 
-	@FindBy(id = "success-msg")
-	public WebElement successMsgtxt;
+        setTextElementText(editcategoryNameArtxt, ArValue);
+        System.out.println(ArValue);
 
-	@FindBy(id = "save-btn")
-	WebElement editSaveBt;
+    }
 
-	public void AddcategoryNameEntxt(String EnValue) {
+    public void ClickSumbitToConfirmEditCategory() {
 
-		setTextElementText(editcategoryNameEntxt, EnValue);
-		System.out.println(EnValue);
-	}
+        clickButton(editSaveBt);
+    }
 
-	public void AddcategoryNameArtxt(String ArValue) {
+    public void ClearNameEn() {
 
-		setTextElementText(editcategoryNameArtxt, ArValue);
-		System.out.println(ArValue);
+        editcategoryNameEntxt.clear();
+    }
 
-	}
+    public void ClearNameAr() {
 
-	public void ClickSumbitToConfirmEditCategory() {
-
-		clickButton(editSaveBt);
-	}
-
-	public void ClearNameEn() {
-
-		editcategoryNameEntxt.clear();
-	}
-
-	public void ClearNameAr() {
-
-		editcategoryNameArtxt.clear();
-	}
+        editcategoryNameArtxt.clear();
+    }
 
 }

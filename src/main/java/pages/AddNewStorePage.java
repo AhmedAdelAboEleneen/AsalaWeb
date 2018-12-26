@@ -7,190 +7,152 @@ import org.openqa.selenium.support.ui.Select;
 
 public class AddNewStorePage extends PageBase {
 
-	public AddNewStorePage(WebDriver driver) {
-		super(driver);
-	}
+    @FindBy(id = "error-msg-mall_id")
+    public WebElement errorMallSelect;
+    @FindBy(id = "error-msg-category_id")
+    public WebElement errorCategorySelect;
+    @FindBy(id = "error-msg-floor")
+    public WebElement errorMsgFloor;
+    @FindBy(id = "error-msg-store_name_ar")
+    public WebElement errorMsgNameAr;
+    @FindBy(id = "error-msg-store_name_en")
+    public WebElement errorMsgNameEn;
+    @FindBy(id = "error-msg-store_description_ar")
+    public WebElement errorMsgDescriptionAr;
+    @FindBy(id = "error-msg-store_description_en")
+    public WebElement errorMsgDescriptionEn;
+    @FindBy(id = "error-msg-day")
+    public WebElement errorMsgDay;
+    @FindBy(id = "error-msg-status")
+    public WebElement errorMsgStatus;
+    @FindBy(id = "error-msg-location")
+    public WebElement errorMsgLocation;
+    @FindBy(id = "input-file-logo")
+    public WebElement logoBt;
+    @FindBy(id = "error-msg-logo")
+    public WebElement errorMsgLogo;
+    @FindBy(id = "error-msg-photo")
+    public WebElement errorMsgCoverPhoto;
+    @FindBy(id = "error-msg-email")
+    public WebElement errorMsgEmail;
+    @FindBy(id = "error-msgs-phone-0")
+    public WebElement errorMsgPhone1;
+    @FindBy(id = "error-msg-phone-1")
+    public WebElement errorMsgPhone2;
+    @FindBy(id = "success-msg")
+    public WebElement sucessMsg;
+    @FindBy(id = "filter-by-mall")
+    WebElement mallSelect;
+    @FindBy(id = "filter-by-category")
+    WebElement categorySelect;
+    @FindBy(id = "floor-select")
+    WebElement floorSelect;
+    @FindBy(id = "store_name_input_ar")
+    WebElement storeNameArTxt;
+    @FindBy(id = "store_name_input_en")
+    WebElement storeNameEnTxt;
+    @FindBy(id = "store_description_input_ar")
+    WebElement storeDescriptionArTxt;
+    @FindBy(id = "store_description_input_en")
+    WebElement storeDescriptionEnTxt;
+    @FindBy(id = "add-more-shifts")
+    WebElement addMoreShiftBt;
+    @FindBy(id = "days-0")
+    WebElement daySelect;
+    @FindBy(id = "select-date-from-0")
+    WebElement dateFromSelect;
+    @FindBy(id = "select-date-to-0")
+    WebElement dateToSelect;
+    @FindBy(id = "active_status")
+    WebElement activeRadioBt;
+    @FindBy(id = "opening_soon_status")
+    WebElement openingSoonRadioBt;
+    @FindBy(id = "can_redeem_input")
+    WebElement canRedeemCheckbox;
+    @FindBy(id = "location_input")
+    WebElement storeLocationTxt;
+    @FindBy(id = "input-file-photo")
+    WebElement coverPhotoBt;
+    @FindBy(id = "form-control-email")
+    WebElement addEmailTxt;
+    @FindBy(id = "phone-0")
+    WebElement phoneNumber1Txt;
+    @FindBy(id = "add-more-phone")
+    WebElement addMorePhone;
+    @FindBy(id = "phone-1")
+    WebElement phoneNumber2Txt;
+    @FindBy(id = "submit-btn")
+    WebElement saveBt;
 
-	@FindBy(id = "filter-by-mall")
-	WebElement mallSelect;
+    public AddNewStorePage(WebDriver driver) {
+        super(driver);
+    }
 
-	@FindBy(id = "error-msg-mall_id")
-	public WebElement errorMallSelect;
+    public void SelectMall() {
 
-	@FindBy(id = "filter-by-category")
-	WebElement categorySelect;
+        Select selectMall = new Select(mallSelect);
+        selectMall.selectByValue("4");
+    }
 
-	@FindBy(id = "error-msg-category_id")
-	public WebElement errorCategorySelect;
+    public void SelectCategory() {
 
-	@FindBy(id = "floor-select")
-	WebElement floorSelect;
+        Select selectCategory = new Select(categorySelect);
+        selectCategory.selectByValue("114");
+    }
 
-	@FindBy(id = "error-msg-floor")
-	public WebElement errorMsgFloor;
+    public void SelectFloorNumber() {
 
-	@FindBy(id = "store_name_input_ar")
-	WebElement storeNameArTxt;
+        Select selectFloor = new Select(floorSelect);
+        selectFloor.selectByValue("4");
+    }
 
-	@FindBy(id = "error-msg-store_name_ar")
-	public WebElement errorMsgNameAr;
+    public void AddTextInStoreNameArabic(String Value) {
 
-	@FindBy(id = "store_name_input_en")
-	WebElement storeNameEnTxt;
+        setTextElementText(storeNameArTxt, Value);
+    }
 
-	@FindBy(id = "error-msg-store_name_en")
-	public WebElement errorMsgNameEn;
+    public void AddTextInStoreNameEnglish(String Value) {
 
-	@FindBy(id = "store_description_input_ar")
-	WebElement storeDescriptionArTxt;
+        setTextElementText(storeNameEnTxt, Value);
+    }
 
-	@FindBy(id = "error-msg-store_description_ar")
-	public WebElement errorMsgDescriptionAr;
+    public void AddTextInStoreDescArabic(String Value) {
 
-	@FindBy(id = "store_description_input_en")
-	WebElement storeDescriptionEnTxt;
+        setTextElementText(storeDescriptionArTxt, Value);
+    }
 
-	@FindBy(id = "error-msg-store_description_en")
-	public WebElement errorMsgDescriptionEn;
+    public void AddTextInStoreDescEnglish(String Value) {
 
-	@FindBy(id = "add-more-shifts")
-	WebElement addMoreShiftBt;
+        setTextElementText(storeDescriptionEnTxt, Value);
+    }
 
-	@FindBy(id = "days-0")
-	WebElement daySelect;
+    public void ClickToAddAnotherShift() {
 
-	@FindBy(id = "select-date-from-0")
-	WebElement dateFromSelect;
+        clickButton(addMoreShiftBt);
+    }
 
-	@FindBy(id = "select-date-to-0")
-	WebElement dateToSelect;
+    public void SelectDay() {
 
-	@FindBy(id = "error-msg-day")
-	public WebElement errorMsgDay;
+        Select selectMall = new Select(daySelect);
+        selectMall.selectByValue("Monday");
+    }
 
-	@FindBy(id = "active_status")
-	WebElement activeRadioBt;
+    public void SelectDateFrom() {
 
-	@FindBy(id = "opening_soon_status")
-	WebElement openingSoonRadioBt;
+        Select selectMall = new Select(dateFromSelect);
+        selectMall.selectByValue("8 AM");
+    }
 
+    public void SelectDateTo() {
 
-	@FindBy(id = "error-msg-status")
-	public WebElement errorMsgStatus;
+        Select selectMall = new Select(dateToSelect);
+        selectMall.selectByValue("8 PM");
+    }
 
-	@FindBy(id = "can_redeem_input")
-	WebElement canRedeemCheckbox;
+    public void AddTextInLocation(String Value) {
 
-	@FindBy(id = "location_input")
-	WebElement storeLocationTxt;
-
-	@FindBy(id = "error-msg-location")
-	public WebElement errorMsgLocation;
-
-	@FindBy(id = "input-file-logo")
-	public WebElement logoBt;
-
-	@FindBy(id = "error-msg-logo")
-	public WebElement errorMsgLogo;
-
-	@FindBy(id = "input-file-photo")
-	WebElement coverPhotoBt;
-
-	@FindBy(id = "error-msg-photo")
-	public WebElement errorMsgCoverPhoto;
-
-	@FindBy(id = "form-control-email")
-	WebElement addEmailTxt;
-
-	@FindBy(id = "error-msg-email")
-	public WebElement errorMsgEmail;
-
-	@FindBy(id = "phone-0")
-	WebElement phoneNumber1Txt;
-
-	@FindBy(id = "error-msgs-phone-0")
-	public WebElement errorMsgPhone1;
-
-	@FindBy(id = "add-more-phone")
-	 WebElement addMorePhone;
-
-	@FindBy(id = "phone-1")
-	WebElement phoneNumber2Txt;
-
-	@FindBy(id = "error-msg-phone-1")
-	public WebElement errorMsgPhone2;
-
-	@FindBy(id = "submit-btn")
-	WebElement saveBt;
-
-	@FindBy(id = "success-msg")
-	public WebElement sucessMsg;
-
-	public void SelectMall() {
-
-		Select selectMall = new Select(mallSelect);
-		selectMall.selectByValue("4");
-	}
-
-	public void SelectCategory() {
-
-		Select selectCategory = new Select(categorySelect);
-		selectCategory.selectByValue("114");
-	}
-
-	public void SelectFloorNumber() {
-
-		Select selectFloor = new Select(floorSelect);
-		selectFloor.selectByValue("4");
-	}
-
-	public void AddTextInStoreNameArabic(String Value) {
-
-		setTextElementText(storeNameArTxt, Value);
-	}
-
-	public void AddTextInStoreNameEnglish(String Value) {
-
-		setTextElementText(storeNameEnTxt, Value);
-	}
-
-	public void AddTextInStoreDescArabic(String Value) {
-
-		setTextElementText(storeDescriptionArTxt, Value);
-	}
-
-	public void AddTextInStoreDescEnglish(String Value) {
-
-		setTextElementText(storeDescriptionEnTxt, Value);
-	}
-
-	public void ClickToAddAnotherShift() {
-
-		clickButton(addMoreShiftBt);
-	}
-
-	public void SelectDay() {
-
-		Select selectMall = new Select(daySelect);
-		selectMall.selectByValue("Monday");
-	}
-
-	public void SelectDateFrom() {
-
-		Select selectMall = new Select(dateFromSelect);
-		selectMall.selectByValue("8 AM");
-	}
-
-	public void SelectDateTo() {
-
-		Select selectMall = new Select(dateToSelect);
-		selectMall.selectByValue("8 PM");
-	}
-
-	public void AddTextInLocation(String Value) {
-
-		setTextElementText(storeLocationTxt, Value);
-	}
+        setTextElementText(storeLocationTxt, Value);
+    }
 
     public void ClickToCanredeem() {
 
@@ -207,90 +169,90 @@ public class AddNewStorePage extends PageBase {
         clickButton(openingSoonRadioBt);
     }
 
-	public void ClickToMakeCanredeem() {
+    public void ClickToMakeCanredeem() {
 
-		clickButton(canRedeemCheckbox);
-	}
+        clickButton(canRedeemCheckbox);
+    }
 
-    public void UploadSVG (){
+    public void UploadSVG() {
 
-		String imageName = "SVG.svg";
-		String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
-		logoBt.sendKeys(imagePath);
-	}
+        String imageName = "SVG.svg";
+        String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
+        logoBt.sendKeys(imagePath);
+    }
 
-	public void UploadMoreSize (){
+    public void UploadMoreSize() {
 
-		String imageName = "OverSize.jpg";
-		String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
-		logoBt.sendKeys(imagePath);
-	}
+        String imageName = "OverSize.jpg";
+        String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
+        logoBt.sendKeys(imagePath);
+    }
 
-	public void UploadPNG (){
+    public void UploadPNG() {
 
-		String imageName = "PNG.png";
-		String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
-		logoBt.sendKeys(imagePath);
-	}
+        String imageName = "PNG.png";
+        String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
+        logoBt.sendKeys(imagePath);
+    }
 
-	public void UploadJPG (){
+    public void UploadJPG() {
 
-		String imageName = "JPG.jpg";
-		String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
-		logoBt.sendKeys(imagePath);
-	}
+        String imageName = "JPG.jpg";
+        String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
+        logoBt.sendKeys(imagePath);
+    }
 
-	public void UploadSVGCover (){
+    public void UploadSVGCover() {
 
-		String imageName = "SVG.svg";
-		String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
-		coverPhotoBt.sendKeys(imagePath);
-	}
+        String imageName = "SVG.svg";
+        String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
+        coverPhotoBt.sendKeys(imagePath);
+    }
 
-	public void UploadMoreSizeCover (){
+    public void UploadMoreSizeCover() {
 
-		String imageName = "OverSize.jpg";
-		String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
-		coverPhotoBt.sendKeys(imagePath);
-	}
+        String imageName = "OverSize.jpg";
+        String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
+        coverPhotoBt.sendKeys(imagePath);
+    }
 
-	public void UploadPNGCover (){
+    public void UploadPNGCover() {
 
-		String imageName = "PNG.png";
-		String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
-		coverPhotoBt.sendKeys(imagePath);
-	}
+        String imageName = "PNG.png";
+        String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
+        coverPhotoBt.sendKeys(imagePath);
+    }
 
-	public void UploadJPGCover (){
+    public void UploadJPGCover() {
 
-		String imageName = "JPG.jpg";
-		String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
-		coverPhotoBt.sendKeys(imagePath);
-	}
+        String imageName = "JPG.jpg";
+        String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
+        coverPhotoBt.sendKeys(imagePath);
+    }
 
-	public void AddEmail(String Value) {
+    public void AddEmail(String Value) {
 
-		setTextElementText(addEmailTxt, Value);
-	}
+        setTextElementText(addEmailTxt, Value);
+    }
 
-	public void ClickToAddMorePhone() {
+    public void ClickToAddMorePhone() {
 
-		clickButton(addMorePhone);
-	}
+        clickButton(addMorePhone);
+    }
 
-	public void AddPhoneOne(String Value) {
+    public void AddPhoneOne(String Value) {
 
-		setTextElementText(phoneNumber1Txt, Value);
-	}
+        setTextElementText(phoneNumber1Txt, Value);
+    }
 
-	public void AddPhoneTwo(String Value) {
+    public void AddPhoneTwo(String Value) {
 
-		setTextElementText(phoneNumber2Txt, Value);
-	}
+        setTextElementText(phoneNumber2Txt, Value);
+    }
 
-	public void ClickToSave() {
+    public void ClickToSave() {
 
-		clickButton(saveBt);
-	}
+        clickButton(saveBt);
+    }
 
 }

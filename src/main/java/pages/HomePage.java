@@ -6,112 +6,100 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends PageBase {
 
-	public HomePage(WebDriver driver) {
-		super(driver);
-	}
+    @FindBy(id = "logo-lg")
+    WebElement homeBt;
+    @FindBy(id = "sidebar-toggle")
+    WebElement sideMenuBt;
+    @FindBy(id = "manage_mall")
+    WebElement manageMallsBt;
+    @FindBy(id = "manage_store")
+    WebElement mangeStoreBt;
+    @FindBy(id = "manage_category")
+    WebElement mangeCategoryBt;
+    @FindBy(id = "manage_offer")
+    WebElement mangeOfferBt;
+    @FindBy(id = "manage_event")
+    WebElement mangeEventBt;
+    @FindBy(id = "mall-list-manage_store_admin")
+    WebElement mangeStoreAdminBt;
+    @FindBy(id = "dropdown-toggle")
+    WebElement userNameBt;
+    @FindBy(id = "sign-out-action")
+    WebElement signOutBt;
+    @FindBy(id = "edit-profile-action")
+    WebElement profileBt;
+    @FindBy(id = "ar")
+    WebElement changeLanguageToArabicBt;
+    @FindBy(id = "en")
+    WebElement changeLanguageToEnglishBt;
 
-	@FindBy(id = "logo-lg")
-	WebElement homeBt;
+    public HomePage(WebDriver driver) {
+        super(driver);
+    }
 
-	@FindBy(id = "sidebar-toggle")
-	WebElement sideMenuBt;
+    public void ClickHome() {
 
-	@FindBy(id = "manage_mall")
-	WebElement manageMallsBt;
+        clickButton(homeBt);
+    }
 
-	@FindBy(id = "manage_store")
-	WebElement mangeStoreBt;
+    public void ClickSideMenu() {
 
-	@FindBy(id = "manage_category")
-	WebElement mangeCategoryBt;
+        clickButton(sideMenuBt);
+    }
 
-	@FindBy(id = "manage_offer")
-	WebElement mangeOfferBt;
+    public void ClickManageMalls() {
 
-	@FindBy(id = "manage_event")
-	WebElement mangeEventBt;
+        clickButton(manageMallsBt);
+    }
 
-	@FindBy(id = "mall-list-manage_store_admin")
-	WebElement mangeStoreAdminBt;
+    public void ClickManageStores() {
 
-	@FindBy(id = "dropdown-toggle")
-	WebElement userNameBt;
+        clickButton(mangeStoreBt);
+    }
 
-	@FindBy(id = "sign-out-action")
-	WebElement signOutBt;
+    public void ClickManageCategory() {
 
-	@FindBy(id = "edit-profile-action")
-	WebElement profileBt;
+        clickButton(mangeCategoryBt);
+    }
 
-	@FindBy(id = "ar")
-	WebElement changeLanguageToArabicBt;
+    public void ClickManageOffer() {
 
-	@FindBy(id = "en")
-	WebElement changeLanguageToEnglishBt;
+        clickButton(mangeOfferBt);
+    }
 
-	public void ClickHome() {
+    public void ClickManageEvent() {
 
-		clickButton(homeBt);
-	}
+        clickButton(mangeEventBt);
+    }
 
-	public void ClickSideMenu() {
+    public void ClickMangeStoreAdmin() {
 
-		clickButton(sideMenuBt);
-	}
+        clickButton(mangeStoreAdminBt);
+    }
 
-	public void ClickManageMalls() {
+    public void ClickUserName() {
 
-		clickButton(manageMallsBt);
-	}
+        clickButton(userNameBt);
+    }
 
-	public void ClickManageStores() {
+    public void ClickSignOut() {
 
-		clickButton(mangeStoreBt);
-	}
+        clickButton(signOutBt);
+    }
 
-	public void ClickManageCategory() {
+    public void ClickProfile() {
 
-		clickButton(mangeCategoryBt);
-	}
+        clickButton(profileBt);
+    }
 
-	public void ClickManageOffer() {
+    public void ClickChangeLanguageToArabic() {
 
-		clickButton(mangeOfferBt);
-	}
+        clickButton(changeLanguageToArabicBt);
+    }
 
-	public void ClickManageEvent() {
+    public void ClickChangeLanguageToEnglish() {
 
-		clickButton(mangeEventBt);
-	}
-
-	public void ClickMangeStoreAdmin() {
-
-		clickButton(mangeStoreAdminBt);
-	}
-
-	public void ClickUserName() {
-
-		clickButton(userNameBt);
-	}
-
-	public void ClickSignOut() {
-
-		clickButton(signOutBt);
-	}
-
-	public void ClickProfile() {
-
-		clickButton(profileBt);
-	}
-
-	public void ClickChangeLanguageToArabic() {
-
-		clickButton(changeLanguageToArabicBt);
-	}
-
-	public void ClickChangeLanguageToEnglish() {
-
-		clickButton(changeLanguageToEnglishBt);
-	}
+        clickButton(changeLanguageToEnglishBt);
+    }
 
 }

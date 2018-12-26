@@ -37,7 +37,10 @@ public class AddNewStoreTest extends TestBase {
 
         // login
         loginPage = new LoginPage(driver);
+        // login in stage server
         loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
+        // login in demo server
+        //loginPage.AddEmail("super@asala.com");
         //loginPage.AddEmail("ahmed.adel.mall@ibtikar.net.sa");
         loginPage.AddPassword("123456");
         loginPage.ClickLogin();

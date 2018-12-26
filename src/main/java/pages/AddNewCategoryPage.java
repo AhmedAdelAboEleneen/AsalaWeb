@@ -6,51 +6,46 @@ import org.openqa.selenium.support.FindBy;
 
 public class AddNewCategoryPage extends PageBase {
 
-	public AddNewCategoryPage(WebDriver driver) {
-		super(driver);
-	}
+    @FindBy(id = "error-msg-catEnglishName")
+    public WebElement addcategoryNameEnErrorMsgtxt;
+    @FindBy(id = "error-msg-catArabicName")
+    public WebElement addcategoryNameArErrorMsgtxt;
+    @FindBy(id = "success-msg")
+    public WebElement successMsgtxt;
+    @FindBy(id = "form-control-catEnglishName")
+    WebElement addcategoryNameEntxt;
+    @FindBy(id = "form-control-catArabicName")
+    WebElement addcategoryNameArtxt;
+    @FindBy(id = "submit-btn")
+    WebElement saveBt;
 
-	@FindBy(id = "form-control-catEnglishName")
-	WebElement addcategoryNameEntxt;
+    public AddNewCategoryPage(WebDriver driver) {
+        super(driver);
+    }
 
-	@FindBy(id = "error-msg-catEnglishName")
-	public WebElement addcategoryNameEnErrorMsgtxt;
+    public void AddcategoryNameEntxt(String EnValue) {
 
-	@FindBy(id = "form-control-catArabicName")
-	WebElement addcategoryNameArtxt;
+        setTextElementText(addcategoryNameEntxt, EnValue);
+    }
 
-	@FindBy(id = "error-msg-catArabicName")
-	public WebElement addcategoryNameArErrorMsgtxt;
+    public void AddcategoryNameArtxt(String ArValue) {
 
-	@FindBy(id = "success-msg")
-	public WebElement successMsgtxt;
+        setTextElementText(addcategoryNameArtxt, ArValue);
+    }
 
-	@FindBy(id = "submit-btn")
-	WebElement saveBt;
+    public void ClickSumbitToAddCategory() {
 
-	public void AddcategoryNameEntxt(String EnValue) {
+        clickButton(saveBt);
+    }
 
-		setTextElementText(addcategoryNameEntxt, EnValue);
-	}
+    public void ClearNameEn() {
 
-	public void AddcategoryNameArtxt(String ArValue) {
+        addcategoryNameEntxt.clear();
+    }
 
-		setTextElementText(addcategoryNameArtxt, ArValue);
-	}
+    public void ClearNameAr() {
 
-	public void ClickSumbitToAddCategory() {
-
-		clickButton(saveBt);
-	}
-
-	public void ClearNameEn() {
-
-		addcategoryNameEntxt.clear();
-	}
-
-	public void ClearNameAr() {
-
-		addcategoryNameArtxt.clear();
-	}
+        addcategoryNameArtxt.clear();
+    }
 
 }

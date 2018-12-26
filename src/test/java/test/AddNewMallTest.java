@@ -33,8 +33,11 @@ public class AddNewMallTest extends TestBase {
 
         // login
         loginPage = new LoginPage(driver);
+        // login in stage server
         loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
-        loginPage.AddPassword("123456");
+        // login in demo server
+        //loginPage.AddEmail("super@asala.com");
+        // loginPage.AddPassword("123456");
         loginPage.ClickLogin();
 
         // go to home page & click mange stores
@@ -354,6 +357,7 @@ public class AddNewMallTest extends TestBase {
         Assert.assertTrue(addNewMallPage.errorMsgAddressAr.getText().contains("This field shouldn’t contain more than 100 character"));
         driver.navigate().refresh();
     }
+
     // if user add website link number
     @Test(priority = 36)
     public void IfUseAddWebsiteLinkNumber() {

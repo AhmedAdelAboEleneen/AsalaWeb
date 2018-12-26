@@ -7,33 +7,30 @@ import org.openqa.selenium.support.ui.Select;
 
 public class MangeCategoriesPage extends PageBase {
 
-	public MangeCategoriesPage(WebDriver driver) {
-		super(driver);
-	}
+    @FindBy(id = "addNew-btn")
+    WebElement addNewCategoryBt;
+    @FindBy(id = "filter-by-mall")
+    WebElement mallSelect;
+    @FindBy(id = "edit-114")
+    WebElement editCategoryBt;
 
-	@FindBy(id = "addNew-btn")
-	WebElement addNewCategoryBt;
+    public MangeCategoriesPage(WebDriver driver) {
+        super(driver);
+    }
 
-	@FindBy(id = "filter-by-mall")
-	WebElement mallSelect;
+    public void ClickToAddNewCategory() {
 
-	@FindBy(id = "edit-114")
-	WebElement editCategoryBt;
+        clickButton(addNewCategoryBt);
+    }
 
+    public void SelectMall() {
 
-	public void ClickToAddNewCategory() {
+        Select selectMall = new Select(mallSelect);
+        selectMall.selectByValue("4");
+    }
 
-		clickButton(addNewCategoryBt);
-	}
+    public void ClickEditCategory() {
 
-	public void SelectMall() {
-
-		Select selectMall = new Select(mallSelect);
-		selectMall.selectByValue("4");
-	}
-
-	public void ClickEditCategory() {
-
-		clickButton(editCategoryBt);
-	}
+        clickButton(editCategoryBt);
+    }
 }

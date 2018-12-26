@@ -8,96 +8,86 @@ import org.openqa.selenium.support.ui.Select;
 
 public class MangeStoresPage extends PageBase {
 
-	public MangeStoresPage(WebDriver driver) {
-		super(driver);
-	}
+    @FindBy(id = "store-search")
+    public WebElement seacrhStoreTxt;
+    @FindBy(id = "error-msg-search")
+    public WebElement searchErrorMsg;
+    @FindBy(id = "deactivated-1")
+    public WebElement deleteStoreBt;
+    @FindBy(id = "admin-1")
+    public WebElement adminStoreBt;
+    @FindBy(id = "filter-by-mall")
+    WebElement filterByMall;
+    @FindBy(id = "filter-by-category")
+    WebElement filterByCategory;
+    @FindBy(id = "submit-filters")
+    WebElement submitFilterAndSearch;
+    @FindBy(id = "addNew-btn")
+    WebElement addNewStoreBt;
+    @FindBy(id = "edit-1")
+    WebElement editStoreBt;
+    @FindBy(id = "offers-1")
+    WebElement offerStoreBt;
+    @FindBy(id = "offers-1")
+    WebElement reviewsStoreBt;
 
-	@FindBy(id = "filter-by-mall")
-	WebElement filterByMall;
+    public MangeStoresPage(WebDriver driver) {
+        super(driver);
+    }
 
-	@FindBy(id = "filter-by-category")
-	WebElement filterByCategory;
+    public void SelectFilterMallAll() {
 
-	@FindBy(id = "store-search")
-	public WebElement seacrhStoreTxt;
+        Select selectMall = new Select(filterByMall);
+        selectMall.selectByIndex(0);
+    }
 
-	@FindBy(id = "error-msg-search")
-	public WebElement searchErrorMsg;
+    public void SelectFilterMallAsSuperAdmin() {
 
-	@FindBy(id = "submit-filters")
-	WebElement submitFilterAndSearch;
+        Select selectMall = new Select(filterByMall);
+        selectMall.selectByValue("4");
 
-	@FindBy(id = "addNew-btn")
-	WebElement addNewStoreBt;
+    }
 
-	@FindBy(id = "edit-1")
-	WebElement editStoreBt;
+    public void SelectFilterMallAsMallAdmin() {
 
-	@FindBy(id = "deactivated-1")
-	public WebElement deleteStoreBt;
+        Select selectMall = new Select(filterByMall);
+        selectMall.selectByValue("2");
 
-	@FindBy(id = "admin-1")
-	public WebElement adminStoreBt;
+    }
 
-	@FindBy(id = "offers-1")
-	WebElement offerStoreBt;
+    public void SelectFilterCategoryAll() {
 
-	@FindBy(id = "offers-1")
-	WebElement reviewsStoreBt;
+        Select selectCategoru = new Select(filterByCategory);
+        selectCategoru.selectByIndex(0);
+    }
 
-	public void SelectFilterMallAll() {
+    public void SelectFilterCategory() {
 
-		Select selectMall = new Select(filterByMall);
-		selectMall.selectByIndex(0);
-	}
+        Select selectCategoru = new Select(filterByCategory);
+        selectCategoru.selectByIndex(4);
+    }
 
-	public void SelectFilterMallAsSuperAdmin() {
+    public void AddTextInSearch(String SearchValue) {
 
-		Select selectMall = new Select(filterByMall);
-		selectMall.selectByValue("4");
+        setTextElementText(seacrhStoreTxt, SearchValue);
+    }
 
-	}
+    public void AutoComplete() {
 
-	public void SelectFilterMallAsMallAdmin() {
+        seacrhStoreTxt.sendKeys(Keys.ARROW_DOWN);
+        seacrhStoreTxt.sendKeys(Keys.ENTER);
+        seacrhStoreTxt.sendKeys(Keys.ENTER);
+    }
 
-		Select selectMall = new Select(filterByMall);
-		selectMall.selectByValue("2");
+    public void ClearSearchValue() {
 
-	}
+        seacrhStoreTxt.clear();
+    }
 
-	public void SelectFilterCategoryAll() {
+    public void ClickSumbitToSearch() {
 
-		Select selectCategoru = new Select(filterByCategory);
-		selectCategoru.selectByIndex(0);
-	}
-
-	public void SelectFilterCategory() {
-
-		Select selectCategoru = new Select(filterByCategory);
-		selectCategoru.selectByIndex(4);
-	}
-
-	public void AddTextInSearch(String SearchValue) {
-
-		setTextElementText(seacrhStoreTxt, SearchValue);
-	}
-
-	public void AutoComplete() {
-
-		seacrhStoreTxt.sendKeys(Keys.ARROW_DOWN);
-		seacrhStoreTxt.sendKeys(Keys.ENTER);
-		seacrhStoreTxt.sendKeys(Keys.ENTER);
-	}
-
-	public void ClearSearchValue() {
-
-		seacrhStoreTxt.clear();
-	}
-
-	public void ClickSumbitToSearch() {
-
-		clickButton(submitFilterAndSearch);
-	}
+        clickButton(submitFilterAndSearch);
+    }
 
     public void ClickToAddNewStore() {
 

@@ -1,51 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
-  <reporter-output>
-  </reporter-output>
-  <suite name="Default suite" duration-ms="13938" started-at="2018-11-02T20:45:33Z" finished-at="2018-11-02T20:45:47Z">
-    <groups>
-    </groups>
-    <test name="Default test" duration-ms="13938" started-at="2018-11-02T20:45:33Z" finished-at="2018-11-02T20:45:47Z">
-      <class name="test.MangeCategoriesTest">
-        <test-method status="PASS" signature="startDriver(java.lang.String)[pri:0, instance:test.MangeCategoriesTest@4b952a2d]" name="startDriver" is-config="true" duration-ms="16741" started-at="2018-11-02T20:45:16Z" finished-at="2018-11-02T20:45:33Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[firefox]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- startDriver -->
-        <test-method status="PASS" signature="MakeLoginAndSelectMallAsSuuperAdmin()[pri:1, instance:test.MangeCategoriesTest@4b952a2d]" name="MakeLoginAndSelectMallAsSuuperAdmin" duration-ms="1912" started-at="2018-11-02T20:45:33Z" finished-at="2018-11-02T20:45:35Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- MakeLoginAndSelectMallAsSuuperAdmin -->
-        <test-method status="PASS" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:test.MangeCategoriesTest@4b952a2d]" name="screenShootsOnFailure" is-config="true" duration-ms="2" started-at="2018-11-02T20:45:35Z" finished-at="2018-11-02T20:45:35Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=MakeLoginAndSelectMallAsSuuperAdmin status=SUCCESS method=MangeCategoriesTest.MakeLoginAndSelectMallAsSuuperAdmin()[pri:1, instance:test.MangeCategoriesTest@4b952a2d] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="FAIL" signature="DeleteCategory()[pri:2, instance:test.MangeCategoriesTest@4b952a2d]" name="DeleteCategory" duration-ms="10364" started-at="2018-11-02T20:45:35Z" finished-at="2018-11-02T20:45:45Z">
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[Failed to convert data to an object
+    <reporter-output>
+    </reporter-output>
+    <suite name="Default suite" duration-ms="13938" started-at="2018-11-02T20:45:33Z"
+           finished-at="2018-11-02T20:45:47Z">
+        <groups>
+        </groups>
+        <test name="Default test" duration-ms="13938" started-at="2018-11-02T20:45:33Z"
+              finished-at="2018-11-02T20:45:47Z">
+            <class name="test.MangeCategoriesTest">
+                <test-method status="PASS"
+                             signature="startDriver(java.lang.String)[pri:0, instance:test.MangeCategoriesTest@4b952a2d]"
+                             name="startDriver" is-config="true" duration-ms="16741" started-at="2018-11-02T20:45:16Z"
+                             finished-at="2018-11-02T20:45:33Z">
+                    <params>
+                        <param index="0">
+                            <value>
+                                <![CDATA[firefox]]>
+                            </value>
+                        </param>
+                    </params>
+                    <reporter-output>
+                    </reporter-output>
+                </test-method> <!-- startDriver -->
+                <test-method status="PASS"
+                             signature="MakeLoginAndSelectMallAsSuuperAdmin()[pri:1, instance:test.MangeCategoriesTest@4b952a2d]"
+                             name="MakeLoginAndSelectMallAsSuuperAdmin" duration-ms="1912"
+                             started-at="2018-11-02T20:45:33Z" finished-at="2018-11-02T20:45:35Z">
+                    <reporter-output>
+                    </reporter-output>
+                </test-method> <!-- MakeLoginAndSelectMallAsSuuperAdmin -->
+                <test-method status="PASS"
+                             signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:test.MangeCategoriesTest@4b952a2d]"
+                             name="screenShootsOnFailure" is-config="true" duration-ms="2"
+                             started-at="2018-11-02T20:45:35Z" finished-at="2018-11-02T20:45:35Z">
+                    <params>
+                        <param index="0">
+                            <value>
+                                <![CDATA[[TestResult name=MakeLoginAndSelectMallAsSuuperAdmin status=SUCCESS method=MangeCategoriesTest.MakeLoginAndSelectMallAsSuuperAdmin()[pri:1, instance:test.MangeCategoriesTest@4b952a2d] output={null}]]]>
+                            </value>
+                        </param>
+                    </params>
+                    <reporter-output>
+                    </reporter-output>
+                </test-method> <!-- screenShootsOnFailure -->
+                <test-method status="FAIL"
+                             signature="DeleteCategory()[pri:2, instance:test.MangeCategoriesTest@4b952a2d]"
+                             name="DeleteCategory" duration-ms="10364" started-at="2018-11-02T20:45:35Z"
+                             finished-at="2018-11-02T20:45:45Z">
+                    <exception class="org.openqa.selenium.WebDriverException">
+                        <message>
+                            <![CDATA[Failed to convert data to an object
 Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
 System info: host: 'Be-Max', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-38-generic', java.version: '1.8.0_181'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 63.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:geckodriverVersion: 0.23.0, moz:headless: false, moz:processID: 25385, moz:profile: /tmp/rust_mozprofile.Vf7XHb..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, platformVersion: 4.15.0-38-generic, rotatable: false, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
 Session ID: ed834a05-6617-42cc-8c6c-cd0014457941
 *** Element info: {Using=id, value=delete-62}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Failed to convert data to an object
+                        </message>
+                        <full-stacktrace>
+                            <![CDATA[org.openqa.selenium.WebDriverException: Failed to convert data to an object
 Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
 System info: host: 'Be-Max', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-38-generic', java.version: '1.8.0_181'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
@@ -98,30 +112,33 @@ at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- DeleteCategory -->
-        <test-method status="FAIL" signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:test.MangeCategoriesTest@4b952a2d]" name="screenShootsOnFailure" is-config="true" duration-ms="1619" started-at="2018-11-02T20:45:45Z" finished-at="2018-11-02T20:45:47Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=DeleteCategory status=FAILURE method=MangeCategoriesTest.DeleteCategory()[pri:2, instance:test.MangeCategoriesTest@4b952a2d] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.WebDriverException">
-            <message>
-              <![CDATA[Failed to decode response from marionette
+                        </full-stacktrace>
+                    </exception> <!-- org.openqa.selenium.WebDriverException -->
+                    <reporter-output>
+                    </reporter-output>
+                </test-method> <!-- DeleteCategory -->
+                <test-method status="FAIL"
+                             signature="screenShootsOnFailure(org.testng.ITestResult)[pri:0, instance:test.MangeCategoriesTest@4b952a2d]"
+                             name="screenShootsOnFailure" is-config="true" duration-ms="1619"
+                             started-at="2018-11-02T20:45:45Z" finished-at="2018-11-02T20:45:47Z">
+                    <params>
+                        <param index="0">
+                            <value>
+                                <![CDATA[[TestResult name=DeleteCategory status=FAILURE method=MangeCategoriesTest.DeleteCategory()[pri:2, instance:test.MangeCategoriesTest@4b952a2d] output={null}]]]>
+                            </value>
+                        </param>
+                    </params>
+                    <exception class="org.openqa.selenium.WebDriverException">
+                        <message>
+                            <![CDATA[Failed to decode response from marionette
 Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
 System info: host: 'Be-Max', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-38-generic', java.version: '1.8.0_181'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 63.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:geckodriverVersion: 0.23.0, moz:headless: false, moz:processID: 25385, moz:profile: /tmp/rust_mozprofile.Vf7XHb..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, platformVersion: 4.15.0-38-generic, rotatable: false, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
 Session ID: ed834a05-6617-42cc-8c6c-cd0014457941]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Failed to decode response from marionette
+                        </message>
+                        <full-stacktrace>
+                            <![CDATA[org.openqa.selenium.WebDriverException: Failed to decode response from marionette
 Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
 System info: host: 'Be-Max', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-38-generic', java.version: '1.8.0_181'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
@@ -170,23 +187,25 @@ at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- screenShootsOnFailure -->
-        <test-method status="FAIL" signature="stopDriver()[pri:0, instance:test.MangeCategoriesTest@4b952a2d]" name="stopDriver" is-config="true" duration-ms="58" started-at="2018-11-02T20:45:47Z" finished-at="2018-11-02T20:45:47Z">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
-            <message>
-              <![CDATA[Tried to run command without establishing a connection
+                        </full-stacktrace>
+                    </exception> <!-- org.openqa.selenium.WebDriverException -->
+                    <reporter-output>
+                    </reporter-output>
+                </test-method> <!-- screenShootsOnFailure -->
+                <test-method status="FAIL" signature="stopDriver()[pri:0, instance:test.MangeCategoriesTest@4b952a2d]"
+                             name="stopDriver" is-config="true" duration-ms="58" started-at="2018-11-02T20:45:47Z"
+                             finished-at="2018-11-02T20:45:47Z">
+                    <exception class="org.openqa.selenium.NoSuchSessionException">
+                        <message>
+                            <![CDATA[Tried to run command without establishing a connection
 Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
 System info: host: 'Be-Max', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-38-generic', java.version: '1.8.0_181'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 63.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:geckodriverVersion: 0.23.0, moz:headless: false, moz:processID: 25385, moz:profile: /tmp/rust_mozprofile.Vf7XHb..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, platformVersion: 4.15.0-38-generic, rotatable: false, setWindowRect: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
 Session ID: ed834a05-6617-42cc-8c6c-cd0014457941]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
+                        </message>
+                        <full-stacktrace>
+                            <![CDATA[org.openqa.selenium.NoSuchSessionException: Tried to run command without establishing a connection
 Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
 System info: host: 'Be-Max', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-38-generic', java.version: '1.8.0_181'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
@@ -226,12 +245,12 @@ at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- stopDriver -->
-      </class> <!-- test.MangeCategoriesTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+                        </full-stacktrace>
+                    </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+                    <reporter-output>
+                    </reporter-output>
+                </test-method> <!-- stopDriver -->
+            </class> <!-- test.MangeCategoriesTest -->
+        </test> <!-- Default test -->
+    </suite> <!-- Default suite -->
 </testng-results>

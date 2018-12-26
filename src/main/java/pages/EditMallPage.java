@@ -7,172 +7,152 @@ import org.openqa.selenium.support.ui.Select;
 
 public class EditMallPage extends PageBase {
 
-	public EditMallPage(WebDriver driver) {
-		super(driver);
-	}
+    @FindBy(id = "error-msg-mall_name_ar")
+    public WebElement errorMsgNameAr;
+    @FindBy(id = "error-msg-mall_name_en")
+    public WebElement errorMsgNameEn;
+    @FindBy(id = "error-msg-photo")
+    public WebElement errorMsgPhoto;
+    @FindBy(id = "error-msg-floor")
+    public WebElement errorMsgFloor;
+    @FindBy(id = "error-msg-city")
+    public WebElement errorMsgCity;
+    @FindBy(id = "error-msg-store_description_ar")
+    public WebElement errorMsgDescriptionAr;
+    @FindBy(id = "error-msg-website")
+    public WebElement errorMsgWebsiteLink;
+    @FindBy(id = "error-msg-twitter")
+    public WebElement errorMsgeTwitter;
+    @FindBy(id = "error-msg-facebook")
+    public WebElement errorMsgeFacebook;
+    @FindBy(id = "error-msg-instagram")
+    public WebElement errorMsgeInstagram;
+    @FindBy(id = "success-msg")
+    public WebElement sucessMsg;
+    @FindBy(id = "mall_name_input_ar")
+    WebElement mallNameArTxt;
+    @FindBy(id = "mall_name_input_en")
+    WebElement mallNameEnTxt;
+    @FindBy(id = "input-file-photo")
+    WebElement coverPhotoBt;
+    @FindBy(id = "mall_floor")
+    WebElement AddFloorTxt;
+    @FindBy(id = "mall_city")
+    WebElement mallCitySelect;
+    @FindBy(id = "mall_address")
+    WebElement mallAddressTxt;
+    @FindBy(id = "website_link")
+    WebElement websiteLinkTxt;
+    @FindBy(id = "twitter_account")
+    WebElement twitterTxt;
+    @FindBy(id = "facebook_account")
+    WebElement facebookTxt;
+    @FindBy(id = "instagram_account")
+    WebElement instagramTxt;
+    @FindBy(id = "submit-btn")
+    WebElement saveBt;
 
-	@FindBy(id = "mall_name_input_ar")
-	WebElement mallNameArTxt;
+    public EditMallPage(WebDriver driver) {
+        super(driver);
+    }
 
-	@FindBy(id = "error-msg-mall_name_ar")
-	public WebElement errorMsgNameAr;
+    public void AddTextInMallNameArabic(String Value) {
 
-	@FindBy(id = "mall_name_input_en")
-	WebElement mallNameEnTxt;
+        setTextElementText(mallNameArTxt, Value);
+    }
 
-	@FindBy(id = "error-msg-mall_name_en")
-	public WebElement errorMsgNameEn;
+    public void AddTextInMallNameEnglish(String Value) {
 
-	@FindBy(id = "input-file-photo")
-	WebElement coverPhotoBt;
+        setTextElementText(mallNameEnTxt, Value);
+    }
 
-	@FindBy(id = "error-msg-photo")
-	public WebElement errorMsgPhoto;
+    public void UploadSVGCover() {
 
-	@FindBy(id = "mall_floor")
-	WebElement AddFloorTxt;
+        String imageName = "SVG.svg";
+        String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
+        coverPhotoBt.sendKeys(imagePath);
+    }
 
-	@FindBy(id = "error-msg-floor")
-	public WebElement errorMsgFloor;
+    public void UploadMoreSizeCover() {
 
-	@FindBy(id = "mall_city")
-	WebElement mallCitySelect;
+        String imageName = "OverSize.jpg";
+        String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
+        coverPhotoBt.sendKeys(imagePath);
+    }
 
-	@FindBy(id = "error-msg-city")
-	public WebElement errorMsgCity;
+    public void UploadPNGCover() {
 
-	@FindBy(id = "mall_address")
-	WebElement mallAddressTxt;
+        String imageName = "PNG.png";
+        String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
+        coverPhotoBt.sendKeys(imagePath);
+    }
 
-	@FindBy(id = "error-msg-store_description_ar")
-	public WebElement errorMsgDescriptionAr;
+    public void UploadJPGCover() {
 
-	@FindBy(id = "website_link")
-	WebElement websiteLinkTxt;
+        String imageName = "JPG.jpg";
+        String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
+        coverPhotoBt.sendKeys(imagePath);
+    }
 
-	@FindBy(id = "error-msg-website")
-	public WebElement errorMsgWebsiteLink;
+    public void AddTextInNumbersOfFloor(String Value) {
 
-	@FindBy(id = "twitter_account")
-	WebElement twitterTxt;
+        setTextElementText(AddFloorTxt, Value);
+    }
 
-	@FindBy(id = "error-msg-twitter")
-	public WebElement errorMsgeTwitter;
+    public void SelectMakka() {
 
-	@FindBy(id = "facebook_account")
-	WebElement facebookTxt;
+        Select selectMall = new Select(mallCitySelect);
+        selectMall.selectByValue("2");
+    }
 
-	@FindBy(id = "error-msg-facebook")
-	public WebElement errorMsgeFacebook;
+    public void SelectMedina() {
 
-	@FindBy(id = "instagram_account")
-	WebElement instagramTxt;
+        Select selectMall = new Select(mallCitySelect);
+        selectMall.selectByValue("3");
+    }
 
-	@FindBy(id = "error-msg-instagram")
-	public WebElement errorMsgeInstagram;
+    public void SelectTarout() {
 
-	@FindBy(id = "submit-btn")
-	WebElement saveBt;
+        Select selectMall = new Select(mallCitySelect);
+        selectMall.selectByValue("34");
+    }
 
-	@FindBy(id = "success-msg")
-	public WebElement sucessMsg;
+    public void AddTextInMallAddress(String Value) {
 
-	public void AddTextInMallNameArabic(String Value) {
+        setTextElementText(mallAddressTxt, Value);
+    }
 
-		setTextElementText(mallNameArTxt, Value);
-	}
+    public void AddTextInMallWebsite(String Value) {
 
-	public void AddTextInMallNameEnglish(String Value) {
+        setTextElementText(websiteLinkTxt, Value);
+    }
 
-		setTextElementText(mallNameEnTxt, Value);
-	}
+    public void AddTextInMallTwitter(String Value) {
 
-	public void UploadSVGCover (){
+        setTextElementText(twitterTxt, Value);
+    }
 
-		String imageName = "SVG.svg";
-		String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
-		coverPhotoBt.sendKeys(imagePath);
-	}
+    public void AddTextInMallFacebook(String Value) {
 
-	public void UploadMoreSizeCover (){
+        setTextElementText(facebookTxt, Value);
+    }
 
-		String imageName = "OverSize.jpg";
-		String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
-		coverPhotoBt.sendKeys(imagePath);
-	}
+    public void AddTextInMallInstgram(String Value) {
 
-	public void UploadPNGCover (){
+        setTextElementText(instagramTxt, Value);
+    }
 
-		String imageName = "PNG.png";
-		String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
-		coverPhotoBt.sendKeys(imagePath);
-	}
+    public void ClearAllLinks() {
 
-	public void UploadJPGCover (){
+        websiteLinkTxt.clear();
+        twitterTxt.clear();
+        facebookTxt.clear();
+        instagramTxt.clear();
+    }
 
-		String imageName = "JPG.jpg";
-		String imagePath = System.getProperty("user.dir")+"/uploads/"+imageName;
-		coverPhotoBt.sendKeys(imagePath);
-	}
+    public void ClickToSave() {
 
-	public void AddTextInNumbersOfFloor(String Value) {
-
-		setTextElementText(AddFloorTxt, Value);
-	}
-
-	public void SelectMakka() {
-
-		Select selectMall = new Select(mallCitySelect);
-		selectMall.selectByValue("2");
-	}
-
-	public void SelectMedina() {
-
-		Select selectMall = new Select(mallCitySelect);
-		selectMall.selectByValue("3");
-	}
-
-	public void SelectTarout() {
-
-		Select selectMall = new Select(mallCitySelect);
-		selectMall.selectByValue("34");
-	}
-
-	public void AddTextInMallAddress(String Value) {
-
-		setTextElementText(mallAddressTxt, Value);
-	}
-
-	public void AddTextInMallWebsite(String Value) {
-
-		setTextElementText(websiteLinkTxt, Value);
-	}
-
-	public void AddTextInMallTwitter(String Value) {
-
-		setTextElementText(twitterTxt, Value);
-	}
-
-	public void AddTextInMallFacebook(String Value) {
-
-		setTextElementText(facebookTxt, Value);
-	}
-	public void AddTextInMallInstgram(String Value) {
-
-		setTextElementText(instagramTxt, Value);
-	}
-
-	public void ClearAllLinks (){
-
-		websiteLinkTxt.clear();
-		twitterTxt.clear();
-		facebookTxt.clear();
-		instagramTxt.clear();
-	}
-
-	public void ClickToSave() {
-
-		clickButton(saveBt);
-	}
+        clickButton(saveBt);
+    }
 
 }
