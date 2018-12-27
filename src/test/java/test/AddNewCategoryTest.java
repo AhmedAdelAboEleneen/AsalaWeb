@@ -18,9 +18,9 @@ public class AddNewCategoryTest extends TestBase {
     Faker fakeData = new Faker();
 
     String Name1 = fakeData.name().name();
-    String Name2 = fakeData.name().name();
-    String Name3 = fakeData.name().name();
-    String Name4 = fakeData.name().name();
+    String Name2 = fakeData.name().fullName();
+    String Name3 = fakeData.name().firstName();
+    String Name4 = fakeData.name().username();
 
     // make login
     @Test(priority = 1)
@@ -28,10 +28,7 @@ public class AddNewCategoryTest extends TestBase {
 
         // login
         loginPage = new LoginPage(driver);
-        // login in stage server
         loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
-        // login in demo server
-        //loginPage.AddEmail("super@asala.com");
         loginPage.AddPassword("123456");
         loginPage.ClickLogin();
 

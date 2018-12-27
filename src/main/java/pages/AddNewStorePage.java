@@ -67,8 +67,6 @@ public class AddNewStorePage extends PageBase {
     WebElement activeRadioBt;
     @FindBy(id = "opening_soon_status")
     WebElement openingSoonRadioBt;
-    @FindBy(id = "can_redeem_input")
-    WebElement canRedeemCheckbox;
     @FindBy(id = "location_input")
     WebElement storeLocationTxt;
     @FindBy(id = "input-file-photo")
@@ -97,7 +95,12 @@ public class AddNewStorePage extends PageBase {
     public void SelectCategory() {
 
         Select selectCategory = new Select(categorySelect);
-        selectCategory.selectByValue("114");
+        // this for stage
+        //selectCategory.selectByValue("114");
+
+        // this for demo
+        selectCategory.selectByValue("5");
+
     }
 
     public void SelectFloorNumber() {
@@ -154,11 +157,6 @@ public class AddNewStorePage extends PageBase {
         setTextElementText(storeLocationTxt, Value);
     }
 
-    public void ClickToCanredeem() {
-
-        clickButton(canRedeemCheckbox);
-    }
-
     public void ClickToMakeStatusActive() {
 
         clickButton(activeRadioBt);
@@ -167,11 +165,6 @@ public class AddNewStorePage extends PageBase {
     public void ClickToMakeStatusOpeningSoon() {
 
         clickButton(openingSoonRadioBt);
-    }
-
-    public void ClickToMakeCanredeem() {
-
-        clickButton(canRedeemCheckbox);
     }
 
     public void UploadSVG() {

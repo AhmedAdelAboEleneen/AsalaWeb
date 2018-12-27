@@ -23,6 +23,17 @@ public class AddNewEventTest extends TestBase {
     String OrganizerName = fakeData.name().fullName();
     String location1 = fakeData.address().cityName();
 
+    String name1 = fakeData.name().name();
+    String name2 = fakeData.name().name();
+
+    String name3 = fakeData.name().fullName();
+    String name4 = fakeData.name().fullName();
+
+    String name5 = fakeData.name().firstName();
+    String name6 = fakeData.name().firstName();
+
+    String name7 = fakeData.name().username();
+    String name8 = fakeData.name().username();
 
     // make login
     @Test(priority = 1)
@@ -30,10 +41,7 @@ public class AddNewEventTest extends TestBase {
 
         // login
         loginPage = new LoginPage(driver);
-        // login in stage server
         loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
-        // login in demo server
-        //loginPage.AddEmail("super@asala.com");
         //loginPage.AddEmail("ahmed.adel.mall@ibtikar.net.sa");
         loginPage.AddPassword("123456");
         loginPage.ClickLogin();
@@ -630,8 +638,82 @@ public class AddNewEventTest extends TestBase {
     @Test(priority = 61)
     public void IfUserAddValidEvent() throws InterruptedException {
         addNewEventPage.SelectMall();
-        addNewEventPage.AddTextInEventNameArabic("tee");
-        addNewEventPage.AddTextInEventNameEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewEventPage.AddTextInEventNameArabic(name1);
+        addNewEventPage.AddTextInEventNameEnglish(name2);
+        addNewEventPage.AddTextInEventDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewEventPage.AddTextInEventDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewEventPage.AddTextInSponseer(OrganizerName);
+        addNewEventPage.ChoseDateFromCurrent();
+        addNewEventPage.ChoseDateToFuture();
+        addNewEventPage.SelectTimeFromTen();
+        addNewEventPage.SelectTimeToten();
+        js = (JavascriptExecutor) driver;
+        js.executeScript("scrollBy(0,3000)");
+        addNewEventPage.UploadPNG();
+        addNewEventPage.AddEmail("a@a.com");
+        addNewEventPage.AddPhoneOne("966591234567");
+        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.ClickToSave();
+        js.executeScript("scrollBy(0,-3000)");
+        Thread.sleep(3000);
+        Assert.assertTrue(addNewEventPage.sucessMsg.getText().contains("New event has been added successfully"));
+        driver.navigate().refresh();
+    }
+
+    @Test(priority = 62)
+    public void IfUserAddValidEventTwo() throws InterruptedException {
+        addNewEventPage.SelectMall();
+        addNewEventPage.AddTextInEventNameArabic(name3);
+        addNewEventPage.AddTextInEventNameEnglish(name4);
+        addNewEventPage.AddTextInEventDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewEventPage.AddTextInEventDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewEventPage.AddTextInSponseer(OrganizerName);
+        addNewEventPage.ChoseDateFromCurrent();
+        addNewEventPage.ChoseDateToFuture();
+        addNewEventPage.SelectTimeFromTen();
+        addNewEventPage.SelectTimeToten();
+        js = (JavascriptExecutor) driver;
+        js.executeScript("scrollBy(0,3000)");
+        addNewEventPage.UploadPNG();
+        addNewEventPage.AddEmail("a@a.com");
+        addNewEventPage.AddPhoneOne("966591234567");
+        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.ClickToSave();
+        js.executeScript("scrollBy(0,-3000)");
+        Thread.sleep(3000);
+        Assert.assertTrue(addNewEventPage.sucessMsg.getText().contains("New event has been added successfully"));
+        driver.navigate().refresh();
+    }
+
+    @Test(priority = 63)
+    public void IfUserAddValidEventThree() throws InterruptedException {
+        addNewEventPage.SelectMall();
+        addNewEventPage.AddTextInEventNameArabic(name5);
+        addNewEventPage.AddTextInEventNameEnglish(name6);
+        addNewEventPage.AddTextInEventDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewEventPage.AddTextInEventDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewEventPage.AddTextInSponseer(OrganizerName);
+        addNewEventPage.ChoseDateFromCurrent();
+        addNewEventPage.ChoseDateToFuture();
+        addNewEventPage.SelectTimeFromTen();
+        addNewEventPage.SelectTimeToten();
+        js = (JavascriptExecutor) driver;
+        js.executeScript("scrollBy(0,3000)");
+        addNewEventPage.UploadPNG();
+        addNewEventPage.AddEmail("a@a.com");
+        addNewEventPage.AddPhoneOne("966591234567");
+        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.ClickToSave();
+        js.executeScript("scrollBy(0,-3000)");
+        Thread.sleep(3000);
+        Assert.assertTrue(addNewEventPage.sucessMsg.getText().contains("New event has been added successfully"));
+        driver.navigate().refresh();
+    }
+    @Test(priority = 64)
+    public void IfUserAddValidEventFour() throws InterruptedException {
+        addNewEventPage.SelectMall();
+        addNewEventPage.AddTextInEventNameArabic(name7);
+        addNewEventPage.AddTextInEventNameEnglish(name8);
         addNewEventPage.AddTextInEventDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewEventPage.AddTextInEventDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewEventPage.AddTextInSponseer(OrganizerName);

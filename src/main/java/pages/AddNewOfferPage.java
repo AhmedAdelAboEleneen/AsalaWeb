@@ -137,7 +137,12 @@ public class AddNewOfferPage extends PageBase {
     public void SelectStore() {
 
         Select selectStore = new Select(storeSelect);
-        selectStore.selectByValue("293");
+        // this for stage
+        //selectStore.selectByValue("293");
+
+        //this for demo
+        selectStore.selectByValue("430");
+
     }
 
     public void ClickToSave() {

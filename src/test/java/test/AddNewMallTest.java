@@ -19,11 +19,11 @@ public class AddNewMallTest extends TestBase {
 
     Faker fakeData = new Faker();
     String name1 = fakeData.lordOfTheRings().character();
-    String name2 = fakeData.lordOfTheRings().character();
-    String name3 = fakeData.lordOfTheRings().character();
-    String name4 = fakeData.lordOfTheRings().character();
-    String name5 = fakeData.lordOfTheRings().character();
-    String name6 = fakeData.lordOfTheRings().character();
+    String name2 = fakeData.name().name();
+    String name3 = fakeData.name().fullName();
+    String name4 = fakeData.name().firstName();
+    String name5 = fakeData.name().lastName();
+    String name6 = fakeData.name().username();
     String location1 = fakeData.address().cityName();
     String location2 = fakeData.address().cityName();
 
@@ -33,11 +33,8 @@ public class AddNewMallTest extends TestBase {
 
         // login
         loginPage = new LoginPage(driver);
-        // login in stage server
         loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
-        // login in demo server
-        //loginPage.AddEmail("super@asala.com");
-        // loginPage.AddPassword("123456");
+        loginPage.AddPassword("123456");
         loginPage.ClickLogin();
 
         // go to home page & click mange stores
@@ -489,6 +486,7 @@ public class AddNewMallTest extends TestBase {
         driver.navigate().refresh();
     }
 
+    // valid mall
     // if user add mall valid without website link & social account
     @Test(priority = 48)
     public void IfUseAddValidMallWithoutSocialAccount() throws InterruptedException {

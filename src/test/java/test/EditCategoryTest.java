@@ -20,10 +20,7 @@ public class EditCategoryTest extends TestBase {
 
         // login
         loginPage = new LoginPage(driver);
-        // login in stage server
         loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
-        // login in demo server
-        //loginPage.AddEmail("super@asala.com");
         loginPage.AddPassword("123456");
         loginPage.ClickLogin();
 

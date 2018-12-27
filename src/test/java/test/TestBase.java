@@ -46,9 +46,9 @@ public class TestBase {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         // Stage Link
-        driver.navigate().to("https://asala-dashboard.ibtikar.net.sa/auth/login");
+        //driver.navigate().to("https://asala-dashboard.ibtikar.net.sa/auth/login");
         // Demo Link
-        //driver.navigate().to("https://asala-dashboard-demo.ibtikar.net.sa/auth/login");
+        driver.navigate().to("https://asala-dashboard-demo.ibtikar.net.sa/auth/login");
 
     }
 

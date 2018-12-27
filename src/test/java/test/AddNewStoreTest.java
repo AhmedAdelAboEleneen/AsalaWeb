@@ -18,6 +18,7 @@ public class AddNewStoreTest extends TestBase {
     JavascriptExecutor js;
 
     Faker fakeData = new Faker();
+
     String location1 = fakeData.address().cityName();
     String location2 = fakeData.address().cityName();
     String location4 = fakeData.address().cityName();
@@ -30,6 +31,40 @@ public class AddNewStoreTest extends TestBase {
     String location11 = fakeData.address().cityName();
     String location12 = fakeData.address().cityName();
 
+    String name1 = fakeData.name().name();
+    String name2 = fakeData.name().name();
+
+    String name3 = fakeData.name().fullName();
+    String name4 = fakeData.name().fullName();
+
+    String name5 = fakeData.name().firstName();
+    String name6 = fakeData.name().firstName();
+
+    String name7 = fakeData.name().lastName();
+    String name8 = fakeData.name().lastName();
+
+    String name9 = fakeData.name().username();
+    String name10 = fakeData.name().username();
+
+    String name11 = fakeData.name().nameWithMiddle();
+    String name12 = fakeData.name().nameWithMiddle();
+
+    String name13 = fakeData.name().name();
+    String name14 = fakeData.name().fullName();
+
+    String name15 = fakeData.name().firstName();
+    String name16 = fakeData.name().lastName();
+
+    String name17 = fakeData.name().username();
+    String name18 = fakeData.name().nameWithMiddle();
+
+    String email1 = fakeData.internet().emailAddress();
+    String email2 = fakeData.internet().emailAddress();
+    String email3 = fakeData.internet().emailAddress();
+    String email4 = fakeData.internet().emailAddress();
+    String email5 = fakeData.internet().emailAddress();
+    String email6 = fakeData.internet().emailAddress();
+    String email7 = fakeData.internet().emailAddress();
 
     // make login
     @Test(priority = 1)
@@ -37,10 +72,7 @@ public class AddNewStoreTest extends TestBase {
 
         // login
         loginPage = new LoginPage(driver);
-        // login in stage server
         loginPage.AddEmail("ahmed.adel.super@ibtikar.net.sa");
-        // login in demo server
-        //loginPage.AddEmail("super@asala.com");
         //loginPage.AddEmail("ahmed.adel.mall@ibtikar.net.sa");
         loginPage.AddPassword("123456");
         loginPage.ClickLogin();
@@ -840,7 +872,7 @@ public class AddNewStoreTest extends TestBase {
         addNewStorePage.SelectDateFrom();
         addNewStorePage.SelectDateTo();
         addNewStorePage.ClickToMakeStatusActive();
-        addNewStorePage.AddTextInLocation("Leorafurt");
+        addNewStorePage.AddTextInLocation("G-56");
         addNewStorePage.UploadJPG();
         addNewStorePage.UploadJPGCover();
         addNewStorePage.AddEmail("A@A.AA");
@@ -916,8 +948,8 @@ public class AddNewStoreTest extends TestBase {
         Thread.sleep(5000);
         addNewStorePage.SelectCategory();
         addNewStorePage.SelectFloorNumber();
-        addNewStorePage.AddTextInStoreNameArabic("كبير");
-        addNewStorePage.AddTextInStoreNameEnglish("Big");
+        addNewStorePage.AddTextInStoreNameArabic(name1);
+        addNewStorePage.AddTextInStoreNameEnglish(name2);
         addNewStorePage.AddTextInStoreDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewStorePage.AddTextInStoreDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         js = (JavascriptExecutor) driver;
@@ -926,7 +958,7 @@ public class AddNewStoreTest extends TestBase {
         addNewStorePage.AddTextInLocation(location4);
         addNewStorePage.UploadJPG();
         addNewStorePage.UploadJPGCover();
-        addNewStorePage.AddEmail("a@a.com");
+        addNewStorePage.AddEmail(email1);
         addNewStorePage.AddPhoneOne("966511234567");
         addNewStorePage.ClickToSave();
         js.executeScript("scrollBy(0,-3000)");
@@ -943,18 +975,18 @@ public class AddNewStoreTest extends TestBase {
         Thread.sleep(5000);
         addNewStorePage.SelectCategory();
         addNewStorePage.SelectFloorNumber();
-        addNewStorePage.AddTextInStoreNameArabic("كبير");
-        addNewStorePage.AddTextInStoreNameEnglish("Big");
+        addNewStorePage.AddTextInStoreNameArabic(name3);
+        addNewStorePage.AddTextInStoreNameEnglish(name4);
         addNewStorePage.AddTextInStoreDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewStorePage.AddTextInStoreDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewStorePage.ClickToAddAnotherShift();
-        addNewStorePage.ClickToMakeStatusOpeningSoon();
+        addNewStorePage.ClickToMakeStatusActive();
         addNewStorePage.AddTextInLocation(location5);
         addNewStorePage.UploadJPG();
         addNewStorePage.UploadJPGCover();
-        addNewStorePage.AddEmail("a@a.com");
+        addNewStorePage.AddEmail(email2);
         addNewStorePage.AddPhoneOne("966511234567");
         addNewStorePage.ClickToSave();
         Thread.sleep(5000);
@@ -977,8 +1009,8 @@ public class AddNewStoreTest extends TestBase {
         Thread.sleep(5000);
         addNewStorePage.SelectCategory();
         addNewStorePage.SelectFloorNumber();
-        addNewStorePage.AddTextInStoreNameArabic("كبير");
-        addNewStorePage.AddTextInStoreNameEnglish("Big");
+        addNewStorePage.AddTextInStoreNameArabic(name5);
+        addNewStorePage.AddTextInStoreNameEnglish(name6);
         addNewStorePage.AddTextInStoreDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewStorePage.AddTextInStoreDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         js = (JavascriptExecutor) driver;
@@ -987,7 +1019,7 @@ public class AddNewStoreTest extends TestBase {
         addNewStorePage.AddTextInLocation(location6);
         addNewStorePage.UploadJPG();
         addNewStorePage.UploadJPGCover();
-        addNewStorePage.AddEmail("a@a.com");
+        addNewStorePage.AddEmail(email3);
         addNewStorePage.AddPhoneOne("966511234567");
         addNewStorePage.ClickToSave();
         js.executeScript("scrollBy(0,-3000)");
@@ -1005,8 +1037,8 @@ public class AddNewStoreTest extends TestBase {
         Thread.sleep(5000);
         addNewStorePage.SelectCategory();
         addNewStorePage.SelectFloorNumber();
-        addNewStorePage.AddTextInStoreNameArabic("كبير");
-        addNewStorePage.AddTextInStoreNameEnglish("Big");
+        addNewStorePage.AddTextInStoreNameArabic(name7);
+        addNewStorePage.AddTextInStoreNameEnglish(name8);
         addNewStorePage.AddTextInStoreDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewStorePage.AddTextInStoreDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         js = (JavascriptExecutor) driver;
@@ -1015,7 +1047,7 @@ public class AddNewStoreTest extends TestBase {
         addNewStorePage.AddTextInLocation(location7);
         addNewStorePage.UploadJPG();
         addNewStorePage.UploadJPGCover();
-        addNewStorePage.AddEmail("a@a.com");
+        addNewStorePage.AddEmail(email4);
         addNewStorePage.AddPhoneOne("966511234567");
         addNewStorePage.ClickToSave();
         js.executeScript("scrollBy(0,-3000)");
@@ -1033,18 +1065,17 @@ public class AddNewStoreTest extends TestBase {
         Thread.sleep(5000);
         addNewStorePage.SelectCategory();
         addNewStorePage.SelectFloorNumber();
-        addNewStorePage.AddTextInStoreNameArabic("كبير");
-        addNewStorePage.AddTextInStoreNameEnglish("Big");
+        addNewStorePage.AddTextInStoreNameArabic(name9);
+        addNewStorePage.AddTextInStoreNameEnglish(name10);
         addNewStorePage.AddTextInStoreDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewStorePage.AddTextInStoreDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewStorePage.ClickToMakeStatusOpeningSoon();
-        addNewStorePage.ClickToCanredeem();
         addNewStorePage.AddTextInLocation(location8);
         addNewStorePage.UploadPNG();
         addNewStorePage.UploadJPGCover();
-        addNewStorePage.AddEmail("a@a.com");
+        addNewStorePage.AddEmail(email5);
         addNewStorePage.AddPhoneOne("966511234567");
         addNewStorePage.ClickToSave();
         js.executeScript("scrollBy(0,-3000)");
@@ -1061,18 +1092,17 @@ public class AddNewStoreTest extends TestBase {
         Thread.sleep(5000);
         addNewStorePage.SelectCategory();
         addNewStorePage.SelectFloorNumber();
-        addNewStorePage.AddTextInStoreNameArabic("كبير");
-        addNewStorePage.AddTextInStoreNameEnglish("Big");
+        addNewStorePage.AddTextInStoreNameArabic(name11);
+        addNewStorePage.AddTextInStoreNameEnglish(name12);
         addNewStorePage.AddTextInStoreDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewStorePage.AddTextInStoreDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
-        addNewStorePage.ClickToMakeStatusOpeningSoon();
-        addNewStorePage.ClickToCanredeem();
+        addNewStorePage.ClickToMakeStatusActive();
         addNewStorePage.AddTextInLocation(location9);
         addNewStorePage.UploadPNG();
         addNewStorePage.UploadJPGCover();
-        addNewStorePage.AddEmail("a@a.com");
+        addNewStorePage.AddEmail(email6);
         addNewStorePage.AddPhoneOne("966511234567");
         addNewStorePage.ClickToAddMorePhone();
         addNewStorePage.AddPhoneTwo("966511234568");
@@ -1091,14 +1121,13 @@ public class AddNewStoreTest extends TestBase {
         Thread.sleep(5000);
         addNewStorePage.SelectCategory();
         addNewStorePage.SelectFloorNumber();
-        addNewStorePage.AddTextInStoreNameArabic("كبير");
-        addNewStorePage.AddTextInStoreNameEnglish("Big");
+        addNewStorePage.AddTextInStoreNameArabic(name13);
+        addNewStorePage.AddTextInStoreNameEnglish(name14);
         addNewStorePage.AddTextInStoreDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewStorePage.AddTextInStoreDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewStorePage.ClickToMakeStatusOpeningSoon();
-        addNewStorePage.ClickToCanredeem();
         addNewStorePage.AddTextInLocation(location10);
         addNewStorePage.UploadPNG();
         addNewStorePage.UploadJPGCover();
@@ -1118,18 +1147,17 @@ public class AddNewStoreTest extends TestBase {
         Thread.sleep(5000);
         addNewStorePage.SelectCategory();
         addNewStorePage.SelectFloorNumber();
-        addNewStorePage.AddTextInStoreNameArabic("كبير");
-        addNewStorePage.AddTextInStoreNameEnglish("Big");
+        addNewStorePage.AddTextInStoreNameArabic(name15);
+        addNewStorePage.AddTextInStoreNameEnglish(name16);
         addNewStorePage.AddTextInStoreDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewStorePage.AddTextInStoreDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
-        addNewStorePage.ClickToMakeStatusOpeningSoon();
-        addNewStorePage.ClickToCanredeem();
+        addNewStorePage.ClickToMakeStatusActive();
         addNewStorePage.AddTextInLocation(location11);
         addNewStorePage.UploadPNG();
         addNewStorePage.UploadJPGCover();
-        addNewStorePage.AddEmail("a@a.com");
+        addNewStorePage.AddEmail(email7);
         addNewStorePage.ClickToSave();
         js.executeScript("scrollBy(0,-3000)");
         Thread.sleep(5000);
@@ -1145,14 +1173,13 @@ public class AddNewStoreTest extends TestBase {
         Thread.sleep(5000);
         addNewStorePage.SelectCategory();
         addNewStorePage.SelectFloorNumber();
-        addNewStorePage.AddTextInStoreNameArabic("كبير");
-        addNewStorePage.AddTextInStoreNameEnglish("Big");
+        addNewStorePage.AddTextInStoreNameArabic(name17);
+        addNewStorePage.AddTextInStoreNameEnglish(name18);
         addNewStorePage.AddTextInStoreDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewStorePage.AddTextInStoreDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewStorePage.ClickToMakeStatusOpeningSoon();
-        addNewStorePage.ClickToCanredeem();
         addNewStorePage.AddTextInLocation(location12);
         addNewStorePage.UploadPNG();
         addNewStorePage.UploadJPGCover();
