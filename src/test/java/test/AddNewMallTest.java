@@ -513,7 +513,7 @@ public class AddNewMallTest extends TestBase {
         addNewMallPage.AddTextInMallNameEnglish(name2);
         addNewMallPage.UploadJPGCover();
         addNewMallPage.AddTextInNumbersOfFloor("10");
-        addNewMallPage.SelectMakka();
+        addNewMallPage.SelectMedina();
         addNewMallPage.AddTextInMallAddressEn(location1);
         addNewMallPage.AddTextInMallAddressAr(location2);
         addNewMallPage.AddTextInMallWebsite("https://asala-dashboard.ibtikar.net.sa/mall/add");
