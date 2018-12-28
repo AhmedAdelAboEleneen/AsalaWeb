@@ -24,16 +24,14 @@ public class AddNewEventTest extends TestBase {
     String location1 = fakeData.address().cityName();
 
     String name1 = fakeData.name().name();
-    String name2 = fakeData.name().name();
+    String name2 = fakeData.name().fullName();
+    String name3 = fakeData.name().username();
+    String name4 = fakeData.name().firstName();
 
-    String name3 = fakeData.name().fullName();
-    String name4 = fakeData.name().fullName();
-
-    String name5 = fakeData.name().firstName();
-    String name6 = fakeData.name().firstName();
-
-    String name7 = fakeData.name().username();
-    String name8 = fakeData.name().username();
+    String email1 = fakeData.internet().emailAddress();
+    String email2 = fakeData.internet().emailAddress();
+    String email3 = fakeData.internet().emailAddress();
+    String email4 = fakeData.internet().emailAddress();
 
     // make login
     @Test(priority = 1)
@@ -633,13 +631,14 @@ public class AddNewEventTest extends TestBase {
         driver.navigate().refresh();
     }
 
+    // Valid Offer
 
     // if user add valid event
     @Test(priority = 61)
     public void IfUserAddValidEvent() throws InterruptedException {
         addNewEventPage.SelectMall();
         addNewEventPage.AddTextInEventNameArabic(name1);
-        addNewEventPage.AddTextInEventNameEnglish(name2);
+        addNewEventPage.AddTextInEventNameEnglish(name1);
         addNewEventPage.AddTextInEventDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewEventPage.AddTextInEventDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewEventPage.AddTextInSponseer(OrganizerName);
@@ -650,7 +649,7 @@ public class AddNewEventTest extends TestBase {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewEventPage.UploadPNG();
-        addNewEventPage.AddEmail("a@a.com");
+        addNewEventPage.AddEmail(email1);
         addNewEventPage.AddPhoneOne("966591234567");
         addNewEventPage.AddTextInLocation(location1);
         addNewEventPage.ClickToSave();
@@ -663,8 +662,8 @@ public class AddNewEventTest extends TestBase {
     @Test(priority = 62)
     public void IfUserAddValidEventTwo() throws InterruptedException {
         addNewEventPage.SelectMall();
-        addNewEventPage.AddTextInEventNameArabic(name3);
-        addNewEventPage.AddTextInEventNameEnglish(name4);
+        addNewEventPage.AddTextInEventNameArabic(name2);
+        addNewEventPage.AddTextInEventNameEnglish(name2);
         addNewEventPage.AddTextInEventDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewEventPage.AddTextInEventDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewEventPage.AddTextInSponseer(OrganizerName);
@@ -675,7 +674,7 @@ public class AddNewEventTest extends TestBase {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewEventPage.UploadPNG();
-        addNewEventPage.AddEmail("a@a.com");
+        addNewEventPage.AddEmail(email2);
         addNewEventPage.AddPhoneOne("966591234567");
         addNewEventPage.AddTextInLocation(location1);
         addNewEventPage.ClickToSave();
@@ -688,8 +687,8 @@ public class AddNewEventTest extends TestBase {
     @Test(priority = 63)
     public void IfUserAddValidEventThree() throws InterruptedException {
         addNewEventPage.SelectMall();
-        addNewEventPage.AddTextInEventNameArabic(name5);
-        addNewEventPage.AddTextInEventNameEnglish(name6);
+        addNewEventPage.AddTextInEventNameArabic(name3);
+        addNewEventPage.AddTextInEventNameEnglish(name3);
         addNewEventPage.AddTextInEventDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewEventPage.AddTextInEventDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewEventPage.AddTextInSponseer(OrganizerName);
@@ -700,7 +699,7 @@ public class AddNewEventTest extends TestBase {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewEventPage.UploadPNG();
-        addNewEventPage.AddEmail("a@a.com");
+        addNewEventPage.AddEmail(email3);
         addNewEventPage.AddPhoneOne("966591234567");
         addNewEventPage.AddTextInLocation(location1);
         addNewEventPage.ClickToSave();
@@ -712,8 +711,8 @@ public class AddNewEventTest extends TestBase {
     @Test(priority = 64)
     public void IfUserAddValidEventFour() throws InterruptedException {
         addNewEventPage.SelectMall();
-        addNewEventPage.AddTextInEventNameArabic(name7);
-        addNewEventPage.AddTextInEventNameEnglish(name8);
+        addNewEventPage.AddTextInEventNameArabic(name4);
+        addNewEventPage.AddTextInEventNameEnglish(name4);
         addNewEventPage.AddTextInEventDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewEventPage.AddTextInEventDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewEventPage.AddTextInSponseer(OrganizerName);
@@ -724,7 +723,7 @@ public class AddNewEventTest extends TestBase {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewEventPage.UploadPNG();
-        addNewEventPage.AddEmail("a@a.com");
+        addNewEventPage.AddEmail(email4);
         addNewEventPage.AddPhoneOne("966591234567");
         addNewEventPage.AddTextInLocation(location1);
         addNewEventPage.ClickToSave();

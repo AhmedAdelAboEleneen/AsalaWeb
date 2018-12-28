@@ -32,31 +32,14 @@ public class AddNewStoreTest extends TestBase {
     String location12 = fakeData.address().cityName();
 
     String name1 = fakeData.name().name();
-    String name2 = fakeData.name().name();
-
-    String name3 = fakeData.name().fullName();
-    String name4 = fakeData.name().fullName();
-
-    String name5 = fakeData.name().firstName();
-    String name6 = fakeData.name().firstName();
-
-    String name7 = fakeData.name().lastName();
-    String name8 = fakeData.name().lastName();
-
+    String name2 = fakeData.name().fullName();
+    String name3 = fakeData.name().firstName();
+    String name4 = fakeData.name().lastName();
+    String name5 = fakeData.name().nameWithMiddle();
+    String name6 = fakeData.name().title();
+    String name7 = fakeData.name().prefix();
+    String name8 = fakeData.name().suffix();
     String name9 = fakeData.name().username();
-    String name10 = fakeData.name().username();
-
-    String name11 = fakeData.name().nameWithMiddle();
-    String name12 = fakeData.name().nameWithMiddle();
-
-    String name13 = fakeData.name().name();
-    String name14 = fakeData.name().fullName();
-
-    String name15 = fakeData.name().firstName();
-    String name16 = fakeData.name().lastName();
-
-    String name17 = fakeData.name().username();
-    String name18 = fakeData.name().nameWithMiddle();
 
     String email1 = fakeData.internet().emailAddress();
     String email2 = fakeData.internet().emailAddress();
@@ -937,6 +920,7 @@ public class AddNewStoreTest extends TestBase {
 
 
     // VALID TO ADD NEW STORE
+
     // if User Add try to make Add new store in arabic
     @Test(priority = 72)
     public void IfUserAddStoreArabic() throws InterruptedException {
@@ -949,7 +933,7 @@ public class AddNewStoreTest extends TestBase {
         addNewStorePage.SelectCategory();
         addNewStorePage.SelectFloorNumber();
         addNewStorePage.AddTextInStoreNameArabic(name1);
-        addNewStorePage.AddTextInStoreNameEnglish(name2);
+        addNewStorePage.AddTextInStoreNameEnglish(name1);
         addNewStorePage.AddTextInStoreDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewStorePage.AddTextInStoreDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         js = (JavascriptExecutor) driver;
@@ -975,8 +959,8 @@ public class AddNewStoreTest extends TestBase {
         Thread.sleep(5000);
         addNewStorePage.SelectCategory();
         addNewStorePage.SelectFloorNumber();
-        addNewStorePage.AddTextInStoreNameArabic(name3);
-        addNewStorePage.AddTextInStoreNameEnglish(name4);
+        addNewStorePage.AddTextInStoreNameArabic(name2);
+        addNewStorePage.AddTextInStoreNameEnglish(name2);
         addNewStorePage.AddTextInStoreDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewStorePage.AddTextInStoreDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         js = (JavascriptExecutor) driver;
@@ -1009,8 +993,8 @@ public class AddNewStoreTest extends TestBase {
         Thread.sleep(5000);
         addNewStorePage.SelectCategory();
         addNewStorePage.SelectFloorNumber();
-        addNewStorePage.AddTextInStoreNameArabic(name5);
-        addNewStorePage.AddTextInStoreNameEnglish(name6);
+        addNewStorePage.AddTextInStoreNameArabic(name3);
+        addNewStorePage.AddTextInStoreNameEnglish(name3);
         addNewStorePage.AddTextInStoreDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewStorePage.AddTextInStoreDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         js = (JavascriptExecutor) driver;
@@ -1037,8 +1021,8 @@ public class AddNewStoreTest extends TestBase {
         Thread.sleep(5000);
         addNewStorePage.SelectCategory();
         addNewStorePage.SelectFloorNumber();
-        addNewStorePage.AddTextInStoreNameArabic(name7);
-        addNewStorePage.AddTextInStoreNameEnglish(name8);
+        addNewStorePage.AddTextInStoreNameArabic(name4);
+        addNewStorePage.AddTextInStoreNameEnglish(name4);
         addNewStorePage.AddTextInStoreDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewStorePage.AddTextInStoreDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         js = (JavascriptExecutor) driver;
@@ -1065,8 +1049,8 @@ public class AddNewStoreTest extends TestBase {
         Thread.sleep(5000);
         addNewStorePage.SelectCategory();
         addNewStorePage.SelectFloorNumber();
-        addNewStorePage.AddTextInStoreNameArabic(name9);
-        addNewStorePage.AddTextInStoreNameEnglish(name10);
+        addNewStorePage.AddTextInStoreNameArabic(name5);
+        addNewStorePage.AddTextInStoreNameEnglish(name5);
         addNewStorePage.AddTextInStoreDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewStorePage.AddTextInStoreDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         js = (JavascriptExecutor) driver;
@@ -1092,8 +1076,8 @@ public class AddNewStoreTest extends TestBase {
         Thread.sleep(5000);
         addNewStorePage.SelectCategory();
         addNewStorePage.SelectFloorNumber();
-        addNewStorePage.AddTextInStoreNameArabic(name11);
-        addNewStorePage.AddTextInStoreNameEnglish(name12);
+        addNewStorePage.AddTextInStoreNameArabic(name6);
+        addNewStorePage.AddTextInStoreNameEnglish(name6);
         addNewStorePage.AddTextInStoreDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewStorePage.AddTextInStoreDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         js = (JavascriptExecutor) driver;
@@ -1121,8 +1105,8 @@ public class AddNewStoreTest extends TestBase {
         Thread.sleep(5000);
         addNewStorePage.SelectCategory();
         addNewStorePage.SelectFloorNumber();
-        addNewStorePage.AddTextInStoreNameArabic(name13);
-        addNewStorePage.AddTextInStoreNameEnglish(name14);
+        addNewStorePage.AddTextInStoreNameArabic(name7);
+        addNewStorePage.AddTextInStoreNameEnglish(name7);
         addNewStorePage.AddTextInStoreDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewStorePage.AddTextInStoreDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         js = (JavascriptExecutor) driver;
@@ -1147,8 +1131,8 @@ public class AddNewStoreTest extends TestBase {
         Thread.sleep(5000);
         addNewStorePage.SelectCategory();
         addNewStorePage.SelectFloorNumber();
-        addNewStorePage.AddTextInStoreNameArabic(name15);
-        addNewStorePage.AddTextInStoreNameEnglish(name16);
+        addNewStorePage.AddTextInStoreNameArabic(name8);
+        addNewStorePage.AddTextInStoreNameEnglish(name8);
         addNewStorePage.AddTextInStoreDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewStorePage.AddTextInStoreDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         js = (JavascriptExecutor) driver;
@@ -1173,8 +1157,8 @@ public class AddNewStoreTest extends TestBase {
         Thread.sleep(5000);
         addNewStorePage.SelectCategory();
         addNewStorePage.SelectFloorNumber();
-        addNewStorePage.AddTextInStoreNameArabic(name17);
-        addNewStorePage.AddTextInStoreNameEnglish(name18);
+        addNewStorePage.AddTextInStoreNameArabic(name9);
+        addNewStorePage.AddTextInStoreNameEnglish(name9);
         addNewStorePage.AddTextInStoreDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewStorePage.AddTextInStoreDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         js = (JavascriptExecutor) driver;

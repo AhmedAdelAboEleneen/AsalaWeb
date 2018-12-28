@@ -44,7 +44,13 @@ public class AddNewStoreAdminPage extends PageBase {
     public void SelectStoreInAdmin() {
 
         Select selectStore = new Select(storeSelect);
-        selectStore.selectByValue("293");
+
+        // for stage
+        //selectStore.selectByValue("293");
+
+        // for demo
+        selectStore.selectByValue("440");
+
     }
 
     public void AddAddminName(String Value) {

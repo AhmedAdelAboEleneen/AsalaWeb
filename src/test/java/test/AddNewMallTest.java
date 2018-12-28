@@ -18,12 +18,11 @@ public class AddNewMallTest extends TestBase {
     JavascriptExecutor js;
 
     Faker fakeData = new Faker();
-    String name1 = fakeData.lordOfTheRings().character();
-    String name2 = fakeData.name().name();
-    String name3 = fakeData.name().fullName();
-    String name4 = fakeData.name().firstName();
-    String name5 = fakeData.name().lastName();
-    String name6 = fakeData.name().username();
+
+    String name1 = fakeData.name().name();
+    String name2 = fakeData.name().fullName();
+    String name3 = fakeData.name().username();
+
     String location1 = fakeData.address().cityName();
     String location2 = fakeData.address().cityName();
 
@@ -492,7 +491,7 @@ public class AddNewMallTest extends TestBase {
     public void IfUseAddValidMallWithoutSocialAccount() throws InterruptedException {
         driver.navigate().refresh();
         addNewMallPage.AddTextInMallNameArabic(name1);
-        addNewMallPage.AddTextInMallNameEnglish(name2);
+        addNewMallPage.AddTextInMallNameEnglish(name1);
         addNewMallPage.UploadJPGCover();
         addNewMallPage.AddTextInNumbersOfFloor("10");
         addNewMallPage.SelectMakka();
@@ -510,8 +509,8 @@ public class AddNewMallTest extends TestBase {
     @Test(priority = 49)
     public void IfUseAddValidMallWithWebsiteLinkWithoutSocialAccount() throws InterruptedException {
         driver.navigate().refresh();
-        addNewMallPage.AddTextInMallNameArabic(name3);
-        addNewMallPage.AddTextInMallNameEnglish(name4);
+        addNewMallPage.AddTextInMallNameArabic(name2);
+        addNewMallPage.AddTextInMallNameEnglish(name2);
         addNewMallPage.UploadJPGCover();
         addNewMallPage.AddTextInNumbersOfFloor("10");
         addNewMallPage.SelectMakka();
@@ -530,8 +529,8 @@ public class AddNewMallTest extends TestBase {
     @Test(priority = 50)
     public void IfUseAddValidMallWithWebsiteLinkSocialAccount() throws InterruptedException {
         driver.navigate().refresh();
-        addNewMallPage.AddTextInMallNameArabic(name5);
-        addNewMallPage.AddTextInMallNameEnglish(name6);
+        addNewMallPage.AddTextInMallNameArabic(name3);
+        addNewMallPage.AddTextInMallNameEnglish(name3);
         addNewMallPage.UploadPNGCover();
         addNewMallPage.AddTextInNumbersOfFloor("10");
         addNewMallPage.SelectMakka();

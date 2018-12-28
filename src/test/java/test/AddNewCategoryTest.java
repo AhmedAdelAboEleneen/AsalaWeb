@@ -19,8 +19,7 @@ public class AddNewCategoryTest extends TestBase {
 
     String Name1 = fakeData.name().name();
     String Name2 = fakeData.name().fullName();
-    String Name3 = fakeData.name().firstName();
-    String Name4 = fakeData.name().username();
+
 
     // make login
     @Test(priority = 1)
@@ -186,12 +185,14 @@ public class AddNewCategoryTest extends TestBase {
         driver.navigate().refresh();
     }
 
+    // Valid Category
+
     @Test(priority = 13)
     public void UserAddNameEnAndNameAr() {
 
         driver.navigate().refresh();
         addNewCategoryPage.AddcategoryNameEntxt(Name1);
-        addNewCategoryPage.AddcategoryNameArtxt(Name2);
+        addNewCategoryPage.AddcategoryNameArtxt(Name1);
         addNewCategoryPage.ClickSumbitToAddCategory();
         Assert.assertTrue(addNewCategoryPage.successMsgtxt.getText().contains("تم إضافة تصنيف جديد بنجاح"));
         driver.navigate().refresh();
@@ -203,8 +204,8 @@ public class AddNewCategoryTest extends TestBase {
 
         driver.navigate().refresh();
         homePage.ClickChangeLanguageToEnglish();
-        addNewCategoryPage.AddcategoryNameEntxt(Name3);
-        addNewCategoryPage.AddcategoryNameArtxt(Name4);
+        addNewCategoryPage.AddcategoryNameEntxt(Name2);
+        addNewCategoryPage.AddcategoryNameArtxt(Name2);
         addNewCategoryPage.ClickSumbitToAddCategory();
         Assert.assertTrue(addNewCategoryPage.successMsgtxt.getText().contains("New category has been added successfully"));
     }

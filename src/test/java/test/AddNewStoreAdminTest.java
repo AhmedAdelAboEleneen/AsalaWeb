@@ -16,7 +16,9 @@ public class AddNewStoreAdminTest extends TestBase {
     AddNewStoreAdminPage addNewStoreAdminPage;
 
     Faker fakeData = new Faker();
+
     String name = fakeData.name().name();
+
     String email = fakeData.internet().emailAddress();
 
 
