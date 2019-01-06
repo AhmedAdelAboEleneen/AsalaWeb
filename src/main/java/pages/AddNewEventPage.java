@@ -131,12 +131,44 @@ public class AddNewEventPage extends PageBase {
         DateTo.sendKeys(Keys.ENTER);
     }
 
-    // Time
+    // Time From
+    public void SelectTimeFromTen() {
+
+        Select SelectTimeFromTen = new Select(timeFrom);
+        SelectTimeFromTen.selectByValue("10 AM");
+    }
+
     public void SelectTimefromEight() {
 
         Select selectTimeFromEight = new Select(timeFrom);
         selectTimeFromEight.selectByValue("8 AM");
     }
+
+    public void SelectTimeFromTwelveAM() {
+
+        Select SelectTimeFromTwelveAM = new Select(timeFrom);
+        SelectTimeFromTwelveAM.selectByValue("12 AM");
+    }
+
+    public void SelectTimeFromTwelvePM() {
+
+        Select SelectTimeFromTwelvePM = new Select(timeFrom);
+        SelectTimeFromTwelvePM.selectByValue("12 PM");
+    }
+
+    public void SelectTimeFromElvenAM() {
+
+        Select SelectTimeFromElvenAM = new Select(timeFrom);
+        SelectTimeFromElvenAM.selectByValue("11 AM");
+    }
+
+    public void SelectTimeFromOnePM() {
+
+        Select SelectTimeFromOnePM = new Select(timeFrom);
+        SelectTimeFromOnePM.selectByValue("1 PM");
+    }
+
+    // Time To
 
     public void SelectTimeToTwo() {
 
@@ -144,16 +176,34 @@ public class AddNewEventPage extends PageBase {
         selectTimeToTwo.selectByValue("2 AM");
     }
 
-    public void SelectTimeFromTen() {
-
-        Select SelectTimeFromTen = new Select(timeFrom);
-        SelectTimeFromTen.selectByValue("10 AM");
-    }
-
     public void SelectTimeToten() {
 
         Select selectTimeToten = new Select(timeTo);
         selectTimeToten.selectByValue("10 PM");
+    }
+
+    public void SelectTimeToTwelveAM() {
+
+        Select SelectTimeToTwelveAM = new Select(timeFrom);
+        SelectTimeToTwelveAM.selectByValue("12 AM");
+    }
+
+    public void SelectTimeToTwelvePM() {
+
+        Select SelectTimeToTwelvePM = new Select(timeFrom);
+        SelectTimeToTwelvePM.selectByValue("12 PM");
+    }
+
+    public void SelectTimeToElvenPAM() {
+
+        Select SelectTimeToElvenPAM = new Select(timeFrom);
+        SelectTimeToElvenPAM.selectByValue("11 AM");
+    }
+
+    public void SelectTimeToElvenPM() {
+
+        Select SelectTimeToElvenPM = new Select(timeFrom);
+        SelectTimeToElvenPM.selectByValue("11 PM");
     }
 
     public void UploadSVG() {
