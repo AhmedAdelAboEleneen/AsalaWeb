@@ -29,8 +29,6 @@ public class AddNewEventPage extends PageBase {
     public WebElement errorMsgDateTo;
     @FindBy(id = "timeFrom-select")
     public WebElement timeFrom;
-    @FindBy(id = "")
-    public WebElement errorMsgTimeFrom;
     @FindBy(id = "timeTo-select")
     public WebElement timeTo;
     @FindBy(id = "error-msg-timeTo")
@@ -162,10 +160,21 @@ public class AddNewEventPage extends PageBase {
         SelectTimeFromElvenAM.selectByValue("11 AM");
     }
 
+    public void SelectTimeFromElvenPM() {
+
+        Select SelectTimeFromElvenPM = new Select(timeFrom);
+        SelectTimeFromElvenPM.selectByValue("11 PM");
+    }
     public void SelectTimeFromOnePM() {
 
         Select SelectTimeFromOnePM = new Select(timeFrom);
         SelectTimeFromOnePM.selectByValue("1 PM");
+    }
+
+    public void SelectTimeFromOneAM() {
+
+        Select SelectTimeFromOnePM = new Select(timeFrom);
+        SelectTimeFromOnePM.selectByValue("1 AM");
     }
 
     // Time To
@@ -174,12 +183,6 @@ public class AddNewEventPage extends PageBase {
 
         Select selectTimeToTwo = new Select(timeTo);
         selectTimeToTwo.selectByValue("2 AM");
-    }
-
-    public void SelectTimeToten() {
-
-        Select selectTimeToten = new Select(timeTo);
-        selectTimeToten.selectByValue("10 PM");
     }
 
     public void SelectTimeToTwelveAM() {
@@ -194,7 +197,7 @@ public class AddNewEventPage extends PageBase {
         SelectTimeToTwelvePM.selectByValue("12 PM");
     }
 
-    public void SelectTimeToElvenPAM() {
+    public void SelectTimeToElvenAM() {
 
         Select SelectTimeToElvenPAM = new Select(timeFrom);
         SelectTimeToElvenPAM.selectByValue("11 AM");

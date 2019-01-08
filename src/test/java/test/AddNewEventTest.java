@@ -610,6 +610,7 @@ public class AddNewEventTest extends TestBase {
     // if user add time from after time to
     @Test(priority = 60)
     public void IfUserAddTimeFromAfterTimeTo() {
+        driver.navigate().refresh();
         addNewEventPage.SelectMall();
         addNewEventPage.AddTextInEventNameArabic("tee");
         addNewEventPage.AddTextInEventNameEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
@@ -628,14 +629,12 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.AddTextInLocation(location1);
         addNewEventPage.ClickToSave();
         Assert.assertTrue(addNewEventPage.errorMsgTimeTo.getText().contains("please select a valid end time"));
-        driver.navigate().refresh();
     }
 
-    // Valid Offer
-
-    // if user add valid event
+    // event from 12 AM to 12 AM
     @Test(priority = 61)
-    public void IfUserAddValidEvent() throws InterruptedException {
+    public void IfUserAddNotValidEvent() throws InterruptedException {
+        driver.navigate().refresh();
         addNewEventPage.SelectMall();
         addNewEventPage.AddTextInEventNameArabic(name1);
         addNewEventPage.AddTextInEventNameEnglish(name1);
@@ -643,9 +642,87 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.AddTextInEventDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewEventPage.AddTextInSponseer(OrganizerName);
         addNewEventPage.ChoseDateFromCurrent();
-        addNewEventPage.ChoseDateToFuture();
-        addNewEventPage.SelectTimeFromTen();
-        addNewEventPage.SelectTimeToten();
+        addNewEventPage.ChoseDateToCurrent();
+        addNewEventPage.SelectTimeFromTwelveAM();
+        addNewEventPage.SelectTimeToTwelveAM();
+        js = (JavascriptExecutor) driver;
+        js.executeScript("scrollBy(0,3000)");
+        addNewEventPage.UploadPNG();
+        addNewEventPage.AddEmail(email1);
+        addNewEventPage.AddPhoneOne("966591234567");
+        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.ClickToSave();
+        Thread.sleep(3000);
+        Assert.assertTrue(addNewEventPage.errorMsgTimeTo.getText().contains("please select a valid end time"));
+        driver.navigate().refresh();
+    }
+
+    // event from 12 PM to 12 PM
+    @Test(priority = 62)
+    public void IfUserAddNotValidEventTwo() throws InterruptedException {
+        driver.navigate().refresh();
+        addNewEventPage.SelectMall();
+        addNewEventPage.AddTextInEventNameArabic(name1);
+        addNewEventPage.AddTextInEventNameEnglish(name1);
+        addNewEventPage.AddTextInEventDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewEventPage.AddTextInEventDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewEventPage.AddTextInSponseer(OrganizerName);
+        addNewEventPage.ChoseDateFromCurrent();
+        addNewEventPage.ChoseDateToCurrent();
+        addNewEventPage.SelectTimeFromTwelvePM();
+        addNewEventPage.SelectTimeToTwelvePM();
+        js = (JavascriptExecutor) driver;
+        js.executeScript("scrollBy(0,3000)");
+        addNewEventPage.UploadPNG();
+        addNewEventPage.AddEmail(email1);
+        addNewEventPage.AddPhoneOne("966591234567");
+        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.ClickToSave();
+        Thread.sleep(3000);
+        Assert.assertTrue(addNewEventPage.errorMsgTimeTo.getText().contains("please select a valid end time"));
+    }
+
+    // event from 12 PM to 11 AM
+    @Test(priority = 63)
+    public void IfUserAddNotValidEventThree() throws InterruptedException {
+        driver.navigate().refresh();
+        addNewEventPage.SelectMall();
+        addNewEventPage.AddTextInEventNameArabic(name1);
+        addNewEventPage.AddTextInEventNameEnglish(name1);
+        addNewEventPage.AddTextInEventDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewEventPage.AddTextInEventDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewEventPage.AddTextInSponseer(OrganizerName);
+        addNewEventPage.ChoseDateFromCurrent();
+        addNewEventPage.ChoseDateToCurrent();
+        addNewEventPage.SelectTimeFromTwelvePM();
+        addNewEventPage.SelectTimeToElvenAM();
+        js = (JavascriptExecutor) driver;
+        js.executeScript("scrollBy(0,3000)");
+        addNewEventPage.UploadPNG();
+        addNewEventPage.AddEmail(email1);
+        addNewEventPage.AddPhoneOne("966591234567");
+        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.ClickToSave();
+        Thread.sleep(3000);
+        Assert.assertTrue(addNewEventPage.errorMsgTimeTo.getText().contains("please select a valid end time"));
+    }
+
+    // Valid Offer
+
+    // if user add valid event
+    @Test(priority = 64)
+    public void IfUserAddValidEvent() throws InterruptedException {
+        driver.navigate().refresh();
+        addNewEventPage.SelectMall();
+        addNewEventPage.AddTextInEventNameArabic(name1);
+        addNewEventPage.AddTextInEventNameEnglish(name1);
+        addNewEventPage.AddTextInEventDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewEventPage.AddTextInEventDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewEventPage.AddTextInSponseer(OrganizerName);
+        addNewEventPage.ChoseDateFromCurrent();
+        addNewEventPage.ChoseDateToCurrent();
+        addNewEventPage.SelectTimeFromTwelveAM();
+        addNewEventPage.SelectTimeToTwelvePM();
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewEventPage.UploadPNG();
@@ -656,11 +733,12 @@ public class AddNewEventTest extends TestBase {
         js.executeScript("scrollBy(0,-3000)");
         Thread.sleep(3000);
         Assert.assertTrue(addNewEventPage.sucessMsg.getText().contains("New event has been added successfully"));
-        driver.navigate().refresh();
     }
 
-    @Test(priority = 62)
+    // event from 12 PM to 12 AM
+    @Test(priority = 65)
     public void IfUserAddValidEventTwo() throws InterruptedException {
+        driver.navigate().refresh();
         addNewEventPage.SelectMall();
         addNewEventPage.AddTextInEventNameArabic(name2);
         addNewEventPage.AddTextInEventNameEnglish(name2);
@@ -668,9 +746,9 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.AddTextInEventDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewEventPage.AddTextInSponseer(OrganizerName);
         addNewEventPage.ChoseDateFromCurrent();
-        addNewEventPage.ChoseDateToFuture();
-        addNewEventPage.SelectTimeFromTen();
-        addNewEventPage.SelectTimeToten();
+        addNewEventPage.ChoseDateToCurrent();
+        addNewEventPage.SelectTimeFromTwelvePM();
+        addNewEventPage.SelectTimeToTwelveAM();
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewEventPage.UploadPNG();
@@ -679,13 +757,14 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.AddTextInLocation(location1);
         addNewEventPage.ClickToSave();
         js.executeScript("scrollBy(0,-3000)");
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         Assert.assertTrue(addNewEventPage.sucessMsg.getText().contains("New event has been added successfully"));
-        driver.navigate().refresh();
     }
 
-    @Test(priority = 63)
+    // event from 11 AM to 12 PM
+    @Test(priority = 66)
     public void IfUserAddValidEventThree() throws InterruptedException {
+        driver.navigate().refresh();
         addNewEventPage.SelectMall();
         addNewEventPage.AddTextInEventNameArabic(name3);
         addNewEventPage.AddTextInEventNameEnglish(name3);
@@ -693,9 +772,9 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.AddTextInEventDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewEventPage.AddTextInSponseer(OrganizerName);
         addNewEventPage.ChoseDateFromCurrent();
-        addNewEventPage.ChoseDateToFuture();
-        addNewEventPage.SelectTimeFromTen();
-        addNewEventPage.SelectTimeToten();
+        addNewEventPage.ChoseDateToCurrent();
+        addNewEventPage.SelectTimeFromElvenAM();
+        addNewEventPage.SelectTimeToTwelvePM();
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewEventPage.UploadPNG();
@@ -706,10 +785,12 @@ public class AddNewEventTest extends TestBase {
         js.executeScript("scrollBy(0,-3000)");
         Thread.sleep(3000);
         Assert.assertTrue(addNewEventPage.sucessMsg.getText().contains("New event has been added successfully"));
-        driver.navigate().refresh();
     }
-    @Test(priority = 64)
+
+    // event from 12 PM to 11 AM
+    @Test(priority = 67)
     public void IfUserAddValidEventFour() throws InterruptedException {
+        driver.navigate().refresh();
         addNewEventPage.SelectMall();
         addNewEventPage.AddTextInEventNameArabic(name4);
         addNewEventPage.AddTextInEventNameEnglish(name4);
@@ -717,9 +798,139 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.AddTextInEventDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewEventPage.AddTextInSponseer(OrganizerName);
         addNewEventPage.ChoseDateFromCurrent();
-        addNewEventPage.ChoseDateToFuture();
-        addNewEventPage.SelectTimeFromTen();
-        addNewEventPage.SelectTimeToten();
+        addNewEventPage.ChoseDateToCurrent();
+        addNewEventPage.SelectTimeFromTwelvePM();
+        addNewEventPage.SelectTimeToElvenAM();
+        js = (JavascriptExecutor) driver;
+        js.executeScript("scrollBy(0,3000)");
+        addNewEventPage.UploadPNG();
+        addNewEventPage.AddEmail(email4);
+        addNewEventPage.AddPhoneOne("966591234567");
+        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.ClickToSave();
+        js.executeScript("scrollBy(0,-3000)");
+        Thread.sleep(3000);
+        Assert.assertTrue(addNewEventPage.sucessMsg.getText().contains("New event has been added successfully"));
+    }
+
+    // event from 12 AM to 11 PM
+    @Test(priority = 68)
+    public void IfUserAddValidEventFive() throws InterruptedException {
+        driver.navigate().refresh();
+        addNewEventPage.SelectMall();
+        addNewEventPage.AddTextInEventNameArabic(name4);
+        addNewEventPage.AddTextInEventNameEnglish(name4);
+        addNewEventPage.AddTextInEventDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewEventPage.AddTextInEventDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewEventPage.AddTextInSponseer(OrganizerName);
+        addNewEventPage.ChoseDateFromCurrent();
+        addNewEventPage.ChoseDateToCurrent();
+        addNewEventPage.SelectTimeFromTwelveAM();
+        addNewEventPage.SelectTimeToElvenPM();
+        js = (JavascriptExecutor) driver;
+        js.executeScript("scrollBy(0,3000)");
+        addNewEventPage.UploadPNG();
+        addNewEventPage.AddEmail(email4);
+        addNewEventPage.AddPhoneOne("966591234567");
+        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.ClickToSave();
+        js.executeScript("scrollBy(0,-3000)");
+        Thread.sleep(3000);
+        Assert.assertTrue(addNewEventPage.sucessMsg.getText().contains("New event has been added successfully"));
+    }
+
+    // event from 12 PM to 11 PM
+    @Test(priority = 69)
+    public void IfUserAddValidEventSix() throws InterruptedException {
+        driver.navigate().refresh();
+        addNewEventPage.SelectMall();
+        addNewEventPage.AddTextInEventNameArabic(name4);
+        addNewEventPage.AddTextInEventNameEnglish(name4);
+        addNewEventPage.AddTextInEventDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewEventPage.AddTextInEventDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewEventPage.AddTextInSponseer(OrganizerName);
+        addNewEventPage.ChoseDateFromCurrent();
+        addNewEventPage.ChoseDateToCurrent();
+        addNewEventPage.SelectTimeFromTwelvePM();
+        addNewEventPage.SelectTimeToElvenPM();
+        js = (JavascriptExecutor) driver;
+        js.executeScript("scrollBy(0,3000)");
+        addNewEventPage.UploadPNG();
+        addNewEventPage.AddEmail(email4);
+        addNewEventPage.AddPhoneOne("966591234567");
+        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.ClickToSave();
+        js.executeScript("scrollBy(0,-3000)");
+        Thread.sleep(3000);
+        Assert.assertTrue(addNewEventPage.sucessMsg.getText().contains("New event has been added successfully"));
+    }
+
+    // event from 11 PM to 12 AM
+    @Test(priority = 70)
+    public void IfUserAddValidEventSeven() throws InterruptedException {
+        driver.navigate().refresh();
+        addNewEventPage.SelectMall();
+        addNewEventPage.AddTextInEventNameArabic(name4);
+        addNewEventPage.AddTextInEventNameEnglish(name4);
+        addNewEventPage.AddTextInEventDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewEventPage.AddTextInEventDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewEventPage.AddTextInSponseer(OrganizerName);
+        addNewEventPage.ChoseDateFromCurrent();
+        addNewEventPage.ChoseDateToCurrent();
+        addNewEventPage.SelectTimeFromElvenPM();
+        addNewEventPage.SelectTimeToTwelveAM();
+        js = (JavascriptExecutor) driver;
+        js.executeScript("scrollBy(0,3000)");
+        addNewEventPage.UploadPNG();
+        addNewEventPage.AddEmail(email4);
+        addNewEventPage.AddPhoneOne("966591234567");
+        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.ClickToSave();
+        js.executeScript("scrollBy(0,-3000)");
+        Thread.sleep(5000);
+        Assert.assertTrue(addNewEventPage.sucessMsg.getText().contains("New event has been added successfully"));
+    }
+
+    // event from 1 PM to 11 PM
+    @Test(priority = 71)
+    public void IfUserAddValidEventEight() throws InterruptedException {
+        driver.navigate().refresh();
+        addNewEventPage.SelectMall();
+        addNewEventPage.AddTextInEventNameArabic(name4);
+        addNewEventPage.AddTextInEventNameEnglish(name4);
+        addNewEventPage.AddTextInEventDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewEventPage.AddTextInEventDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewEventPage.AddTextInSponseer(OrganizerName);
+        addNewEventPage.ChoseDateFromCurrent();
+        addNewEventPage.ChoseDateToCurrent();
+        addNewEventPage.SelectTimeFromOnePM();
+        addNewEventPage.SelectTimeToElvenPM();
+        js = (JavascriptExecutor) driver;
+        js.executeScript("scrollBy(0,3000)");
+        addNewEventPage.UploadPNG();
+        addNewEventPage.AddEmail(email4);
+        addNewEventPage.AddPhoneOne("966591234567");
+        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.ClickToSave();
+        js.executeScript("scrollBy(0,-3000)");
+        Thread.sleep(3000);
+        Assert.assertTrue(addNewEventPage.sucessMsg.getText().contains("New event has been added successfully"));
+    }
+
+    // event from 1 AM to 11 AM
+    @Test(priority = 72)
+    public void IfUserAddValidEventNine() throws InterruptedException {
+        driver.navigate().refresh();
+        addNewEventPage.SelectMall();
+        addNewEventPage.AddTextInEventNameArabic(name4);
+        addNewEventPage.AddTextInEventNameEnglish(name4);
+        addNewEventPage.AddTextInEventDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewEventPage.AddTextInEventDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewEventPage.AddTextInSponseer(OrganizerName);
+        addNewEventPage.ChoseDateFromCurrent();
+        addNewEventPage.ChoseDateToCurrent();
+        addNewEventPage.SelectTimeFromOneAM();
+        addNewEventPage.SelectTimeToElvenAM();
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewEventPage.UploadPNG();
@@ -732,5 +943,4 @@ public class AddNewEventTest extends TestBase {
         Assert.assertTrue(addNewEventPage.sucessMsg.getText().contains("New event has been added successfully"));
         driver.navigate().refresh();
     }
-
 }
