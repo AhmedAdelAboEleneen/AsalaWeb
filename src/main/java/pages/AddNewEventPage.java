@@ -29,8 +29,6 @@ public class AddNewEventPage extends PageBase {
     public WebElement errorMsgDateTo;
     @FindBy(id = "timeFrom-select")
     public WebElement timeFrom;
-    @FindBy(id = "")
-    public WebElement errorMsgTimeFrom;
     @FindBy(id = "timeTo-select")
     public WebElement timeTo;
     @FindBy(id = "error-msg-timeTo")
@@ -131,12 +129,55 @@ public class AddNewEventPage extends PageBase {
         DateTo.sendKeys(Keys.ENTER);
     }
 
-    // Time
+    // Time From
+    public void SelectTimeFromTen() {
+
+        Select SelectTimeFromTen = new Select(timeFrom);
+        SelectTimeFromTen.selectByValue("10 AM");
+    }
+
     public void SelectTimefromEight() {
 
         Select selectTimeFromEight = new Select(timeFrom);
         selectTimeFromEight.selectByValue("8 AM");
     }
+
+    public void SelectTimeFromTwelveAM() {
+
+        Select SelectTimeFromTwelveAM = new Select(timeFrom);
+        SelectTimeFromTwelveAM.selectByValue("12 AM");
+    }
+
+    public void SelectTimeFromTwelvePM() {
+
+        Select SelectTimeFromTwelvePM = new Select(timeFrom);
+        SelectTimeFromTwelvePM.selectByValue("12 PM");
+    }
+
+    public void SelectTimeFromElvenAM() {
+
+        Select SelectTimeFromElvenAM = new Select(timeFrom);
+        SelectTimeFromElvenAM.selectByValue("11 AM");
+    }
+
+    public void SelectTimeFromElvenPM() {
+
+        Select SelectTimeFromElvenPM = new Select(timeFrom);
+        SelectTimeFromElvenPM.selectByValue("11 PM");
+    }
+    public void SelectTimeFromOnePM() {
+
+        Select SelectTimeFromOnePM = new Select(timeFrom);
+        SelectTimeFromOnePM.selectByValue("1 PM");
+    }
+
+    public void SelectTimeFromOneAM() {
+
+        Select SelectTimeFromOnePM = new Select(timeFrom);
+        SelectTimeFromOnePM.selectByValue("1 AM");
+    }
+
+    // Time To
 
     public void SelectTimeToTwo() {
 
@@ -144,16 +185,28 @@ public class AddNewEventPage extends PageBase {
         selectTimeToTwo.selectByValue("2 AM");
     }
 
-    public void SelectTimeFromTen() {
+    public void SelectTimeToTwelveAM() {
 
-        Select SelectTimeFromTen = new Select(timeFrom);
-        SelectTimeFromTen.selectByValue("10 AM");
+        Select SelectTimeToTwelveAM = new Select(timeFrom);
+        SelectTimeToTwelveAM.selectByValue("12 AM");
     }
 
-    public void SelectTimeToten() {
+    public void SelectTimeToTwelvePM() {
 
-        Select selectTimeToten = new Select(timeTo);
-        selectTimeToten.selectByValue("10 PM");
+        Select SelectTimeToTwelvePM = new Select(timeFrom);
+        SelectTimeToTwelvePM.selectByValue("12 PM");
+    }
+
+    public void SelectTimeToElvenAM() {
+
+        Select SelectTimeToElvenPAM = new Select(timeFrom);
+        SelectTimeToElvenPAM.selectByValue("11 AM");
+    }
+
+    public void SelectTimeToElvenPM() {
+
+        Select SelectTimeToElvenPM = new Select(timeFrom);
+        SelectTimeToElvenPM.selectByValue("11 PM");
     }
 
     public void UploadSVG() {
