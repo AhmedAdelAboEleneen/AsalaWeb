@@ -138,10 +138,10 @@ public class AddNewOfferPage extends PageBase {
 
         Select selectStore = new Select(storeSelect);
         // this for stage
-        //selectStore.selectByValue("293");
+        selectStore.selectByValue("293");
 
         //this for demo
-        selectStore.selectByValue("430");
+        //selectStore.selectByValue("430");
 
     }
 

@@ -46,10 +46,10 @@ public class AddNewStoreAdminPage extends PageBase {
         Select selectStore = new Select(storeSelect);
 
         // for stage
-        //selectStore.selectByValue("293");
+        selectStore.selectByValue("293");
 
         // for demo
-        selectStore.selectByValue("440");
+        //selectStore.selectByValue("440");
 
     }
 

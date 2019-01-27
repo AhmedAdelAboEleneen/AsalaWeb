@@ -96,10 +96,10 @@ public class AddNewStorePage extends PageBase {
 
         Select selectCategory = new Select(categorySelect);
         // this for stage
-        //selectCategory.selectByValue("114");
+        selectCategory.selectByValue("114");
 
         // this for demo
-        selectCategory.selectByValue("5");
+        //selectCategory.selectByValue("5");
 
     }
 
