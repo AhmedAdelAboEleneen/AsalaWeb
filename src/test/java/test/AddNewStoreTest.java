@@ -904,7 +904,7 @@ public class AddNewStoreTest extends TestBase {
         addNewStorePage.ClickToSave();
         Thread.sleep(8000);
 //        Assert.assertTrue(addNewStorePage.errorMsgLogo.getText().contains("Please upload a photo with aspect ratio 1 width : 1 height"));
-        Assert.assertTrue(addNewStorePage.errorMsgCoverPhoto.getText().contains("Please upload a photo with aspect ratio 1.8 width : 1 height"));
+ //       Assert.assertTrue(addNewStorePage.errorMsgCoverPhoto.getText().contains("Please upload a photo with aspect ratio 1.8 width : 1 height"));
 
     }
 
