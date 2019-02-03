@@ -82,7 +82,10 @@ public class LoginTest extends TestBase {
     public void AddValidEmailAndPasswordInActiveUSer() throws InterruptedException {
 
         loginPage.ClearEmailData();
-        loginPage.AddEmail("a@asala.com");
+        // stage
+       // loginPage.AddEmail("a@asala.com");
+        // demo
+        loginPage.AddEmail("test@test.com");
         loginPage.ClearPasswordData();
         loginPage.AddPassword("123456");
         loginPage.ClickLogin();
@@ -168,7 +171,11 @@ public class LoginTest extends TestBase {
     public void AddValidEmailAndPasswordInActiveUSerAr() throws InterruptedException {
 
         loginPage.ClearEmailData();
-        loginPage.AddEmail("a@asala.com");
+        // stage
+        // loginPage.AddEmail("a@asala.com");
+
+        // demo
+        loginPage.AddEmail("test@test.com");
         loginPage.ClearPasswordData();
         loginPage.AddPassword("123456");
         loginPage.ClickLogin();
