@@ -39,8 +39,8 @@ public class AddNewOfferPage extends PageBase {
     WebElement offerDescriptionArTxt;
     @FindBy(id = "offer_description_input_en")
     WebElement offerDescriptionEnTxt;
-    @FindBy(id = "cover-input-file")
-    WebElement photoBt;
+    @FindBy(id = "input-file-photo")
+    WebElement coverPhotoBt;
     @FindBy(id = "select-mall")
     WebElement mallSelect;
     @FindBy(id = "select-store")
@@ -72,32 +72,32 @@ public class AddNewOfferPage extends PageBase {
         setTextElementText(offerDescriptionEnTxt, Value);
     }
 
-    public void UploadSVG() {
+    public void UploadLogo() {
 
-        String imageName = "SVG.svg";
+        String imageName = "logo.jpg";
         String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
-        photoBt.sendKeys(imagePath);
+        coverPhotoBt.sendKeys(imagePath);
     }
 
-    public void UploadMoreSize() {
+    public void UploadCover() {
 
-        String imageName = "OverSize.jpg";
+        String imageName = "cover.jpg";
         String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
-        photoBt.sendKeys(imagePath);
+        coverPhotoBt.sendKeys(imagePath);
     }
 
-    public void UploadPNG() {
+    public void UploadWrong() {
 
-        String imageName = "PNG.png";
+        String imageName = "wrong.docx";
         String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
-        photoBt.sendKeys(imagePath);
+        coverPhotoBt.sendKeys(imagePath);
     }
 
-    public void UploadJPG() {
+    public void UploadMore() {
 
-        String imageName = "JPG.jpg";
+        String imageName = "more.png";
         String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
-        photoBt.sendKeys(imagePath);
+        coverPhotoBt.sendKeys(imagePath);
     }
 
     // calender Here !!!
@@ -131,14 +131,14 @@ public class AddNewOfferPage extends PageBase {
     public void SelectMall() {
 
         Select selectMall = new Select(mallSelect);
-        selectMall.selectByValue("4");
+        selectMall.selectByValue("10");
     }
 
     public void SelectStore() {
 
         Select selectStore = new Select(storeSelect);
         // this for stage
-        selectStore.selectByValue("293");
+        selectStore.selectByValue("4587");
 
         //this for demo
         //selectStore.selectByValue("430");

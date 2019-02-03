@@ -394,12 +394,12 @@ public class AddNewEventTest extends TestBase {
     }
 
     // photo
-    // check if user upload photo svg display validation message
+    // check if user upload photo Wrong display validation message
     @Test(priority = 40)
-    public void IfUserUploadSvgPhoto() throws InterruptedException {
+    public void IfUserUploadWrongPhoto() throws InterruptedException {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
-        addNewEventPage.UploadSVG();
+        addNewEventPage.UploadWrong();
         Thread.sleep(3000);
         addNewEventPage.ClickToSave();
         Assert.assertTrue(addNewEventPage.errorMsgPhoto.getText().contains("Accept files in jpg, png and image format"));
@@ -407,40 +407,20 @@ public class AddNewEventTest extends TestBase {
     }
 
     // photo
-    // check if user upload photo more 1 mb display validation message
+    // check if user upload photo more 2 mb display validation message
     @Test(priority = 41)
     public void IfUserUploadOverSize() throws InterruptedException {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
-        addNewEventPage.UploadMoreSize();
+        addNewEventPage.UploadMore();
         Thread.sleep(3000);
         addNewEventPage.ClickToSave();
-        Assert.assertTrue(addNewEventPage.errorMsgPhoto.getText().contains("Photo size shouldn’t be more than 1 Mb"));
-        driver.navigate().refresh();
-    }
-
-    // photo
-    // check if user upload PNG
-    @Test(priority = 42)
-    public void IfUserUploadPngPhoto() {
-        js = (JavascriptExecutor) driver;
-        js.executeScript("scrollBy(0,3000)");
-        addNewEventPage.UploadPNG();
-        driver.navigate().refresh();
-    }
-
-    // photo
-    // check if user upload JPG
-    @Test(priority = 43)
-    public void IfUserUploadJpgPhoto() {
-        js = (JavascriptExecutor) driver;
-        js.executeScript("scrollBy(0,3000)");
-        addNewEventPage.UploadJPG();
+        Assert.assertTrue(addNewEventPage.errorMsgPhoto.getText().contains("Photo size shouldn’t be more than 2 Mb"));
         driver.navigate().refresh();
     }
 
     // check if user add email empty display validation message
-    @Test(priority = 44)
+    @Test(priority = 42)
     public void IfUserAddEmailEmpty() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -450,7 +430,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // check if user add email spaces display validation message
-    @Test(priority = 45)
+    @Test(priority = 43)
     public void IfUserAddEmailSpaces() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -461,7 +441,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // check if user add email wrong Format display validation message
-    @Test(priority = 46)
+    @Test(priority = 44)
     public void IfUserAddEmailWrongformat() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -472,7 +452,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // check if user add email numbers  display validation message
-    @Test(priority = 47)
+    @Test(priority = 45)
     public void IfUserAddEmailNumbers() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -483,7 +463,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // check if user add valid email don't display validation message
-    @Test(priority = 48)
+    @Test(priority = 46)
     public void IfUserAddValidEmail() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -493,7 +473,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // check if user add  phone empty display validation message
-    @Test(priority = 49)
+    @Test(priority = 47)
     public void IfUserAddPhoneEmpty() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -504,7 +484,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // check if user add  phone spaces display validation message
-    @Test(priority = 50)
+    @Test(priority = 48)
     public void IfUserAddPhoneSpaces() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -515,7 +495,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // check if user add  phone text display validation message
-    @Test(priority = 51)
+    @Test(priority = 49)
     public void IfUserAddPhoneText() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -526,7 +506,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // check if user add  phone wrong display validation message
-    @Test(priority = 52)
+    @Test(priority = 50)
     public void IfUserAddPhoneWrong() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -537,7 +517,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // check if user add  phone valid (3) display validation message
-    @Test(priority = 53)
+    @Test(priority = 51)
     public void IfUserAddPhonThree() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -547,7 +527,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // check if user add  phone valid (4) display validation message
-    @Test(priority = 54)
+    @Test(priority = 52)
     public void IfUserAddPhonFour() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -557,7 +537,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // check if user add  phone valid (5) display validation message
-    @Test(priority = 55)
+    @Test(priority = 53)
     public void IfUserAddPhonFive() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -567,7 +547,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // check if user add  phone valid (6) display validation message
-    @Test(priority = 56)
+    @Test(priority = 54)
     public void IfUserAddPhonSix() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -577,7 +557,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // check if user add  phone valid (7) display validation message
-    @Test(priority = 57)
+    @Test(priority = 55)
     public void IfUserAddPhonSeven() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -587,7 +567,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // check if user add  phone valid (8) display validation message
-    @Test(priority = 58)
+    @Test(priority = 56)
     public void IfUserAddPhonEight() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -597,7 +577,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // check if user add  phone valid (9) display validation message
-    @Test(priority = 59)
+    @Test(priority = 57)
     public void IfUserAddPhonNine() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -608,7 +588,7 @@ public class AddNewEventTest extends TestBase {
 
     // not valid case
     // if user add time from after time to
-    @Test(priority = 60)
+    @Test(priority = 58)
     public void IfUserAddTimeFromAfterTimeTo() {
         driver.navigate().refresh();
         addNewEventPage.SelectMall();
@@ -623,16 +603,17 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.SelectTimeToTwo();
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
-        addNewEventPage.UploadJPG();
+        addNewEventPage.UploadCover();
         addNewEventPage.AddEmail("a@a.com");
         addNewEventPage.AddPhoneOne("966591234567");
-        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.AddTextInLocationEn(location1);
+        addNewEventPage.AddTextInLocationAr(location1);
         addNewEventPage.ClickToSave();
         Assert.assertTrue(addNewEventPage.errorMsgTimeTo.getText().contains("please select a valid end time"));
     }
 
     // event from 12 AM to 12 AM
-    @Test(priority = 61)
+    @Test(priority = 59)
     public void IfUserAddNotValidEvent() throws InterruptedException {
         driver.navigate().refresh();
         addNewEventPage.SelectMall();
@@ -647,10 +628,11 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.SelectTimeToTwelveAM();
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
-        addNewEventPage.UploadPNG();
+        addNewEventPage.UploadCover();
         addNewEventPage.AddEmail(email1);
         addNewEventPage.AddPhoneOne("966591234567");
-        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.AddTextInLocationEn(location1);
+        addNewEventPage.AddTextInLocationAr(location1);
         addNewEventPage.ClickToSave();
         Thread.sleep(3000);
         Assert.assertTrue(addNewEventPage.errorMsgTimeTo.getText().contains("please select a valid end time"));
@@ -658,7 +640,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // event from 12 PM to 12 PM
-    @Test(priority = 62)
+    @Test(priority = 60)
     public void IfUserAddNotValidEventTwo() throws InterruptedException {
         driver.navigate().refresh();
         addNewEventPage.SelectMall();
@@ -673,17 +655,18 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.SelectTimeToTwelvePM();
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
-        addNewEventPage.UploadPNG();
+        addNewEventPage.UploadCover();
         addNewEventPage.AddEmail(email1);
         addNewEventPage.AddPhoneOne("966591234567");
-        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.AddTextInLocationEn(location1);
+        addNewEventPage.AddTextInLocationAr(location1);
         addNewEventPage.ClickToSave();
         Thread.sleep(3000);
         Assert.assertTrue(addNewEventPage.errorMsgTimeTo.getText().contains("please select a valid end time"));
     }
 
     // event from 12 PM to 11 AM
-    @Test(priority = 63)
+    @Test(priority = 61)
     public void IfUserAddNotValidEventThree() throws InterruptedException {
         driver.navigate().refresh();
         addNewEventPage.SelectMall();
@@ -698,10 +681,11 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.SelectTimeToElvenAM();
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
-        addNewEventPage.UploadPNG();
+        addNewEventPage.UploadCover();
         addNewEventPage.AddEmail(email1);
         addNewEventPage.AddPhoneOne("966591234567");
-        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.AddTextInLocationEn(location1);
+        addNewEventPage.AddTextInLocationAr(location1);
         addNewEventPage.ClickToSave();
         Thread.sleep(3000);
         Assert.assertTrue(addNewEventPage.errorMsgTimeTo.getText().contains("please select a valid end time"));
@@ -710,7 +694,7 @@ public class AddNewEventTest extends TestBase {
     // Valid Offer
 
     // if user add valid event
-    @Test(priority = 64)
+    @Test(priority = 62)
     public void IfUserAddValidEvent() throws InterruptedException {
         driver.navigate().refresh();
         addNewEventPage.SelectMall();
@@ -725,10 +709,11 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.SelectTimeToTwelvePM();
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
-        addNewEventPage.UploadPNG();
+        addNewEventPage.UploadCover();
         addNewEventPage.AddEmail(email1);
         addNewEventPage.AddPhoneOne("966591234567");
-        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.AddTextInLocationEn(location1);
+        addNewEventPage.AddTextInLocationAr(location1);
         addNewEventPage.ClickToSave();
         js.executeScript("scrollBy(0,-3000)");
         Thread.sleep(3000);
@@ -736,7 +721,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // event from 12 PM to 12 AM
-    @Test(priority = 65)
+    @Test(priority = 63)
     public void IfUserAddValidEventTwo() throws InterruptedException {
         driver.navigate().refresh();
         addNewEventPage.SelectMall();
@@ -751,10 +736,11 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.SelectTimeToTwelveAM();
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
-        addNewEventPage.UploadPNG();
+        addNewEventPage.UploadCover();
         addNewEventPage.AddEmail(email2);
         addNewEventPage.AddPhoneOne("966591234567");
-        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.AddTextInLocationEn(location1);
+        addNewEventPage.AddTextInLocationAr(location1);
         addNewEventPage.ClickToSave();
         js.executeScript("scrollBy(0,-3000)");
         Thread.sleep(5000);
@@ -762,7 +748,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // event from 11 AM to 12 PM
-    @Test(priority = 66)
+    @Test(priority = 64)
     public void IfUserAddValidEventThree() throws InterruptedException {
         driver.navigate().refresh();
         addNewEventPage.SelectMall();
@@ -777,10 +763,11 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.SelectTimeToTwelvePM();
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
-        addNewEventPage.UploadPNG();
+        addNewEventPage.UploadCover();
         addNewEventPage.AddEmail(email3);
         addNewEventPage.AddPhoneOne("966591234567");
-        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.AddTextInLocationEn(location1);
+        addNewEventPage.AddTextInLocationAr(location1);
         addNewEventPage.ClickToSave();
         js.executeScript("scrollBy(0,-3000)");
         Thread.sleep(3000);
@@ -788,7 +775,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // event from 12 PM to 11 AM
-    @Test(priority = 67)
+    @Test(priority = 65)
     public void IfUserAddValidEventFour() throws InterruptedException {
         driver.navigate().refresh();
         addNewEventPage.SelectMall();
@@ -803,10 +790,11 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.SelectTimeToElvenAM();
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
-        addNewEventPage.UploadPNG();
+        addNewEventPage.UploadCover();
         addNewEventPage.AddEmail(email4);
         addNewEventPage.AddPhoneOne("966591234567");
-        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.AddTextInLocationEn(location1);
+        addNewEventPage.AddTextInLocationAr(location1);
         addNewEventPage.ClickToSave();
         js.executeScript("scrollBy(0,-3000)");
         Thread.sleep(3000);
@@ -814,7 +802,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // event from 12 AM to 11 PM
-    @Test(priority = 68)
+    @Test(priority = 66)
     public void IfUserAddValidEventFive() throws InterruptedException {
         driver.navigate().refresh();
         addNewEventPage.SelectMall();
@@ -829,10 +817,11 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.SelectTimeToElvenPM();
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
-        addNewEventPage.UploadPNG();
+        addNewEventPage.UploadCover();
         addNewEventPage.AddEmail(email4);
         addNewEventPage.AddPhoneOne("966591234567");
-        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.AddTextInLocationEn(location1);
+        addNewEventPage.AddTextInLocationAr(location1);
         addNewEventPage.ClickToSave();
         js.executeScript("scrollBy(0,-3000)");
         Thread.sleep(3000);
@@ -840,7 +829,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // event from 12 PM to 11 PM
-    @Test(priority = 69)
+    @Test(priority = 67)
     public void IfUserAddValidEventSix() throws InterruptedException {
         driver.navigate().refresh();
         addNewEventPage.SelectMall();
@@ -855,10 +844,11 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.SelectTimeToElvenPM();
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
-        addNewEventPage.UploadPNG();
+        addNewEventPage.UploadCover();
         addNewEventPage.AddEmail(email4);
         addNewEventPage.AddPhoneOne("966591234567");
-        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.AddTextInLocationEn(location1);
+        addNewEventPage.AddTextInLocationAr(location1);
         addNewEventPage.ClickToSave();
         js.executeScript("scrollBy(0,-3000)");
         Thread.sleep(3000);
@@ -866,7 +856,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // event from 11 PM to 12 AM
-    @Test(priority = 70)
+    @Test(priority = 68)
     public void IfUserAddValidEventSeven() throws InterruptedException {
         driver.navigate().refresh();
         addNewEventPage.SelectMall();
@@ -881,10 +871,11 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.SelectTimeToTwelveAM();
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
-        addNewEventPage.UploadPNG();
+        addNewEventPage.UploadCover();
         addNewEventPage.AddEmail(email4);
         addNewEventPage.AddPhoneOne("966591234567");
-        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.AddTextInLocationEn(location1);
+        addNewEventPage.AddTextInLocationAr(location1);
         addNewEventPage.ClickToSave();
         js.executeScript("scrollBy(0,-3000)");
         Thread.sleep(5000);
@@ -892,7 +883,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // event from 1 PM to 11 PM
-    @Test(priority = 71)
+    @Test(priority = 69)
     public void IfUserAddValidEventEight() throws InterruptedException {
         driver.navigate().refresh();
         addNewEventPage.SelectMall();
@@ -907,10 +898,11 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.SelectTimeToElvenPM();
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
-        addNewEventPage.UploadPNG();
+        addNewEventPage.UploadCover();
         addNewEventPage.AddEmail(email4);
         addNewEventPage.AddPhoneOne("966591234567");
-        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.AddTextInLocationEn(location1);
+        addNewEventPage.AddTextInLocationAr(location1);
         addNewEventPage.ClickToSave();
         js.executeScript("scrollBy(0,-3000)");
         Thread.sleep(3000);
@@ -918,7 +910,7 @@ public class AddNewEventTest extends TestBase {
     }
 
     // event from 1 AM to 11 AM
-    @Test(priority = 72)
+    @Test(priority = 70)
     public void IfUserAddValidEventNine() throws InterruptedException {
         driver.navigate().refresh();
         addNewEventPage.SelectMall();
@@ -933,10 +925,11 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.SelectTimeToElvenAM();
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
-        addNewEventPage.UploadPNG();
+        addNewEventPage.UploadCover();
         addNewEventPage.AddEmail(email4);
         addNewEventPage.AddPhoneOne("966591234567");
-        addNewEventPage.AddTextInLocation(location1);
+        addNewEventPage.AddTextInLocationEn(location1);
+        addNewEventPage.AddTextInLocationAr(location1);
         addNewEventPage.ClickToSave();
         js.executeScript("scrollBy(0,-3000)");
         Thread.sleep(3000);

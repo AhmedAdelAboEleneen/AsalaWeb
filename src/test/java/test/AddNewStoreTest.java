@@ -477,19 +477,75 @@ public class AddNewStoreTest extends TestBase {
         driver.navigate().refresh();
     }
 
+    // En location
     // check if user don't add location  display validation message
     @Test(priority = 37)
     public void IfUserDontAddLocation() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewStorePage.ClickToSave();
-        Assert.assertTrue(addNewStorePage.errorMsgLocation.getText().contains("please enter the location"));
+        Assert.assertTrue(addNewStorePage.errorMsgLocationEn.getText().contains("please enter the location"));
+        driver.navigate().refresh();
+    }
+
+    // check if user add location less than 2 characters display validation message
+    @Test(priority = 37)
+    public void IfUserAddLocationLess() {
+        js = (JavascriptExecutor) driver;
+        js.executeScript("scrollBy(0,3000)");
+        addNewStorePage.AddTextInLocationEn("T");
+        addNewStorePage.ClickToSave();
+        Assert.assertTrue(addNewStorePage.errorMsgLocationEn.getText().contains("This field shouldn’t be less than 2 characters"));
+        driver.navigate().refresh();
+    }
+
+    // check if user add location more 50 characters display validation message
+    @Test(priority = 37)
+    public void IfUserAddLocationMore() {
+        js = (JavascriptExecutor) driver;
+        js.executeScript("scrollBy(0,3000)");
+        addNewStorePage.AddTextInLocationEn("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeee");
+        addNewStorePage.ClickToSave();
+        Assert.assertTrue(addNewStorePage.errorMsgLocationEn.getText().contains("This field shouldn’t contain more than 50 characters"));
+        driver.navigate().refresh();
+    }
+
+    // Ar location
+    // check if user don't add location display validation message
+    @Test(priority = 38)
+    public void IfUserDontAddLocationAr() {
+        js = (JavascriptExecutor) driver;
+        js.executeScript("scrollBy(0,3000)");
+        addNewStorePage.ClickToSave();
+        Assert.assertTrue(addNewStorePage.errorMsgLocationAr.getText().contains("please enter the location"));
+        driver.navigate().refresh();
+    }
+
+    // check if user add location less than 2 characters display validation message
+    @Test(priority = 39)
+    public void IfUserAddLocationLessAr() {
+        js = (JavascriptExecutor) driver;
+        js.executeScript("scrollBy(0,3000)");
+        addNewStorePage.AddTextInLocationAr("T");
+        addNewStorePage.ClickToSave();
+        Assert.assertTrue(addNewStorePage.errorMsgLocationAr.getText().contains("This field shouldn’t be less than 2 characters"));
+        driver.navigate().refresh();
+    }
+
+    // check if user add location more 50 characters display validation message
+    @Test(priority = 40)
+    public void IfUserAddLocationMoreAr() {
+        js = (JavascriptExecutor) driver;
+        js.executeScript("scrollBy(0,3000)");
+        addNewStorePage.AddTextInLocationAr("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeee");
+        addNewStorePage.ClickToSave();
+        Assert.assertTrue(addNewStorePage.errorMsgLocationAr.getText().contains("This field shouldn’t contain more than 50 characters"));
         driver.navigate().refresh();
     }
 
     // logo
     // check if user upload photo empty display validation message
-    @Test(priority = 38)
+    @Test(priority = 41)
     public void IfUserUploadphotoEmpty() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -499,54 +555,34 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // logo
-    // check if user upload photo svg display validation message
-    @Test(priority = 39)
-    public void IfUserUploadSvgPhoto() {
+    // check if user upload photo Wrong display validation message
+    @Test(priority = 42)
+    public void IfUserUploadWrongPhoto() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
-        addNewStorePage.UploadSVG();
+        addNewStorePage.UploadWrongLogo();
         addNewStorePage.ClickToSave();
         Assert.assertTrue(addNewStorePage.errorMsgLogo.getText().contains("Accept files in jpg, png and image format"));
         driver.navigate().refresh();
     }
 
     // logo
-    // check if user upload photo more 1 mb display validation message
-    @Test(priority = 40)
-    public void IfUserUploadOverSize() throws InterruptedException {
+    // check if user upload photo more 2 mb display validation message
+    @Test(priority = 43)
+    public void IfUserUploadMoreSize() throws InterruptedException {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         Thread.sleep(3000);
-        addNewStorePage.UploadMoreSize();
+        addNewStorePage.UploadMoreLogo();
         addNewStorePage.ClickToSave();
         Thread.sleep(3000);
-        Assert.assertTrue(addNewStorePage.errorMsgLogo.getText().contains("Photo size shouldn’t be more than 1 Mb"));
-        driver.navigate().refresh();
-    }
-
-    // logo
-    // check if user upload PNG
-    @Test(priority = 41)
-    public void IfUserUploadPngPhoto() {
-        js = (JavascriptExecutor) driver;
-        js.executeScript("scrollBy(0,3000)");
-        addNewStorePage.UploadPNG();
-        driver.navigate().refresh();
-    }
-
-    // logo
-    // check if user upload JPG
-    @Test(priority = 42)
-    public void IfUserUploadJpgPhoto() {
-        js = (JavascriptExecutor) driver;
-        js.executeScript("scrollBy(0,3000)");
-        addNewStorePage.UploadJPG();
+        Assert.assertTrue(addNewStorePage.errorMsgLogo.getText().contains("Photo size shouldn’t be more than 2 Mb"));
         driver.navigate().refresh();
     }
 
     // cover photo
     // check if user upload cover photo empty display validation message
-    @Test(priority = 43)
+    @Test(priority = 44)
     public void IfUserUploadphotoEmptyCover() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -556,52 +592,31 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // cover photo
-    // check if user upload cover photo svg display validation message
-    @Test(priority = 44)
-    public void IfUserUploadSvgCoverPhoto() {
+    // check if user upload cover photo Wrong display validation message
+    @Test(priority = 45)
+    public void IfUserUploadWrongCoverPhoto() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
-        addNewStorePage.UploadSVGCover();
+        addNewStorePage.UploadWrong();
         addNewStorePage.ClickToSave();
         Assert.assertTrue(addNewStorePage.errorMsgCoverPhoto.getText().contains("Accept files in jpg, png and image format"));
         driver.navigate().refresh();
     }
 
     // cover photo
-    // check if user upload cover photo more 1 mb display validation message
-    @Test(priority = 45)
+    // check if user upload cover photo more 2 mb display validation message
+    @Test(priority = 46)
     public void IfUserUploadOverSizeCover() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
-        addNewStorePage.UploadMoreSizeCover();
+        addNewStorePage.UploadMore();
         addNewStorePage.ClickToSave();
-        Assert.assertTrue(addNewStorePage.errorMsgCoverPhoto.getText().contains("Photo size shouldn’t be more than 1 Mb"));
+        Assert.assertTrue(addNewStorePage.errorMsgCoverPhoto.getText().contains("Photo size shouldn’t be more than 2 Mb"));
         driver.navigate().refresh();
     }
-
-    // cover photo
-    // check if user upload PNG
-    @Test(priority = 46)
-    public void IfUserUploadPngCoverPhoto() {
-        js = (JavascriptExecutor) driver;
-        js.executeScript("scrollBy(0,3000)");
-        addNewStorePage.UploadPNGCover();
-        driver.navigate().refresh();
-    }
-
-    // cover photo
-    // check if user upload JPG
-    @Test(priority = 47)
-    public void IfUserUploadJpgCoverPhoto() {
-        js = (JavascriptExecutor) driver;
-        js.executeScript("scrollBy(0,3000)");
-        addNewStorePage.UploadJPGCover();
-        driver.navigate().refresh();
-    }
-
 
     // check if user add email wrong Format display validation message
-    @Test(priority = 48)
+    @Test(priority = 47)
     public void IfUserAddEmailWrongformat() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -612,7 +627,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // check if user add email numbers  display validation message
-    @Test(priority = 49)
+    @Test(priority = 48)
     public void IfUserAddEmailNumbers() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -623,7 +638,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // check if user add valid email don't display validation message
-    @Test(priority = 50)
+    @Test(priority = 49)
     public void IfUserAddValidEmail() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -633,7 +648,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // check if user add  phone text display validation message
-    @Test(priority = 51)
+    @Test(priority = 50)
     public void IfUserAddPhoneText() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -644,7 +659,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // check if user add  phone wrong display validation message
-    @Test(priority = 52)
+    @Test(priority = 51)
     public void IfUserAddPhoneWrong() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -655,7 +670,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // check if user add  phone valid (3) display validation message
-    @Test(priority = 53)
+    @Test(priority = 52)
     public void IfUserAddPhonThree() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -665,7 +680,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // check if user add  phone valid (4) display validation message
-    @Test(priority = 54)
+    @Test(priority = 53)
     public void IfUserAddPhonFour() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -675,7 +690,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // check if user add  phone valid (5) display validation message
-    @Test(priority = 55)
+    @Test(priority = 54)
     public void IfUserAddPhonFive() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -685,7 +700,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // check if user add  phone valid (6) display validation message
-    @Test(priority = 56)
+    @Test(priority = 55)
     public void IfUserAddPhonSix() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -695,7 +710,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // check if user add  phone valid (7) display validation message
-    @Test(priority = 57)
+    @Test(priority = 56)
     public void IfUserAddPhonSeven() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -705,7 +720,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // check if user add  phone valid (8) display validation message
-    @Test(priority = 58)
+    @Test(priority = 57)
     public void IfUserAddPhonEight() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -715,7 +730,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // check if user add  phone valid (9) display validation message
-    @Test(priority = 59)
+    @Test(priority = 58)
     public void IfUserAddPhonNine() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -725,7 +740,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // check if user add Second phone text display validation message
-    @Test(priority = 60)
+    @Test(priority = 59)
     public void IfUserAddSecondPhoneText() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -738,7 +753,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // check if user add Second phone wrong display validation message
-    @Test(priority = 61)
+    @Test(priority = 60)
     public void IfUserAddSecondPhoneWrong() {
         driver.navigate().refresh();
         js = (JavascriptExecutor) driver;
@@ -752,7 +767,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // check if user add Second phone valid (3) display validation message
-    @Test(priority = 62)
+    @Test(priority = 61)
     public void IfUserAddSecondPhonThree() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -764,7 +779,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // check if user add Second phone valid (4) display validation message
-    @Test(priority = 63)
+    @Test(priority = 62)
     public void IfUserAddSecondPhonFour() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -776,7 +791,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // check if user add Second phone valid (5) display validation message
-    @Test(priority = 64)
+    @Test(priority = 63)
     public void IfUserAddSecondPhonFive() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -789,7 +804,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // check if user add Second phone valid (6) display validation message
-    @Test(priority = 65)
+    @Test(priority = 64)
     public void IfUserAddSecondPhonSix() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -801,7 +816,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // check if user add Second phone valid (7) display validation message
-    @Test(priority = 66)
+    @Test(priority = 65)
     public void IfUserAddSecondPhonSeven() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -813,7 +828,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // check if user add Second phone valid (8) display validation message
-    @Test(priority = 67)
+    @Test(priority = 66)
     public void IfUserAddSecondPhonEight() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -825,7 +840,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // check if user add Second phone valid (9) display validation message
-    @Test(priority = 68)
+    @Test(priority = 67)
     public void IfUserAddSecondPhonNine() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -836,37 +851,9 @@ public class AddNewStoreTest extends TestBase {
         driver.navigate().refresh();
     }
 
-    // Location
-    // if location already exist
-    @Test(priority = 69)
-    public void IfLocationAlreadyExist() throws InterruptedException {
-        driver.navigate().refresh();
-        addNewStorePage.SelectMall();
-        Thread.sleep(5000);
-        addNewStorePage.SelectCategory();
-        addNewStorePage.SelectFloorNumber();
-        addNewStorePage.AddTextInStoreNameArabic("كبير");
-        addNewStorePage.AddTextInStoreNameEnglish("Big");
-        addNewStorePage.AddTextInStoreDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
-        addNewStorePage.AddTextInStoreDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
-        js = (JavascriptExecutor) driver;
-        js.executeScript("scrollBy(0,3000)");
-        addNewStorePage.SelectDay();
-        addNewStorePage.SelectDateFrom();
-        addNewStorePage.SelectDateTo();
-        addNewStorePage.ClickToMakeStatusActive();
-        addNewStorePage.AddTextInLocation("G-56");
-        addNewStorePage.UploadJPG();
-        addNewStorePage.UploadJPGCover();
-        addNewStorePage.AddEmail("A@A.AA");
-        addNewStorePage.AddPhoneOne("966511234567");
-        addNewStorePage.ClickToSave();
-        Thread.sleep(3000);
-        Assert.assertTrue(addNewStorePage.errorMsgLocation.getText().contains("location is already exist"));
-    }
-
+    // Not valid store
     // if Shift already exist
-    @Test(priority = 70)
+    @Test(priority = 68)
     public void IfShiftAlreadyExist() throws InterruptedException {
         driver.navigate().refresh();
         addNewStorePage.SelectMall();
@@ -881,9 +868,10 @@ public class AddNewStoreTest extends TestBase {
         js.executeScript("scrollBy(0,3000)");
         addNewStorePage.ClickToAddAnotherShift();
         addNewStorePage.ClickToMakeStatusActive();
-        addNewStorePage.AddTextInLocation(location1);
-        addNewStorePage.UploadJPG();
-        addNewStorePage.UploadJPGCover();
+        addNewStorePage.AddTextInLocationEn(location1);
+        addNewStorePage.AddTextInLocationAr(location1);
+        addNewStorePage.UploadLogoLogo();
+        addNewStorePage.UploadCover();
         addNewStorePage.AddEmail("A@A.AA");
         addNewStorePage.AddPhoneOne("966511234567");
         addNewStorePage.ClickToSave();
@@ -892,7 +880,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // if User Add Phone two Empty
-    @Test(priority = 71)
+    @Test(priority = 69)
     public void IfUserAddPhoneTwoEmpty() throws InterruptedException {
         driver.navigate().refresh();
         addNewStorePage.SelectMall();
@@ -909,20 +897,22 @@ public class AddNewStoreTest extends TestBase {
         addNewStorePage.SelectDateFrom();
         addNewStorePage.SelectDateTo();
         addNewStorePage.ClickToMakeStatusOpeningSoon();
-        addNewStorePage.AddTextInLocation(location2);
-        addNewStorePage.UploadJPG();
-        addNewStorePage.UploadJPGCover();
-        addNewStorePage.AddEmail("A@A.AA");
-        addNewStorePage.AddPhoneOne("966511234567");
-        addNewStorePage.ClickToAddMorePhone();
+        addNewStorePage.AddTextInLocationEn(location2);
+        addNewStorePage.AddTextInLocationAr(location2);
+        addNewStorePage.UploadCoverLogo();
+        addNewStorePage.UploadLogo();
         addNewStorePage.ClickToSave();
+        Thread.sleep(8000);
+        Assert.assertTrue(addNewStorePage.errorMsgLogo.getText().contains("Please upload a photo with aspect ratio 1 width : 1 height"));
+        Assert.assertTrue(addNewStorePage.errorMsgCoverPhoto.getText().contains("Please upload a photo with aspect ratio 1.8 width : 1 height"));
+
     }
 
 
     // VALID TO ADD NEW STORE
 
     // if User Add try to make Add new store in arabic
-    @Test(priority = 72)
+    @Test(priority = 70)
     public void IfUserAddStoreArabic() throws InterruptedException {
         driver.navigate().refresh();
         homePage.ClickChangeLanguageToArabic();
@@ -939,9 +929,10 @@ public class AddNewStoreTest extends TestBase {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewStorePage.ClickToMakeStatusOpeningSoon();
-        addNewStorePage.AddTextInLocation(location4);
-        addNewStorePage.UploadJPG();
-        addNewStorePage.UploadJPGCover();
+        addNewStorePage.AddTextInLocationEn(location4);
+        addNewStorePage.AddTextInLocationAr(location4);
+        addNewStorePage.UploadLogoLogo();
+        addNewStorePage.UploadCover();
         addNewStorePage.AddEmail(email1);
         addNewStorePage.AddPhoneOne("966511234567");
         addNewStorePage.ClickToSave();
@@ -951,7 +942,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // if user add two same shifts & after that change day in one shift
-    @Test(priority = 73)
+    @Test(priority = 71)
     public void IfUserChangeShiftAfterAddIt() throws InterruptedException {
         driver.navigate().refresh();
         Thread.sleep(5000);
@@ -967,9 +958,10 @@ public class AddNewStoreTest extends TestBase {
         js.executeScript("scrollBy(0,3000)");
         addNewStorePage.ClickToAddAnotherShift();
         addNewStorePage.ClickToMakeStatusActive();
-        addNewStorePage.AddTextInLocation(location5);
-        addNewStorePage.UploadJPG();
-        addNewStorePage.UploadJPGCover();
+        addNewStorePage.AddTextInLocationEn(location5);
+        addNewStorePage.AddTextInLocationAr(location5);
+        addNewStorePage.UploadLogoLogo();
+        addNewStorePage.UploadCover();
         addNewStorePage.AddEmail(email2);
         addNewStorePage.AddPhoneOne("966511234567");
         addNewStorePage.ClickToSave();
@@ -983,7 +975,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // if User Add store Active
-    @Test(priority = 74)
+    @Test(priority = 72)
     public void IfUserAddStoreActive() throws InterruptedException {
         driver.navigate().refresh();
         homePage.ClickChangeLanguageToEnglish();
@@ -1000,9 +992,10 @@ public class AddNewStoreTest extends TestBase {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewStorePage.ClickToMakeStatusActive();
-        addNewStorePage.AddTextInLocation(location6);
-        addNewStorePage.UploadJPG();
-        addNewStorePage.UploadJPGCover();
+        addNewStorePage.AddTextInLocationEn(location6);
+        addNewStorePage.AddTextInLocationAr(location6);
+        addNewStorePage.UploadLogoLogo();
+        addNewStorePage.UploadCover();
         addNewStorePage.AddEmail(email3);
         addNewStorePage.AddPhoneOne("966511234567");
         addNewStorePage.ClickToSave();
@@ -1012,7 +1005,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // if User Add store opening soon
-    @Test(priority = 75)
+    @Test(priority = 73)
     public void IfUserAddStoreOpeningSoon() throws InterruptedException {
         driver.navigate().refresh();
         homePage.ClickChangeLanguageToEnglish();
@@ -1028,9 +1021,10 @@ public class AddNewStoreTest extends TestBase {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewStorePage.ClickToMakeStatusOpeningSoon();
-        addNewStorePage.AddTextInLocation(location7);
-        addNewStorePage.UploadJPG();
-        addNewStorePage.UploadJPGCover();
+        addNewStorePage.AddTextInLocationEn(location7);
+        addNewStorePage.AddTextInLocationAr(location7);
+        addNewStorePage.UploadLogoLogo();
+        addNewStorePage.UploadCover();
         addNewStorePage.AddEmail(email4);
         addNewStorePage.AddPhoneOne("966511234567");
         addNewStorePage.ClickToSave();
@@ -1039,36 +1033,8 @@ public class AddNewStoreTest extends TestBase {
         Assert.assertTrue(addNewStorePage.sucessMsg.getText().contains("New store has been added successfully"));
     }
 
-    // if User Add store with Can redeem
-    @Test(priority = 76)
-    public void IfUserAddStoreCanRedeem() throws InterruptedException {
-        driver.navigate().refresh();
-        homePage.ClickChangeLanguageToEnglish();
-        Thread.sleep(5000);
-        addNewStorePage.SelectMall();
-        Thread.sleep(5000);
-        addNewStorePage.SelectCategory();
-        addNewStorePage.SelectFloorNumber();
-        addNewStorePage.AddTextInStoreNameArabic(name5);
-        addNewStorePage.AddTextInStoreNameEnglish(name5);
-        addNewStorePage.AddTextInStoreDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
-        addNewStorePage.AddTextInStoreDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
-        js = (JavascriptExecutor) driver;
-        js.executeScript("scrollBy(0,3000)");
-        addNewStorePage.ClickToMakeStatusOpeningSoon();
-        addNewStorePage.AddTextInLocation(location8);
-        addNewStorePage.UploadPNG();
-        addNewStorePage.UploadJPGCover();
-        addNewStorePage.AddEmail(email5);
-        addNewStorePage.AddPhoneOne("966511234567");
-        addNewStorePage.ClickToSave();
-        js.executeScript("scrollBy(0,-3000)");
-        Thread.sleep(5000);
-        Assert.assertTrue(addNewStorePage.sucessMsg.getText().contains("New store has been added successfully"));
-    }
-
     // if User Add two phone number
-    @Test(priority = 77)
+    @Test(priority = 74)
     public void IfUserAddTwoPhoneNumber() throws InterruptedException {
         driver.navigate().refresh();
         Thread.sleep(5000);
@@ -1083,9 +1049,10 @@ public class AddNewStoreTest extends TestBase {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewStorePage.ClickToMakeStatusActive();
-        addNewStorePage.AddTextInLocation(location9);
-        addNewStorePage.UploadPNG();
-        addNewStorePage.UploadJPGCover();
+        addNewStorePage.AddTextInLocationEn(location8);
+        addNewStorePage.AddTextInLocationAr(location8);
+        addNewStorePage.UploadLogoLogo();
+        addNewStorePage.UploadCover();
         addNewStorePage.AddEmail(email6);
         addNewStorePage.AddPhoneOne("966511234567");
         addNewStorePage.ClickToAddMorePhone();
@@ -1097,7 +1064,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // if User Add store Without email
-    @Test(priority = 78)
+    @Test(priority = 75)
     public void IfUserAddStoreWithoutEmail() throws InterruptedException {
         driver.navigate().refresh();
         Thread.sleep(5000);
@@ -1112,9 +1079,10 @@ public class AddNewStoreTest extends TestBase {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewStorePage.ClickToMakeStatusOpeningSoon();
-        addNewStorePage.AddTextInLocation(location10);
-        addNewStorePage.UploadPNG();
-        addNewStorePage.UploadJPGCover();
+        addNewStorePage.AddTextInLocationEn(location9);
+        addNewStorePage.AddTextInLocationAr(location9);
+        addNewStorePage.UploadLogoLogo();
+        addNewStorePage.UploadCover();
         addNewStorePage.AddPhoneOne("966511234567");
         addNewStorePage.ClickToSave();
         js.executeScript("scrollBy(0,-3000)");
@@ -1123,7 +1091,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // if User Add store Without phone
-    @Test(priority = 79)
+    @Test(priority = 76)
     public void IfUserAddStoreWithoutPhone() throws InterruptedException {
         driver.navigate().refresh();
         Thread.sleep(5000);
@@ -1138,9 +1106,10 @@ public class AddNewStoreTest extends TestBase {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewStorePage.ClickToMakeStatusActive();
-        addNewStorePage.AddTextInLocation(location11);
-        addNewStorePage.UploadPNG();
-        addNewStorePage.UploadJPGCover();
+        addNewStorePage.AddTextInLocationEn(location10);
+        addNewStorePage.AddTextInLocationAr(location10);
+        addNewStorePage.UploadLogoLogo();
+        addNewStorePage.UploadCover();
         addNewStorePage.AddEmail(email7);
         addNewStorePage.ClickToSave();
         js.executeScript("scrollBy(0,-3000)");
@@ -1149,7 +1118,7 @@ public class AddNewStoreTest extends TestBase {
     }
 
     // if User Add store Without phone & email
-    @Test(priority = 80)
+    @Test(priority = 77)
     public void IfUserAddStoreWithoutPhoneAndEmail() throws InterruptedException {
         driver.navigate().refresh();
         Thread.sleep(5000);
@@ -1164,9 +1133,10 @@ public class AddNewStoreTest extends TestBase {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewStorePage.ClickToMakeStatusOpeningSoon();
-        addNewStorePage.AddTextInLocation(location12);
-        addNewStorePage.UploadPNG();
-        addNewStorePage.UploadJPGCover();
+        addNewStorePage.AddTextInLocationEn(location11);
+        addNewStorePage.AddTextInLocationAr(location11);
+        addNewStorePage.UploadLogoLogo();
+        addNewStorePage.UploadCover();
         addNewStorePage.ClickToSave();
         js.executeScript("scrollBy(0,-3000)");
         Thread.sleep(5000);

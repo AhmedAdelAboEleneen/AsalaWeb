@@ -40,7 +40,9 @@ public class AddNewEventPage extends PageBase {
     @FindBy(id = "error-msg-phone")
     public WebElement errorMsgPhone;
     @FindBy(id = "error-msg-location")
-    public WebElement errorMsgEvent;
+    public WebElement errorMsgLocationEn;
+    @FindBy(id = "error-msg-location_ar")
+    public WebElement errorMsgLocationAr;
     @FindBy(id = "success-msg")
     public WebElement sucessMsg;
     @FindBy(id = "filter-by-mall")
@@ -56,13 +58,15 @@ public class AddNewEventPage extends PageBase {
     @FindBy(id = "sponsor_input")
     WebElement organizerTxt;
     @FindBy(id = "input-file-photo")
-    WebElement photoBt;
+    WebElement coverPhotoBt;
     @FindBy(id = "form-control-email")
     WebElement AddEmail;
     @FindBy(id = "form-control-phone")
     WebElement phoneNumberTxt;
     @FindBy(id = "location_input")
-    WebElement eventLocationTxt;
+    WebElement eventLocationTxtEn;
+    @FindBy(id = "location_ar_input")
+    WebElement eventLocationTxtAr;
     @FindBy(id = "submit-btn")
     WebElement saveBt;
 
@@ -209,32 +213,32 @@ public class AddNewEventPage extends PageBase {
         SelectTimeToElvenPM.selectByValue("11 PM");
     }
 
-    public void UploadSVG() {
+    public void UploadLogo() {
 
-        String imageName = "SVG.svg";
+        String imageName = "logo.jpg";
         String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
-        photoBt.sendKeys(imagePath);
+        coverPhotoBt.sendKeys(imagePath);
     }
 
-    public void UploadMoreSize() {
+    public void UploadCover() {
 
-        String imageName = "OverSize.jpg";
+        String imageName = "cover.jpg";
         String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
-        photoBt.sendKeys(imagePath);
+        coverPhotoBt.sendKeys(imagePath);
     }
 
-    public void UploadPNG() {
+    public void UploadWrong() {
 
-        String imageName = "PNG.png";
+        String imageName = "wrong.docx";
         String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
-        photoBt.sendKeys(imagePath);
+        coverPhotoBt.sendKeys(imagePath);
     }
 
-    public void UploadJPG() {
+    public void UploadMore() {
 
-        String imageName = "JPG.jpg";
+        String imageName = "more.png";
         String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
-        photoBt.sendKeys(imagePath);
+        coverPhotoBt.sendKeys(imagePath);
     }
 
     public void AddEmail(String Value) {
@@ -247,9 +251,14 @@ public class AddNewEventPage extends PageBase {
         setTextElementText(phoneNumberTxt, Value);
     }
 
-    public void AddTextInLocation(String Value) {
+    public void AddTextInLocationEn(String Value) {
 
-        setTextElementText(eventLocationTxt, Value);
+        setTextElementText(eventLocationTxtEn, Value);
+    }
+
+    public void AddTextInLocationAr(String Value) {
+
+        setTextElementText(eventLocationTxtAr, Value);
     }
 
     public void ClickToSave() {

@@ -160,10 +160,10 @@ public class AddNewMallTest extends TestBase {
     }
 
     // photo
-    // check if user upload photo svg display validation message
+    // check if user upload photo wWong display validation message
     @Test(priority = 15)
-    public void IfUserUploadSvgPhoto() throws InterruptedException {
-        addNewMallPage.UploadSVGCover();
+    public void IfUserUploadWrongPhoto() throws InterruptedException {
+        addNewMallPage.UploadWrong();
         Thread.sleep(3000);
         addNewMallPage.ClickToSave();
         Assert.assertTrue(addNewMallPage.errorMsgPhoto.getText().contains("Accept files in jpg, png and image format"));
@@ -171,34 +171,18 @@ public class AddNewMallTest extends TestBase {
     }
 
     // photo
-    // check if user upload photo more 1 mb display validation message
+    // check if user upload photo more 2 mb display validation message
     @Test(priority = 16)
-    public void IfUserUploadOverSize() throws InterruptedException {
-        addNewMallPage.UploadMoreSizeCover();
+    public void IfUserUploadMore() throws InterruptedException {
+        addNewMallPage.UploadMore();
         Thread.sleep(3000);
         addNewMallPage.ClickToSave();
-        Assert.assertTrue(addNewMallPage.errorMsgPhoto.getText().contains("Photo size shouldn’t be more than 1 Mb"));
-        driver.navigate().refresh();
-    }
-
-    // photo
-    // check if user upload PNG
-    @Test(priority = 17)
-    public void IfUserUploadPngPhoto() {
-        addNewMallPage.UploadPNGCover();
-        driver.navigate().refresh();
-    }
-
-    // photo
-    // check if user upload JPG
-    @Test(priority = 18)
-    public void IfUserUploadJpgPhoto() {
-        addNewMallPage.UploadJPGCover();
+        Assert.assertTrue(addNewMallPage.errorMsgPhoto.getText().contains("Photo size shouldn’t be more than 2 Mb"));
         driver.navigate().refresh();
     }
 
     // if user add floor Empty
-    @Test(priority = 19)
+    @Test(priority = 17)
     public void IfUseAddFloorEmpty() {
         addNewMallPage.AddTextInNumbersOfFloor("");
         addNewMallPage.ClickToSave();
@@ -207,7 +191,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add floor More Than 100
-    @Test(priority = 19)
+    @Test(priority = 18)
     public void IfUseAddFloorMoreThan() {
         addNewMallPage.AddTextInNumbersOfFloor("101");
         addNewMallPage.ClickToSave();
@@ -216,7 +200,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add floor less Than 1
-    @Test(priority = 20)
+    @Test(priority = 19)
     public void IfUseAddFloorLessThan() {
         addNewMallPage.AddTextInNumbersOfFloor("0");
         addNewMallPage.ClickToSave();
@@ -225,7 +209,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add floor with  -1
-    @Test(priority = 21)
+    @Test(priority = 20)
     public void IfUseAddFloorMinus() {
         addNewMallPage.AddTextInNumbersOfFloor("-1");
         addNewMallPage.ClickToSave();
@@ -234,7 +218,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add floor with  1
-    @Test(priority = 22)
+    @Test(priority = 21)
     public void IfUseAddFloorOne() {
         addNewMallPage.AddTextInNumbersOfFloor("1");
         addNewMallPage.ClickToSave();
@@ -242,7 +226,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add floor with  100
-    @Test(priority = 23)
+    @Test(priority = 22)
     public void IfUseAddFloorOneHundred() {
         addNewMallPage.AddTextInNumbersOfFloor("100");
         addNewMallPage.ClickToSave();
@@ -250,7 +234,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user don't chose city
-    @Test(priority = 24)
+    @Test(priority = 23)
     public void IfUseDontChoseCity() {
         addNewMallPage.ClickToSave();
         Assert.assertTrue(addNewMallPage.errorMsgCity.getText().contains("Please select a city"));
@@ -258,7 +242,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user  chose city Makka
-    @Test(priority = 25)
+    @Test(priority = 24)
     public void IfUseChoseCityMakka() {
         addNewMallPage.SelectMakka();
         addNewMallPage.ClickToSave();
@@ -266,7 +250,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user  chose city Medina
-    @Test(priority = 26)
+    @Test(priority = 25)
     public void IfUseChoseCityMedina() {
         addNewMallPage.SelectMedina();
         addNewMallPage.ClickToSave();
@@ -275,7 +259,7 @@ public class AddNewMallTest extends TestBase {
 
 
     // if user  chose city Tarout
-    @Test(priority = 27)
+    @Test(priority = 26)
     public void IfUseChoseCityTarout() {
         addNewMallPage.SelectMedina();
         addNewMallPage.ClickToSave();
@@ -283,7 +267,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add address En Empty
-    @Test(priority = 28)
+    @Test(priority = 27)
     public void IfUseAddAddressEnEmpty() {
         addNewMallPage.AddTextInMallAddressEn("");
         addNewMallPage.ClickToSave();
@@ -292,7 +276,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add address En Spaces
-    @Test(priority = 29)
+    @Test(priority = 28)
     public void IfUseAddAddressEnSpaces() {
         addNewMallPage.AddTextInMallAddressEn("        ");
         addNewMallPage.ClickToSave();
@@ -301,7 +285,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add address En less than 3 char
-    @Test(priority = 30)
+    @Test(priority = 29)
     public void IfUseAddAddressEnLess() {
         addNewMallPage.AddTextInMallAddressEn("Te");
         addNewMallPage.ClickToSave();
@@ -310,7 +294,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add address En more than 100 char
-    @Test(priority = 31)
+    @Test(priority = 30)
     public void IfUseAddAddressEnMore() {
         addNewMallPage.AddTextInMallAddressEn("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeeeeeeeeeeee");
         addNewMallPage.ClickToSave();
@@ -319,7 +303,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add address Ar Empty
-    @Test(priority = 32)
+    @Test(priority = 31)
     public void IfUseAddAddressArEmpty() {
         addNewMallPage.AddTextInMallAddressAr("");
         addNewMallPage.ClickToSave();
@@ -328,7 +312,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add address Ar Spaces
-    @Test(priority = 33)
+    @Test(priority = 32)
     public void IfUseAddAddressArSpaces() {
         addNewMallPage.AddTextInMallAddressAr("        ");
         addNewMallPage.ClickToSave();
@@ -337,7 +321,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add address Ar less than 3 char
-    @Test(priority = 34)
+    @Test(priority = 33)
     public void IfUseAddAddressArLess() {
         addNewMallPage.AddTextInMallAddressAr("Te");
         addNewMallPage.ClickToSave();
@@ -346,7 +330,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add address Ar more than 100 char
-    @Test(priority = 35)
+    @Test(priority = 34)
     public void IfUseAddAddressArMore() {
         addNewMallPage.AddTextInMallAddressAr("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeeeeeeeeeeee");
         addNewMallPage.ClickToSave();
@@ -355,7 +339,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add website link number
-    @Test(priority = 36)
+    @Test(priority = 35)
     public void IfUseAddWebsiteLinkNumber() {
         addNewMallPage.AddTextInMallWebsite("15451546416546");
         js = (JavascriptExecutor) driver;
@@ -366,7 +350,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add website link text
-    @Test(priority = 37)
+    @Test(priority = 36)
     public void IfUseAddWebsiteLinkText() {
         addNewMallPage.AddTextInMallWebsite("bdakjbkjabkjfbaskbn");
         js = (JavascriptExecutor) driver;
@@ -377,7 +361,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add website link valid
-    @Test(priority = 38)
+    @Test(priority = 37)
     public void IfUseAddWebsiteLinkValid() {
         addNewMallPage.AddTextInMallWebsite("https://asala-dashboard.ibtikar.net.sa/mall/add");
         js = (JavascriptExecutor) driver;
@@ -388,7 +372,7 @@ public class AddNewMallTest extends TestBase {
 
 
     // if user add twitter link number
-    @Test(priority = 39)
+    @Test(priority = 38)
     public void IfUseAddTwitterLinkNumber() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -399,7 +383,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add twitter link text
-    @Test(priority = 40)
+    @Test(priority = 39)
     public void IfUseAddTwitterLinkText() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -411,7 +395,7 @@ public class AddNewMallTest extends TestBase {
 
 
     // if user add twitter link valid
-    @Test(priority = 41)
+    @Test(priority = 40)
     public void IfUseAddTwitterLinkValid() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -421,7 +405,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add facebook link number
-    @Test(priority = 42)
+    @Test(priority = 41)
     public void IfUseAddFacebookLinkNumber() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -432,7 +416,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add facebook link text
-    @Test(priority = 43)
+    @Test(priority = 42)
     public void IfUseAddFacebookLinkText() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -443,7 +427,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add facebook link valid
-    @Test(priority = 44)
+    @Test(priority = 43)
     public void IfUseAddFacebookLinkValid() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -453,7 +437,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add instagram link number
-    @Test(priority = 45)
+    @Test(priority = 44)
     public void IfUseAddinstagraminkNumber() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -464,7 +448,7 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add instagram link text
-    @Test(priority = 46)
+    @Test(priority = 45)
     public void IfUseAddinstagramLinkText() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -476,7 +460,7 @@ public class AddNewMallTest extends TestBase {
 
 
     // if user add instagram link valid
-    @Test(priority = 47)
+    @Test(priority = 46)
     public void IfUseAddInstagramLinkValid() {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
@@ -485,14 +469,14 @@ public class AddNewMallTest extends TestBase {
         driver.navigate().refresh();
     }
 
-    // valid mall
-    // if user add mall valid without website link & social account
-    @Test(priority = 48)
+    // Not valid mall
+    // if user add mall with wrong photo ratio
+    @Test(priority = 47)
     public void IfUseAddValidMallWithoutSocialAccount() throws InterruptedException {
         driver.navigate().refresh();
         addNewMallPage.AddTextInMallNameArabic(name1);
         addNewMallPage.AddTextInMallNameEnglish(name1);
-        addNewMallPage.UploadJPGCover();
+        addNewMallPage.UploadLogo();
         addNewMallPage.AddTextInNumbersOfFloor("10");
         addNewMallPage.SelectMakka();
         addNewMallPage.AddTextInMallAddressEn(location1);
@@ -501,17 +485,18 @@ public class AddNewMallTest extends TestBase {
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,-300)");
         Thread.sleep(5000);
-        Assert.assertTrue(addNewMallPage.sucessMsg.getText().contains("New Mall had been added successfully"));
+        Assert.assertTrue(addNewMallPage.errorMsgPhoto.getText().contains("Please upload a photo with aspect ratio 1.8 width : 1 height"));
         driver.navigate().refresh();
     }
 
+    // valid mall
     // if user add mall valid website link & Without social account
-    @Test(priority = 49)
+    @Test(priority = 48)
     public void IfUseAddValidMallWithWebsiteLinkWithoutSocialAccount() throws InterruptedException {
         driver.navigate().refresh();
         addNewMallPage.AddTextInMallNameArabic(name2);
         addNewMallPage.AddTextInMallNameEnglish(name2);
-        addNewMallPage.UploadJPGCover();
+        addNewMallPage.UploadCover();
         addNewMallPage.AddTextInNumbersOfFloor("10");
         addNewMallPage.SelectMedina();
         addNewMallPage.AddTextInMallAddressEn(location1);
@@ -526,12 +511,12 @@ public class AddNewMallTest extends TestBase {
     }
 
     // if user add mall valid website link & social account
-    @Test(priority = 50)
+    @Test(priority = 49)
     public void IfUseAddValidMallWithWebsiteLinkSocialAccount() throws InterruptedException {
         driver.navigate().refresh();
         addNewMallPage.AddTextInMallNameArabic(name3);
         addNewMallPage.AddTextInMallNameEnglish(name3);
-        addNewMallPage.UploadPNGCover();
+        addNewMallPage.UploadCover();
         addNewMallPage.AddTextInNumbersOfFloor("10");
         addNewMallPage.SelectMakka();
         addNewMallPage.AddTextInMallAddressEn(location1);

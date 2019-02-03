@@ -265,10 +265,10 @@ public class AddNewOfferTest extends TestBase {
     }
 
     // photo
-    // check if user upload photo svg display validation message
+    // check if user upload photo Wrong display validation message
     @Test(priority = 28)
-    public void IfUserUploadSvgPhoto() throws InterruptedException {
-        addNewOfferPage.UploadSVG();
+    public void IfUserUploadWrong() throws InterruptedException {
+        addNewOfferPage.UploadWrong();
         Thread.sleep(3000);
         addNewOfferPage.ClickToSave();
         Assert.assertTrue(addNewOfferPage.errorMsgPhoto.getText().contains("Accept files in jpg, png and image format"));
@@ -276,41 +276,25 @@ public class AddNewOfferTest extends TestBase {
     }
 
     // photo
-    // check if user upload photo more 1 mb display validation message
+    // check if user upload photo more 2 mb display validation message
     @Test(priority = 29)
-    public void IfUserUploadOverSize() throws InterruptedException {
-        addNewOfferPage.UploadMoreSize();
+    public void IfUserUploadMoreSize() throws InterruptedException {
+        addNewOfferPage.UploadMore();
         Thread.sleep(3000);
         addNewOfferPage.ClickToSave();
-        Assert.assertTrue(addNewOfferPage.errorMsgPhoto.getText().contains("Photo size shouldn’t be more than 1 Mb"));
-        driver.navigate().refresh();
-    }
-
-    // photo
-    // check if user upload PNG
-    @Test(priority = 30)
-    public void IfUserUploadPngPhoto() {
-        addNewOfferPage.UploadPNG();
-        driver.navigate().refresh();
-    }
-
-    // photo
-    // check if user upload JPG
-    @Test(priority = 31)
-    public void IfUserUploadJpgPhoto() {
-        addNewOfferPage.UploadJPG();
+        Assert.assertTrue(addNewOfferPage.errorMsgPhoto.getText().contains("Photo size shouldn’t be more than 2 Mb"));
         driver.navigate().refresh();
     }
 
     // Not Valid Offer
     // because it from future to curent date
-    @Test(priority = 32)
+    @Test(priority = 30)
     public void AddOfferinDateFromInFutureAndDateToInCurrent() throws InterruptedException {
         addNewOfferPage.AddTextInOfferNameArabic("Tee");
         addNewOfferPage.AddTextInOfferNameEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewOfferPage.AddTextInOfferDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewOfferPage.AddTextInOfferDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
-        addNewOfferPage.UploadPNG();
+        addNewOfferPage.UploadCover();
         addNewOfferPage.ChoseDateFromFuture();
         addNewOfferPage.ChoseDateToCurrent();
         addNewOfferPage.SelectMall();
@@ -323,14 +307,14 @@ public class AddNewOfferTest extends TestBase {
     }
 
     // add offer without store
-    @Test(priority = 33)
+    @Test(priority = 31)
     public void AddOfferWithoutStore() throws InterruptedException {
         driver.navigate().refresh();
         addNewOfferPage.AddTextInOfferNameArabic("Tee");
         addNewOfferPage.AddTextInOfferNameEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewOfferPage.AddTextInOfferDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewOfferPage.AddTextInOfferDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
-        addNewOfferPage.UploadPNG();
+        addNewOfferPage.UploadCover();
         addNewOfferPage.ChoseDateFromCurrent();
         addNewOfferPage.ChoseDateToCurrent();
         addNewOfferPage.SelectMall();
@@ -342,14 +326,14 @@ public class AddNewOfferTest extends TestBase {
 
 
     // add offer without mall
-    @Test(priority = 34)
+    @Test(priority = 32)
     public void AddOfferWithoutMall() throws InterruptedException {
         driver.navigate().refresh();
         addNewOfferPage.AddTextInOfferNameArabic("Tee");
         addNewOfferPage.AddTextInOfferNameEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewOfferPage.AddTextInOfferDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewOfferPage.AddTextInOfferDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
-        addNewOfferPage.UploadPNG();
+        addNewOfferPage.UploadCover();
         addNewOfferPage.ChoseDateFromCurrent();
         addNewOfferPage.ChoseDateToCurrent();
         addNewOfferPage.SelectStore();
@@ -360,14 +344,14 @@ public class AddNewOfferTest extends TestBase {
     }
 
     // add offer without Date To
-    @Test(priority = 35)
+    @Test(priority = 33)
     public void AddOfferWithoutDateTo() throws InterruptedException {
         driver.navigate().refresh();
         addNewOfferPage.AddTextInOfferNameArabic("Tee");
         addNewOfferPage.AddTextInOfferNameEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewOfferPage.AddTextInOfferDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewOfferPage.AddTextInOfferDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
-        addNewOfferPage.UploadPNG();
+        addNewOfferPage.UploadCover();
         addNewOfferPage.ChoseDateFromCurrent();
         addNewOfferPage.SelectMall();
         addNewOfferPage.SelectStore();
@@ -378,14 +362,14 @@ public class AddNewOfferTest extends TestBase {
     }
 
     // add offer without Date From
-    @Test(priority = 36)
+    @Test(priority = 34)
     public void AddOfferWithoutDateFrom() throws InterruptedException {
         driver.navigate().refresh();
         addNewOfferPage.AddTextInOfferNameArabic("Tee");
         addNewOfferPage.AddTextInOfferNameEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewOfferPage.AddTextInOfferDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewOfferPage.AddTextInOfferDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
-        addNewOfferPage.UploadPNG();
+        addNewOfferPage.UploadCover();
         addNewOfferPage.ChoseDateToCurrent();
         addNewOfferPage.SelectMall();
         addNewOfferPage.SelectStore();
@@ -395,17 +379,35 @@ public class AddNewOfferTest extends TestBase {
         driver.navigate().refresh();
     }
 
+    // add offer with Wrong Ratio
+    @Test(priority = 35)
+    public void AddOfferWrongRatio() throws InterruptedException {
+        driver.navigate().refresh();
+        addNewOfferPage.AddTextInOfferNameArabic("Tee");
+        addNewOfferPage.AddTextInOfferNameEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.AddTextInOfferDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.AddTextInOfferDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
+        addNewOfferPage.UploadLogo();
+        addNewOfferPage.ChoseDateToCurrent();
+        addNewOfferPage.SelectMall();
+        addNewOfferPage.SelectStore();
+        addNewOfferPage.ClickToSave();
+        Thread.sleep(8000);
+        Assert.assertTrue(addNewOfferPage.errorMsgPhoto.getText().contains("Please upload a photo with aspect ratio 1.8 width : 1 height"));
+        driver.navigate().refresh();
+    }
+
 
     // valid offer
     // add offer in current day & photo PNG
-    @Test(priority = 37)
+    @Test(priority = 36)
     public void AddOfferinCurrent() throws InterruptedException {
         driver.navigate().refresh();
         addNewOfferPage.AddTextInOfferNameArabic(name1);
         addNewOfferPage.AddTextInOfferNameEnglish(name1);
         addNewOfferPage.AddTextInOfferDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewOfferPage.AddTextInOfferDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
-        addNewOfferPage.UploadPNG();
+        addNewOfferPage.UploadCover();
         addNewOfferPage.ChoseDateFromCurrent();
         addNewOfferPage.ChoseDateToCurrent();
         addNewOfferPage.SelectMall();
@@ -419,14 +421,14 @@ public class AddNewOfferTest extends TestBase {
     }
 
     // add offer Date from in current & Date to in future & photo JPG
-    @Test(priority = 38)
+    @Test(priority = 37)
     public void AddOfferinCurrentAndFuture() throws InterruptedException {
         driver.navigate().refresh();
         addNewOfferPage.AddTextInOfferNameArabic(name2);
         addNewOfferPage.AddTextInOfferNameEnglish(name2);
         addNewOfferPage.AddTextInOfferDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewOfferPage.AddTextInOfferDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
-        addNewOfferPage.UploadJPG();
+        addNewOfferPage.UploadCover();
         addNewOfferPage.ChoseDateFromCurrent();
         addNewOfferPage.ChoseDateToFuture();
         addNewOfferPage.SelectMall();
@@ -440,14 +442,14 @@ public class AddNewOfferTest extends TestBase {
     }
 
     // add offer Date from in future & Date to in future & photo JPG
-    @Test(priority = 39)
+    @Test(priority = 38)
     public void AddOfferinFutureAndFuture() throws InterruptedException {
         driver.navigate().refresh();
         addNewOfferPage.AddTextInOfferNameArabic(name3);
         addNewOfferPage.AddTextInOfferNameEnglish(name3);
         addNewOfferPage.AddTextInOfferDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewOfferPage.AddTextInOfferDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
-        addNewOfferPage.UploadJPG();
+        addNewOfferPage.UploadCover();
         addNewOfferPage.ChoseDateFromFuture();
         addNewOfferPage.ChoseDateToFuture();
         addNewOfferPage.SelectMall();
@@ -460,14 +462,14 @@ public class AddNewOfferTest extends TestBase {
         driver.navigate().refresh();
     }
     // add offer valid
-    @Test(priority = 40)
+    @Test(priority = 39)
     public void AddOfferValid() throws InterruptedException {
         driver.navigate().refresh();
         addNewOfferPage.AddTextInOfferNameArabic(name4);
         addNewOfferPage.AddTextInOfferNameEnglish(name4);
         addNewOfferPage.AddTextInOfferDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewOfferPage.AddTextInOfferDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
-        addNewOfferPage.UploadJPG();
+        addNewOfferPage.UploadCover();
         addNewOfferPage.ChoseDateFromCurrent();
         addNewOfferPage.ChoseDateToFuture();
         addNewOfferPage.SelectMall();

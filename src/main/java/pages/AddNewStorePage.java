@@ -26,7 +26,9 @@ public class AddNewStorePage extends PageBase {
     @FindBy(id = "error-msg-status")
     public WebElement errorMsgStatus;
     @FindBy(id = "error-msg-location")
-    public WebElement errorMsgLocation;
+    public WebElement errorMsgLocationEn;
+    @FindBy(id = "error-msg-location_ar")
+    public WebElement errorMsgLocationAr;
     @FindBy(id = "input-file-logo")
     public WebElement logoBt;
     @FindBy(id = "error-msg-logo")
@@ -68,7 +70,9 @@ public class AddNewStorePage extends PageBase {
     @FindBy(id = "opening_soon_status")
     WebElement openingSoonRadioBt;
     @FindBy(id = "location_input")
-    WebElement storeLocationTxt;
+    WebElement storeLocationTxtEn;
+    @FindBy(id = "location_ar_input")
+    WebElement storeLocationTxtAr;
     @FindBy(id = "input-file-photo")
     WebElement coverPhotoBt;
     @FindBy(id = "form-control-email")
@@ -96,7 +100,7 @@ public class AddNewStorePage extends PageBase {
 
         Select selectCategory = new Select(categorySelect);
         // this for stage
-        selectCategory.selectByValue("114");
+        selectCategory.selectByValue("218");
 
         // this for demo
         //selectCategory.selectByValue("5");
@@ -152,9 +156,14 @@ public class AddNewStorePage extends PageBase {
         selectMall.selectByValue("8 PM");
     }
 
-    public void AddTextInLocation(String Value) {
+    public void AddTextInLocationEn(String Value) {
 
-        setTextElementText(storeLocationTxt, Value);
+        setTextElementText(storeLocationTxtEn, Value);
+    }
+
+    public void AddTextInLocationAr(String Value) {
+
+        setTextElementText(storeLocationTxtAr, Value);
     }
 
     public void ClickToMakeStatusActive() {
@@ -167,58 +176,60 @@ public class AddNewStorePage extends PageBase {
         clickButton(openingSoonRadioBt);
     }
 
-    public void UploadSVG() {
+    // logo
+    public void UploadLogoLogo() {
 
-        String imageName = "SVG.svg";
+        String imageName = "logo.jpg";
         String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
         logoBt.sendKeys(imagePath);
     }
 
-    public void UploadMoreSize() {
+    public void UploadCoverLogo() {
 
-        String imageName = "OverSize.jpg";
+        String imageName = "cover.jpg";
         String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
         logoBt.sendKeys(imagePath);
     }
 
-    public void UploadPNG() {
+    public void UploadWrongLogo() {
 
-        String imageName = "PNG.png";
+        String imageName = "wrong.docx";
         String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
         logoBt.sendKeys(imagePath);
     }
 
-    public void UploadJPG() {
+    public void UploadMoreLogo() {
 
-        String imageName = "JPG.jpg";
+        String imageName = "more.png";
         String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
         logoBt.sendKeys(imagePath);
     }
 
-    public void UploadSVGCover() {
+    // cover
+    public void UploadLogo() {
 
-        String imageName = "SVG.svg";
+        String imageName = "logo.jpg";
         String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
         coverPhotoBt.sendKeys(imagePath);
     }
 
-    public void UploadMoreSizeCover() {
+    public void UploadCover() {
 
-        String imageName = "OverSize.jpg";
+        String imageName = "cover.jpg";
         String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
         coverPhotoBt.sendKeys(imagePath);
     }
 
-    public void UploadPNGCover() {
+    public void UploadWrong() {
 
-        String imageName = "PNG.png";
+        String imageName = "wrong.docx";
         String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
         coverPhotoBt.sendKeys(imagePath);
     }
 
-    public void UploadJPGCover() {
+    public void UploadMore() {
 
-        String imageName = "JPG.jpg";
+        String imageName = "more.png";
         String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
         coverPhotoBt.sendKeys(imagePath);
     }

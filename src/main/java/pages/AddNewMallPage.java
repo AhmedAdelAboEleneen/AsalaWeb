@@ -70,30 +70,30 @@ public class AddNewMallPage extends PageBase {
         setTextElementText(mallNameEnTxt, Value);
     }
 
-    public void UploadSVGCover() {
+    public void UploadLogo() {
 
-        String imageName = "SVG.svg";
+        String imageName = "logo.jpg";
         String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
         coverPhotoBt.sendKeys(imagePath);
     }
 
-    public void UploadMoreSizeCover() {
+    public void UploadCover() {
 
-        String imageName = "OverSize.jpg";
+        String imageName = "cover.jpg";
         String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
         coverPhotoBt.sendKeys(imagePath);
     }
 
-    public void UploadPNGCover() {
+    public void UploadWrong() {
 
-        String imageName = "PNG.png";
+        String imageName = "wrong.docx";
         String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
         coverPhotoBt.sendKeys(imagePath);
     }
 
-    public void UploadJPGCover() {
+    public void UploadMore() {
 
-        String imageName = "JPG.jpg";
+        String imageName = "more.png";
         String imagePath = System.getProperty("user.dir") + "/uploads/" + imageName;
         coverPhotoBt.sendKeys(imagePath);
     }
