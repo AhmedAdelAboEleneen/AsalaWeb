@@ -38,7 +38,12 @@ public class AddNewStoreAdminPage extends PageBase {
     public void SelectMallInAdmin() {
 
         Select selectMall = new Select(mallSelect);
-        selectMall.selectByValue("4");
+        // stage
+       // selectMall.selectByValue("4");
+
+        // demo
+        selectMall.selectByValue("72");
+
     }
 
     public void SelectStoreInAdmin() {
@@ -46,10 +51,10 @@ public class AddNewStoreAdminPage extends PageBase {
         Select selectStore = new Select(storeSelect);
 
         // for stage
-        selectStore.selectByValue("293");
+       // selectStore.selectByValue("293");
 
         // for demo
-        //selectStore.selectByValue("440");
+        selectStore.selectByValue("553");
 
     }
 
