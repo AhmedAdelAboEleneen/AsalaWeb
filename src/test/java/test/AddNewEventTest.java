@@ -661,7 +661,7 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.AddTextInLocationEn(location1);
         addNewEventPage.AddTextInLocationAr(location1);
         addNewEventPage.ClickToSave();
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         Assert.assertTrue(addNewEventPage.errorMsgTimeTo.getText().contains("please select a valid end time"));
     }
 
@@ -787,7 +787,7 @@ public class AddNewEventTest extends TestBase {
         addNewEventPage.ChoseDateFromCurrent();
         addNewEventPage.ChoseDateToCurrent();
         addNewEventPage.SelectTimeFromTwelvePM();
-        addNewEventPage.SelectTimeToElvenAM();
+        addNewEventPage.SelectTimeToElvenPM();
         js = (JavascriptExecutor) driver;
         js.executeScript("scrollBy(0,3000)");
         addNewEventPage.UploadCover();

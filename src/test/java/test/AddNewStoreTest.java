@@ -38,7 +38,6 @@ public class AddNewStoreTest extends TestBase {
     String name5 = fakeData.name().nameWithMiddle();
     String name6 = fakeData.name().title();
     String name7 = fakeData.name().prefix();
-    String name8 = fakeData.name().suffix();
     String name9 = fakeData.name().username();
 
     String email1 = fakeData.internet().emailAddress();
@@ -1099,8 +1098,8 @@ public class AddNewStoreTest extends TestBase {
         Thread.sleep(5000);
         addNewStorePage.SelectCategory();
         addNewStorePage.SelectFloorNumber();
-        addNewStorePage.AddTextInStoreNameArabic(name8);
-        addNewStorePage.AddTextInStoreNameEnglish(name8);
+        addNewStorePage.AddTextInStoreNameArabic(name5);
+        addNewStorePage.AddTextInStoreNameEnglish(name5);
         addNewStorePage.AddTextInStoreDescArabic("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         addNewStorePage.AddTextInStoreDescEnglish("TeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeeeTeeeeeeeee");
         js = (JavascriptExecutor) driver;

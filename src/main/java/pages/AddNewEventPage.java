@@ -196,19 +196,19 @@ public class AddNewEventPage extends PageBase {
 
     public void SelectTimeToTwelveAM() {
 
-        Select SelectTimeToTwelveAM = new Select(timeFrom);
+        Select SelectTimeToTwelveAM = new Select(timeTo);
         SelectTimeToTwelveAM.selectByValue("12 AM");
     }
 
     public void SelectTimeToTwelvePM() {
 
-        Select SelectTimeToTwelvePM = new Select(timeFrom);
+        Select SelectTimeToTwelvePM = new Select(timeTo);
         SelectTimeToTwelvePM.selectByValue("12 PM");
     }
 
     public void SelectTimeToElvenAM() {
 
-        Select SelectTimeToElvenPAM = new Select(timeFrom);
+        Select SelectTimeToElvenPAM = new Select(timeTo);
         SelectTimeToElvenPAM.selectByValue("11 AM");
     }
 
