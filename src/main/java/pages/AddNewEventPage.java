@@ -79,10 +79,10 @@ public class AddNewEventPage extends PageBase {
         Select selectMall = new Select(mallSelect);
 
         // stage
-        // selectMall.selectByValue("4");
+         selectMall.selectByValue("4");
 
         // demo
-        selectMall.selectByValue("72");
+       // selectMall.selectByValue("72");
     }
 
     public void AddTextInEventNameArabic(String Value) {

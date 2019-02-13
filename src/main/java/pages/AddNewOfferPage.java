@@ -132,20 +132,20 @@ public class AddNewOfferPage extends PageBase {
 
         Select selectMall = new Select(mallSelect);
         // stage
-       // selectMall.selectByValue("10");
+        selectMall.selectByValue("10");
 
         // demo
-        selectMall.selectByValue("72");
+       // selectMall.selectByValue("72");
     }
 
     public void SelectStore() {
 
         Select selectStore = new Select(storeSelect);
         // stage
-       // selectStore.selectByValue("4587");
+        selectStore.selectByValue("4587");
 
         // demo
-        selectStore.selectByValue("553");
+       // selectStore.selectByValue("553");
 
     }
 

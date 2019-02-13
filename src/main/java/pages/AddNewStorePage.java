@@ -94,20 +94,20 @@ public class AddNewStorePage extends PageBase {
 
         Select selectMall = new Select(mallSelect);
         // stage
-        // selectMall.selectByValue("4");
+         selectMall.selectByValue("4");
 
         // demo
-        selectMall.selectByValue("72");
+       // selectMall.selectByValue("72");
     }
 
     public void SelectCategory() {
 
         Select selectCategory = new Select(categorySelect);
         // stage
-        //selectCategory.selectByValue("218");
+        selectCategory.selectByValue("218");
 
         // demo
-            selectCategory.selectByValue("4");
+        //    selectCategory.selectByValue("4");
 
     }
 
