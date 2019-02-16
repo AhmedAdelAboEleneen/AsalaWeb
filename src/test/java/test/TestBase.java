@@ -41,7 +41,11 @@ public class TestBase {
         // Stage Link
         driver.navigate().to("https://asala-dashboard.ibtikar.net.sa/auth/login");
         // Demo Link
+<<<<<<< HEAD
        // driver.navigate().to("https://asala-dashboard-demo.ibtikar.net.sa/auth/login");
+=======
+      //  driver.navigate().to("https://asala-dashboard-demo.ibtikar.net.sa/auth/login");
+>>>>>>> master
 
     }
 
