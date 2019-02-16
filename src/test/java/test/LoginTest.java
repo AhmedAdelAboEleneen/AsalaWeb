@@ -83,9 +83,9 @@ public class LoginTest extends TestBase {
 
         loginPage.ClearEmailData();
         // stage
-       // loginPage.AddEmail("a@asala.com");
+        loginPage.AddEmail("a@asala.com");
         // demo
-        loginPage.AddEmail("test@test.com");
+       // loginPage.AddEmail("test@test.com");
         loginPage.ClearPasswordData();
         loginPage.AddPassword("123456");
         loginPage.ClickLogin();
@@ -172,10 +172,10 @@ public class LoginTest extends TestBase {
 
         loginPage.ClearEmailData();
         // stage
-        // loginPage.AddEmail("a@asala.com");
+         loginPage.AddEmail("a@asala.com");
 
         // demo
-        loginPage.AddEmail("test@test.com");
+        //loginPage.AddEmail("test@test.com");
         loginPage.ClearPasswordData();
         loginPage.AddPassword("123456");
         loginPage.ClickLogin();
