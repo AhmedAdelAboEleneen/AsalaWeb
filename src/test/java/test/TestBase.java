@@ -19,8 +19,14 @@ public class TestBase {
 
         if (browserName.equalsIgnoreCase("firefox")) {
 
+            // For Windos
+            //System.setProperty("webdriver.gecko.driver",
+                   // System.getProperty("user.dir") + "/drivers/geckodriver.exe");
+
+            // For Linux
             System.setProperty("webdriver.gecko.driver",
-                    System.getProperty("user.dir") + "/drivers/geckodriver.exe");
+                    System.getProperty("user.dir") + "/drivers/geckodriver");
+
             driver = new FirefoxDriver();
 
         } else if (browserName.equalsIgnoreCase("chrome")) {
