@@ -139,11 +139,6 @@ public class AddNewEventPage extends PageBase {
     }
 
     // Time From
-    public void SelectTimeFromTen() {
-
-        Select SelectTimeFromTen = new Select(timeFrom);
-        SelectTimeFromTen.selectByValue("10 AM");
-    }
 
     public void SelectTimefromEight() {
 

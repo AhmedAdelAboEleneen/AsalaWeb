@@ -22,8 +22,6 @@ public class LoginPage extends PageBase {
     WebElement changeLanguageToEnglishBt;
     @FindBy(id = "submit-btn")
     WebElement loginBtn;
-    @FindBy(id = "forgot-password-btn")
-    WebElement forgetPasswordBtn;
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -42,11 +40,6 @@ public class LoginPage extends PageBase {
     public void ClickLogin() {
 
         clickButton(loginBtn);
-    }
-
-    public void ClickForgetPassword() {
-
-        clickButton(forgetPasswordBtn);
     }
 
     public void ClearEmailData() {
